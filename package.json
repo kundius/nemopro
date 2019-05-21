@@ -1,0 +1,38 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "autoprefixer": "^9.5.1",
+    "critical": "^2.0.0-18",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-debug": "^4.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "jquery-form": "^4.2.2",
+    "jquery-lazy": "^1.7.10",
+    "jquery-validation": "^1.19.0",
+    "jquery.cookie": "^1.4.1",
+    "magnific-popup": "^1.1.0",
+    "slick-carousel": "^1.8.1",
+    "uikit": "^2.27.4"
+  }
+}
