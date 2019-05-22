@@ -1,60 +1,66 @@
 //@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,500,700&subset=cyrillic');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,700i,800&subset=latin,cyrillic');
 
-//@import "uikit/uikit-mixins.scss";
+@import "../../node_modules/uikit/dist/scss/uikit-mixins";
 
 // LESS related
-//@import "uikit/core/variables.scss";
+@import "../../node_modules/uikit/dist/scss/core/variables";
 
 // Defaults
-//@import "uikit/core/base.scss";
+@import "../../node_modules/uikit/dist/scss/core/base";
 
 // Layout
-//@import "uikit/core/grid.scss";
-//@import "uikit/core/panel.scss";
-//@import "uikit/core/block.scss";
-
-//@import "uikit/core/article.scss";
-//@import "uikit/core/comment.scss";
-//@import "uikit/core/cover.scss";
+@import "../../node_modules/uikit/dist/scss/core/grid";
+//@import "../../node_modules/uikit/dist/scss/core/panel";
+//@import "../../node_modules/uikit/dist/scss/core/block";
+//@import "../../node_modules/uikit/dist/scss/core/article";
+//@import "../../node_modules/uikit/dist/scss/core/comment";
+//@import "../../node_modules/uikit/dist/scss/core/cover";
 
 // Navs
-//@import "uikit/core/nav.scss";
-//@import "uikit/core/navbar.scss";
-//@import "uikit/core/subnav.scss";
-//@import "uikit/core/breadcrumb.scss";
-//@import "uikit/core/pagination.scss";
-//@import "uikit/core/tab.scss";
-//@import "uikit/core/thumbnav.scss";
+//@import "../../node_modules/uikit/dist/scss/core/nav";
+//@import "../../node_modules/uikit/dist/scss/core/navbar";
+//@import "../../node_modules/uikit/dist/scss/core/subnav";
+//@import "../../node_modules/uikit/dist/scss/core/breadcrumb";
+//@import "../../node_modules/uikit/dist/scss/core/pagination";
+//@import "../../node_modules/uikit/dist/scss/core/tab";
+//@import "../../node_modules/uikit/dist/scss/core/thumbnav";
 
 // Elements
-//@import "uikit/core/list.scss";
-//@import "uikit/core/description-list.scss";
-//@import "uikit/core/table.scss";
-//@import "uikit/core/form.scss";
+@import "../../node_modules/uikit/dist/scss/core/list";
+@import "../../node_modules/uikit/dist/scss/core/description-list";
+@import "../../node_modules/uikit/dist/scss/core/table";
+@import "../../node_modules/uikit/dist/scss/core/form";
 
 // Common
-//@import "uikit/core/button.scss";
-//@import "uikit/core/icon.scss";
-//@import "uikit/core/close.scss";
-//@import "uikit/core/badge.scss";
-//@import "uikit/core/alert.scss";
-//@import "uikit/core/thumbnail.scss";
-//@import "uikit/core/overlay.scss";
-//@import "uikit/core/animation.scss";
+@import "../../node_modules/uikit/dist/scss/core/button";
+@import "../../node_modules/uikit/dist/scss/core/icon";
+@import "../../node_modules/uikit/dist/scss/core/close";
+//@import "../../node_modules/uikit/dist/scss/core/badge";
+@import "../../node_modules/uikit/dist/scss/core/alert";
+//@import "../../node_modules/uikit/dist/scss/core/thumbnail";
+//@import "../../node_modules/uikit/dist/scss/core/overlay";
+//@import "../../node_modules/uikit/dist/scss/core/column";
+//@import "../../node_modules/uikit/dist/scss/core/animation";
 
 // JavaScript
-//@import "uikit/core/dropdown.scss";
-//@import "uikit/core/modal.scss";
-//@import "uikit/core/offcanvas.scss";
-//@import "uikit/core/switcher.scss";
+@import "../../node_modules/uikit/dist/scss/core/dropdown";
+@import "../../node_modules/uikit/dist/scss/core/modal";
+@import "../../node_modules/uikit/dist/scss/core/offcanvas";
+@import "../../node_modules/uikit/dist/scss/core/switcher";
 
 // Need to be loaded last
-//@import "uikit/core/text.scss";
-//@import "uikit/core/utility.scss";
-//@import "uikit/core/flex.scss";
-//@import "uikit/core/contrast.scss";
-//@import "uikit/core/print.scss";
+@import "../../node_modules/uikit/dist/scss/core/text";
+@import "../../node_modules/uikit/dist/scss/core/utility";
+@import "../../node_modules/uikit/dist/scss/core/flex";
+@import "../../node_modules/uikit/dist/scss/core/contrast";
+@import "../../node_modules/uikit/dist/scss/core/print";
+
+// Components
+@import "../../node_modules/uikit/dist/scss/components/sticky";
+@import "../../node_modules/uikit/dist/scss/components/notify";
+@import "../../node_modules/uikit/dist/scss/components/tooltip";
+@import "../../node_modules/uikit/dist/scss/components/slider";
 
 $breakpoint-small:                               480px !default;
 $breakpoint-medium:                              768px !default;
@@ -393,10 +399,11 @@ select {
 }
 
 html {
-  background: #01718f url("../img/bg-header.webp") no-repeat center 60px;
+  //background: #01718f url("../img/bg-header.jpg") no-repeat center 60px;
+  background: #01718f;
 }
 body {
-  background: url("../img/footer.webp") no-repeat center bottom;
+  background: url("../img/footer.jpg") no-repeat center bottom;
   background-size: 100%;
 }
 .wrapper {
@@ -789,14 +796,17 @@ body {
       }
       &.parent {
         > a:after {
-          content: "\f0d7";
-          color: #169bbb;
-          display: inline;
-          font-size: 10px;
-          font-family: $icon-font;
-          margin-left: 5px;
-          text-shadow: none;
-          top: -1px;
+          content: '';
+          width: 0;
+          height: 0;
+          border-left: 5px;
+          border-top: 5px;
+          border-right: 5px;
+          border-bottom: 0;
+          border-style: solid;
+          border-color: #169bbb transparent transparent;
+          display: inline-block;
+          margin-left: 8px;
           position: relative;
         }
       }
@@ -1464,6 +1474,10 @@ jdiv {
         height: 22px;
         line-height: 22px;
         font-size: 16px;
+        &::before {
+          width: 6px;
+          height: 6px;
+        }
     }
     &:hover {
         background-color:  rgba(0, 0, 0, 1);
@@ -1471,11 +1485,11 @@ jdiv {
 }
 
 .slider__prev {
-    left: 8px;
+  left: 8px;
 }
 
 .slider__next {
-    right: 8px;
+  right: 8px;
 }
 
 .slider-item {
@@ -7519,6 +7533,7 @@ div.pagination {
     cursor: pointer;
     color: #444;
     background-color: #fae66c;
+    position: relative;
     &:hover {
         background-color: #ffcb41;
     }
@@ -8976,7 +8991,7 @@ div.pagination {
 }
 
 .header-sticky {
-    z-index: 1100 !important;
+    z-index: 990 !important;
 }
 
 @media (min-width: $breakpoint-large) {
