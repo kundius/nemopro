@@ -65,7 +65,6 @@ function jsTask(){
     './node_modules/jquery-validation/dist/localization/messages_ru.min.js',
     './node_modules/jquery.cookie/jquery.cookie.js',
     config.srcDir + 'js/flexmenu.min.js',
-    config.srcDir + 'js/minishop2.callbacks.js',
     config.srcDir + 'js/mobilemenu.js',
     config.srcDir + 'js/main.js'
   ])
@@ -121,4 +120,4 @@ function watchTask(){
   )
 }
 
-exports.default = gulp.series(gulp.parallel(/*imagesTask, fontsTask, */scssTask, jsTask, modxTask), criticalTask/*, watchTask*/)
+exports.default = gulp.series(gulp.parallel(/*imagesTask, fontsTask, */scssTask, jsTask, modxTask)/*, criticalTask*//*, watchTask*/)
