@@ -120,4 +120,4 @@ function watchTask(){
   )
 }
 
-exports.default = gulp.series(gulp.parallel(imagesTask, fontsTask, scssTask, jsTask, modxTask), criticalTask/*, watchTask*/)
+exports.default = gulp.series(gulp.parallel(/*imagesTask, */fontsTask, scssTask, jsTask, modxTask), criticalTask/*, watchTask*/)

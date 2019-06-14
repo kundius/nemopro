@@ -9376,23 +9376,75 @@ div.pagination {
         margin: -10px -10px 1px;
     }
     li {
-        display: block;
         flex-grow: 1;
-        text-align: center;
-        cursor: pointer;
-        background-color: #f1f5c9;
-        line-height: 33px;
-        color: #7c7979;
-        font-size: 16px;
-        &:hover {
-            background-color: darken(#f1f5c9, 5%);
+        a {
+            display: block;
+            text-align: center;
+            cursor: pointer;
+            background-color: #f1f5c9;
+            line-height: 33px;
             color: #7c7979;
+            font-size: 16px;
+            &:hover {
+                background-color: darken(#f1f5c9, 5%);
+                color: #7c7979;
+            }
         }
-        &.uk-active {
+        &.active {
             background-color: #5b9aab;
             color: #fff;
+            a {
+                background-color: darken(#f1f5c9, 5%);
+                color: #7c7979;
+            }
         }
     }
+}
+
+.contacts-city {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.contacts-city__select {
+    position: relative;
+    min-width: 264px;
+    span {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+        width: 30px;
+        height: 100%;
+        background: #171a61;
+        pointer-events: none;
+        &::after {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-left: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            transform: rotate(-45deg) translate(-50%, -50%);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+    }
+    select {
+        padding: 10px 20px;
+        border: 2px solid #02748e;
+        position: relative;
+        z-index: 1;
+        box-sizing: border-box;
+        width: 100%;
+    }
+}
+
+.contacts-city__label {
+    margin-left: 35px;
+    font-size: 16px;
+    color: #992c25;
 }
 
 .contacts-cities {
