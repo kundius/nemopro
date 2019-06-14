@@ -9405,17 +9405,23 @@ div.pagination {
     display: flex;
     align-items: center;
     margin: 15px 0;
+    @media (max-width: $breakpoint-mini-max) {
+        flex-wrap: wrap;
+    }
 }
 
 .contacts-city__select {
     position: relative;
     min-width: 264px;
+    @media (max-width: $breakpoint-mini-max) {
+        width: 100%;
+    }
     span {
         position: absolute;
         right: 0;
         top: 0;
         z-index: 2;
-        width: 30px;
+        width: 40px;
         height: 100%;
         background: #171a61;
         pointer-events: none;
@@ -9429,10 +9435,11 @@ div.pagination {
             position: absolute;
             left: 50%;
             top: 50%;
+            margin-top: -5px;
         }
     }
     select {
-        padding: 10px 20px;
+        padding: 10px 60px 10px 20px;
         border: 2px solid #02748e;
         position: relative;
         z-index: 1;
@@ -9445,6 +9452,9 @@ div.pagination {
     margin-left: 35px;
     font-size: 16px;
     color: #992c25;
+    @media (max-width: $breakpoint-mini-max) {
+        margin: 0;
+    }
 }
 
 .contacts-cities {
