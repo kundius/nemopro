@@ -9376,7 +9376,7 @@ div.pagination {
         margin: -10px -10px 1px;
     }
     li {
-        flex-grow: 1;
+        width: 50%;
         a {
             display: block;
             text-align: center;
@@ -9391,11 +9391,9 @@ div.pagination {
             }
         }
         &.active {
-            background-color: #5b9aab;
-            color: #fff;
             a {
-                background-color: darken(#f1f5c9, 5%);
-                color: #7c7979;
+              background-color: #5b9aab;
+              color: #fff;
             }
         }
     }
@@ -9405,18 +9403,16 @@ div.pagination {
     display: flex;
     align-items: center;
     margin: 15px 0;
+    position: relative;
+    z-index: 20;
     @media (max-width: $breakpoint-mini-max) {
         flex-wrap: wrap;
     }
-}
-
-.contacts-city__select {
-    position: relative;
-    min-width: 264px;
-    @media (max-width: $breakpoint-mini-max) {
-        width: 100%;
+    .choices__list--single {
+        padding-right: 40px;
     }
-    span {
+    .choices[data-type*="select-one"]::before {
+        content: '';
         position: absolute;
         right: 0;
         top: 0;
@@ -9424,28 +9420,64 @@ div.pagination {
         width: 40px;
         height: 100%;
         background: #171a61;
-        pointer-events: none;
-        &::after {
-            content: '';
-            width: 5px;
-            height: 5px;
-            border-left: 2px solid #fff;
-            border-bottom: 2px solid #fff;
-            transform: rotate(-45deg) translate(-50%, -50%);
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            margin-top: -5px;
-        }
+        border-radius: 0 4px 4px 0;
     }
-    select {
-        padding: 10px 60px 10px 20px;
-        border: 2px solid #02748e;
-        position: relative;
-        z-index: 1;
-        box-sizing: border-box;
+    .choices[data-type*="select-one"]::after {
+        z-index: 3;
+        border-top-color: #fff;
+        right: 15px;
+    }
+    .choices[data-type*="select-one"].is-open::before {
+        border-radius: 0 4px 0 0;
+    }
+    .choices[data-type*="select-one"].is-open::after {
+        border-color: transparent transparent #fff;
+    }
+    .choices[data-type*="select-one"] .choices__inner {
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+}
+
+.contacts-city__select {
+    position: relative;
+    min-width: 264px;
+    .selectric-wrapper {
         width: 100%;
     }
+    @media (max-width: $breakpoint-mini-max) {
+        width: 100%;
+    }
+    // span {
+    //     position: absolute;
+    //     right: 0;
+    //     top: 0;
+    //     z-index: 2;
+    //     width: 40px;
+    //     height: 100%;
+    //     background: #171a61;
+    //     pointer-events: none;
+    //     &::after {
+    //         content: '';
+    //         width: 5px;
+    //         height: 5px;
+    //         border-left: 2px solid #fff;
+    //         border-bottom: 2px solid #fff;
+    //         transform: rotate(-45deg) translate(-50%, -50%);
+    //         position: absolute;
+    //         left: 50%;
+    //         top: 50%;
+    //         margin-top: -5px;
+    //     }
+    // }
+    // select {
+    //     padding: 10px 60px 10px 20px;
+    //     border: 2px solid #02748e;
+    //     position: relative;
+    //     z-index: 1;
+    //     box-sizing: border-box;
+    //     width: 100%;
+    // }
 }
 
 .contacts-city__label {

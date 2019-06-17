@@ -36,7 +36,7 @@ function imagesTask() {
 function scssTask() {
   return gulp.src([
     './node_modules/slick-carousel/slick/slick.css',
-    './node_modules/magnific-popup/dist/magnific-popup.css',
+    './node_modules/choices.js/public/assets/styles/choices.min.css',
     config.srcDir + 'css/mobilemenu.css',
     config.srcDir + 'scss/styles.scss'
   ])
@@ -58,6 +58,7 @@ function jsTask(){
     // './node_modules/uikit/dist/js/components/tooltip.min.js',
     // './node_modules/uikit/dist/js/components/slider.min.js',
     './node_modules/slick-carousel/slick/slick.min.js',
+    './node_modules/choices.js/public/assets/scripts/choices.min.js',
     './node_modules/jquery-lazy/jquery.lazy.min.js',
     './node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
     './node_modules/jquery-form/dist/jquery.form.min.js',

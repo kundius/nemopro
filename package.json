@@ -27,6 +27,7 @@
     "gulp-util": "^3.0.8"
   },
   "dependencies": {
+    "choices.js": "^7.0.0",
     "jquery": "^3.4.1",
     "jquery-form": "^4.2.2",
     "jquery-lazy": "^1.7.10",
