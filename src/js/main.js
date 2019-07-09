@@ -154,6 +154,12 @@ $('.js-slider').slick({
     nextArrow: '<button class="slider__next"><i class="uk-icon-angle-right"></i></button>',
     dots: true
 });
+$('.js-about-slider').slick({
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+    dots: true
+});
 $('.js-seeAlso-carousel').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
