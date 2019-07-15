@@ -1432,6 +1432,34 @@ jdiv {
   @media (max-width: $breakpoint-small-max) {
     padding: 2px;
   }
+  .slick-dots {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    li {
+      list-style: none;
+      margin: 0 5px;
+      button {
+        border: 1px solid rgb(162, 162, 162);
+        background: rgb(204, 204, 204);
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+        display: block;
+        padding: 0;
+        cursor: pointer;
+        text-indent: -9999px;
+      }
+      &.slick-active button {
+        border-color: rgb(39, 142, 167);
+        background: rgb(22, 155, 187);
+      }
+    }
+  }
   .bx-pager-item {
     display: inline-block;
     margin: 0 2px;
@@ -2065,37 +2093,34 @@ jdiv {
   overflow: hidden;
   margin-bottom: 10px;
   line-height: 12px;
-  .bx-wrapper {
-    height: 100%;
-  }
-  .bx-viewport {
-    height: 100% !important;
-    > ul {
-      height: 100% !important;
-      padding: 0;
-      margin: 0;
-     > li {
-       height: 100% !important;
-     }
+  .bx-pager-item {
+    a {
     }
   }
-  .bx-pager {
+  .slick-dots {
+    padding: 0;
+    margin: 0;
     position: absolute;
     right: 10px;
     bottom: 10px;
-  }
-  .bx-pager-item {
-    display: inline-block;
-    margin: 0 2px;
-    a {
-      border-radius: 50%;
-      background-color:  #b6efff;
-      width: 12px;
-      height: 12px;
-      display: inline-block;
-      text-indent: -9999px;
-      border: 1px solid #5ba3b7;
-      &.active {
+    display: flex;
+    li {
+      list-style: none;
+      margin: 0 2px;
+      button {
+        border-radius: 50%;
+        background:  #b6efff;
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        text-indent: -9999px;
+        border: 1px solid #5ba3b7;
+        display: block;
+        padding: 0;
+        cursor: pointer;
+        text-indent: -9999px;
+      }
+      &.slick-active button {
         border-color: #026c89;
         background: -webkit-linear-gradient(90deg, #016986 0%, #05a6ca 100%);
         background: -moz-linear-gradient(90deg, #016986 0%, #05a6ca 100%);
@@ -3158,31 +3183,30 @@ jdiv {
   position: relative;
   clear: both;
 
-  .bx-wrapper {
-    position: relative;
-  }
-  .bx-pager {
+  .slick-dots {
+    padding: 0;
+    margin: 0;
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    line-height: 12px;
-    opacity: .5;
-    &:hover {
-        opacity: 1;
-    }
-  }
-  .bx-pager-item {
-    display: inline-block;
-    margin: 0 2px;
-    a {
-      border-radius: 50%;
-      background-color:  #b6efff;
-      width: 12px;
-      height: 12px;
-      display: inline-block;
-      text-indent: -9999px;
-      border: 1px solid #5ba3b7;
-      &.active {
+    right: 10px;
+    bottom: 10px;
+    display: flex;
+    li {
+      list-style: none;
+      margin: 0 2px;
+      button {
+        border-radius: 50%;
+        background-color:  #b6efff;
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        text-indent: -9999px;
+        border: 1px solid #5ba3b7;
+        display: block;
+        padding: 0;
+        cursor: pointer;
+        text-indent: -9999px;
+      }
+      &.slick-active button {
         border-color: #026c89;
         background: -webkit-linear-gradient(90deg, #016986 0%, #05a6ca 100%);
         background: -moz-linear-gradient(90deg, #016986 0%, #05a6ca 100%);
@@ -9564,36 +9588,6 @@ div.pagination {
         display: none;
     }
 }
-
-.slick-dots {
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    li {
-        list-style: none;
-        margin: 0 5px;
-        button {
-            border: 1px solid rgb(162, 162, 162);
-            background: rgb(204, 204, 204);
-            border-radius: 50%;
-            width: 12px;
-            height: 12px;
-            display: block;
-            padding: 0;
-            cursor: pointer;
-            text-indent: -9999px;
-        }
-        &.slick-active button {
-            border-color: rgb(39, 142, 167);
-            background: rgb(22, 155, 187);
-        }
-    }
-}
-
 
 .form-item {
     display: none;

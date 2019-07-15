@@ -197,6 +197,8 @@ $('.js-viewed-carousel').slick({
 });
 $('.js-viewed-carousel').on('init', equalBlocks);
 $('.js-actions-slider').slick({
+    autoplay: true,
+    autoplaySpeed: 3000,
     arrows: false,
     dots: true
 });
@@ -867,4 +869,7 @@ $('.js-lazy').lazy();
 
 $('.ajax_form').append('<input type="text" name="org" value="" class="_org" style="visibility:hidden; height: 0; width: 0; padding: 0; border:none;"/>')
 
-const choices = new Choices($('.js-contacts-select')[0]);
+var contactsSelect = document.querySelector('.js-contacts-select');
+if (contactsSelect) {
+    new Choices(contactsSelect);
+}

@@ -88,31 +88,31 @@ function modxTask(){
     .pipe(gulp.dest('dist/js'))
 }
 
-// function criticalTask(cb){
-//   http.get('http://nemopro.ru/?critical=1', onGotData)
-//   function onGotData(res) {
-//     const chunks = [];
-//     res.on('data', onGotData)
-//     res.on('end', onEnd)
-//     function onGotData(chunk) {
-//       chunks.push(chunk)
-//     }
-//     function onEnd() {
-//       critical.generate({
-//         base: 'dist/',
-//         rebase: {
-//           from: "dist/all.css",
-//           to: "dist/all.css"
-//         },
-//         target: { css: 'css/critical.css', uncritical: 'css/uncritical.css' },
-//         html: chunks.join(''),
-//         css: ['dist/css/all.css'],
-//         width: 480,
-//         height: 480
-//       }, cb);
-//     }
-//   }
-// }
+function criticalTask(cb){
+  http.get('http://nemopro.ru/?critical=1', onGotData)
+  function onGotData(res) {
+    const chunks = [];
+    res.on('data', onGotData)
+    res.on('end', onEnd)
+    function onGotData(chunk) {
+      chunks.push(chunk)
+    }
+    function onEnd() {
+      critical.generate({
+        base: 'dist/',
+        rebase: {
+          from: "dist/all.css",
+          to: "dist/all.css"
+        },
+        target: { css: 'css/critical.css', uncritical: 'css/uncritical.css' },
+        html: chunks.join(''),
+        css: ['dist/css/all.css'],
+        width: 480,
+        height: 480
+      }, cb);
+    }
+  }
+}
 
 // function watchTask(){
 //   gulp.watch(
@@ -121,4 +121,4 @@ function modxTask(){
 //   )
 // }
 
-exports.default = gulp.series(gulp.parallel(imagesTask, fontsTask, scssTask, jsTask, modxTask)/*, criticalTask, watchTask*/)
+exports.default = gulp.series(gulp.parallel(imagesTask, fontsTask, scssTask, jsTask, modxTask), criticalTask, /*watchTask*/)
