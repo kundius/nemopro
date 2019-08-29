@@ -739,7 +739,7 @@
 
                   $('form.ms2_form')
                     .has('input[name="id"][value="' + r.data.product.id + '"]')
-                    .addClass('added');
+                    .addClass('_is_in_cart');
 
                   var modal = UIkit.modal($(r.html).appendTo("body"), {
                       center: true

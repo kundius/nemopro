@@ -161,12 +161,17 @@ $('.js-about-slider').slick({
     dots: true
 });
 $('.js-seeAlso-carousel').slick({
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     prevArrow: '.js-seeAlso-previous',
     nextArrow: '.js-seeAlso-next',
     responsive: [{
-        breakpoint: 940,
+        breakpoint: 960,
+        settings: {
+            slidesToShow: 3
+        }
+    }, {
+        breakpoint: 768,
         settings: {
             slidesToShow: 2
         }
@@ -179,12 +184,17 @@ $('.js-seeAlso-carousel').slick({
 });
 $('.js-seeAlso-carousel').on('init', equalBlocks);
 $('.js-viewed-carousel').slick({
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     prevArrow: '.js-viewed-previous',
     nextArrow: '.js-viewed-next',
     responsive: [{
-        breakpoint: 940,
+        breakpoint: 960,
+        settings: {
+            slidesToShow: 3
+        }
+    }, {
+        breakpoint: 768,
         settings: {
             slidesToShow: 2
         }

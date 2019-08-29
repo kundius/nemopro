@@ -114,11 +114,11 @@ function criticalTask(cb){
   }
 }
 
-// function watchTask(){
-//   gulp.watch(
-//     [config.stylePattern, config.jsPattern],
-//     gulp.parallel(scssTask, jsTask)
-//   )
-// }
+function watchTask(){
+  gulp.watch(
+    [config.stylePattern, config.jsPattern],
+    gulp.parallel(scssTask, jsTask)
+  )
+}
 
-exports.default = gulp.series(gulp.parallel(imagesTask, fontsTask, scssTask, jsTask, modxTask), criticalTask, /*watchTask*/)
+exports.default = gulp.series(gulp.parallel(/*fontsTask, imagesTask, */scssTask, jsTask, modxTask), /*criticalTask, watchTask*/)
