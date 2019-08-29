@@ -9998,7 +9998,7 @@ div.pagination {
 .u-product-options {
   margin: 16px 0;
   td {
-    padding: 8px 0;
+    padding: 7px 0;
   }
   table {
     width: 100%;
@@ -10006,7 +10006,7 @@ div.pagination {
   @media (max-width: $breakpoint-mini-max) {
     margin: 19px 0;
     td {
-      padding: 1px 0;
+      padding: 0;
     }
   }
 }
@@ -10019,7 +10019,7 @@ div.pagination {
 
 .u-product-options__item {
   float: left;
-  margin-right: 10px;
+  margin: 2px;
   input {
     display: none;
   }
