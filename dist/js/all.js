@@ -14371,6 +14371,9 @@ svg4everybody(); // тригерим ресайз окна для обновле
 $('[data-uk-switcher]').on('show.uk.switcher', function () {
   $(window).trigger('resize');
 });
+$(document).on('af_complete', function (e, response) {
+  response.form.parents('.uk-modal').find('.uk-modal-close').click();
+});
 /* Лайтбокс */
 
 $('a[href$=".jpg"], a[href$=".jpeg"], a[href$=".JPG"], a[href$=".png"], a[href$=".gif"]').not('[target="_blank"]').magnificPopup({
@@ -14886,7 +14889,7 @@ $(document).on('click', '.msbuyoneclick', function () {
               } else {
                 UIkit.notify(response.message, {
                   status: 'danger',
-                  timeout: 0
+                  timeout: 4000
                 });
               }
             }
