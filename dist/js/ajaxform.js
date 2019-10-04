@@ -77,7 +77,7 @@ var AjaxForm = {
 
         $(document).on('reset', afConfig['formSelector'], function () {
             $(this).find('.error').html('');
-            AjaxForm.Message.close();
+            // AjaxForm.Message.close();
         });
     }
 
@@ -120,19 +120,19 @@ AjaxForm.Message = {
     success: function (message) {
         UIkit.notify(message, {
             status: 'success',
-            timeout: 2000
+            timeout: 3000
         });
     },
     error: function (message) {
         UIkit.notify(message, {
             status: 'danger',
-            timeout: 2000
+            timeout: 3000
         });
     },
     info: function (message) {
         UIkit.notify(message, {
             status: 'warning',
-            timeout: 2000
+            timeout: 3000
         });
     },
     close: function () {

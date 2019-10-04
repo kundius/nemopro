@@ -14889,7 +14889,7 @@ $(document).on('click', '.msbuyoneclick', function () {
               } else {
                 UIkit.notify(response.message, {
                   status: 'danger',
-                  timeout: 4000
+                  timeout: 3000
                 });
               }
             }
