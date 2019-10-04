@@ -723,6 +723,44 @@
     /**
      * Callbacks
      */
+     
+    function optionsInCart () {
+        $('form.ms2_form').each(function (i, form) {
+            var $form = $(form);
+            var in_cart = $form.data('in_cart') || {};
+            var check = function () {
+                var added = false;
+                $.each(in_cart, function (i, item) {
+                    if (Object.keys(item.options).length > 0) {
+                        var match = 0;
+                        var $checked = $form.find('[name^="options"]:checked');
+                        $.each($checked, function (i, option) {
+                            var name = $(option).attr('name');
+                            name = name.substr(8, name.length - 9)
+                            if (item.options[name] === $(option).val()) {
+                                match += 1
+                            }
+                        });
+                        if (Object.keys(item.options).length == match && match == $checked.length) {
+                            added = true;
+                        }
+                    } else {
+                        if ($form.find('[name^="options"]:checked').length === 0) {
+                            added = true;
+                        }
+                    }
+                });
+                if (added) {
+                    $form.addClass('_is_in_cart');
+                } else {
+                    $form.removeClass('_is_in_cart');
+                }
+            }
+            check()
+            $form.on('change', 'input', check);
+        })
+    }
+    optionsInCart();
 
     /* сообщение о добавлении в корзину */
     miniShop2.Callbacks.add('Cart.add.response.success', 'add_to_cart_message', function(response) {
@@ -736,10 +774,11 @@
               r = $.parseJSON(r);
 
               if (r.success) {
-
-                  $('form.ms2_form')
-                    .has('input[name="id"][value="' + r.data.product.id + '"]')
-                    .addClass('_is_in_cart');
+                  var form = $('form.ms2_form').has('input[name="id"][value="' + r.data.product.id + '"]');
+                  var in_cart = form.data('in_cart') || [];
+                  in_cart.push(r.data.cart);
+                  form.data('in_cart', in_cart);
+                  optionsInCart();
 
                   var modal = UIkit.modal($(r.html).appendTo("body"), {
                       center: true

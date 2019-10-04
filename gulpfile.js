@@ -1,4 +1,4 @@
-const gulp = require('gulp')
+const { src, dest, parallel, watch, series } = require('gulp')
 const babel = require('gulp-babel')
 const sourcemaps = require('gulp-sourcemaps')
 const sass = require('gulp-sass')
@@ -12,44 +12,41 @@ const http = require('http')
 const imagemin = require('gulp-imagemin')
 
 const config = {
-    srcDir: './src/',
-    stylePattern: '/**/*.+(scss|css)',
-    jsPattern: '/**/*.js'
+    srcDir: './src/'
 }
 
-function fontsTask() {
-  return gulp.src([
+function fonts() {
+  return src([
+    config.srcDir + 'fonts/**/*',
     './node_modules/uikit/dist/fonts/**/*'
   ])
-    .pipe(gulp.dest('dist/fonts'))
+    .pipe(dest('dist/fonts'))
 }
 
-function imagesTask() {
-  return gulp.src([
+function images() {
+  return src([
     config.srcDir + 'img/**/*'
   ])
-    .pipe(sourcemaps.init())
-    .pipe(imagemin())
-    .pipe(gulp.dest('dist/img'))
+    //.pipe(imagemin())
+    .pipe(dest('dist/img'))
 }
 
-function scssTask() {
-  return gulp.src([
+function css() {
+  return src([
     './node_modules/slick-carousel/slick/slick.css',
     './node_modules/choices.js/public/assets/styles/choices.min.css',
+    './node_modules/autocompleter/autocomplete.css',
     config.srcDir + 'css/mobilemenu.css',
     config.srcDir + 'scss/styles.scss'
   ])
-    .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(concat('all.css'))
     .pipe(postcss([ autoprefixer(), cssnano() ]))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('dist/css'))
+    .pipe(dest('dist/css'))
 }
 
-function jsTask(){
-  return gulp.src([
+function js(){
+  return src([
     './node_modules/jquery/dist/jquery.min.js',
     './node_modules/jquery-migrate/dist/jquery-migrate.min.js',
     './node_modules/uikit/dist/js/uikit.min.js',
@@ -59,6 +56,7 @@ function jsTask(){
     // './node_modules/uikit/dist/js/components/slider.min.js',
     './node_modules/slick-carousel/slick/slick.min.js',
     './node_modules/choices.js/public/assets/scripts/choices.min.js',
+    './node_modules/autocompleter/autocomplete.js',
     './node_modules/jquery-lazy/jquery.lazy.min.js',
     './node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
     './node_modules/jquery-form/dist/jquery.form.min.js',
@@ -69,56 +67,33 @@ function jsTask(){
     config.srcDir + 'js/mobilemenu.js',
     config.srcDir + 'js/main.js'
   ])
-    .pipe(sourcemaps.init())
     .pipe(babel({
-      presets: ['@babel/env']
+      presets: ["@babel/env"]
     }))
     .pipe(concat('all.js'))
-    .pipe(uglify())
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('dist/js'))
+    .pipe(dest('dist/js'))
 }
 
-function modxTask(){
-  return gulp.src([
+function modx(){
+  return src([
     config.srcDir + 'js/ajaxform.js',
     config.srcDir + 'js/minishop2.js',
-    config.srcDir + 'js/mslistorders.js'
+    config.srcDir + 'js/mslistorders.js',
+    config.srcDir + 'js/tickets.js'
   ])
-    .pipe(gulp.dest('dist/js'))
+    .pipe(dest('dist/js'))
 }
 
-function criticalTask(cb){
-  http.get('http://nemopro.ru/?critical=1', onGotData)
-  function onGotData(res) {
-    const chunks = [];
-    res.on('data', onGotData)
-    res.on('end', onEnd)
-    function onGotData(chunk) {
-      chunks.push(chunk)
-    }
-    function onEnd() {
-      critical.generate({
-        base: 'dist/',
-        rebase: {
-          from: "dist/all.css",
-          to: "dist/all.css"
-        },
-        target: { css: 'css/critical.css', uncritical: 'css/uncritical.css' },
-        html: chunks.join(''),
-        css: ['dist/css/all.css'],
-        width: 480,
-        height: 480
-      }, cb);
-    }
-  }
+exports.fonts = fonts
+exports.images = images
+exports.js = js
+exports.css = css
+exports.modx = modx
+exports.build = parallel(fonts, images, css, js, modx)
+exports.default = function() {
+  watch(config.srcDir + 'scss/**/*', css)
+  watch(config.srcDir + 'css/**/*', css)
+  watch(config.srcDir + 'js/**/*', js)
+  watch(config.srcDir + 'fonts/**/*', fonts)
+  watch(config.srcDir + 'img/**/*', images)
 }
-
-function watchTask(){
-  gulp.watch(
-    [config.stylePattern, config.jsPattern],
-    gulp.parallel(scssTask, jsTask)
-  )
-}
-
-exports.default = gulp.series(gulp.parallel(/*fontsTask, imagesTask, */scssTask, jsTask, modxTask), /*criticalTask, watchTask*/)

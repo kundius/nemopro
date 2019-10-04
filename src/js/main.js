@@ -33,6 +33,14 @@ function number_format( number, decimals, dec_point, thousands_sep ) {
 	return km + kw + kd;
 }
 
+svg4everybody();
+
+
+// тригерим ресайз окна для обновления закрепленных блоков
+$('[data-uk-switcher]').on('show.uk.switcher', function() {
+    $(window).trigger('resize');
+});
+
 /* Лайтбокс */
 $('a[href$=".jpg"], a[href$=".jpeg"], a[href$=".JPG"], a[href$=".png"], a[href$=".gif"]').not('[target="_blank"]').magnificPopup({
     type:'image',
@@ -182,7 +190,7 @@ $('.js-seeAlso-carousel').slick({
         }
     }]
 });
-$('.js-seeAlso-carousel').on('init', equalBlocks);
+// $('.js-seeAlso-carousel').on('init', equalBlocks);
 $('.js-viewed-carousel').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -205,7 +213,7 @@ $('.js-viewed-carousel').slick({
         }
     }]
 });
-$('.js-viewed-carousel').on('init', equalBlocks);
+// $('.js-viewed-carousel').on('init', equalBlocks);
 $('.js-actions-slider').slick({
     autoplay: true,
     autoplaySpeed: 3000,
@@ -468,20 +476,25 @@ $('.js-download-popup').magnificPopup({
 // });
 
 
-$('.js-insert-file .ms2galleryform-file-image-wrapper').append('<span>Вставить</span>');
-$('.js-insert-file').on('click', '.ms2galleryform-file-link', function(){
-    var target = $(this).parents('.js-insert-file').data('target');
+$('.js-insert-file').each(function(i, wrapper) {
+    var $wrapper = $(wrapper);
     
-    var link = $(this).attr('href');
-    var name = $(this).attr('title');
-    
-    $.markItUp({
-        target: target,
-        replaceWith: '<a href="'+link+'" class="comment-image" target="_blank"><img src="'+ link +'" alt="'+name+'"></a>'
+    $wrapper.find('.ms2galleryform-file-image-wrapper').append('<span>Вставить</span>');
+    $wrapper.on('click', '.ms2galleryform-file-link', function() {
+        var target = $(this).parents('.js-insert-file').data('target');
+        
+        var link = $(this).attr('href');
+        var name = $(this).attr('title');
+        
+        $.markItUp({
+            target: target,
+            replaceWith: '<a href="'+link+'" class="comment-image" target="_blank"><img src="'+ link +'" alt="'+name+'"></a>'
+        });
+        
+        UIkit.modal(wrapper).hide();
+        
+        return false;
     });
-    $.magnificPopup.close();
-    
-    return false;
 });
 
 // $('.js-cart-receiver input[type="text"]').change(function() {
@@ -632,13 +645,17 @@ $(document).on('click', '[data-add-options]', function(e) {
     e.preventDefault();
     
     var $modal = $($(this).data('add-options'));
-    // $modal.appendTo('body');
+    if ($modal.first().parent().prop('tagName') !== 'BODY') {
+        $modal.appendTo('body');
+    }
     
     
     var modal = UIkit.modal($modal, {
         center: true,
         container: 'body'
     });
+    
+    $modal.on({ 'show.uk.modal': optionsWidth });
 
     if ( modal.isActive() ) {
         modal.hide();
@@ -696,7 +713,7 @@ $('.js-home-catalog').click(function(e) {
     }
 });
     
-function equalBlocks() {
+/*function equalBlocks() {
     ;( function( $, window, document, undefined )
     {
         'use strict';
@@ -736,7 +753,7 @@ $(window).load(equalBlocks);
 $(document).on('mse2_load', equalBlocks);
 $(document).on('pdopage_load', equalBlocks);
 $('[data-uk-switcher]').on('show.uk.switcher', equalBlocks);
-$('[data-uk-slider]').on('focusitem.uk.slider', equalBlocks);
+$('[data-uk-slider]').on('focusitem.uk.slider', equalBlocks);*/
 
 $(document).on('change', '#mse2_filters select', function() {
    $('html, body').animate({
@@ -883,3 +900,415 @@ var contactsSelect = document.querySelector('.js-contacts-select');
 if (contactsSelect) {
     new Choices(contactsSelect);
 }
+
+
+// function optionsWidth () {
+//     let items = $('.u-product-options__item');
+//     let maxWidth = 0;
+//     items.each(function(i2, item) {
+//         if ($(item).width() > maxWidth) {
+//             maxWidth = $(item).outerWidth();
+//         }
+//     });
+//     if (maxWidth > 0) {
+//         items.css('width', maxWidth);
+//     }
+// }
+// optionsWidth();
+
+
+function optionsWidth () {
+    const groups = $('.u-product-options__items');
+    groups.each(function(i1, group) {
+        let items = $(group).find('.u-product-options__item');
+        let minWidth = 0;
+        items.each(function(i2, item) {
+            if ($(item).outerWidth() > minWidth) {
+                minWidth = $(item).outerWidth();
+            }
+        });
+        if (minWidth > 0) {
+            let perRow = Math.floor($(group).outerWidth() / minWidth);
+            let normalPerRow = Math.ceil(items.length/Math.ceil(items.length/perRow));
+            let maxWidth = $(group).outerWidth() / normalPerRow;
+            items.css('width', maxWidth);
+        }
+    });
+}
+optionsWidth();
+
+
+$('.js-discount-dropdown').each(function() {
+    const dropdown = UIkit.dropdown(this, {
+        pos: 'top-right',
+        remaintime: 0,
+        mode: window.matchMedia("(min-width: 640px)").matches ? 'hover' : 'click'
+    });
+    $(window).scroll(function() {
+        dropdown.hide();
+    });
+});
+
+$('.js-share-dropdown').each(function() {
+    const dropdown = UIkit.dropdown(this, {
+        remaintime: 0,
+        mode: 'click'
+    });
+    $(window).scroll(function() {
+        dropdown.hide();
+    });
+});
+
+$('.u-rating__add').click(function() {
+    if ($('#comment-form').is(':visible')) {
+        $(this).removeClass('u-rating__add_active');
+        $('#comment-form').slideUp(500, function() {
+            // тригерим ресайз окна для обновления закрепленных блоков
+            $(window).trigger('resize');
+        });
+    } else {
+        $(this).addClass('u-rating__add_active');
+        $('#comment-form').slideDown(500, function() {
+            // тригерим ресайз окна для обновления закрепленных блоков
+            $(window).trigger('resize');
+        });
+    }
+});
+
+$('[data-uk-switcher]').on('show.uk.switcher', function() {
+    $('.u-rating__add').removeClass('u-rating__add_active');
+    $('#comment-form').slideUp(500);
+});
+
+
+$(function() {
+    const deliveries = [{
+        id: 1,
+        label: 'Самовывоз',
+        payments: [2]
+    }, {
+        id: 2,
+        label: 'Курьером по Москве',
+        payments: [1, 3]
+    }, {
+        id: 3,
+        label: 'Курьером по Москве (за МКАД)',
+        payments: [1, 3]
+    }, {
+        id: 4,
+        label: 'Почта России',
+        payments: [1, 3]
+    }, {
+        id: 5,
+        label: 'Транспортные компании',
+        payments: [1]
+    }, {
+        id: 6,
+        label: 'Служба СДЭК (до пункта выдачи)',
+        payments: [1, 3]
+    }, {
+        id: 7,
+        label: 'Служба СДЭК (до двери получателя)',
+        payments: [1, 3]
+    }]
+    const payments = [{
+        id: 1,
+        label: 'Онлайн оплата'
+    }, {
+        id: 2,
+        label: 'Оплата в магазине'
+    }, {
+        id: 3,
+        label: 'Оплата при получении'
+    }]
+    $('.js-calc').each(function(i, form) {
+        const cityInput = form.querySelector('[name="city"]')
+        const cityLabel = form.querySelector('.js-calc-city-name')
+        const citySubmit = form.querySelector('.js-calc-city-submit')
+        const citySelect = form.querySelector('[name="autocomplete"]')
+
+        const deliverySelect = form.querySelector('[name="delivery"]')
+        const deliveryChoices = new Choices(deliverySelect, {
+            searchEnabled: false,
+            noChoicesText: 'Укажите город'
+        })
+
+        const paymentSelect = form.querySelector('[name="payment"]')
+        const paymentChoices = new Choices(paymentSelect, {
+            searchEnabled: false,
+            noChoicesText: 'Выберите способ доставки'
+        })
+
+        const errorBox = form.querySelector('.js-calc-error')
+        const resultBox = form.querySelector('.js-calc-result')
+        const resultDelivery = form.querySelector('.js-calc-result-delivery')
+        const resultTime = form.querySelector('.js-calc-result-time')
+        const resultPrice = form.querySelector('.js-calc-result-price')
+        
+        const costInput = form.querySelector('[name="cost"]')
+        const calculateSubmit = form.querySelector('.js-calc-calculate')
+
+        const setCity = function (city) {
+            if (city.indexOf('г ') === 0) {
+                city = city.substring(2)
+            }
+            cityLabel.innerHTML = cityInput.value = city
+            let idx = []
+            if (['Воронеж', 'Курск'].indexOf(city) !== -1) {
+                idx = [1]
+            }
+            else if (['Москва'].indexOf(city) !== -1) {
+                idx = [1, 2, 3]
+            }
+            else {
+                idx = [4, 5, 6, 7]
+            }
+            // способы доставки в соответствии с выбранным городом
+            deliveryChoices.setChoices(deliveries.filter(row => idx.indexOf(row.id) !== -1).map((row, index) => ({
+                value: row.id,
+                label: row.label,
+                selected: index === 0
+            })), 'value', 'label', true)
+            deliverySelect.dispatchEvent(new Event('change'))
+        }
+        
+        const onChangeDelivery = function (e) {
+            let item =  deliveries.find(row => row.id === parseInt(e.target.value))
+            // способы оплаты в соответствии с выбранным способом доставки
+            paymentChoices.setChoices(payments.filter(row => item.payments.indexOf(row.id) !== -1).map((row, index) => ({
+                value: row.id,
+                label: row.label,
+                selected: index === 0
+            })), 'value', 'label', true)
+        }
+        
+        const calculate = function (e) {
+            e.preventDefault()
+
+            let errors = []
+            if (!cityInput.value) {
+                errors.push('Укажите город.')
+            }
+            if (!costInput.value) {
+                errors.push('Укажите стоимость заказа.')
+            }
+            if (!deliverySelect.value) {
+                errors.push('Укажите способ доставки.')
+            }
+            if (!paymentSelect.value) {
+                errors.push('Укажите способ оплаты.')
+            }
+            if (errors.length > 0) {
+                $(resultBox).hide()
+                $(errorBox).html(errors.join('<br />')).show()
+                return false
+            } else {
+                $(resultBox).show()
+                $(errorBox).hide()
+            }
+
+            let payment = payments.find(row => row.id === parseInt(paymentSelect.value))
+            let delivery = deliveries.find(row => row.id === parseInt(deliverySelect.value))
+
+            resultDelivery.innerHTML = delivery.label
+
+            if (['Воронеж', 'Курск'].indexOf(cityInput.value) !== -1) {
+                resultTime.innerHTML = 'Сегодня'
+                resultPrice.innerHTML = 'Бесплатно'
+            }
+            else if (['Москва'].indexOf(cityInput.value) !== -1) {
+                if (delivery.id === 1) {
+                    if (payment.id === 2) {
+                        resultTime.innerHTML = 'Сегодня'
+                        resultPrice.innerHTML = 'Бесплатно'
+                    }
+                    else {
+                        errors.push('Неверный способ оплаты.')
+                    }
+                }
+                else if ([2, 3].indexOf(delivery.id) !== -1) {
+                    if (payment.id === 1) {
+                        if (costInput.value < 5000) {
+                            resultTime.innerHTML = delivery.id === 2 ? 'Завтра' : '1-2 дня'
+                            resultPrice.innerHTML = '400 руб.'
+                        }
+                        else if (costInput.value >= 5000 && costInput.value < 15000) {
+                            resultTime.innerHTML = delivery.id === 2 ? 'Завтра' : '1-2 дня'
+                            resultPrice.innerHTML = '300 руб.'
+                        }
+                        else if (costInput.value >= 15000) {
+                            resultTime.innerHTML = delivery.id === 2 ? 'Завтра' : '1-2 дня'
+                            resultPrice.innerHTML = 'Бесплатно'
+                        }
+                    }
+                    else if (payment.id === 3) {
+                        if (costInput.value < 5000) {
+                            resultTime.innerHTML = delivery.id === 2 ? 'Завтра' : '1-2 дня'
+                            resultPrice.innerHTML = '400 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 400) + ' руб.'
+                        }
+                        else if (costInput.value >= 5000 && costInput.value < 15000) {
+                            resultTime.innerHTML = delivery.id === 2 ? 'Завтра' : '1-2 дня'
+                            resultPrice.innerHTML = '300 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 300) + ' руб.'
+                        }
+                        else if (costInput.value >= 15000) {
+                            resultTime.innerHTML = delivery.id === 2 ? 'Завтра' : '1-2 дня'
+                            resultPrice.innerHTML = '0 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04) + ' руб.'
+                        }
+                    }
+                    else {
+                        errors.push('Неверный способ оплаты.')
+                    }
+                }
+                else {
+                    errors.push('Неверный способ доставки.')
+                }
+            }
+            else {
+                if (delivery.id === 4) {
+                    if (payment.id === 1) {
+                        if (costInput.value < 5000) {
+                            resultTime.innerHTML = '4-6 дней'
+                            resultPrice.innerHTML = '300 руб.'
+                        }
+                        else if (costInput.value >= 5000) {
+                            resultTime.innerHTML = '4-6 дней'
+                            resultPrice.innerHTML = 'Бесплатно'
+                        }
+                    }
+                    else if (payment.id === 3) {
+                        if (costInput.value < 5000) {
+                            resultTime.innerHTML = '4-6 дней'
+                            resultPrice.innerHTML = '300 + ' + (costInput.value * 0.08) + ' = ' + (costInput.value * 0.08 + 300) + ' руб.'
+                        }
+                        else if (costInput.value >= 5000) {
+                            resultTime.innerHTML = '4-6 дней'
+                            resultPrice.innerHTML = '0 + ' + (costInput.value * 0.08) + ' = ' + (costInput.value * 0.08) + ' руб.'
+                        }
+                    }
+                    else {
+                        errors.push('Неверный способ оплаты.')
+                    }
+                }
+                else if (delivery.id === 5) {
+                    if (payment.id === 1) {
+                        if (costInput.value < 5000) {
+                            resultTime.innerHTML = '3-5 дней'
+                            resultPrice.innerHTML = '400 руб.'
+                        }
+                        else if (costInput.value >= 5000 && costInput.value < 15000) {
+                            resultTime.innerHTML = '3-5 дней'
+                            resultPrice.innerHTML = '350 руб.'
+                        }
+                        else if (costInput.value >= 15000) {
+                            resultTime.innerHTML = '3-5 дней'
+                            resultPrice.innerHTML = 'Бесплатно'
+                        }
+                    }
+                    else {
+                        errors.push('Неверный способ оплаты.')
+                    }
+                }
+                else if (delivery.id === 6) {
+                    if (payment.id === 1) {
+                        if (costInput.value < 5000) {
+                            resultTime.innerHTML = '2-4 дня'
+                            resultPrice.innerHTML = '500 руб.'
+                        }
+                        else if (costInput.value >= 5000 && costInput.value < 15000) {
+                            resultTime.innerHTML = '2-4 дня'
+                            resultPrice.innerHTML = '400 руб.'
+                        }
+                        else if (costInput.value >= 15000) {
+                            resultTime.innerHTML = '2-4 дня'
+                            resultPrice.innerHTML = 'Бесплатно'
+                        }
+                    }
+                    else if (payment.id === 3) {
+                        if (costInput.value < 5000) {
+                            resultTime.innerHTML = '2-4 дня'
+                            resultPrice.innerHTML = '500 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 500) + ' руб.'
+                        }
+                        else if (costInput.value >= 5000 && costInput.value < 15000) {
+                            resultTime.innerHTML = '2-4 дня'
+                            resultPrice.innerHTML = '400 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 400) + ' руб.'
+                        }
+                        else if (costInput.value >= 15000) {
+                            resultTime.innerHTML = '2-4 дня'
+                            resultPrice.innerHTML = '0 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04) + ' руб.'
+                        }
+                    }
+                    else {
+                        errors.push('Неверный способ оплаты.')
+                    }
+                }
+                else if (delivery.id === 7) {
+                    if (payment.id === 1) {
+                        if (costInput.value < 5000) {
+                            resultTime.innerHTML = '2-4 дня'
+                            resultPrice.innerHTML = '1000 руб.'
+                        }
+                        else if (costInput.value >= 5000 && costInput.value < 15000) {
+                            resultTime.innerHTML = '2-4 дня'
+                            resultPrice.innerHTML = '900 руб.'
+                        }
+                        else if (costInput.value >= 15000 && costInput.value < 30000) {
+                            resultTime.innerHTML = '2-4 дня'
+                            resultPrice.innerHTML = '500 руб.'
+                        }
+                        else if (costInput.value >= 30000) {
+                            resultTime.innerHTML = '2-4 дня'
+                            resultPrice.innerHTML = 'Бесплатно'
+                        }
+                    }
+                    else if (payment.id === 3) {
+                        if (costInput.value < 5000) {
+                            resultTime.innerHTML = '2-4 дня'
+                            resultPrice.innerHTML = '1000 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 1000) + ' руб.'
+                        }
+                        else if (costInput.value >= 5000 && costInput.value < 15000) {
+                            resultTime.innerHTML = '2-4 дня'
+                            resultPrice.innerHTML = '900 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 900) + ' руб.'
+                        }
+                        else if (costInput.value >= 15000 && costInput.value < 30000) {
+                            resultTime.innerHTML = '2-4 дня'
+                            resultPrice.innerHTML = '500 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 500) + ' руб.'
+                        }
+                        else if (costInput.value >= 30000) {
+                            resultTime.innerHTML = '2-4 дня'
+                            resultPrice.innerHTML = '0 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04) + ' руб.'
+                        }
+                    }
+                    else {
+                        errors.push('Неверный способ оплаты.')
+                    }
+                }
+                else {
+                    errors.push('Неверный способ доставки.')
+                }
+            }
+        }
+
+        $(citySubmit).click(e => setCity(citySelect.value))
+        $(citySelect).suggestions({
+            token: "4b25f9cb98a44de7c49207580b8644f4c4cfa2ba",
+            type: "ADDRESS",
+            hint: false,
+            scrollOnFocus: false,
+            bounds: "city",
+            constraints: {
+                label: "",
+                locations: { city_type_full: "город" }
+            },
+            onSelect: e => setCity(e.data.city)
+        })
+        $(deliverySelect).change(onChangeDelivery)
+        $(form).submit(calculate)
+
+        if (form.dataset.city) {
+            setCity(form.dataset.city)
+        }
+        // $(paymentSelect).change(calculate)
+        // $(deliverySelect).change(calculate)
+        // $(costInput).change(calculate)
+    });
+});
