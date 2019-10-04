@@ -5787,10 +5787,12 @@ div.pagination {
   padding: 10px;
 }
 .forum-comment-form__title {
-  display: block !important;
-  color: #016a88;
-  font-size: 18px;
-  font-weight: 700;
+    display: block!important;
+    color: #016a88;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
 }
 .forum-comment-form__submit {
   text-transform: uppercase;
