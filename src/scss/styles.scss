@@ -8530,7 +8530,11 @@ div.pagination {
             border: none;
         }
         > td.cart-data_remove {
-            display: none;
+            order: 25;
+            width: 100%;
+            > * {
+              display: none;
+            }
         }
     }
 }
