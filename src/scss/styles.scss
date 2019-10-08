@@ -2249,8 +2249,8 @@ jdiv {
   border: 1px solid #01556b;
   position: relative;
   overflow: hidden;
-  margin-bottom: 10px;
   line-height: 12px;
+  min-height: 100%;
   .bx-pager-item {
     a {
     }
@@ -2321,7 +2321,6 @@ jdiv {
   background-color: #ffffff;
   position: relative;
   overflow: hidden;
-  margin-bottom: 15px;
   padding: 26px 12px;
 
   @media (min-width: $breakpoint-medium) and (max-width: $breakpoint-medium-max) {
