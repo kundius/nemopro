@@ -11715,254 +11715,273 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 });
 "use strict";
 
-/*! jQuery & Zepto Lazy v1.7.10 - http://jquery.eisbehr.de/lazy - MIT&GPL-2.0 license - Copyright 2012-2018 Daniel 'Eisbehr' Kern */
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+
+function _extends() {
+  return (_extends = Object.assign || function (t) {
+    for (var e = 1; e < arguments.length; e++) {
+      var n = arguments[e];
+
+      for (var o in n) {
+        Object.prototype.hasOwnProperty.call(n, o) && (t[o] = n[o]);
+      }
+    }
+
+    return t;
+  }).apply(this, arguments);
+}
+
+function _typeof(t) {
+  return (_typeof = "function" == typeof Symbol && "symbol" == _typeof2(Symbol.iterator) ? function (t) {
+    return _typeof2(t);
+  } : function (t) {
+    return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : _typeof2(t);
+  })(t);
+}
+
 !function (t, e) {
+  "object" === ("undefined" == typeof exports ? "undefined" : _typeof(exports)) && "undefined" != typeof module ? module.exports = e() : "function" == typeof define && define.amd ? define(e) : t.LazyLoad = e();
+}(void 0, function () {
   "use strict";
 
-  function r(r, a, i, u, l) {
-    function f() {
-      L = t.devicePixelRatio > 1, i = c(i), a.delay >= 0 && setTimeout(function () {
-        s(!0);
-      }, a.delay), (a.delay < 0 || a.combined) && (u.e = v(a.throttle, function (t) {
-        "resize" === t.type && (w = B = -1), s(t.all);
-      }), u.a = function (t) {
-        t = c(t), i.push.apply(i, t);
-      }, u.g = function () {
-        return i = n(i).filter(function () {
-          return !n(this).data(a.loadedName);
-        });
-      }, u.f = function (t) {
-        for (var e = 0; e < t.length; e++) {
-          var r = i.filter(function () {
-            return this === t[e];
-          });
-          r.length && s(!1, r);
+  var t = "undefined" != typeof window,
+      e = t && !("onscroll" in window) || "undefined" != typeof navigator && /(gle|ing|ro)bot|crawl|spider/i.test(navigator.userAgent),
+      n = t && "IntersectionObserver" in window && "IntersectionObserverEntry" in window && "intersectionRatio" in window.IntersectionObserverEntry.prototype && "isIntersecting" in window.IntersectionObserverEntry.prototype,
+      o = t && "classList" in document.createElement("p"),
+      r = {
+    elements_selector: "img",
+    container: e || t ? document : null,
+    threshold: 300,
+    thresholds: null,
+    data_src: "src",
+    data_srcset: "srcset",
+    data_sizes: "sizes",
+    data_bg: "bg",
+    class_loading: "loading",
+    class_loaded: "loaded",
+    class_error: "error",
+    load_delay: 0,
+    auto_unobserve: !0,
+    callback_enter: null,
+    callback_exit: null,
+    callback_reveal: null,
+    callback_loaded: null,
+    callback_error: null,
+    callback_finish: null,
+    use_native: !1
+  },
+      i = function i(t, e) {
+    var n,
+        o = new t(e);
+
+    try {
+      n = new CustomEvent("LazyLoad::Initialized", {
+        detail: {
+          instance: o
         }
-      }, s(), n(a.appendScroll).on("scroll." + l + " resize." + l, u.e));
+      });
+    } catch (t) {
+      (n = document.createEvent("CustomEvent")).initCustomEvent("LazyLoad::Initialized", !1, !1, {
+        instance: o
+      });
     }
 
-    function c(t) {
-      var i = a.defaultImage,
-          o = a.placeholder,
-          u = a.imageBase,
-          l = a.srcsetAttribute,
-          f = a.loaderAttribute,
-          c = a._f || {};
-      t = n(t).filter(function () {
-        var t = n(this),
-            r = m(this);
-        return !t.data(a.handledName) && (t.attr(a.attribute) || t.attr(l) || t.attr(f) || c[r] !== e);
-      }).data("plugin_" + a.name, r);
+    window.dispatchEvent(n);
+  };
 
-      for (var s = 0, d = t.length; s < d; s++) {
-        var A = n(t[s]),
-            g = m(t[s]),
-            h = A.attr(a.imageBaseAttribute) || u;
-        g === N && h && A.attr(l) && A.attr(l, b(A.attr(l), h)), c[g] === e || A.attr(f) || A.attr(f, c[g]), g === N && i && !A.attr(E) ? A.attr(E, i) : g === N || !o || A.css(O) && "none" !== A.css(O) || A.css(O, "url('" + o + "')");
-      }
-
-      return t;
+  var a = function a(t, e) {
+    return t.getAttribute("data-" + e);
+  },
+      s = function s(t, e, n) {
+    var o = "data-" + e;
+    null !== n ? t.setAttribute(o, n) : t.removeAttribute(o);
+  },
+      c = function c(t) {
+    return "true" === a(t, "was-processed");
+  },
+      l = function l(t, e) {
+    return s(t, "ll-timeout", e);
+  },
+      u = function u(t) {
+    return a(t, "ll-timeout");
+  },
+      d = function d(t, e) {
+    t && t(e);
+  },
+      f = function f(t, e) {
+    t._loadingCount += e, 0 === t._elements.length && 0 === t._loadingCount && d(t._settings.callback_finish);
+  },
+      _ = function _(t) {
+    for (var e, n = [], o = 0; e = t.children[o]; o += 1) {
+      "SOURCE" === e.tagName && n.push(e);
     }
 
-    function s(t, e) {
-      if (!i.length) return void (a.autoDestroy && r.destroy());
-
-      for (var o = e || i, u = !1, l = a.imageBase || "", f = a.srcsetAttribute, c = a.handledName, s = 0; s < o.length; s++) {
-        if (t || e || A(o[s])) {
-          var g = n(o[s]),
-              h = m(o[s]),
-              b = g.attr(a.attribute),
-              v = g.attr(a.imageBaseAttribute) || l,
-              p = g.attr(a.loaderAttribute);
-          g.data(c) || a.visibleOnly && !g.is(":visible") || !((b || g.attr(f)) && (h === N && (v + b !== g.attr(E) || g.attr(f) !== g.attr(F)) || h !== N && v + b !== g.css(O)) || p) || (u = !0, g.data(c, !0), d(g, h, v, p));
-        }
-      }
-
-      u && (i = n(i).filter(function () {
-        return !n(this).data(c);
-      }));
+    return n;
+  },
+      v = function v(t, e, n) {
+    n && t.setAttribute(e, n);
+  },
+      g = function g(t, e) {
+    v(t, "sizes", a(t, e.data_sizes)), v(t, "srcset", a(t, e.data_srcset)), v(t, "src", a(t, e.data_src));
+  },
+      b = {
+    IMG: function IMG(t, e) {
+      var n = t.parentNode;
+      n && "PICTURE" === n.tagName && _(n).forEach(function (t) {
+        g(t, e);
+      });
+      g(t, e);
+    },
+    IFRAME: function IFRAME(t, e) {
+      v(t, "src", a(t, e.data_src));
+    },
+    VIDEO: function VIDEO(t, e) {
+      _(t).forEach(function (t) {
+        v(t, "src", a(t, e.data_src));
+      }), v(t, "src", a(t, e.data_src)), t.load();
     }
+  },
+      m = function m(t, e) {
+    var n,
+        o,
+        r = e._settings,
+        i = t.tagName,
+        s = b[i];
+    if (s) return s(t, r), f(e, 1), void (e._elements = (n = e._elements, o = t, n.filter(function (t) {
+      return t !== o;
+    })));
+    !function (t, e) {
+      var n = a(t, e.data_src),
+          o = a(t, e.data_bg);
+      n && (t.style.backgroundImage = 'url("'.concat(n, '")')), o && (t.style.backgroundImage = o);
+    }(t, r);
+  },
+      h = function h(t, e) {
+    o ? t.classList.add(e) : t.className += (t.className ? " " : "") + e;
+  },
+      p = function p(t, e, n) {
+    t.addEventListener(e, n);
+  },
+      y = function y(t, e, n) {
+    t.removeEventListener(e, n);
+  },
+      E = function E(t, e, n) {
+    y(t, "load", e), y(t, "loadeddata", e), y(t, "error", n);
+  },
+      w = function w(t, e, n) {
+    var r = n._settings,
+        i = e ? r.class_loaded : r.class_error,
+        a = e ? r.callback_loaded : r.callback_error,
+        s = t.target;
+    !function (t, e) {
+      o ? t.classList.remove(e) : t.className = t.className.replace(new RegExp("(^|\\s+)" + e + "(\\s+|$)"), " ").replace(/^\s+/, "").replace(/\s+$/, "");
+    }(s, r.class_loading), h(s, i), d(a, s), f(n, -1);
+  },
+      I = function I(t, e) {
+    var n = function n(r) {
+      w(r, !0, e), E(t, n, o);
+    },
+        o = function o(r) {
+      w(r, !1, e), E(t, n, o);
+    };
 
-    function d(t, e, r, i) {
-      ++z;
+    !function (t, e, n) {
+      p(t, "load", e), p(t, "loadeddata", e), p(t, "error", n);
+    }(t, n, o);
+  },
+      k = ["IMG", "IFRAME", "VIDEO"],
+      O = function O(t, e) {
+    var n = e._observer;
+    x(t, e), n && e._settings.auto_unobserve && n.unobserve(t);
+  },
+      A = function A(t) {
+    var e = u(t);
+    e && (clearTimeout(e), l(t, null));
+  },
+      L = function L(t, e) {
+    var n = e._settings.load_delay,
+        o = u(t);
+    o || (o = setTimeout(function () {
+      O(t, e), A(t);
+    }, n), l(t, o));
+  },
+      x = function x(t, e, n) {
+    var o = e._settings;
+    !n && c(t) || (k.indexOf(t.tagName) > -1 && (I(t, e), h(t, o.class_loading)), m(t, e), function (t) {
+      s(t, "was-processed", "true");
+    }(t), d(o.callback_reveal, t), d(o.callback_set, t));
+  },
+      z = function z(t) {
+    return !!n && (t._observer = new IntersectionObserver(function (e) {
+      e.forEach(function (e) {
+        return function (t) {
+          return t.isIntersecting || t.intersectionRatio > 0;
+        }(e) ? function (t, e) {
+          var n = e._settings;
+          d(n.callback_enter, t), n.load_delay ? L(t, e) : O(t, e);
+        }(e.target, t) : function (t, e) {
+          var n = e._settings;
+          d(n.callback_exit, t), n.load_delay && A(t);
+        }(e.target, t);
+      });
+    }, {
+      root: (e = t._settings).container === document ? null : e.container,
+      rootMargin: e.thresholds || e.threshold + "px"
+    }), !0);
+    var e;
+  },
+      N = ["IMG", "IFRAME"],
+      C = function C(t, e) {
+    return function (t) {
+      return t.filter(function (t) {
+        return !c(t);
+      });
+    }((n = t || function (t) {
+      return t.container.querySelectorAll(t.elements_selector);
+    }(e), Array.prototype.slice.call(n)));
+    var n;
+  },
+      M = function M(t, e) {
+    this._settings = function (t) {
+      return _extends({}, r, t);
+    }(t), this._loadingCount = 0, z(this), this.update(e);
+  };
 
-      var _o = function o() {
-        y("onError", t), p(), _o = n.noop;
-      };
-
-      y("beforeLoad", t);
-      var u = a.attribute,
-          l = a.srcsetAttribute,
-          f = a.sizesAttribute,
-          c = a.retinaAttribute,
-          s = a.removeAttribute,
-          d = a.loadedName,
-          A = t.attr(c);
-
-      if (i) {
-        var _g = function g() {
-          s && t.removeAttr(a.loaderAttribute), t.data(d, !0), y(T, t), setTimeout(p, 1), _g = n.noop;
-        };
-
-        t.off(I).one(I, _o).one(D, _g), y(i, t, function (e) {
-          e ? (t.off(D), _g()) : (t.off(I), _o());
-        }) || t.trigger(I);
-      } else {
-        var h = n(new Image());
-        h.one(I, _o).one(D, function () {
-          t.hide(), e === N ? t.attr(C, h.attr(C)).attr(F, h.attr(F)).attr(E, h.attr(E)) : t.css(O, "url('" + h.attr(E) + "')"), t[a.effect](a.effectTime), s && (t.removeAttr(u + " " + l + " " + c + " " + a.imageBaseAttribute), f !== C && t.removeAttr(f)), t.data(d, !0), y(T, t), h.remove(), p();
-        });
-        var m = (L && A ? A : t.attr(u)) || "";
-        h.attr(C, t.attr(f)).attr(F, t.attr(l)).attr(E, m ? r + m : null), h.complete && h.trigger(D);
-      }
-    }
-
-    function A(t) {
-      var e = t.getBoundingClientRect(),
-          r = a.scrollDirection,
-          n = a.threshold,
-          i = h() + n > e.top && -n < e.bottom,
-          o = g() + n > e.left && -n < e.right;
-      return "vertical" === r ? i : "horizontal" === r ? o : i && o;
-    }
-
-    function g() {
-      return w >= 0 ? w : w = n(t).width();
-    }
-
-    function h() {
-      return B >= 0 ? B : B = n(t).height();
-    }
-
-    function m(t) {
-      return t.tagName.toLowerCase();
-    }
-
-    function b(t, e) {
-      if (e) {
-        var r = t.split(",");
-        t = "";
-
-        for (var a = 0, n = r.length; a < n; a++) {
-          t += e + r[a].trim() + (a !== n - 1 ? "," : "");
-        }
-      }
-
-      return t;
-    }
-
-    function v(t, e) {
+  return M.prototype = {
+    update: function update(t) {
       var n,
-          i = 0;
-      return function (o, u) {
-        function l() {
-          i = +new Date(), e.call(r, o);
-        }
+          o = this,
+          r = this._settings;
+      (this._elements = C(t, r), !e && this._observer) ? (function (t) {
+        return t.use_native && "loading" in HTMLImageElement.prototype;
+      }(r) && ((n = this)._elements.forEach(function (t) {
+        -1 !== N.indexOf(t.tagName) && (t.setAttribute("loading", "lazy"), x(t, n));
+      }), this._elements = C(t, r)), this._elements.forEach(function (t) {
+        o._observer.observe(t);
+      })) : this.loadAll();
+    },
+    destroy: function destroy() {
+      var t = this;
+      this._observer && (this._elements.forEach(function (e) {
+        t._observer.unobserve(e);
+      }), this._observer = null), this._elements = null, this._settings = null;
+    },
+    load: function load(t, e) {
+      x(t, this, e);
+    },
+    loadAll: function loadAll() {
+      var t = this;
 
-        var f = +new Date() - i;
-        n && clearTimeout(n), f > t || !a.enableThrottle || u ? l() : n = setTimeout(l, t - f);
-      };
+      this._elements.forEach(function (e) {
+        O(e, t);
+      });
     }
-
-    function p() {
-      --z, i.length || z || y("onFinishedAll");
-    }
-
-    function y(t, e, n) {
-      return !!(t = a[t]) && (t.apply(r, [].slice.call(arguments, 1)), !0);
-    }
-
-    var z = 0,
-        w = -1,
-        B = -1,
-        L = !1,
-        T = "afterLoad",
-        D = "load",
-        I = "error",
-        N = "img",
-        E = "src",
-        F = "srcset",
-        C = "sizes",
-        O = "background-image";
-    "event" === a.bind || o ? f() : n(t).on(D + "." + l, f);
-  }
-
-  function a(a, o) {
-    var u = this,
-        l = n.extend({}, u.config, o),
-        f = {},
-        c = l.name + "-" + ++i;
-    return u.config = function (t, r) {
-      return r === e ? l[t] : (l[t] = r, u);
-    }, u.addItems = function (t) {
-      return f.a && f.a("string" === n.type(t) ? n(t) : t), u;
-    }, u.getItems = function () {
-      return f.g ? f.g() : {};
-    }, u.update = function (t) {
-      return f.e && f.e({}, !t), u;
-    }, u.force = function (t) {
-      return f.f && f.f("string" === n.type(t) ? n(t) : t), u;
-    }, u.loadAll = function () {
-      return f.e && f.e({
-        all: !0
-      }, !0), u;
-    }, u.destroy = function () {
-      return n(l.appendScroll).off("." + c, f.e), n(t).off("." + c), f = {}, e;
-    }, r(u, l, a, f, c), l.chainable ? a : u;
-  }
-
-  var n = t.jQuery || t.Zepto,
-      i = 0,
-      o = !1;
-  n.fn.Lazy = n.fn.lazy = function (t) {
-    return new a(this, t);
-  }, n.Lazy = n.lazy = function (t, r, i) {
-    if (n.isFunction(r) && (i = r, r = []), n.isFunction(i)) {
-      t = n.isArray(t) ? t : [t], r = n.isArray(r) ? r : [r];
-
-      for (var o = a.prototype.config, u = o._f || (o._f = {}), l = 0, f = t.length; l < f; l++) {
-        (o[t[l]] === e || n.isFunction(o[t[l]])) && (o[t[l]] = i);
-      }
-
-      for (var c = 0, s = r.length; c < s; c++) {
-        u[r[c]] = t[0];
-      }
-    }
-  }, a.prototype.config = {
-    name: "lazy",
-    chainable: !0,
-    autoDestroy: !0,
-    bind: "load",
-    threshold: 500,
-    visibleOnly: !1,
-    appendScroll: t,
-    scrollDirection: "both",
-    imageBase: null,
-    defaultImage: "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==",
-    placeholder: null,
-    delay: -1,
-    combined: !1,
-    attribute: "data-src",
-    srcsetAttribute: "data-srcset",
-    sizesAttribute: "data-sizes",
-    retinaAttribute: "data-retina",
-    loaderAttribute: "data-loader",
-    imageBaseAttribute: "data-imagebase",
-    removeAttribute: !0,
-    handledName: "handled",
-    loadedName: "loaded",
-    effect: "show",
-    effectTime: 0,
-    enableThrottle: !0,
-    throttle: 250,
-    beforeLoad: e,
-    afterLoad: e,
-    onError: e,
-    onFinishedAll: e
-  }, n(t).on("load", function () {
-    o = !0;
-  });
-}(window);
+  }, t && function (t, e) {
+    if (e) if (e.length) for (var n, o = 0; n = e[o]; o += 1) {
+      i(t, n);
+    } else i(t, e);
+  }(M, window.lazyLoadOptions), M;
+});
 "use strict";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -15164,13 +15183,19 @@ UIkit.switcher('#switcher-contacts-tabs', {
   });
 })();
 
+var lazyLoadInstance = new LazyLoad({
+  elements_selector: ".js-lazy"
+});
 $(document).on('mse2_load', function () {
-  $('.js-lazy').lazy();
+  if (lazyLoadInstance) {
+    lazyLoadInstance.update();
+  }
 });
 $(document).on('pdopage_load', function () {
-  $('.js-lazy').lazy();
+  if (lazyLoadInstance) {
+    lazyLoadInstance.update();
+  }
 });
-$('.js-lazy').lazy();
 $('.ajax_form').append('<input type="text" name="org" value="" class="_org" style="visibility:hidden; height: 0; width: 0; padding: 0; border:none;"/>');
 var contactsSelect = document.querySelector('.js-contacts-select');
 

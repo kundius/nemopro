@@ -890,13 +890,21 @@ UIkit.switcher('#switcher-contacts-tabs', {
     });
 }());
 
+var lazyLoadInstance = new LazyLoad({
+    elements_selector: ".js-lazy"
+})
+
 $(document).on('mse2_load', function() {
-    $('.js-lazy').lazy();
+    if (lazyLoadInstance) {
+        lazyLoadInstance.update();
+    }
 });
+
 $(document).on('pdopage_load', function() {
-    $('.js-lazy').lazy();
+    if (lazyLoadInstance) {
+        lazyLoadInstance.update();
+    }
 });
-$('.js-lazy').lazy();
 
 $('.ajax_form').append('<input type="text" name="org" value="" class="_org" style="visibility:hidden; height: 0; width: 0; padding: 0; border:none;"/>')
 
