@@ -57,7 +57,6 @@ function js(){
     './node_modules/slick-carousel/slick/slick.min.js',
     './node_modules/choices.js/public/assets/scripts/choices.min.js',
     './node_modules/autocompleter/autocomplete.js',
-    './node_modules/vanilla-lazyload/dist/lazyload.min.js',
     './node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
     './node_modules/jquery-form/dist/jquery.form.min.js',
     './node_modules/jquery-validation/dist/jquery.validate.min.js',

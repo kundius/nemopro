@@ -890,6 +890,7 @@ UIkit.switcher('#switcher-contacts-tabs', {
     });
 }());
 
+if (typeof LazyLoad !== 'undefined') {
 var lazyLoadInstance = new LazyLoad({
     elements_selector: ".js-lazy"
 })
@@ -905,6 +906,7 @@ $(document).on('pdopage_load', function() {
         lazyLoadInstance.update();
     }
 });
+}
 
 $('.ajax_form').append('<input type="text" name="org" value="" class="_org" style="visibility:hidden; height: 0; width: 0; padding: 0; border:none;"/>')
 
