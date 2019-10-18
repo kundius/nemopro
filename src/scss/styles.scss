@@ -3030,7 +3030,7 @@ jdiv {
     transform: rotate(-45deg);
 }
 .left-menu {
-    margin: 0 0 26px -10px;
+    margin: 0 0 80px -10px;
     overflow: hidden;
     position: relative;
 }
@@ -7759,7 +7759,7 @@ div.pagination {
 }
 
 .modal-cheaper__header {
-    color: #076692;
+    color: #03405c;
     font-size: 19px;
     font-weight: 700;
     line-height: 1;
@@ -7812,13 +7812,15 @@ div.pagination {
     min-height: 37px;
     border: 1px solid #79b8d9;
     background-color: #ffffff;
-    &::placeholder {
-        color: #d2d4d5;
-    }
+    &::placeholder { color: #777777; }
+    &::-webkit-input-placeholder { color: #777777; }
+    &::-moz-placeholder { color: #777777; }
+    &:-ms-input-placeholder { color: #777777; }
+    &:-moz-placeholder { color: #777777; }
 }
 
 .cheaper-form__subtitle {
-    color: #5c5e5f;
+    color: #03405c;
     font-size: 16px;
     font-weight: 700;
     line-height: 1.5;
@@ -7834,7 +7836,7 @@ div.pagination {
     margin: 12px 0 14px;
     list-style: none;
     li {
-        color: #5c5e5f;
+        color: #03405c;
         font-size: 14px;
         font-weight: 400;
         line-height: 20px;
@@ -10137,6 +10139,9 @@ div.pagination {
   text-align: center;
   padding: 10px 20px;
   width: auto;
+  strong {
+    font-weight: 500;
+  }
   strong,
   span {
     color: #0092b3;
