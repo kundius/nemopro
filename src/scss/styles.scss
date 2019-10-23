@@ -10201,6 +10201,10 @@ div.pagination {
     @media (max-width: $breakpoint-mini-max) {
         font-size: 35px;
         width: 130px;
+        &_small {
+          font-size: 28px;
+          width: auto;
+        }
     }
 }
 
