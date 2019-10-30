@@ -3448,6 +3448,7 @@ jdiv {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
+  min-height: 58px;
   -webkit-touch-callout: none;
   color: #016a88;
   text-decoration: none;
@@ -3462,7 +3463,8 @@ jdiv {
 }
 
 .category__name {
-  font-size: 24px;
+  font-size: 14px;
+  text-transform: uppercase;
   font-weight: 700;
   line-height: 1.3;
 }
