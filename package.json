@@ -41,6 +41,7 @@
     "jquery-validation": "^1.19.0",
     "jquery.cookie": "^1.4.1",
     "magnific-popup": "^1.1.0",
+    "node-sass": "^4.13.0",
     "slick-carousel": "^1.8.1",
     "svg4everybody": "^2.1.9",
     "uikit": "^2.27.4",
