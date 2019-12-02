@@ -67,7 +67,7 @@ $('.js-popup-map').magnificPopup({
     mainClass: 'mfp-fade',
     removalDelay: 160,
     preloader: false,
-    
+
     fixedContentPos: false
 });
 $('.js-popup-inline').magnificPopup({
@@ -103,7 +103,7 @@ $('.js-image-lightbox').magnificPopup({
             var popup = this,
                 id = popup.currItem.el.data('id'),
                 share = popup.currItem.el.data('share');
-            
+
             popup.content.find('.js-mfp-share').html($(share).clone(true));
 
             $.post(document.location.href, {
@@ -308,16 +308,16 @@ $(document).ready(function(){
 
 // смена внешней ссылки при выборе селекта
 $('.js-contacts-select').each(function() {
-    var $select = $(this), 
+    var $select = $(this),
         uri = $select.find('option:selected').data('uri'),
         target = $select.data('target');
-        
+
         $(target).attr('href', uri).show();
-        
+
     $select.change(function() {
         var uri = $(this).find('option:selected').data('uri'),
             target = $(this).data('target');
-            
+
             $(target).attr('href', uri);
     });
 });
@@ -463,16 +463,16 @@ $('.js-download-popup').magnificPopup({
 // window.addEventListener("scroll", function(e,e2,e3){
 //     var scrollTop = $window.scrollTop();
 //     console.log(scrollTop);
-    
+
 //     // if (scrollTop > 230) {
 //     //     $('.scrolltop').fadeIn();
-        
+
 //     //     if($('.catalog-menu').length) {
 //     //         $('body').addClass('menu-fixed');
 //     //     }
 //     // } else {
 //     //     $('.scrolltop').fadeOut();
-        
+
 //     //     if($('.catalog-menu').length) {
 //     //         $('body').removeClass('menu-fixed');
 //     //     }
@@ -482,21 +482,21 @@ $('.js-download-popup').magnificPopup({
 
 $('.js-insert-file').each(function(i, wrapper) {
     var $wrapper = $(wrapper);
-    
+
     $wrapper.find('.ms2galleryform-file-image-wrapper').append('<span>Вставить</span>');
     $wrapper.on('click', '.ms2galleryform-file-link', function() {
         var target = $(this).parents('.js-insert-file').data('target');
-        
+
         var link = $(this).attr('href');
         var name = $(this).attr('title');
-        
+
         $.markItUp({
             target: target,
             replaceWith: '<a href="'+link+'" class="comment-image" target="_blank"><img src="'+ link +'" alt="'+name+'"></a>'
         });
-        
+
         UIkit.modal(wrapper).hide();
-        
+
         return false;
     });
 });
@@ -505,7 +505,7 @@ $('.js-insert-file').each(function(i, wrapper) {
 //     var surname = $('#receiver-surname').val();
 //     var name = $('#receiver-name').val();
 //     var patronymic = $('#receiver-patronymic').val();
-    
+
 //     $('#receiver').val(surname + ' ' + name + ' ' + patronymic);
 // });
 
@@ -515,7 +515,7 @@ $('.js-insert-file').each(function(i, wrapper) {
 //     var s = window.location.search;
 //     s = s.match(new RegExp('page' + '=([^&=]+)'));
 //     var page = s ? s[1] : false;
-    
+
 //     if(page) {
 //         var config = {
 //     		wrapper: "#pdopage",
@@ -525,7 +525,7 @@ $('.js-insert-file').each(function(i, wrapper) {
 //     	var wrapper = $(config['wrapper']);
 //     	var rows = $(config['rows']);
 //     	var limit = config['pageLimit'] * (page-1);
-	
+
 //     	$.get(document.location.pathname, {page: 1, limit: limit}, function(response) {
 //     	    if (response && response['total']) {
 //         		wrapper.find(rows).prepend(response['output']);
@@ -551,7 +551,7 @@ $('.js-collapse-toggle').on('click', function() {
     var exclude = [
         'http://nemopro.ru/'
     ];
-    
+
     if($.inArray(window.location.href, exclude) == '-1') {
         $("html, body").animate({
             scrollTop: $('#header').height() - ($(window).width()>768?60:48)
@@ -561,7 +561,7 @@ $('.js-collapse-toggle').on('click', function() {
 
 $(document).on('click', '.msbuyoneclick', function() {
     var id = $(this).data('id');
-    
+
     $.ajax({
         type: 'POST',
         url: 'template/buyoneclick.php',
@@ -571,7 +571,7 @@ $(document).on('click', '.msbuyoneclick', function() {
         },
         success: function(response){
             var modal = UIkit.modal($(response).appendTo("body"), {});
-            
+
             modal.on("hide.uk.modal", function(){
                 if (modal.persist) {
                     modal.persist.appendTo(modal.persist.data("modalPersistParent"));
@@ -579,9 +579,9 @@ $(document).on('click', '.msbuyoneclick', function() {
                 }
                 modal.element.remove();
             });
-            
+
             modal.show();
-            
+
             modal.find('form').each(function() {
                 var form = $(this);
                 form.submit(function() {
@@ -591,7 +591,7 @@ $(document).on('click', '.msbuyoneclick', function() {
                         data: form.serialize(),
                         success: function(response){
                             response = $.parseJSON(response);
-                            
+
                             if (response.redirect) {
                                 window.location = response.redirect;
                             } else if (response.success) {
@@ -607,13 +607,13 @@ $(document).on('click', '.msbuyoneclick', function() {
                             }
                         }
                     });
-                    
+
                     return false;
                 });
             });
         }
     });
-    
+
     return false;
 });
 
@@ -628,12 +628,12 @@ $('.js-catalog-menu').flexMenu({
 
 $(document).on('click', '[data-add-remains]', function(e) {
     e.preventDefault();
-    
+
     var url = $(this).data('add-remains');
     if (url) {
         $('#under-order [name="url"]').val(url);
     }
-    
+
     var modal = UIkit.modal("#under-order");
 
     if ( modal.isActive() ) {
@@ -641,24 +641,24 @@ $(document).on('click', '[data-add-remains]', function(e) {
     } else {
         modal.show();
     }
-    
+
     return false;
 });
 
 $(document).on('click', '[data-add-options]', function(e) {
     e.preventDefault();
-    
+
     var $modal = $($(this).data('add-options'));
     if ($modal.first().parent().prop('tagName') !== 'BODY') {
         $modal.appendTo('body');
     }
-    
-    
+
+
     var modal = UIkit.modal($modal, {
         center: true,
         container: 'body'
     });
-    
+
     $modal.on({ 'show.uk.modal': optionsWidth });
 
     if ( modal.isActive() ) {
@@ -666,7 +666,7 @@ $(document).on('click', '[data-add-options]', function(e) {
     } else {
         modal.show();
     }
-    
+
     return false;
 });
 
@@ -674,7 +674,7 @@ $(document).on('click', '[data-add-options]', function(e) {
 $('.auth-button-restore').click(function(e) {
     $('#office-login-form-password').val('');
     $('#office-auth-login').toggleClass('auth-form-restore');
-    
+
     return false;
 });
 
@@ -699,14 +699,14 @@ $(document).on('click', '.filters-wrap__toggle', function() {
 $('#cheaper').on('click', '.cheaper-plus', function() {
     var row = $(this).parents('.cheaper-address-row'),
         clone = row.clone();
-        
+
     clone.find('input').val('');
     row.after(clone);
 });
 
 $('#cheaper').on('click', '.cheaper-minus', function() {
     var row = $(this).parents('.cheaper-address-row');
-    
+
     row.remove();
 });
 
@@ -716,27 +716,27 @@ $('.js-home-catalog').click(function(e) {
         return false;
     }
 });
-    
+
 /*function equalBlocks() {
     ;( function( $, window, document, undefined )
     {
         'use strict';
-        
+
         $( '.js-equal-list' ).each( function() {
             var $list       = $( this ),
                 $items      = $list.find( '.js-equal-item:visible' ),
                 setHeights  = function()
                 {
                     $items.css( 'height', 'auto' );
-    
+
                     var perRow = Math.floor( $list.width() / $items.width() );
                     if( perRow == null || perRow < 2 ) return true;
-    
+
                     for( var i = 0, j = $items.length; i < j; i += perRow )
                     {
                         var maxHeight   = 0,
                             $row        = $items.slice( i, i + perRow );
-    
+
                         $row.each( function()
                         {
                             var itemHeight = parseInt( $( this ).outerHeight() );
@@ -745,7 +745,7 @@ $('.js-home-catalog').click(function(e) {
                         $row.css( 'height', maxHeight );
                     }
                 };
-    
+
             setHeights();
             $( window ).on( 'resize', setHeights );
         });
@@ -774,10 +774,10 @@ var discount_form = $('#msCartCoupon');
 if (Boolean(discount_field.val())) {
     discount_form.addClass('cart-coupon--applied');
 }
-    
+
 discount_form.on('submit', function(e) {
     e.preventDefault();
-    
+
     var value = $('[name="discount_code"]', this).val();
     discount_field.val(value);
     discount_field.trigger('change');
@@ -791,7 +791,7 @@ discount_form.on('submit', function(e) {
     var deliveries_inputs = $('#msOrder input');
     deliveries_inputs.on('change', function() {
         var delivery = parseInt(deliveries.filter(':checked').val());
-        
+
         if ([1, 3].indexOf(delivery) !== -1) {
             $('#field-passport').hide();
         } else {
@@ -908,7 +908,7 @@ $(document).on('pdopage_load', function() {
 });
 }
 
-$('.ajax_form').append('<input type="text" name="org" value="" class="_org" style="visibility:hidden; height: 0; width: 0; padding: 0; border:none;"/>')
+$('.ajax_form').append('<input type="text" name="org" value="" class="_org" style="position:absolute; visibility:hidden; height: 0; width: 0; padding: 0; border:none;"/>')
 
 var contactsSelect = document.querySelector('.js-contacts-select');
 if (contactsSelect) {
@@ -1058,7 +1058,7 @@ $(function() {
         const resultDelivery = form.querySelector('.js-calc-result-delivery')
         const resultTime = form.querySelector('.js-calc-result-time')
         const resultPrice = form.querySelector('.js-calc-result-price')
-        
+
         const costInput = form.querySelector('[name="cost"]')
         const calculateSubmit = form.querySelector('.js-calc-calculate')
 
@@ -1085,7 +1085,7 @@ $(function() {
             })), 'value', 'label', true)
             deliverySelect.dispatchEvent(new Event('change'))
         }
-        
+
         const onChangeDelivery = function (e) {
             let item =  deliveries.find(row => row.id === parseInt(e.target.value))
             // способы оплаты в соответствии с выбранным способом доставки
@@ -1095,7 +1095,7 @@ $(function() {
                 selected: index === 0
             })), 'value', 'label', true)
         }
-        
+
         const calculate = function (e) {
             e.preventDefault()
 

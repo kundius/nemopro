@@ -14591,7 +14591,7 @@ $('.js-collapse-toggle').on('click', function () {
     var exclude = [
         'http://nemopro.ru/'
     ];
-    
+
     if($.inArray(window.location.href, exclude) == '-1') {
         $("html, body").animate({
             scrollTop: $('#header').height() - ($(window).width()>768?60:48)
@@ -14741,22 +14741,22 @@ $('.js-home-catalog').click(function (e) {
     ;( function( $, window, document, undefined )
     {
         'use strict';
-        
+
         $( '.js-equal-list' ).each( function() {
             var $list       = $( this ),
                 $items      = $list.find( '.js-equal-item:visible' ),
                 setHeights  = function()
                 {
                     $items.css( 'height', 'auto' );
-    
+
                     var perRow = Math.floor( $list.width() / $items.width() );
                     if( perRow == null || perRow < 2 ) return true;
-    
+
                     for( var i = 0, j = $items.length; i < j; i += perRow )
                     {
                         var maxHeight   = 0,
                             $row        = $items.slice( i, i + perRow );
-    
+
                         $row.each( function()
                         {
                             var itemHeight = parseInt( $( this ).outerHeight() );
@@ -14765,7 +14765,7 @@ $('.js-home-catalog').click(function (e) {
                         $row.css( 'height', maxHeight );
                     }
                 };
-    
+
             setHeights();
             $( window ).on( 'resize', setHeights );
         });
@@ -14930,7 +14930,7 @@ if (typeof LazyLoad !== 'undefined') {
   });
 }
 
-$('.ajax_form').append('<input type="text" name="org" value="" class="_org" style="visibility:hidden; height: 0; width: 0; padding: 0; border:none;"/>');
+$('.ajax_form').append('<input type="text" name="org" value="" class="_org" style="position:absolute; visibility:hidden; height: 0; width: 0; padding: 0; border:none;"/>');
 var contactsSelect = document.querySelector('.js-contacts-select');
 
 if (contactsSelect) {
