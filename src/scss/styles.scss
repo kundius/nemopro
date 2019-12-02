@@ -5620,6 +5620,9 @@ div.pagination {
   color: #005475;
   border-radius: 0;
   float: right;
+  @media (max-width: $breakpoint-mini-max) {
+    width: 100%;
+  }
 }
 
 .forum-topic__date {
