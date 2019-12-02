@@ -2645,7 +2645,7 @@ jdiv {
 
 .h-text-block {
   padding: 32px 15px 20px;
-  width: 320px;
+  width: 350px;
   max-width: 100%;
 }
 .h-text-block__title {
@@ -3314,9 +3314,10 @@ jdiv {
   width: 100%;
   position: relative;
   background: #ffffff;
+  overflow: hidden;
   &::before {
     content: '';
-    padding-bottom: 50%;
+    padding-bottom: 68%;
     display: block;
   }
   img {
