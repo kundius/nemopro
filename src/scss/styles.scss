@@ -2650,6 +2650,9 @@ jdiv {
   padding: 32px 15px 20px;
   width: 350px;
   max-width: 100%;
+  @media (max-width: $breakpoint-mini-max) {
+    width: 100%;
+  }
 }
 
 .h-text-block {
@@ -5507,6 +5510,10 @@ div.pagination {
   margin: 0 auto 20px;
   text-align: center;
   line-height: 1;
+  @media (max-width: $breakpoint-mini-max) {
+    font-weight: 400;
+    font-size: 24px;
+  }
 }
 
 .forum-table {
