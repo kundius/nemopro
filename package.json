@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "gulp build"
+    "build": "gulp build",
+    "deploy": "gulp build && git add . && git commit -m upd && git push"
   },
   "author": "",
   "license": "ISC",
