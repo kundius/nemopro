@@ -5563,10 +5563,13 @@ div.pagination {
       display: none;
   }
 }
-.forum-headline__themes {
+th.forum-headline__themes {
   @media (max-width: $breakpoint-mini-max) {
     text-align: right;
   }
+}
+.forum-theme-row__topic {
+  width: 100%;
 }
 .forum-theme-row__info {
   overflow: hidden;
