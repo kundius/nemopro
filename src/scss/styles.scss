@@ -5542,15 +5542,14 @@ div.pagination {
   td {
     border-bottom: 1px solid #f1f1f1;
     padding: 15px;
-    &:first-child {
-        width: 99%;
-        display: flex;
-        align-items: center;
-    }
   }
 }
 .forum-theme-row {
   line-height: 1.2;
+}
+.forum-theme-row__name-wrap {
+    display: flex;
+    align-items: center;
 }
 .forum-theme-row__icon {
   margin-left: 5px;
@@ -5562,6 +5561,11 @@ div.pagination {
 .forum-hidden-small {
   @media (max-width: $breakpoint-mini-max) {
       display: none;
+  }
+}
+.forum-headline__themes {
+  @media (max-width: $breakpoint-mini-max) {
+    text-align: right;
   }
 }
 .forum-theme-row__info {
@@ -5581,6 +5585,9 @@ div.pagination {
   color: #999999;
   font-size: 14px;
   text-align: center;
+  @media (max-width: $breakpoint-mini-max) {
+    text-align: right;
+  }
 }
 .forum-theme-row__comments {
   color: #999999;
