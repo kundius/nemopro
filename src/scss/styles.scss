@@ -5568,6 +5568,11 @@ th.forum-headline__themes {
     text-align: right;
   }
 }
+th.forum-headline__replies {
+  @media (max-width: $breakpoint-mini-max) {
+    text-align: right;
+  }
+}
 .forum-theme-row__topic {
   width: 100%;
 }
@@ -5596,6 +5601,9 @@ th.forum-headline__themes {
   color: #999999;
   font-size: 14px;
   text-align: center;
+  @media (max-width: $breakpoint-mini-max) {
+    text-align: right;
+  }
 }
 .forum-theme-row__new-comments {
   color: green;
