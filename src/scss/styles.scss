@@ -1519,15 +1519,15 @@ jdiv {
     padding: 0;
     margin: 0;
     position: absolute;
-    bottom: 12px;
+    bottom: 32px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     li {
       list-style: none;
-      margin: 0 5px;
+      margin: 0 8px;
       button {
-        border: 1px solid rgb(162, 162, 162);
+        border: none;
         background: rgb(204, 204, 204);
         border-radius: 50%;
         width: 12px;
@@ -1538,8 +1538,7 @@ jdiv {
         text-indent: -9999px;
       }
       &.slick-active button {
-        border-color: rgb(39, 142, 167);
-        background: rgb(22, 155, 187);
+        background: #fed500;
       }
     }
   }
@@ -1580,6 +1579,7 @@ jdiv {
     line-height: 64px;
     border: none;
     z-index: 20;
+    cursor: pointer;
     @media (max-width: $breakpoint-small-max) {
         width: 22px;
         height: 22px;
@@ -2413,15 +2413,17 @@ jdiv {
 
 .home-text {
 }
+
 .home-text__title {
   background-color: rgba(90, 163, 182, 0.2);
   color: #016a88;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.1;
-  padding: 9px 12px;
+  margin: 0;
+  padding: 12px;
   position: relative;
-  /*cursor: pointer;*/
+  font-family: "SF UI Text", sans-serif;
 
     .uk-icon-angle-down,
     .uk-icon-angle-up {
@@ -2461,7 +2463,7 @@ jdiv {
   font-size: 18px;
   font-weight: 600;
   line-height: 1.1;
-  padding: 9px 12px;
+  padding: 12px 12px;
   text-transform: uppercase;
 }
 .why-we__table {
@@ -2503,7 +2505,7 @@ jdiv {
   font-size: 18px;
   font-weight: 600;
   line-height: 1.1;
-  padding: 17px 12px;
+  padding: 12px 12px;
   text-transform: uppercase;
 }
 .workflow__items {
@@ -2556,7 +2558,7 @@ jdiv {
   font-size: 18px;
   font-weight: 600;
   line-height: 1.1;
-  padding: 17px 12px;
+  padding: 12px 12px;
   text-transform: uppercase;
 }
 .h-reviews__all {
@@ -2569,7 +2571,7 @@ jdiv {
   font-weight: bold;
   color: #333333;
   text-decoration: none;
-  margin: -8px 0;
+  margin: -7px 0;
   &:hover {
     background-color: #027290;
     color: #ffffff;
