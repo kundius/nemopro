@@ -15324,34 +15324,36 @@ $(function () {
 
   });
 });
-$('.brands').each(function (wrapper) {
-  var maxHeight = function maxHeight() {
-    return window.matchMedia("(max-width: 640px)").matches ? '100px' : '50px';
-  };
-
-  var $body = $('.brands__body', wrapper);
-  var $more = $('.brands__more', wrapper);
-  var $shadow = $('.brands__shadow', wrapper);
-  var height = $body.height();
-  var opened = false;
-  $body.css('height', maxHeight());
-  $more.click(function () {
-    if (window.matchMedia("(max-width: 640px)").matches) {
-      $([document.documentElement, document.body]).animate({
-        scrollTop: $body.offset().top - 80
-      }, 1000);
+/*$('.brands').each(function (wrapper) {
+    const maxHeight = function () {
+        return window.matchMedia("(max-width: 640px)").matches ? '100px' : '50px'
     }
 
-    if (opened) {
-      opened = false;
-      $body.css('height', maxHeight());
-      $more.html('Показать все');
-      $shadow.show();
-    } else {
-      opened = true;
-      $body.css('height', height);
-      $more.html('Скрыть');
-      $shadow.hide();
-    }
-  });
-});
+    let $body = $('.brands__body', wrapper);
+    let $more = $('.brands__more', wrapper);
+    let $shadow = $('.brands__shadow', wrapper);
+    let height = $body.height();
+    let opened = false;
+
+    $body.css('height', maxHeight());
+
+    $more.click(function () {
+        if (window.matchMedia("(max-width: 640px)").matches) {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $body.offset().top - 80
+            }, 1000);
+        }
+
+        if (opened) {
+            opened = false;
+            $body.css('height', maxHeight());
+            $more.html('Показать все');
+            $shadow.show();
+        } else {
+            opened = true;
+            $body.css('height', height);
+            $more.html('Скрыть');
+            $shadow.hide();
+        }
+    });
+});*/

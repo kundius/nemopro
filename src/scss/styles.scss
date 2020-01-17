@@ -11628,7 +11628,7 @@ td.u-product-options__items {
 
 
 .brands {
-    
+
 }
 
 .brands__body {
@@ -11636,10 +11636,21 @@ td.u-product-options__items {
     position: relative;
     margin: 0 -5px;
     transition: height .3s ease;
+    text-align: center;
+    line-height: 1.5;
     a {
         display: inline-block;
-        margin: 0px 5px;
-        color: #002837;
+        margin: 2px 10px;
+        color: #005976;
+        white-space: nowrap;
+        text-decoration: none;
+        border-bottom: 1px solid currentColor;
+        &:hover {
+            text-decoration: none;
+            color: #fff;
+            background: #005976;
+            border-bottom-color: #005976;
+        }
     }
 }
 
