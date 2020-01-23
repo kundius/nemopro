@@ -162,7 +162,7 @@ if(hash_image) {
 
 $('.js-categories-slider').slick({
   dots: false,
-  infinite: false,
+  infinite: true,
   speed: 300,
   slidesToShow: 6,
   slidesToScroll: 6,
@@ -171,9 +171,7 @@ $('.js-categories-slider').slick({
       breakpoint: 1024,
       settings: {
         slidesToShow: 4,
-        slidesToScroll: 4,
-        infinite: true,
-        dots: false
+        slidesToScroll: 4
       }
     },
     {
