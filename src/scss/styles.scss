@@ -2400,6 +2400,9 @@ jdiv {
   background-color: #ffffff;
   position: relative;
   overflow: hidden;
+  & + .white-container {
+      margin-top: 15px;
+  }
 }
 .content {
   border-radius: 5px;
@@ -3741,24 +3744,24 @@ jdiv {
 
 .product__headline-arrow {
     cursor: pointer;
-    background: rgba(11, 143, 174, 0.8);
+    background: #005976;
     border: none;
     font-size: 32px;
     color: #fff;
     line-height: 54px;
     width: 54px;
-    min-wisth: 54px;
+    min-width: 54px;
     text-align: center;
     padding: 0;
     &:hover {
-        background: rgba(11, 143, 174, 1);
+        background: #002837;
     }
     @media (max-width: $breakpoint-small-max) {
         font-size: 28px;
         line-height: 48px;
         width: 48px;
         width: 48px;
-        min-wisth: 48px;
+        min-width: 48px;
     }
 }
 
@@ -3766,13 +3769,14 @@ jdiv {
   color: #016a88;
   font-size: 18px;
   font-weight: 600;
-  line-height: 54px;
+  line-height: 1;
   text-transform: uppercase;
-  padding: 0 20px;
+  padding: 20px 20px 16px;
   flex-grow: 1;
   @media (max-width: $breakpoint-small-max) {
-      font-size: 14px;
-      line-height: 48px;
+    font-size: 14px;
+    line-height: 1;
+    padding: 18px 20px 16px;
   }
 }
 
@@ -7774,6 +7778,7 @@ th.forum-headline__replies {
     font-weight: 400;
     line-height: 18.67px;
     letter-spacing: 0.67px;
+    margin-top: 14px;
 }
 
 .cheaper-form {
@@ -7861,14 +7866,17 @@ th.forum-headline__replies {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.3px;
-    max-width: 260px;
-    width: 100%;
+    width: 260px;
+    max-width: 100%;
     margin: 0 auto;
     display: block;
     box-sizing: border-box;
     cursor: pointer;
     &:hover {
         background: lighten(#03405c, 5%);
+    }
+    @media (max-width: $breakpoint-small-max) {
+        width: 100%;
     }
 }
 
@@ -9781,7 +9789,7 @@ th.forum-headline__replies {
         z-index: 2;
         width: 40px;
         height: 100%;
-        background: #171a61;
+        background: #002837;
         border-radius: 0 4px 4px 0;
     }
     .choices[data-type*="select-one"]::after {
@@ -9958,7 +9966,6 @@ th.forum-headline__replies {
   text-decoration: underline;
   font-size: 15px;
   line-height: 24px;
-  font-style: italic;
   display: inline-block;
   background: transparent;
   border: none;
@@ -9982,7 +9989,7 @@ th.forum-headline__replies {
     display: block;
     &::before {
       border-width: 8px 12px 8px 0;
-      margin-right: 4px;
+      margin-right: 12px;
     }
   }
 }
@@ -10174,7 +10181,7 @@ th.forum-headline__replies {
 
 .u-product-price__value {
     font-size: 48px;
-    color: #0bb6e4;
+    color: #005976;
     position: relative;
     top: 3px;
     white-space: nowrap;
@@ -10197,7 +10204,7 @@ th.forum-headline__replies {
 
 .u-product-price__currency {
     font-size: 65%;
-    color: #0bb6e4;
+    color: #005976;
     margin-left: 8px;
     @media (max-width: $breakpoint-mini-max) {
         margin-left: 4px;
