@@ -11859,3 +11859,64 @@ td.u-product-options__items {
     }
 }
 
+.brand-item {
+    border: 1px solid #01556b;
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    position: relative;
+    transition: box-shadow .3s ease;
+    &:hover {
+        box-shadow: 0 0 6px rgba(0,0,0,.75);
+    }
+}
+
+.brand-item__image {
+    img {
+        display: block;
+        max-width: 100%;
+    }
+}
+
+.brand-item__link {
+    display: block;
+    margin-top: 8px;
+    text-decoration: none;
+    color: #016a88;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    &:hover {
+        text-decoration: underline;
+        color: #016a88;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.brand-item__name {
+    display: block;
+    text-align: center;
+    height: 28px;
+    position: relative;
+    text-decoration: inherit;
+    span {
+        position: absolute;
+        width: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-decoration: inherit;
+    }
+    @media (max-width: $breakpoint-mini-max) {
+        font-size: 12px;
+        height: 24px;
+    }
+}
+
