@@ -14231,26 +14231,6 @@ if (hash_image) {
 //});
 
 
-$('.js-categories-slider').slick({
-  dots: false,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 6,
-  slidesToScroll: 6,
-  responsive: [{
-    breakpoint: 1024,
-    settings: {
-      slidesToShow: 4,
-      slidesToScroll: 4
-    }
-  }, {
-    breakpoint: 640,
-    settings: {
-      slidesToShow: 2,
-      slidesToScroll: 2
-    }
-  }]
-});
 $('.js-slider').slick({
   autoplay: true,
   autoplaySpeed: 3000,
@@ -15377,3 +15357,13 @@ $(function () {
         }
     });
 });*/
+
+$('.js-categories-slider').slick({
+  dots: false,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 1,
+  variableWidth: true,
+  swipeToSlide: true,
+  touchThreshold: 15
+});

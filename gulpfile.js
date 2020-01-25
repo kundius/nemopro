@@ -45,7 +45,7 @@ function css() {
     .pipe(dest('dist/css'))
 }
 
-function js(){
+function js() {
   return src([
     './node_modules/jquery/dist/jquery.min.js',
     './node_modules/jquery-migrate/dist/jquery-migrate.min.js',
