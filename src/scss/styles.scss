@@ -3722,10 +3722,13 @@ jdiv {
   background-color: rgba(90, 163, 182, 0.2);
   margin: 25px 0;
   position: relative;
-  white-space: nowrap;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 54px;
+  @media (max-width: $breakpoint-small-max) {
+    min-height: 48px;
+  }
 }
 
 .product__headline-arrow {
