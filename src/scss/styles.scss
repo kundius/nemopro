@@ -3743,8 +3743,10 @@ jdiv {
     min-width: 54px;
     text-align: center;
     padding: 0;
-    &:hover {
-        background: #169bbb;
+    @media (min-width: $breakpoint-medium) {
+        &:hover {
+            background: #169bbb;
+        }
     }
     @media (max-width: $breakpoint-small-max) {
         font-size: 28px;
@@ -3752,11 +3754,11 @@ jdiv {
         height: 48px;
         width: 48px;
         min-width: 48px;
-        &:hover {
-            background: #005976;
-        }
         &:active {
             background: #169bbb;
+        }
+        &:focus {
+            background: #005976;
         }
     }
 }
