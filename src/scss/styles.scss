@@ -3744,6 +3744,9 @@ jdiv {
     text-align: center;
     padding: 0;
     touch-action: manipulation;
+    &:focus {
+        background: #005976;
+    }
     &:hover {
         background: #169bbb;
     }
