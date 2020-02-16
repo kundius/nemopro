@@ -3743,11 +3743,11 @@ jdiv {
     min-width: 54px;
     text-align: center;
     padding: 0;
-    &:focus {
-        background: #005976;
-    }
     &:hover {
         background: #169bbb;
+    }
+    &:focus {
+        background: #005976;
     }
     &:active {
         background: #169bbb;
