@@ -3746,18 +3746,18 @@ jdiv {
     &:hover {
         background: #169bbb;
     }
-    &:focus {
-        background: #005976;
-    }
-    &:active {
-        background: #169bbb;
-    }
     @media (max-width: $breakpoint-small-max) {
         font-size: 28px;
         line-height: 48px;
         height: 48px;
         width: 48px;
         min-width: 48px;
+        &:hover {
+            background: #005976;
+        }
+        &:active {
+            background: #169bbb;
+        }
     }
 }
 
