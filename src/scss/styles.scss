@@ -3744,29 +3744,20 @@ jdiv {
     text-align: center;
     padding: 0;
     touch-action: manipulation;
-    &:focus {
-        background: #005976;
-    }
-    &:hover {
-        background: #169bbb;
-    }
-    /*@media (min-width: $breakpoint-medium) {
+    @media (min-width: $breakpoint-medium) {
         &:hover {
             background: #169bbb;
         }
-    }*/
+    }
     @media (max-width: $breakpoint-small-max) {
         font-size: 28px;
         line-height: 48px;
         height: 48px;
         width: 48px;
         min-width: 48px;
-        /*&:active {
+        &:active {
             background: #169bbb;
         }
-        &:focus {
-            background: #005976;
-        }*/
     }
 }
 
