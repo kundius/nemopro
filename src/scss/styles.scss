@@ -5520,7 +5520,7 @@ div.pagination {
 }
 
 .forum-table {
-  border: 1px solid #01718f;
+  border: none;
   border-collapse: separate;
   position: relative;
   overflow: hidden;
@@ -5545,6 +5545,12 @@ div.pagination {
   td {
     border-bottom: 1px solid #f1f1f1;
     padding: 15px;
+    &:first-child {
+      border-left: 1px solid #01718f;
+    }
+    &:last-child {
+      border-right: 1px solid #01718f;
+    }
   }
   tr:last-child td {
     border-bottom: 1px solid #01718f;
