@@ -5546,6 +5546,9 @@ div.pagination {
     border-bottom: 1px solid #f1f1f1;
     padding: 15px;
   }
+  tr:last-child td {
+    border-bottom: 1px solid #01718f;
+  }
 }
 .forum-theme-row {
   line-height: 1.2;
