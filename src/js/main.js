@@ -943,7 +943,7 @@ function optionsWidth () {
         let items = $(group).find('.u-product-options__item');
         let minWidth = 0;
         items.each(function(i2, item) {
-            console.log([item]);
+            console.log([$(item).outerWidth()]);
             if ($(item).outerWidth() > minWidth) {
                 minWidth = $(item).outerWidth();
             }
