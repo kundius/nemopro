@@ -15140,8 +15140,6 @@ function optionsWidth() {
       var items = $(group).find('.u-product-options__item');
       var minWidth = 0;
       items.each(function (i2, item) {
-        console.log([$(item).outerWidth()]);
-
         if ($(item).outerWidth() > minWidth) {
           minWidth = $(item).outerWidth();
         }
@@ -15548,7 +15546,7 @@ $(function () {
 $('.js-categories-slider').slick({
   dots: false,
   infinite: true,
-  speed: 1000,
+  speed: 400,
   slidesToShow: 1,
   variableWidth: true,
   swipeToSlide: true,
