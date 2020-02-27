@@ -1383,4 +1383,5 @@ $('.js-categories-slider').slick({
 const SFUITextFont = new FontFaceObserver('SF UI Text');
 SFUITextFont.load().then(function () {
     $('.u-product-options__item').css('width', 'initial');
+    optionsWidth();
 });
