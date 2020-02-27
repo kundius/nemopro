@@ -1366,7 +1366,7 @@ $('.js-categories-slider').slick({
 
 WebFont.load({
     custom: {
-        families: ['SF UI Text'],
+        families: ['SF UI Text', 'SF UI Display'],
         urls: ['/assets/nemopro/src/fonts/sf/stylesheet.css']
     },
     loading: function() {console.log('font loading')},
