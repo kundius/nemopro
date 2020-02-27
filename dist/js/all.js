@@ -15565,4 +15565,6 @@ $('.js-categories-slider').slick({
   touchThreshold: 15
 });
 var SFUITextFont = new FontFaceObserver('SF UI Text');
-SFUITextFont.load().then(optionsWidth);
+SFUITextFont.load().then(function () {
+  $('.u-product-options__item').css('width', 'initial');
+});
