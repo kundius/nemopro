@@ -16201,9 +16201,7 @@ WebFont.load({
   loading: function loading() {
     console.log('font loading');
   },
-  active: function active() {
-    console.log('font active');
-  },
+  active: optionsWidth,
   inactive: function inactive() {
     console.log('font inactive');
   },
