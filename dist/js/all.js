@@ -15775,8 +15775,6 @@ if (contactsSelect) {
 }
 
 function optionsWidth() {
-  // $('.u-product-options__item').css('width', 'initial');
-  // setTimeout(function () {
   var groups = $('.u-product-options__items');
   groups.each(function (i1, group) {
     var items = $(group).find('.u-product-options__item');
@@ -15793,7 +15791,7 @@ function optionsWidth() {
       var maxWidth = $(group).outerWidth() / normalPerRow;
       items.css('width', maxWidth);
     }
-  }); // }, 0);
+  });
 }
 
 $('.js-discount-dropdown').each(function () {
@@ -16195,14 +16193,9 @@ $('.js-categories-slider').slick({
 WebFont.load({
   custom: {
     families: ['SF UI Text', 'SF UI Display'],
-    urls: ['/assets/nemopro/src/fonts/sf/stylesheet.css']
+    urls: ['/assets/nemopro/src/fonts/sf/SFUIText.css', '/assets/nemopro/src/fonts/sf/SFUIDisplay.css']
   },
   active: function active() {
     setTimeout(optionsWidth, 0);
   }
-}); // const SFUITextFont = new FontFaceObserver('SF UI Text');
-// SFUITextFont.load().then(function () {
-//     // setTimeout(function () {
-//     //     $(document).trigger('font:loaded');
-//     // }, 0);
-// });
+});

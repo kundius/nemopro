@@ -920,26 +920,22 @@ if (contactsSelect) {
 }
 
 function optionsWidth () {    
-    // $('.u-product-options__item').css('width', 'initial');
-
-    // setTimeout(function () {
-        const groups = $('.u-product-options__items');
-        groups.each(function(i1, group) {
-            let items = $(group).find('.u-product-options__item');
-            let minWidth = 0;
-            items.each(function(i2, item) {
-                if ($(item).outerWidth() > minWidth) {
-                    minWidth = $(item).outerWidth();
-                }
-            });
-            if (minWidth > 0) {
-                let perRow = Math.floor($(group).outerWidth() / minWidth);
-                let normalPerRow = Math.ceil(items.length/Math.ceil(items.length/perRow));
-                let maxWidth = $(group).outerWidth() / normalPerRow;
-                items.css('width', maxWidth);
+    const groups = $('.u-product-options__items');
+    groups.each(function(i1, group) {
+        let items = $(group).find('.u-product-options__item');
+        let minWidth = 0;
+        items.each(function(i2, item) {
+            if ($(item).outerWidth() > minWidth) {
+                minWidth = $(item).outerWidth();
             }
         });
-    // }, 0);
+        if (minWidth > 0) {
+            let perRow = Math.floor($(group).outerWidth() / minWidth);
+            let normalPerRow = Math.ceil(items.length/Math.ceil(items.length/perRow));
+            let maxWidth = $(group).outerWidth() / normalPerRow;
+            items.css('width', maxWidth);
+        }
+    });
 }
 
 $('.js-discount-dropdown').each(function() {
@@ -1365,15 +1361,9 @@ $('.js-categories-slider').slick({
 WebFont.load({
     custom: {
         families: ['SF UI Text', 'SF UI Display'],
-        urls: ['/assets/nemopro/src/fonts/sf/stylesheet.css']
+        urls: ['/assets/nemopro/src/fonts/sf/SFUIText.css', '/assets/nemopro/src/fonts/sf/SFUIDisplay.css']
     },
     active: function() {
         setTimeout(optionsWidth, 0);
     }
 });
-// const SFUITextFont = new FontFaceObserver('SF UI Text');
-// SFUITextFont.load().then(function () {
-//     // setTimeout(function () {
-//     //     $(document).trigger('font:loaded');
-//     // }, 0);
-// });
