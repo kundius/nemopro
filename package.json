@@ -35,7 +35,6 @@
     "autocompleter": "^5.1.0",
     "awesomplete": "^1.1.5",
     "choices.js": "^7.0.0",
-    "fontfaceobserver": "^2.1.0",
     "jquery": "^3.4.1",
     "jquery-form": "^4.2.2",
     "jquery-lazy": "^1.7.10",
