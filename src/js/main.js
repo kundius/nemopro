@@ -1374,3 +1374,7 @@ $('.js-categories-slider').slick({
     swipeToSlide: true,
     touchThreshold: 15
 });
+
+
+const SFUITextFont = new FontFaceObserver('SF UI Text');
+SFUITextFont.load().then(optionsWidth);
