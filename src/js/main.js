@@ -922,7 +922,7 @@ if (contactsSelect) {
 function optionsWidth () {    
     $('.u-product-options__item').css('width', 'initial');
 
-    setTimeout(function () {
+    // setTimeout(function () {
         const groups = $('.u-product-options__items');
         groups.each(function(i1, group) {
             let items = $(group).find('.u-product-options__item');
@@ -939,7 +939,7 @@ function optionsWidth () {
                 items.css('width', maxWidth);
             }
         });
-    }, 0);
+    // }, 0);
 }
 
 optionsWidth();
@@ -1366,7 +1366,6 @@ $('.js-categories-slider').slick({
 
 
 const SFUITextFont = new FontFaceObserver('SF UI Text');
-SFUITextFont.load().then(() => {
-    console.log('SFUITextFont');
+SFUITextFont.load().then(function () {
     setTimeout(optionsWidth, 0);
 });

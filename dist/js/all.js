@@ -15133,26 +15133,25 @@ if (contactsSelect) {
 }
 
 function optionsWidth() {
-  $('.u-product-options__item').css('width', 'initial');
-  setTimeout(function () {
-    var groups = $('.u-product-options__items');
-    groups.each(function (i1, group) {
-      var items = $(group).find('.u-product-options__item');
-      var minWidth = 0;
-      items.each(function (i2, item) {
-        if ($(item).outerWidth() > minWidth) {
-          minWidth = $(item).outerWidth();
-        }
-      });
+  $('.u-product-options__item').css('width', 'initial'); // setTimeout(function () {
 
-      if (minWidth > 0) {
-        var perRow = Math.floor($(group).outerWidth() / minWidth);
-        var normalPerRow = Math.ceil(items.length / Math.ceil(items.length / perRow));
-        var maxWidth = $(group).outerWidth() / normalPerRow;
-        items.css('width', maxWidth);
+  var groups = $('.u-product-options__items');
+  groups.each(function (i1, group) {
+    var items = $(group).find('.u-product-options__item');
+    var minWidth = 0;
+    items.each(function (i2, item) {
+      if ($(item).outerWidth() > minWidth) {
+        minWidth = $(item).outerWidth();
       }
     });
-  }, 0);
+
+    if (minWidth > 0) {
+      var perRow = Math.floor($(group).outerWidth() / minWidth);
+      var normalPerRow = Math.ceil(items.length / Math.ceil(items.length / perRow));
+      var maxWidth = $(group).outerWidth() / normalPerRow;
+      items.css('width', maxWidth);
+    }
+  }); // }, 0);
 }
 
 optionsWidth();
@@ -15554,6 +15553,5 @@ $('.js-categories-slider').slick({
 });
 var SFUITextFont = new FontFaceObserver('SF UI Text');
 SFUITextFont.load().then(function () {
-  console.log('SFUITextFont');
   setTimeout(optionsWidth, 0);
 });
