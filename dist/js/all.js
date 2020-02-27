@@ -15154,7 +15154,7 @@ function optionsWidth() {
   }); // }, 0);
 }
 
-optionsWidth();
+$(document).on('font:loaded', optionsWidth);
 $('.js-discount-dropdown').each(function () {
   var dropdown = UIkit.dropdown(this, {
     pos: 'top-right',
@@ -15553,5 +15553,6 @@ $('.js-categories-slider').slick({
 });
 var SFUITextFont = new FontFaceObserver('SF UI Text');
 SFUITextFont.load().then(function () {
-  setTimeout(optionsWidth, 0);
+  // setTimeout(optionsWidth, 0);
+  $(document).trigger('font:loaded');
 });

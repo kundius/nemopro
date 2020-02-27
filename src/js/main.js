@@ -942,8 +942,7 @@ function optionsWidth () {
     // }, 0);
 }
 
-optionsWidth();
-
+$(document).on('font:loaded', optionsWidth);
 
 $('.js-discount-dropdown').each(function() {
     const dropdown = UIkit.dropdown(this, {
@@ -1367,5 +1366,6 @@ $('.js-categories-slider').slick({
 
 const SFUITextFont = new FontFaceObserver('SF UI Text');
 SFUITextFont.load().then(function () {
-    setTimeout(optionsWidth, 0);
+    // setTimeout(optionsWidth, 0);
+    $(document).trigger('font:loaded');
 });
