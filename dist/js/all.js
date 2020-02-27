@@ -15146,6 +15146,8 @@ if (contactsSelect) {
 
 
 function optionsWidth() {
+  console.log('optionsWidth');
+  $('.u-product-options__item').css('width', 'initial');
   var groups = $('.u-product-options__items');
   groups.each(function (i1, group) {
     var items = $(group).find('.u-product-options__item');
