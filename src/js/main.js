@@ -935,9 +935,7 @@ if (contactsSelect) {
 // optionsWidth();
 
 
-function optionsWidth () {
-    console.log('optionsWidth');
-    
+function optionsWidth () {    
     $('.u-product-options__item').css('width', 'initial');
 
     const groups = $('.u-product-options__items');
@@ -945,6 +943,7 @@ function optionsWidth () {
         let items = $(group).find('.u-product-options__item');
         let minWidth = 0;
         items.each(function(i2, item) {
+            console.log([item]);
             if ($(item).outerWidth() > minWidth) {
                 minWidth = $(item).outerWidth();
             }
@@ -1382,6 +1381,5 @@ $('.js-categories-slider').slick({
 
 const SFUITextFont = new FontFaceObserver('SF UI Text');
 SFUITextFont.load().then(function () {
-    $('.u-product-options__item').css('width', 'initial');
     optionsWidth();
 });

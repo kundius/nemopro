@@ -15146,13 +15146,14 @@ if (contactsSelect) {
 
 
 function optionsWidth() {
-  console.log('optionsWidth');
   $('.u-product-options__item').css('width', 'initial');
   var groups = $('.u-product-options__items');
   groups.each(function (i1, group) {
     var items = $(group).find('.u-product-options__item');
     var minWidth = 0;
     items.each(function (i2, item) {
+      console.log([item]);
+
       if ($(item).outerWidth() > minWidth) {
         minWidth = $(item).outerWidth();
       }
@@ -15566,6 +15567,5 @@ $('.js-categories-slider').slick({
 });
 var SFUITextFont = new FontFaceObserver('SF UI Text');
 SFUITextFont.load().then(function () {
-  $('.u-product-options__item').css('width', 'initial');
   optionsWidth();
 });
