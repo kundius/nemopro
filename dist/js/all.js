@@ -16198,8 +16198,23 @@ WebFont.load({
     families: ['SF UI Text'],
     urls: ['/assets/nemopro/src/fonts/sf/stylesheet.css']
   },
+  loading: function loading() {
+    console.log('font loading');
+  },
   active: function active() {
     console.log('font active');
+  },
+  inactive: function inactive() {
+    console.log('font inactive');
+  },
+  fontloading: function fontloading(familyName, fvd) {
+    console.log('font fontloading');
+  },
+  fontactive: function fontactive(familyName, fvd) {
+    console.log('font fontactive');
+  },
+  fontinactive: function fontinactive(familyName, fvd) {
+    console.log('font fontinactive');
   }
 }); // const SFUITextFont = new FontFaceObserver('SF UI Text');
 // SFUITextFont.load().then(function () {
