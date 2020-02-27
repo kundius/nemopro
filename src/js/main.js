@@ -1364,9 +1364,18 @@ $('.js-categories-slider').slick({
 });
 
 
-const SFUITextFont = new FontFaceObserver('SF UI Text');
-SFUITextFont.load().then(function () {
-    // setTimeout(function () {
-    //     $(document).trigger('font:loaded');
-    // }, 0);
+WebFont.load({
+    custom: {
+        families: ['SF UI Text'],
+        urls: ['/assets/nemopro/src/fonts/sf/stylesheet.css']
+    },
+    active: function() {
+        console.log('font active')
+    }
 });
+// const SFUITextFont = new FontFaceObserver('SF UI Text');
+// SFUITextFont.load().then(function () {
+//     // setTimeout(function () {
+//     //     $(document).trigger('font:loaded');
+//     // }, 0);
+// });
