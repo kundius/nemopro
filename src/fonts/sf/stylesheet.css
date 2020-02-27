@@ -60,7 +60,7 @@
   font-display: swap;
 }
 
-@font-face {
+/* @font-face {
 	font-family: 'SF UI Display';
 	src: url('SFUIDisplay-Light.eot');
 	src: local('SF UI Display Light'), local('SFUIDisplay-Light'),
@@ -70,7 +70,7 @@
 	font-weight: 300;
 	font-style: normal;
   font-display: swap;
-}
+} */
 
 /* @font-face {
 	font-family: 'SF UI Display';
@@ -180,7 +180,7 @@
   font-display: swap;
 } */
 
-@font-face {
+/* @font-face {
 	font-family: 'SF UI Text';
 	src: url('SFUIText-Light.eot');
 	src: local('SF UI Text Light'), local('SFUIText-Light'),
@@ -190,7 +190,7 @@
 	font-weight: 300;
 	font-style: normal;
   font-display: swap;
-}
+} */
 
 /* @font-face {
 	font-family: 'SF UI Text';

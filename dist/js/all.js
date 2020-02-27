@@ -15775,8 +15775,8 @@ if (contactsSelect) {
 }
 
 function optionsWidth() {
-  $('.u-product-options__item').css('width', 'initial'); // setTimeout(function () {
-
+  // $('.u-product-options__item').css('width', 'initial');
+  // setTimeout(function () {
   var groups = $('.u-product-options__items');
   groups.each(function (i1, group) {
     var items = $(group).find('.u-product-options__item');
@@ -15796,7 +15796,6 @@ function optionsWidth() {
   }); // }, 0);
 }
 
-$(document).on('font:loaded', optionsWidth);
 $('.js-discount-dropdown').each(function () {
   var dropdown = UIkit.dropdown(this, {
     pos: 'top-right',
@@ -16201,9 +16200,11 @@ WebFont.load({
   loading: function loading() {
     console.log('font loading');
   },
-  active: optionsWidth,
+  active: function active() {
+    console.log('font loading');
+  },
   inactive: function inactive() {
-    console.log('font inactive');
+    setTimeout(optionsWidth, 0);
   },
   fontloading: function fontloading(familyName, fvd) {
     console.log('font fontloading');

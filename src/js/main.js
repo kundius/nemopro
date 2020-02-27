@@ -920,7 +920,7 @@ if (contactsSelect) {
 }
 
 function optionsWidth () {    
-    $('.u-product-options__item').css('width', 'initial');
+    // $('.u-product-options__item').css('width', 'initial');
 
     // setTimeout(function () {
         const groups = $('.u-product-options__items');
@@ -941,8 +941,6 @@ function optionsWidth () {
         });
     // }, 0);
 }
-
-$(document).on('font:loaded', optionsWidth);
 
 $('.js-discount-dropdown').each(function() {
     const dropdown = UIkit.dropdown(this, {
@@ -1370,8 +1368,10 @@ WebFont.load({
         urls: ['/assets/nemopro/src/fonts/sf/stylesheet.css']
     },
     loading: function() {console.log('font loading')},
-    active: optionsWidth,
-    inactive: function() {console.log('font inactive')},
+    active: function() {console.log('font loading')},
+    inactive: function() {
+        setTimeout(optionsWidth, 0);
+    },
     fontloading: function(familyName, fvd) {console.log('font fontloading')},
     fontactive: function(familyName, fvd) {console.log('font fontactive')},
     fontinactive: function(familyName, fvd) {console.log('font fontinactive')}
