@@ -919,43 +919,30 @@ if (contactsSelect) {
     new Choices(contactsSelect);
 }
 
-
-// function optionsWidth () {
-//     let items = $('.u-product-options__item');
-//     let maxWidth = 0;
-//     items.each(function(i2, item) {
-//         if ($(item).width() > maxWidth) {
-//             maxWidth = $(item).outerWidth();
-//         }
-//     });
-//     if (maxWidth > 0) {
-//         items.css('width', maxWidth);
-//     }
-// }
-// optionsWidth();
-
-
 function optionsWidth () {    
     $('.u-product-options__item').css('width', 'initial');
 
-    const groups = $('.u-product-options__items');
-    groups.each(function(i1, group) {
-        let items = $(group).find('.u-product-options__item');
-        let minWidth = 0;
-        items.each(function(i2, item) {
-            console.log([$(item).outerWidth()]);
-            if ($(item).outerWidth() > minWidth) {
-                minWidth = $(item).outerWidth();
+    setTimeout(function () {
+        const groups = $('.u-product-options__items');
+        groups.each(function(i1, group) {
+            let items = $(group).find('.u-product-options__item');
+            let minWidth = 0;
+            items.each(function(i2, item) {
+                console.log([$(item).outerWidth()]);
+                if ($(item).outerWidth() > minWidth) {
+                    minWidth = $(item).outerWidth();
+                }
+            });
+            if (minWidth > 0) {
+                let perRow = Math.floor($(group).outerWidth() / minWidth);
+                let normalPerRow = Math.ceil(items.length/Math.ceil(items.length/perRow));
+                let maxWidth = $(group).outerWidth() / normalPerRow;
+                items.css('width', maxWidth);
             }
         });
-        if (minWidth > 0) {
-            let perRow = Math.floor($(group).outerWidth() / minWidth);
-            let normalPerRow = Math.ceil(items.length/Math.ceil(items.length/perRow));
-            let maxWidth = $(group).outerWidth() / normalPerRow;
-            items.css('width', maxWidth);
-        }
-    });
+    }, 0);
 }
+
 optionsWidth();
 
 
@@ -1380,6 +1367,4 @@ $('.js-categories-slider').slick({
 
 
 const SFUITextFont = new FontFaceObserver('SF UI Text');
-SFUITextFont.load().then(function () {
-    optionsWidth();
-});
+SFUITextFont.load().then(optionsWidth);
