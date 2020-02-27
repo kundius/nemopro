@@ -15555,5 +15555,5 @@ $('.js-categories-slider').slick({
 var SFUITextFont = new FontFaceObserver('SF UI Text');
 SFUITextFont.load().then(function () {
   console.log('SFUITextFont');
-  optionsWidth();
+  setTimeout(optionsWidth, 0);
 });
