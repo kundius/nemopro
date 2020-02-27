@@ -1368,7 +1368,7 @@ $(function() {
 $('.js-categories-slider').slick({
     dots: false,
     infinite: true,
-    speed: 700,
+    speed: 1000,
     slidesToShow: 1,
     variableWidth: true,
     swipeToSlide: true,
