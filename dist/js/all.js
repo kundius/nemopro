@@ -15553,6 +15553,7 @@ $('.js-categories-slider').slick({
 });
 var SFUITextFont = new FontFaceObserver('SF UI Text');
 SFUITextFont.load().then(function () {
-  // setTimeout(optionsWidth, 0);
-  $(document).trigger('font:loaded');
+  setTimeout(function () {
+    $(document).trigger('font:loaded');
+  }, 0);
 });
