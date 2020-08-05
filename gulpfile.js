@@ -11,6 +11,8 @@ const critical = require('critical')
 const http = require('http')
 const imagemin = require('gulp-imagemin')
 
+sass.compiler = require('node-sass')
+
 const config = {
     srcDir: './src/'
 }
@@ -36,6 +38,7 @@ function css() {
     './node_modules/slick-carousel/slick/slick.css',
     './node_modules/choices.js/public/assets/styles/choices.min.css',
     './node_modules/autocompleter/autocomplete.css',
+    './node_modules/swiper/swiper-bundle.min.css',
     config.srcDir + 'css/mobilemenu.css',
     config.srcDir + 'scss/styles.scss'
   ])
@@ -48,6 +51,7 @@ function css() {
 function js() {
   return src([
     './node_modules/jquery/dist/jquery.min.js',
+    './node_modules/swiper/swiper-bundle.min.js',
     './node_modules/jquery-migrate/dist/jquery-migrate.min.js',
     './node_modules/uikit/dist/js/uikit.min.js',
     './node_modules/uikit/dist/js/components/sticky.min.js',

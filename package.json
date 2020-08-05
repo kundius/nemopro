@@ -24,10 +24,11 @@
     "gulp-debug": "^4.0.0",
     "gulp-imagemin": "^5.0.3",
     "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
-    "gulp-util": "^3.0.8"
+    "gulp-util": "^3.0.8",
+    "node-sass": "^4.14.1"
   },
   "dependencies": {
     "@tarekraafat/autocomplete.js": "^7.0.0",
@@ -42,10 +43,9 @@
     "jquery-validation": "^1.19.0",
     "jquery.cookie": "^1.4.1",
     "magnific-popup": "^1.1.0",
-    "node-sass": "^4.13.0",
     "slick-carousel": "^1.8.1",
     "svg4everybody": "^2.1.9",
-    "swiper": "^5.3.0",
+    "swiper": "^6.1.1",
     "uikit": "^2.27.4",
     "vanilla-lazyload": "^12.1.0",
     "webfontloader": "^1.6.28"
