@@ -20777,7 +20777,7 @@ WebFont.load({
   }
 }); // Product Gallery
 
-var galleryThumbs = new Swiper('.js-product-gallery-thumbs', {
+var galleryThumbs = new Swiper('.js-detail-gallery-thumbs', {
   spaceBetween: 10,
   slidesPerView: 4,
   loop: true,
@@ -20787,7 +20787,7 @@ var galleryThumbs = new Swiper('.js-product-gallery-thumbs', {
   watchSlidesVisibility: true,
   watchSlidesProgress: true
 });
-var galleryTop = new Swiper('.js-product-gallery', {
+var galleryTop = new Swiper('.js-detail-gallery', {
   spaceBetween: 10,
   loop: true,
   loopedSlides: 5,
