@@ -20787,6 +20787,7 @@ var galleryThumbs = new Swiper('.js-detail-gallery-thumbs', {
   watchSlidesProgress: true
 });
 var galleryTop = new Swiper('.js-detail-gallery', {
+  slidesPerView: 1,
   loop: true,
   loopedSlides: 6,
   //looped slides should be the same
