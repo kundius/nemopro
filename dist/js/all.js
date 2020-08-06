@@ -20797,5 +20797,9 @@ var galleryTop = new Swiper('.js-detail-gallery', {
   },
   thumbs: {
     swiper: galleryThumbs
+  },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
   }
 });
