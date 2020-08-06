@@ -20779,7 +20779,7 @@ WebFont.load({
 
 var galleryThumbs = new Swiper('.js-detail-gallery-thumbs', {
   spaceBetween: 10,
-  slidesPerView: 4,
+  slidesPerView: 'auto',
   loop: true,
   freeMode: true,
   loopedSlides: 5,
