@@ -1373,6 +1373,7 @@ var galleryThumbs = new Swiper('.js-detail-gallery-thumbs', {
     slidesPerView: 'auto',
     loop: false,
     freeMode: true,
+    centeredSlides: true,
     loopedSlides: 5, //looped slides should be the same
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
