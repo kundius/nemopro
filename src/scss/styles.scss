@@ -11955,7 +11955,7 @@ td.u-product-options__items {
   position: fixed;
   padding-bottom: 0;
   height: 100%;
-  z-index: 3000;
+  z-index: 2147483647 !important;
   left: 0;
   top: 0;
 }
