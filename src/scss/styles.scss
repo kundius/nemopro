@@ -11941,6 +11941,10 @@ td.u-product-options__items {
     }
 }
 
+#jvlabelWrap {
+  z-index: 2000 !important;
+}
+
 .detail-gallery {
   position: relative;
   width: 100%;
@@ -11951,7 +11955,7 @@ td.u-product-options__items {
   position: fixed;
   padding-bottom: 0;
   height: 100%;
-  z-index: 2147483647 !important;
+  z-index: 3000;
   left: 0;
   top: 0;
 }
