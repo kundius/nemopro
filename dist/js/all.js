@@ -20778,9 +20778,8 @@ WebFont.load({
 }); // Product Gallery
 
 var galleryThumbs = new Swiper('.js-detail-gallery-thumbs', {
-  spaceBetween: 10,
   slidesPerView: 'auto',
-  loop: true,
+  loop: false,
   freeMode: true,
   loopedSlides: 5,
   //looped slides should be the same
@@ -20788,7 +20787,6 @@ var galleryThumbs = new Swiper('.js-detail-gallery-thumbs', {
   watchSlidesProgress: true
 });
 var galleryTop = new Swiper('.js-detail-gallery', {
-  spaceBetween: 10,
   loop: true,
   loopedSlides: 5,
   //looped slides should be the same
