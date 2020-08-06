@@ -1371,7 +1371,7 @@ WebFont.load({
 // Product Gallery
 var galleryThumbs = new Swiper('.js-detail-gallery-thumbs', {
     slidesPerView: 'auto',
-    loop: true,
+    // loop: true,
     freeMode: true,
     loopedSlides: 6, //looped slides should be the same
     watchSlidesVisibility: true,
