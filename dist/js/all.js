@@ -20786,7 +20786,7 @@ var galleryThumbs = new Swiper('.js-detail-gallery-thumbs', {
   watchSlidesVisibility: true,
   watchSlidesProgress: true
 });
-var galleryTop = new Swiper('.js-detail-gallery', {
+var galleryTop = new Swiper('.js-detail-gallery-main', {
   slidesPerView: 1,
   loop: true,
   loopedSlides: 6,
@@ -20802,4 +20802,9 @@ var galleryTop = new Swiper('.js-detail-gallery', {
     delay: 5000,
     disableOnInteraction: false
   }
+});
+$('.js-detail-gallery-main').on('click', '.swiper-slide', function () {
+  $('.js-detail-gallery').addClass('.detail-gallery_lightbox');
+  galleryTop.update();
+  galleryThumbs.update();
 });
