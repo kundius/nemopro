@@ -1370,17 +1370,16 @@ WebFont.load({
 
 // Product Gallery
 var galleryThumbs = new Swiper('.js-detail-gallery-thumbs', {
-    slidesPerView: 'auto',
+    slidesPerView: 5,
     loop: true,
     freeMode: true,
-    // centeredSlides: true,
-    loopedSlides: 5, //looped slides should be the same
+    loopedSlides: 6, //looped slides should be the same
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
 });
 var galleryTop = new Swiper('.js-detail-gallery', {
     loop: true,
-    loopedSlides: 5, //looped slides should be the same
+    loopedSlides: 6, //looped slides should be the same
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
