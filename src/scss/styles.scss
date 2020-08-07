@@ -11953,6 +11953,7 @@ td.u-product-options__items {
   position: fixed;
   padding-bottom: 0;
   height: 100%;
+  width: 100%;
   z-index: 3000;
   left: 0;
   top: 0;
@@ -12001,10 +12002,6 @@ td.u-product-options__items {
 
 .detail-gallery-main {
   width: 100%;
-  // height: 100%;
-  // position: absolute;
-  // top: 0;
-  // left: 0;
   padding-top: 66.66%;
   position: relative;
 }
@@ -12030,6 +12027,7 @@ td.u-product-options__items {
 }
 
 .detail-gallery-thumbs {
+  margin-top: 10px;
 }
 
 .detail-gallery-thumbs .swiper-slide {
