@@ -1371,10 +1371,8 @@ WebFont.load({
 // Product Gallery
 var galleryThumbs = new Swiper('.js-detail-gallery-thumbs', {
     slidesPerView: 5,
-    // loop: true,
-    // centeredSlides: true,
     freeMode: true,
-    loopedSlides: 6, //looped slides should be the same
+    loopedSlides: 6,
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
     centerInsufficientSlides: true,
@@ -1407,12 +1405,20 @@ $('.js-detail-gallery-main').on('click', '.swiper-slide', function () {
     $('.js-detail-gallery').addClass('detail-gallery_lightbox');
     galleryTop.update();
     galleryThumbs.update();
-    console.log(galleryThumbs.params);
-    galleryThumbs.params.slidesPerView = 10;
+    var perView = Math.ceil(window.innerWidth / 64);
+    galleryThumbs.params.slidesPerView = perView;
+    galleryThumbs.params.breakpoints['768'].slidesPerView = perView;
+    galleryThumbs.params.breakpoints['1024'].slidesPerView = perView;
     galleryThumbs.update();
+    galleryTop.autoplay.stop();
 });
 $('.js-detail-gallery-button').click(function () {
     $('.js-detail-gallery').removeClass('detail-gallery_lightbox');
-    galleryTop.update();	
-    galleryThumbs.update();	
+    galleryTop.update();
+    galleryThumbs.update();
+    galleryThumbs.params.slidesPerView = 5;
+    galleryThumbs.params.breakpoints['768'].slidesPerView = 6;
+    galleryThumbs.params.breakpoints['1024'].slidesPerView = 8;
+    galleryThumbs.update();
+    galleryTop.autoplay.start();
 });
