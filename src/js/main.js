@@ -1372,7 +1372,7 @@ $('.js-detail-gallery').each(function () {
     var $wrapper = $(this);
     var $thumbs = $('.js-detail-gallery-thumbs', this);
     var $main = $('.js-detail-gallery-main', this);
-    console.log(Math.ceil(window.innerWidth / 64));
+    console.log(Math.ceil(this.innerWidth / 64));
     // Product Gallery
     var galleryThumbs = new Swiper($thumbs[0], {
         slidesPerView: 5,
