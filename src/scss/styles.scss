@@ -11946,9 +11946,8 @@ td.u-product-options__items {
 
 .detail-gallery {
   position: relative;
-  width: 100%;
-  padding-bottom: calc(66.66% + 74px);
 }
+
 .detail-gallery_lightbox {
   background: #000000;
   position: fixed;
@@ -11958,9 +11957,15 @@ td.u-product-options__items {
   left: 0;
   top: 0;
 }
+
+.detail-gallery__main {
+  padding-top: 66.66%;
+}
+
 .detail-gallery_lightbox .detail-gallery__close {
   display: block;
 }
+
 .detail-gallery__close {
   display: none;
   position: absolute;
@@ -11975,6 +11980,7 @@ td.u-product-options__items {
   color: #ffffff;
   filter: drop-shadow(0 0.1em 0.25em rgba(0, 0, 0, 0.4));
 }
+
 .detail-gallery__close::before {
   content: '';
   position: absolute;
@@ -11985,6 +11991,7 @@ td.u-product-options__items {
   width: 60%;
   background: currentColor;
 }
+
 .detail-gallery__close::after {
   content: '';
   position: absolute;
@@ -11995,6 +12002,7 @@ td.u-product-options__items {
   width: 60%;
   background: currentColor;
 }
+
 .detail-gallery-main {
   width: 100%;
   height: calc(100% - 74px);
@@ -12002,12 +12010,15 @@ td.u-product-options__items {
   top: 0;
   left: 0;
 }
+
 .detail-gallery-main .swiper-wrapper {
   position: absolute;
 }
+
 .detail-gallery-main .swiper-slide {
   position: relative;
 }
+
 .detail-gallery-main .swiper-slide img {
   position: absolute;
   left: 50%;
@@ -12018,12 +12029,10 @@ td.u-product-options__items {
   width: auto;
   height: auto;
 }
+
 .detail-gallery-thumbs {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
 }
+
 .detail-gallery-thumbs .swiper-slide {
   border: 2px solid transparent;
   box-sizing: border-box;
@@ -12031,15 +12040,19 @@ td.u-product-options__items {
   width: 64px;
   height: 64px;
 }
+
 .detail-gallery-thumbs .swiper-slide.swiper-slide-thumb-active {
   border-color: #00afea;
 }
+
 .swiper-button-next, .swiper-button-prev {
   filter: drop-shadow(0 0.1em 0.25em rgba(0, 0, 0, 0.4));
 }
+
 .swiper-button-next:focus, .swiper-button-prev:focus {
   outline: none;
 }
+
 .swiper-button-next::before, .swiper-button-prev::before {
   content: '';
   width: 300%;
