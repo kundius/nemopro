@@ -11958,11 +11958,6 @@ td.u-product-options__items {
   top: 0;
 }
 
-.detail-gallery__main {
-  padding-top: 66.66%;
-  position: relative;
-}
-
 .detail-gallery_lightbox .detail-gallery__close {
   display: block;
 }
@@ -12006,14 +12001,17 @@ td.u-product-options__items {
 
 .detail-gallery-main {
   width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  // height: 100%;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  padding-top: 66.66%;
+  position: relative;
 }
 
 .detail-gallery-main .swiper-wrapper {
   position: absolute;
+  top: 0;
 }
 
 .detail-gallery-main .swiper-slide {
