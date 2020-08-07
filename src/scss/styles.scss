@@ -11970,11 +11970,6 @@ td.u-product-options__items {
   display: block;
 }
 
-.detail-gallery_lightbox .detail-gallery-thumbs .swiper-slide {
-  max-width: 64px;
-  max-height: 64px;
-}
-
 .detail-gallery__close {
   display: none;
   position: absolute;
@@ -12047,8 +12042,6 @@ td.u-product-options__items {
   border: 2px solid transparent;
   box-sizing: border-box;
   position: relative;
-  // width: 64px;
-  // height: 64px;
 }
 
 .detail-gallery-thumbs .swiper-slide.swiper-slide-thumb-active {
