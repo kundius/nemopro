@@ -11946,6 +11946,8 @@ td.u-product-options__items {
 
 .detail-gallery {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .detail-gallery_lightbox {
@@ -11957,6 +11959,11 @@ td.u-product-options__items {
   z-index: 3000;
   left: 0;
   top: 0;
+}
+
+.detail-gallery_lightbox .detail-gallery-main {
+  padding: 0;
+  flex-grow: 1;
 }
 
 .detail-gallery_lightbox .detail-gallery__close {
