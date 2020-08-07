@@ -20778,13 +20778,22 @@ WebFont.load({
 }); // Product Gallery
 
 var galleryThumbs = new Swiper('.js-detail-gallery-thumbs', {
-  slidesPerView: 'auto',
+  slidesPerView: 5,
   // loop: true,
+  centeredSlides: true,
   freeMode: true,
   loopedSlides: 6,
   //looped slides should be the same
   watchSlidesVisibility: true,
-  watchSlidesProgress: true
+  watchSlidesProgress: true,
+  breakpoints: {
+    768: {
+      slidesPerView: 6
+    },
+    1024: {
+      slidesPerView: 8
+    }
+  }
 });
 var galleryTop = new Swiper('.js-detail-gallery-main', {
   slidesPerView: 1,
