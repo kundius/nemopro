@@ -1372,10 +1372,12 @@ $('.js-detail-gallery').each(function () {
     var $wrapper = $(this);
     var $thumbs = $('.js-detail-gallery-thumbs', this);
     var $main = $('.js-detail-gallery-main', this);
-    console.log(this, Math.ceil(this.offsetWidth / 64));
+    var perView = Math.ceil(this.offsetWidth / 64);
+    var windowPerView = Math.ceil(window.innerWidth / 64);
+
     // Product Gallery
     var galleryThumbs = new Swiper($thumbs[0], {
-        slidesPerView: 5,
+        slidesPerView: perView,
         freeMode: true,
         loopedSlides: 6,
         watchSlidesVisibility: true,
@@ -1402,10 +1404,9 @@ $('.js-detail-gallery').each(function () {
         $wrapper.addClass('detail-gallery_lightbox');
         galleryTop.update();
         galleryThumbs.update();
-        var perView = Math.ceil(window.innerWidth / 64);
-        galleryThumbs.params.slidesPerView = perView;
-        galleryThumbs.params.breakpoints['768'].slidesPerView = perView;
-        galleryThumbs.params.breakpoints['1024'].slidesPerView = perView;
+        galleryThumbs.params.slidesPerView = windowPerView;
+        galleryThumbs.params.breakpoints['768'].slidesPerView = windowPerView;
+        galleryThumbs.params.breakpoints['1024'].slidesPerView = windowPerView;
         galleryThumbs.update();
         galleryTop.autoplay.stop();
     });
@@ -1413,7 +1414,6 @@ $('.js-detail-gallery').each(function () {
         $wrapper.removeClass('detail-gallery_lightbox');
         galleryTop.update();
         galleryThumbs.update();
-        var perView = Math.ceil(window.innerWidth / 64);
         galleryThumbs.params.slidesPerView = perView;
         galleryThumbs.params.breakpoints['768'].slidesPerView = perView;
         galleryThumbs.params.breakpoints['1024'].slidesPerView = perView;
