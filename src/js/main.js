@@ -1405,8 +1405,11 @@ var galleryTop = new Swiper('.js-detail-gallery-main', {
 });
 $('.js-detail-gallery-main').on('click', '.swiper-slide', function () {
     $('.js-detail-gallery').addClass('detail-gallery_lightbox');
-    galleryTop.update();	
-    galleryThumbs.update();	
+    galleryTop.update();
+    galleryThumbs.update();
+    console.log(galleryThumbs.params);
+    galleryThumbs.params.slidesPerView = 10;
+    galleryThumbs.update();
 });
 $('.js-detail-gallery-button').click(function () {
     $('.js-detail-gallery').removeClass('detail-gallery_lightbox');
