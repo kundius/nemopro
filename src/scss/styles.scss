@@ -11960,6 +11960,7 @@ td.u-product-options__items {
 
 .detail-gallery__main {
   padding-top: 66.66%;
+  position: relative;
 }
 
 .detail-gallery_lightbox .detail-gallery__close {
@@ -12005,7 +12006,7 @@ td.u-product-options__items {
 
 .detail-gallery-main {
   width: 100%;
-  height: calc(100% - 74px);
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
