@@ -1405,8 +1405,6 @@ $('.js-detail-gallery').each(function () {
         galleryTop.update();
         galleryThumbs.update();
         galleryThumbs.params.slidesPerView = windowPerView;
-        galleryThumbs.params.breakpoints['768'].slidesPerView = windowPerView;
-        galleryThumbs.params.breakpoints['1024'].slidesPerView = windowPerView;
         galleryThumbs.update();
         galleryTop.autoplay.stop();
     });
@@ -1415,8 +1413,6 @@ $('.js-detail-gallery').each(function () {
         galleryTop.update();
         galleryThumbs.update();
         galleryThumbs.params.slidesPerView = perView;
-        galleryThumbs.params.breakpoints['768'].slidesPerView = perView;
-        galleryThumbs.params.breakpoints['1024'].slidesPerView = perView;
         galleryThumbs.update();
         galleryTop.autoplay.start();
     });
