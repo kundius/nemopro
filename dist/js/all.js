@@ -20766,16 +20766,16 @@ $('.js-categories-slider').slick({
   variableWidth: true,
   swipeToSlide: true,
   touchThreshold: 15
-});
-WebFont.load({
-  custom: {
-    families: ['SF UI Text', 'SF UI Display'],
-    urls: ['/assets/nemopro/src/fonts/sf/SFUIText.css', '/assets/nemopro/src/fonts/sf/SFUIDisplay.css']
-  },
-  active: function active() {
-    setTimeout(optionsWidth, 0);
-  }
-});
+}); // WebFont.load({
+//     custom: {
+//         families: ['SF UI Text', 'SF UI Display'],
+//         urls: ['/assets/nemopro/src/fonts/sf/SFUIText.css', '/assets/nemopro/src/fonts/sf/SFUIDisplay.css']
+//     },
+//     active: function() {
+//         setTimeout(optionsWidth, 0);
+//     }
+// });
+
 $('.js-detail-gallery').each(function () {
   var $wrapper = $(this);
   var $thumbs = $('.js-detail-gallery-thumbs', this);
