@@ -20786,6 +20786,7 @@ var galleryThumbs = new Swiper('.js-detail-gallery-thumbs', {
   //looped slides should be the same
   watchSlidesVisibility: true,
   watchSlidesProgress: true,
+  centerInsufficientSlides: true,
   breakpoints: {
     768: {
       slidesPerView: 6
