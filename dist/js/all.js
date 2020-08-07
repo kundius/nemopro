@@ -20779,9 +20779,10 @@ WebFont.load({
 $('.js-detail-gallery').each(function () {
   var $wrapper = $(this);
   var $thumbs = $('.js-detail-gallery-thumbs', this);
-  var $main = $('.js-detail-gallery-main', this); // Product Gallery
+  var $main = $('.js-detail-gallery-main', this);
+  console.log(Math.ceil($wrapper.width() / 64)); // Product Gallery
 
-  var galleryThumbs = new Swiper($thumbs, {
+  var galleryThumbs = new Swiper($thumbs[0], {
     slidesPerView: Math.ceil($wrapper.width() / 64),
     freeMode: true,
     loopedSlides: 6,
@@ -20789,7 +20790,7 @@ $('.js-detail-gallery').each(function () {
     watchSlidesProgress: true,
     centerInsufficientSlides: true
   });
-  var galleryTop = new Swiper($main, {
+  var galleryTop = new Swiper($main[0], {
     slidesPerView: 1,
     loop: true,
     loopedSlides: 6,
