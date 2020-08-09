@@ -20361,7 +20361,6 @@ function optionsWidth() {
         minWidth = $(item).outerWidth();
       }
     });
-    console.log(minWidth);
 
     if (minWidth > 0) {
       var perRow = Math.floor($(group).outerWidth() / minWidth);

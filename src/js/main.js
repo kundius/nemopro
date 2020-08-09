@@ -929,7 +929,6 @@ function optionsWidth () {
                 minWidth = $(item).outerWidth();
             }
         });
-        console.log(minWidth);
         if (minWidth > 0) {
             let perRow = Math.floor($(group).outerWidth() / minWidth);
             let normalPerRow = Math.ceil(items.length/Math.ceil(items.length/perRow));
