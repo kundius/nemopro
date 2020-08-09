@@ -929,6 +929,7 @@ function optionsWidth () {
                 minWidth = $(item).outerWidth();
             }
         });
+        console.log(minWidth);
         if (minWidth > 0) {
             let perRow = Math.floor($(group).outerWidth() / minWidth);
             let normalPerRow = Math.ceil(items.length/Math.ceil(items.length/perRow));
@@ -1358,15 +1359,15 @@ $('.js-categories-slider').slick({
 });
 
 
-// WebFont.load({
-//     custom: {
-//         families: ['SF UI Text', 'SF UI Display'],
-//         urls: ['/assets/nemopro/src/fonts/sf/SFUIText.css', '/assets/nemopro/src/fonts/sf/SFUIDisplay.css']
-//     },
-//     active: function() {
-//         setTimeout(optionsWidth, 0);
-//     }
-// });
+WebFont.load({
+    custom: {
+        families: ['SF UI Text', 'SF UI Display'],
+        urls: ['/assets/nemopro/src/fonts/sf/SFUIText.css', '/assets/nemopro/src/fonts/sf/SFUIDisplay.css']
+    },
+    active: function() {
+        setTimeout(optionsWidth, 0);
+    }
+});
 
 $('.js-detail-gallery').each(function () {
     var $wrapper = $(this);
