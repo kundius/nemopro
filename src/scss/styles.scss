@@ -8415,8 +8415,7 @@ th.forum-headline__replies {
     }
 }
 
-.uk-offcanvas-page .wrapper::after {
-    content: '';
+.uk-offcanvas-page .offcanvas-overlay {
     position: absolute;
     left: 0;
     top: 0;
