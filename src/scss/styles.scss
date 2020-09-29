@@ -12019,6 +12019,7 @@ td.u-product-options__items {
 
 .detail-gallery-main .swiper-slide {
   position: relative;
+  cursor: pointer;
 }
 
 .detail-gallery-main .swiper-slide img {
@@ -12038,9 +12039,16 @@ td.u-product-options__items {
 }
 
 .detail-gallery-thumbs .swiper-slide {
-  border: 2px solid transparent;
+  border: 2px solid #ffffff;
   box-sizing: border-box;
   position: relative;
+  cursor: pointer;
+  &:hover {
+    background: #333;
+    img {
+      opacity: 0.8;
+    }
+  }
 }
 
 .detail-gallery-thumbs .swiper-slide.swiper-slide-thumb-active {

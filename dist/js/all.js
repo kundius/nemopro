@@ -20784,6 +20784,7 @@ $('.js-detail-gallery').each(function () {
   var windowPerView = Math.ceil(window.innerWidth / 64); // Product Gallery
 
   var galleryThumbs = new Swiper($thumbs[0], {
+    simulateTouch: false,
     slidesPerView: perView,
     freeMode: true,
     loopedSlides: 6,
