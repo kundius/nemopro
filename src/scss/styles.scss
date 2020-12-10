@@ -7585,8 +7585,8 @@ th.forum-headline__replies {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 6px 0 0 6px;
-  border-color: transparent transparent transparent #dc3535;
+  border-width: 0 0 6px 6px;
+  border-color: transparent transparent #dc3535 transparent;
 }
 
 .coupon-sticker::before {
@@ -7633,13 +7633,14 @@ th.forum-headline__replies {
   font-size: 14px;
   text-transform: lowercase;
   line-height: 1;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 .coupon-sticker__price {
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 600;
-  margin-top: 4px;
 }
 
 .auth-show-login {
