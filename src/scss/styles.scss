@@ -7581,7 +7581,7 @@ th.forum-headline__replies {
 .coupon-sticker__angle {
   position: absolute;
   top: 0;
-  left: 100%;
+  left: -6px;
   width: 0;
   height: 0;
   border-style: solid;
@@ -7641,6 +7641,10 @@ th.forum-headline__replies {
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 600;
+}
+
+.coupon-sticker__price i {
+  font-size: 80%;
 }
 
 .auth-show-login {
