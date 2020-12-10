@@ -1836,6 +1836,8 @@ jdiv {
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
+    position: relative;
+    z-index: 4;
 }
 
 .products-image:hover .products-image__flipper {
@@ -1899,6 +1901,7 @@ jdiv {
     height: 200px;
     overflow: hidden;
     position: relative;
+    z-index: 4;
     width: 200px;
     margin: 0 auto;
     img {
