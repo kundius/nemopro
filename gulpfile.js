@@ -11,7 +11,7 @@ const critical = require('critical')
 const http = require('http')
 const imagemin = require('gulp-imagemin')
 
-sass.compiler = require('node-sass')
+// sass.compiler = require('gulp-dart-scss')
 
 const config = {
     srcDir: './src/'
