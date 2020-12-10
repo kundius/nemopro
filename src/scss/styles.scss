@@ -1783,7 +1783,7 @@ jdiv {
     border-radius: 4px;
     border: 1px solid #01556b;
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
     transition: .6s ease;
     transition-property: transform, box-shadow;
     z-index: 1;
@@ -7574,8 +7574,19 @@ th.forum-headline__replies {
   width: 80px;
   background: #fe0000;
   left: 10px;
-  top: 0;
+  top: -5px;
   z-index: 5;
+}
+
+.coupon-sticker__angle {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 0 5px;
+  border-color: transparent transparent transparent #fe0000;
 }
 
 .coupon-sticker::before {
