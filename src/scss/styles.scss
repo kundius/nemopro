@@ -12218,7 +12218,9 @@ td.u-product-options__items {
   .swiper-button-prev {
     left: 0;
   }
-  .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+  &.swiper-container-horizontal>.swiper-pagination-bullets,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
     @media (max-width: $breakpoint-small-max) {
       bottom: 4px;
     }
