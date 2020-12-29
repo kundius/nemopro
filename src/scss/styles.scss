@@ -12130,4 +12130,13 @@ td.u-product-options__items {
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+    opacity: 0.3;
+    &.swiper-slide-active {
+      opacity: 1;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
 }
