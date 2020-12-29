@@ -12173,7 +12173,8 @@ td.u-product-options__items {
   .swiper-pagination-bullet {
     // width: 12px;
     // height: 12px;
-    background: d3cac4;
+    background: #d3cac4;
+    opacity: 1;
   }
   // .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
   //   margin: 0 7px;
@@ -12190,10 +12191,14 @@ td.u-product-options__items {
     top: auto;
     margin-top: 0;
   }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 14px;
+  }
   .swiper-button-next {
-    left: 0;
+    right: 0;
   }
   .swiper-button-prev {
-    right: 0;
+    left: 0;
   }
 }
