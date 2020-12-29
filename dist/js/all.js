@@ -20130,6 +20130,10 @@ $('.js-home-slider').each(function () {
     loop: true,
     loopedSlides: 6,
     //looped slides should be the same
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
