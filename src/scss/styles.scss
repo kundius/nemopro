@@ -12145,8 +12145,14 @@ td.u-product-options__items {
   cursor: pointer;
   img {
     display: block;
-    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
     height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
