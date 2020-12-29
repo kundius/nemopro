@@ -20115,20 +20115,19 @@ $('.js-home-slider').each(function () {
   var $main = $('.js-home-slider-main', this); // Product Gallery
 
   var galleryThumbs = new Swiper($thumbs[0], {
-    direction: 'vertical',
-    allowTouchMove: false,
-    slidesPerView: 3,
-    freeMode: true,
-    loopedSlides: 6,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    centerInsufficientSlides: true
+    direction: 'vertical' // allowTouchMove: false,
+    // slidesPerView: 3,
+    // freeMode: true,
+    // loopedSlides: 6,
+    // watchSlidesVisibility: true,
+    // watchSlidesProgress: true,
+    // centerInsufficientSlides: true
+
   });
   var galleryTop = new Swiper($main[0], {
     slidesPerView: 1,
     loop: true,
-    loopedSlides: 6,
-    //looped slides should be the same
+    // loopedSlides: 6, //looped slides should be the same
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
