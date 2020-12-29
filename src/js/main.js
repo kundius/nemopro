@@ -1452,7 +1452,7 @@ $('.js-home-slider').each(function () {
             disableOnInteraction: false,
         },
     });
-    $main.on('slideChange', function () {
+    galleryTop.on('slideChange', function () {
         console.log('slide changed', this, galleryTop);
     });
     // $('.js-home-slider-main', this).on('click', '.swiper-slide', function () {
