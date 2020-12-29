@@ -12140,6 +12140,7 @@ td.u-product-options__items {
 }
 
 .home-slider-thumbs__slide::after {
+  content: '';
   opacity: 0.3;
   background: #022c3a;
   position: absolute;
