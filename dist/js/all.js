@@ -20121,6 +20121,7 @@ $('.js-home-slider').each(function () {
     freeMode: true,
     loopedSlides: 6,
     spaceBetween: 10,
+    centeredSlides: true,
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
     centerInsufficientSlides: true
