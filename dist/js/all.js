@@ -20120,10 +20120,10 @@ $('.js-home-slider').each(function () {
     loop: true,
     loopedSlides: 6,
     spaceBetween: 10,
-    centeredSlides: true,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    centerInsufficientSlides: true
+    centeredSlides: true // watchSlidesVisibility: true,
+    // watchSlidesProgress: true,
+    // centerInsufficientSlides: true
+
   });
   var galleryTop = new Swiper($main[0], {
     slidesPerView: 1,
@@ -20134,9 +20134,9 @@ $('.js-home-slider').each(function () {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
     },
-    // thumbs: {
-    //     swiper: galleryThumbs,
-    // },
+    thumbs: {
+      swiper: galleryThumbs
+    },
     autoplay: {
       delay: 5000,
       disableOnInteraction: false
@@ -20144,9 +20144,6 @@ $('.js-home-slider').each(function () {
   });
   galleryTop.on('slideChange', function () {
     galleryThumbs.slideTo(galleryTop.activeIndex);
-  });
-  galleryThumbs.on('slideChange', function () {
-    galleryTop.slideTo(galleryThumbs.activeIndex);
   }); // $('.js-home-slider-main', this).on('click', '.swiper-slide', function () {
   //     galleryTop.update();
   //     galleryThumbs.update();
