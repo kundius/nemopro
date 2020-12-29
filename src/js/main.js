@@ -1423,16 +1423,14 @@ $('.js-home-slider').each(function () {
     var $wrapper = $(this);
     var $thumbs = $('.js-home-slider-thumbs', this);
     var $main = $('.js-home-slider-main', this);
-    var perView = Math.ceil(this.offsetWidth / 64);
-    var windowPerView = Math.ceil(window.innerWidth / 64);
 
     // Product Gallery
     var galleryThumbs = new Swiper($thumbs[0], {
         direction: 'vertical',
         allowTouchMove: false,
-        slidesPerView: perView,
+        slidesPerView: 3,
         freeMode: true,
-        loopedSlides: 6,
+        loopedSlides: 3,
         watchSlidesVisibility: true,
         watchSlidesProgress: true,
         centerInsufficientSlides: true
@@ -1455,8 +1453,6 @@ $('.js-home-slider').each(function () {
     });
     $('.js-home-slider-main', this).on('click', '.swiper-slide', function () {
         galleryTop.update();
-        galleryThumbs.update();
-        galleryThumbs.params.slidesPerView = windowPerView;
         galleryThumbs.update();
         galleryTop.autoplay.stop();
     });

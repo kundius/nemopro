@@ -11163,6 +11163,11 @@ td.u-product-options__items {
         &:-ms-input-placeholder { color: #fff; }
         &::-ms-input-placeholder { color: #fff; }
         &::placeholder { color: #fff; }
+        @media (max-width: $breakpoint-mini-max) {
+            padding: 0 12px;
+            font-size: 14px;
+            min-height: 24px;
+        }
     }
     input[type="submit"] {
         position: absolute;
