@@ -1418,3 +1418,45 @@ $('.js-detail-gallery').each(function () {
         galleryTop.autoplay.start();
     });
 });
+
+$('.js-home-slider').each(function () {
+    var $wrapper = $(this);
+    var $thumbs = $('.js-home-slider-thumbs', this);
+    var $main = $('.js-home-slider-main', this);
+    var perView = Math.ceil(this.offsetWidth / 64);
+    var windowPerView = Math.ceil(window.innerWidth / 64);
+
+    // Product Gallery
+    var galleryThumbs = new Swiper($thumbs[0], {
+        allowTouchMove: false,
+        slidesPerView: perView,
+        freeMode: true,
+        loopedSlides: 6,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        centerInsufficientSlides: true
+    });
+    var galleryTop = new Swiper($main[0], {
+        slidesPerView: 1,
+        loop: true,
+        loopedSlides: 6, //looped slides should be the same
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        thumbs: {
+            swiper: galleryThumbs,
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+    });
+    $('.js-home-slider-main', this).on('click', '.swiper-slide', function () {
+        galleryTop.update();
+        galleryThumbs.update();
+        galleryThumbs.params.slidesPerView = windowPerView;
+        galleryThumbs.update();
+        galleryTop.autoplay.stop();
+    });
+});
