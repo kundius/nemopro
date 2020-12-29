@@ -1423,13 +1423,11 @@ $('.js-home-slider').each(function () {
     var $wrapper = $(this);
     var $thumbs = $('.js-home-slider-thumbs', this);
     var $main = $('.js-home-slider-main', this);
-
-    // Product Gallery
     var galleryThumbs = new Swiper($thumbs[0], {
         direction: 'vertical',
         allowTouchMove: false,
         slidesPerView: 3,
-        freeMode: true,
+        // freeMode: true,
         loop: true,
         loopedSlides: 6,
         spaceBetween: 10,
@@ -1454,9 +1452,12 @@ $('.js-home-slider').each(function () {
             disableOnInteraction: false,
         },
     });
-    $('.js-home-slider-main', this).on('click', '.swiper-slide', function () {
-        galleryTop.update();
-        galleryThumbs.update();
-        galleryTop.autoplay.stop();
+    $main.on('slideChange', function () {
+        console.log('slide changed', this, galleryTop);
     });
+    // $('.js-home-slider-main', this).on('click', '.swiper-slide', function () {
+    //     galleryTop.update();
+    //     galleryThumbs.update();
+    //     galleryTop.autoplay.stop();
+    // });
 });
