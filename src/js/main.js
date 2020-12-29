@@ -1431,6 +1431,7 @@ $('.js-home-slider').each(function () {
         slidesPerView: 3,
         freeMode: true,
         loopedSlides: 6,
+        spaceBetween: 10,
         watchSlidesVisibility: true,
         watchSlidesProgress: true,
         centerInsufficientSlides: true
