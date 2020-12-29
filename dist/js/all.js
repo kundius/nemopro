@@ -20120,10 +20120,7 @@ $('.js-home-slider').each(function () {
     loop: true,
     loopedSlides: 6,
     spaceBetween: 10,
-    centeredSlides: true // watchSlidesVisibility: true,
-    // watchSlidesProgress: true,
-    // centerInsufficientSlides: true
-
+    centeredSlides: true
   });
   var galleryTop = new Swiper($main[0], {
     slidesPerView: 1,
@@ -20148,9 +20145,5 @@ $('.js-home-slider').each(function () {
   });
   galleryTop.on('slideChange', function () {
     galleryThumbs.slideTo(galleryTop.activeIndex);
-  }); // $('.js-home-slider-main', this).on('click', '.swiper-slide', function () {
-  //     galleryTop.update();
-  //     galleryThumbs.update();
-  //     galleryTop.autoplay.stop();
-  // });
+  });
 });
