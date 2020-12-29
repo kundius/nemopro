@@ -1428,6 +1428,7 @@ $('.js-home-slider').each(function () {
 
     // Product Gallery
     var galleryThumbs = new Swiper($thumbs[0], {
+        direction: 'vertical',
         allowTouchMove: false,
         slidesPerView: perView,
         freeMode: true,

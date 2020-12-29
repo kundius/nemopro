@@ -20117,6 +20117,7 @@ $('.js-home-slider').each(function () {
   var windowPerView = Math.ceil(window.innerWidth / 64); // Product Gallery
 
   var galleryThumbs = new Swiper($thumbs[0], {
+    direction: 'vertical',
     allowTouchMove: false,
     slidesPerView: perView,
     freeMode: true,
