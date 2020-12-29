@@ -11153,32 +11153,29 @@ td.u-product-options__items {
         background-color: #026282;
         border: 1px solid #0eb5e2;
         box-shadow: 0 0 0 1px #067fa4;
-        padding: 0 12px;
-        min-height: 34px;
+        padding: 0 20px;
+        min-height: 44px;
         color: #fff;
-        font-size: 14px;
+        font-size: 18px;
         width: 100%;
         &::-moz-placeholder { color: #fff; }
         &::-webkit-input-placeholder { color: #fff; }
         &:-ms-input-placeholder { color: #fff; }
         &::-ms-input-placeholder { color: #fff; }
         &::placeholder { color: #fff; }
-        @media (max-width: $breakpoint-mini-max) {
-            min-height: 24px;
-        }
     }
     input[type="submit"] {
         position: absolute;
-        background: url('../img/icon-search.png') no-repeat 50% 50%;
+        background: url('../img/icon-search-white.png') no-repeat 50% 50%;
         right: 0;
-        top: 0;
-        width: 48px;
-        height: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
         display: block;
         border: none;
         cursor: pointer;
         text-indent: -9999px;
-        background-size: auto 60%;
     }
 }
 
