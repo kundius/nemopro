@@ -12110,7 +12110,10 @@ td.u-product-options__items {
 
 .home-slider-thumbs {
     width: 100%;
-    height: 330px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .home-slider-thumbs__wrapper {
@@ -12133,6 +12136,7 @@ td.u-product-options__items {
   background-color: #000;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
   img {
     display: block;
     width: 100%;
@@ -12149,6 +12153,10 @@ td.u-product-options__items {
   top: 0;
   width: 100%;
   height: 100%;
+}
+
+.home-slider-thumbs__slide:hover::after {
+  opacity: 0;
 }
 
 .home-slider-thumbs__slide.swiper-slide-active::after {
