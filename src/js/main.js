@@ -1427,19 +1427,19 @@ $('.js-home-slider').each(function () {
         direction: 'vertical',
         allowTouchMove: false,
         slidesPerView: 3,
-        // freeMode: true,
         loop: true,
-        loopedSlides: 6,
+        // loopedSlides: 6,
         spaceBetween: 10,
         centeredSlides: true,
         watchSlidesVisibility: true,
         watchSlidesProgress: true,
-        centerInsufficientSlides: true
+        centerInsufficientSlides: true,
+        cssMode: true
     });
     var galleryTop = new Swiper($main[0], {
         slidesPerView: 1,
         loop: true,
-        loopedSlides: 6, //looped slides should be the same
+        // loopedSlides: 6, //looped slides should be the same
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -1451,9 +1451,9 @@ $('.js-home-slider').each(function () {
             delay: 5000,
             disableOnInteraction: false,
         },
+        cssMode: true
     });
     galleryTop.on('slideChange', function () {
-        console.log(galleryThumbs, galleryTop);
         galleryThumbs.slideTo(galleryTop.activeIndex);
     });
     // $('.js-home-slider-main', this).on('click', '.swiper-slide', function () {
