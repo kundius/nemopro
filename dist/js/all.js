@@ -20144,7 +20144,8 @@ $('.js-home-slider').each(function () {
     }
   });
   galleryTop.on('slideChange', function () {
-    console.log('slide changed', this, galleryTop);
+    console.log(galleryThumbs, galleryTop);
+    galleryThumbs.slideTo(index, galleryTop.activeIndex);
   }); // $('.js-home-slider-main', this).on('click', '.swiper-slide', function () {
   //     galleryTop.update();
   //     galleryThumbs.update();
