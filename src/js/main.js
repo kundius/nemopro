@@ -1430,6 +1430,7 @@ $('.js-home-slider').each(function () {
         allowTouchMove: false,
         slidesPerView: 3,
         freeMode: true,
+        loop: true,
         loopedSlides: 6,
         spaceBetween: 10,
         centeredSlides: true,
