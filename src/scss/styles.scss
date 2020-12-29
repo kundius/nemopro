@@ -11181,6 +11181,10 @@ td.u-product-options__items {
         border: none;
         cursor: pointer;
         text-indent: -9999px;
+        @media (max-width: $breakpoint-mini-max) {
+            width: 24px;
+            height: 24px;
+        }
     }
 }
 
