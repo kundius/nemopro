@@ -12118,25 +12118,28 @@ td.u-product-options__items {
 }
 
 .home-slider-thumbs__slide {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  background-color: #000;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
     opacity: 0.3;
-    &.swiper-slide-active {
+  }
+  &.swiper-slide-active {
+    img {
       opacity: 1;
     }
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+  }
 }
