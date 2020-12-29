@@ -20119,7 +20119,7 @@ $('.js-home-slider').each(function () {
     allowTouchMove: false,
     slidesPerView: 3,
     freeMode: true,
-    loopedSlides: 3,
+    loopedSlides: 6,
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
     centerInsufficientSlides: true
