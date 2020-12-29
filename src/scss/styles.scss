@@ -12131,15 +12131,24 @@ td.u-product-options__items {
   -webkit-align-items: center;
   align-items: center;
   background-color: #000;
+  position: relative;
   img {
     display: block;
     width: 100%;
     height: auto;
-    opacity: 0.3;
   }
-  &.swiper-slide-active {
-    img {
-      opacity: 1;
-    }
-  }
+}
+
+.home-slider-thumbs__slide::after {
+  opacity: 0.3;
+  background: #022c3a;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-slider-thumbs__slide.swiper-slide-active::after {
+  opacity: 1;
 }
