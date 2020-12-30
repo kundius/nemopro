@@ -11150,7 +11150,7 @@ td.u-product-options__items {
 .u-search-form.ya-site-form {
     position: relative;
     input[name="text"] {
-        background-color: #026282;
+        background-color: #002c39;
         border: 1px solid #0eb5e2;
         box-shadow: 0 0 0 1px #067fa4;
         padding: 0 20px;
@@ -12150,13 +12150,11 @@ td.u-product-options__items {
   img {
     display: block;
     min-width: 100%;
-    min-height: 100%;
-    width: auto;
     height: auto;
     position: absolute;
-    left: 50%;
+    left: 0;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
   }
 }
 
