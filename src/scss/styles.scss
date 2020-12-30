@@ -11171,21 +11171,18 @@ td.u-product-options__items {
     }
     input[type="submit"] {
         position: absolute;
-        background: url('../img/icon-search-white.png') no-repeat 50% 50%;
-        right: 0;
+        background: url(../img/icon-search-white.png) no-repeat 50% 50%;
+        right: 20px;
         top: 50%;
         transform: translateY(-50%);
-        width: 44px;
-        height: 44px;
+        width: 22px;
+        height: 22px;
         display: block;
         border: none;
         cursor: pointer;
         text-indent: -9999px;
-        background-size: auto 60%;
         @media (max-width: $breakpoint-mini-max) {
-            width: 24px;
-            height: 24px;
-            right: 4px;
+            right: 12px;
         }
     }
 }
