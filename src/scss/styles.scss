@@ -11181,8 +11181,11 @@ td.u-product-options__items {
         border: none;
         cursor: pointer;
         text-indent: -9999px;
+        background-size: cover;
         @media (max-width: $breakpoint-mini-max) {
             right: 12px;
+            width: 18px;
+            height: 18px;
         }
     }
 }
