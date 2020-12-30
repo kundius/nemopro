@@ -11172,7 +11172,7 @@ td.u-product-options__items {
     input[type="submit"] {
         position: absolute;
         background: url(../img/icon-search-white.svg) no-repeat 50% 50%;
-        right: 20px;
+        right: 18px;
         top: 50%;
         transform: translateY(-50%);
         width: 28px;
@@ -11184,7 +11184,7 @@ td.u-product-options__items {
         background-size: cover;
         padding: 0;
         @media (max-width: $breakpoint-mini-max) {
-            right: 12px;
+            right: 10px;
             width: 18px;
             height: 18px;
         }
