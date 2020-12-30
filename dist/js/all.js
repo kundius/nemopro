@@ -20139,7 +20139,7 @@ $('.js-home-slider').each(function () {
       swiper: galleryThumbs
     },
     autoplay: {
-      delay: 3000,
+      delay: 4000,
       disableOnInteraction: false
     }
   });
