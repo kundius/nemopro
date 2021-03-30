@@ -4047,7 +4047,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 /**
- * Swiper 6.5.1
+ * Swiper 6.5.2
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -4055,7 +4055,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
  *
  * Released under the MIT License
  *
- * Released on: March 29, 2021
+ * Released on: March 30, 2021
  */
 !function (e, t) {
   "object" == (typeof exports === "undefined" ? "undefined" : _typeof(exports)) && "undefined" != typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define(t) : (e = "undefined" != typeof globalThis ? globalThis : e || self).Swiper = t();
@@ -4846,7 +4846,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }), r = 0, n = s.length; r < n; r += 1) {
         var l = s[r],
             o = Object.getOwnPropertyDescriptor(i, l);
-        void 0 !== o && o.enumerable && (S(e[l]) && S(i[l]) ? C(e[l], i[l]) : !S(e[l]) && S(i[l]) ? (e[l] = {}, C(e[l], i[l])) : e[l] = i[l]);
+        void 0 !== o && o.enumerable && (S(e[l]) && S(i[l]) ? i[l].__swiper__ ? e[l] = i[l] : C(e[l], i[l]) : !S(e[l]) && S(i[l]) ? (e[l] = {}, i[l].__swiper__ ? e[l] = i[l] : C(e[l], i[l])) : e[l] = i[l]);
       }
     }
 
@@ -5545,14 +5545,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
                   var V = a(X, "width"),
                       W = a(X, "padding-left"),
                       F = a(X, "padding-right"),
-                      q = a(X, "margin-left"),
-                      _ = a(X, "margin-right"),
+                      _ = a(X, "margin-left"),
+                      q = a(X, "margin-right"),
                       j = X.getPropertyValue("box-sizing");
 
-                  if (j && "border-box" === j) S = V + q + _;else {
+                  if (j && "border-box" === j) S = V + _ + q;else {
                     var U = O[0],
                         K = U.clientWidth;
-                    S = V + W + F + q + _ + (U.offsetWidth - K);
+                    S = V + W + F + _ + q + (U.offsetWidth - K);
                   }
                 }
                 Y && (O[0].style.transform = Y), R && (O[0].style.webkitTransform = R), i.roundLengths && (S = Math.floor(S));
@@ -6386,7 +6386,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
 
       var l = this;
-      l.support = z(), l.device = P({
+      l.__swiper__ = !0, l.support = z(), l.device = P({
         userAgent: a.userAgent
       }), l.browser = k(), l.eventsListeners = {}, l.eventsAnyListeners = [], void 0 === l.modules && (l.modules = {}), Object.keys(l.modules).forEach(function (e) {
         var t = l.modules[e];
@@ -6737,7 +6737,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       e.virtual.slides = [], e.params.virtual.cache && (e.virtual.cache = {}), e.virtual.update(!0), e.slideTo(0, 0);
     }
   },
-      q = {
+      _ = {
     name: "virtual",
     params: {
       virtual: {
@@ -6774,7 +6774,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   },
-      _ = {
+      q = {
     handle: function handle(e) {
       var t = this,
           a = l(),
@@ -6844,7 +6844,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       M(this, {
         keyboard: t({
           enabled: !1
-        }, _)
+        }, q)
       });
     },
     on: {
@@ -8191,7 +8191,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   },
-      ue = [q, j, {
+      ue = [_, j, {
     name: "mousewheel",
     params: {
       mousewheel: {
