@@ -1841,7 +1841,7 @@ jdiv {
     overflow: hidden;
 }
 
-.products-image:hover .products-image__flipper {
+.products-image.products-image_hover .products-image__flipper {
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);

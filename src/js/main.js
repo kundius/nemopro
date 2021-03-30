@@ -1456,3 +1456,23 @@ $('.js-home-slider').each(function () {
         galleryThumbs.slideTo(galleryTop.activeIndex);
     });
 });
+
+$('.products-image').each(function () {
+    let clicked = false
+    if (window.matchMedia("(min-width: 768px)").matches) {
+        this.addEventListener('mouseenter', function () {
+            this.classList.add('products-image_hover');
+        });
+        this.addEventListener('mouseleave', function () {
+            this.classList.remove('products-image_hover');
+        });
+    } else {
+        this.addEventListener('click', function (e) {
+            if (clicked) return;
+
+            e.preventDefault();
+            clicked = true;
+            this.classList.add('products-image_hover');
+        });
+    }
+});
