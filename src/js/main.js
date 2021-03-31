@@ -1458,32 +1458,32 @@ $('.js-home-slider').each(function () {
 });
 
 $('.products-image').each(function () {
-    let clicked = false
+    let item = this
+    let canClick = false
+    
+    const secondTouchListener = (e) => {
+        if (!item.contains(e.target)) {
+            item.classList.remove('products-image_hover');
+        }
+        document.removeEventListener('touchstart', secondTouchListener);
+    }
+    
     if (window.matchMedia("(min-width: 768px)").matches) {
-        this.addEventListener('mouseenter', function () {
-            this.classList.add('products-image_hover');
+        item.addEventListener('mouseenter', function () {
+            item.classList.add('products-image_hover');
         });
-        this.addEventListener('mouseleave', function () {
-            this.classList.remove('products-image_hover');
+        item.addEventListener('mouseleave', function () {
+            item.classList.remove('products-image_hover');
         });
     } else {
-        /*$(this).on('touchstart touchend', function (e) {
-            e.preventDefault();
-            $(this).toggleClass('products-image_hover');
-        });*/
-        this.addEventListener('touchstart', function (e) {
-            console.log(e);
-            // this.classList.add('products-image_hover');
+        item.addEventListener('touchstart', function (e) {
+            item.classList.add('products-image_hover');
+            document.addEventListener('touchstart', secondTouchListener);
         });
-        /*
         this.addEventListener('click', function (e) {
-            if (clicked) return;
-
+            if (canClick) return;
             e.preventDefault();
-            clicked = true;
-            this.classList.add('products-image_hover');
         });
-        */
     }
 });
 
