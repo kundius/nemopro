@@ -20262,7 +20262,7 @@ function initProductsImageOnMobile() {
 
       if (hoveredItem == item) {
         var href = $(item).find('a').first().attr('href');
-        console.log(href);
+        window.location = href;
       }
 
       $('.products-image').removeClass('products-image_hover');
