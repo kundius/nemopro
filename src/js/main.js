@@ -1469,7 +1469,7 @@ function initProductsImageOnDesktop () {
 }
 
 function initProductsImageOnMobile () {
-    let hoveredItem = null
+    let hoveredItem = null;
 
     document.addEventListener('touchstart', function (e) {
         console.log('touch document');
@@ -1480,10 +1480,13 @@ function initProductsImageOnMobile () {
 
     $('.products-image').each(function () {
         let item = this;
+        let canClick = false;
         item.addEventListener('touchstart', function (e) {
             console.log('touch item');
             hoveredItem = item;
-            item.classList.add('products-image_hover');
+            canClick = true;
+            $('.products-image').removeClass('products-image_hover');
+            $(item).addClass('products-image_hover');
         });
         item.addEventListener('click', function (e) {
             if (canClick) return;

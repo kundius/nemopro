@@ -20258,10 +20258,13 @@ function initProductsImageOnMobile() {
   });
   $('.products-image').each(function () {
     var item = this;
+    var canClick = false;
     item.addEventListener('touchstart', function (e) {
       console.log('touch item');
       hoveredItem = item;
-      item.classList.add('products-image_hover');
+      canClick = true;
+      $('.products-image').removeClass('products-image_hover');
+      $(item).addClass('products-image_hover');
     });
     item.addEventListener('click', function (e) {
       if (canClick) return;
