@@ -20249,11 +20249,20 @@ $('.products-image').each(function () {
       this.classList.remove('products-image_hover');
     });
   } else {
-    this.addEventListener('click', function (e) {
-      if (clicked) return;
-      e.preventDefault();
-      clicked = true;
-      this.classList.add('products-image_hover');
+    /*$(this).on('touchstart touchend', function (e) {
+        e.preventDefault();
+        $(this).toggleClass('products-image_hover');
+    });*/
+    this.addEventListener('touchenter', function (e) {
+      console.log(e); // this.classList.add('products-image_hover');
     });
+    /*
+    this.addEventListener('click', function (e) {
+        if (clicked) return;
+         e.preventDefault();
+        clicked = true;
+        this.classList.add('products-image_hover');
+    });
+    */
   }
 });
