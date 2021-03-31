@@ -20238,38 +20238,40 @@ $('.js-home-slider').each(function () {
     galleryThumbs.slideTo(galleryTop.activeIndex);
   });
 });
-$('.products-image').each(function () {
-  var item = this;
-  var canClick = false;
 
-  var documentTouchListener = function documentTouchListener(e) {
-    console.log('documentTouchListener');
+function initProductsImageOnDesktop() {
+  $('.products-image').hover(function () {
+    this.classList.add('products-image_hover');
+  }, function () {
+    this.classList.remove('products-image_hover');
+  });
+}
 
-    if (!item.contains(e.target)) {
-      item.classList.remove('products-image_hover');
+function initProductsImageOnMobile() {
+  var hoveredItem = null;
+  document.addEventListener('touchstart', function (e) {
+    console.log('touch document');
+
+    if (hoveredItem && !hoveredItem.contains(e.target)) {
+      hoveredItem.classList.remove('products-image_hover');
     }
-
-    document.removeEventListener('touchstart', documentTouchListener);
-  };
-
-  var itemTouchListener = function itemTouchListener(e) {
-    console.log('itemTouchListener');
-    item.classList.add('products-image_hover');
-    document.addEventListener('touchstart', documentTouchListener);
-  };
-
-  if (window.matchMedia("(min-width: 768px)").matches) {
-    item.addEventListener('mouseenter', function () {
+  });
+  $('.products-image').each(function () {
+    var item = this;
+    item.addEventListener('touchstart', function (e) {
+      console.log('touch item');
+      hoveredItem = item;
       item.classList.add('products-image_hover');
     });
-    item.addEventListener('mouseleave', function () {
-      item.classList.remove('products-image_hover');
-    });
-  } else {
-    item.addEventListener('touchstart', itemTouchListener);
-    this.addEventListener('click', function (e) {
+    item.addEventListener('click', function (e) {
       if (canClick) return;
       e.preventDefault();
     });
-  }
-});
+  });
+}
+
+if (window.matchMedia("(min-width: 768px)").matches) {
+  initProductsImageOnDesktop();
+} else {
+  initProductsImageOnMobile();
+}

@@ -1457,37 +1457,44 @@ $('.js-home-slider').each(function () {
     });
 });
 
-$('.products-image').each(function () {
-    let item = this
-    let canClick = false
-    
-    const documentTouchListener = (e) => {
-        console.log('documentTouchListener')
-        if (!item.contains(e.target)) {
-            item.classList.remove('products-image_hover');
+function initProductsImageOnDesktop () {
+    $('.products-image').hover(
+        function() {
+            this.classList.add('products-image_hover');
+        },
+        function() {
+            this.classList.remove('products-image_hover');
         }
-        document.removeEventListener('touchstart', documentTouchListener);
-    }
-    
-    const itemTouchListener = (e) => {
-        console.log('itemTouchListener')
-        item.classList.add('products-image_hover');
-        document.addEventListener('touchstart', documentTouchListener);
-    }
-    
-    if (window.matchMedia("(min-width: 768px)").matches) {
-        item.addEventListener('mouseenter', function () {
+    );
+}
+
+function initProductsImageOnMobile () {
+    let hoveredItem = null
+
+    document.addEventListener('touchstart', function (e) {
+        console.log('touch document');
+        if (hoveredItem && !hoveredItem.contains(e.target)) {
+            hoveredItem.classList.remove('products-image_hover');
+        }
+    });
+
+    $('.products-image').each(function () {
+        let item = this;
+        item.addEventListener('touchstart', function (e) {
+            console.log('touch item');
+            hoveredItem = item;
             item.classList.add('products-image_hover');
         });
-        item.addEventListener('mouseleave', function () {
-            item.classList.remove('products-image_hover');
-        });
-    } else {
-        item.addEventListener('touchstart', itemTouchListener);
-        this.addEventListener('click', function (e) {
+        item.addEventListener('click', function (e) {
             if (canClick) return;
             e.preventDefault();
         });
-    }
-});
+    });
+}
+
+if (window.matchMedia("(min-width: 768px)").matches) {
+    initProductsImageOnDesktop();
+} else {
+    initProductsImageOnMobile();
+}
 
