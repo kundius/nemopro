@@ -1474,6 +1474,7 @@ function initProductsImageOnMobile () {
     document.addEventListener('touchstart', function (e) {
         if (hoveredItem && !hoveredItem.contains(e.target)) {
             $(hoveredItem).removeClass('products-image_hover');
+            hoveredItem = null;
         }
     });
 
@@ -1484,10 +1485,11 @@ function initProductsImageOnMobile () {
             console.log(hoveredItem, item, hoveredItem == item);
             if (hoveredItem == item) {
                 let link = $(item).closest('a');
+                console.log(link);
             }
-            hoveredItem = item;
             $('.products-image').removeClass('products-image_hover');
             $(item).addClass('products-image_hover');
+            hoveredItem = item;
         });
         item.addEventListener('click', function (e) {
             e.preventDefault();
