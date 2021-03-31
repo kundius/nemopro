@@ -20260,7 +20260,6 @@ function initProductsImageOnMobile() {
     var canClick = false;
     item.addEventListener('touchstart', function (e) {
       hoveredItem = item;
-      $('.products-image').data('canClick', false);
       $('.products-image').removeClass('products-image_hover');
       $(item).addClass('products-image_hover');
     });
