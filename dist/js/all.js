@@ -20243,7 +20243,7 @@ $('.products-image').each(function () {
   var canClick = false;
 
   var documentTouchListener = function documentTouchListener(e) {
-    console.log(item, item.contains(e.target));
+    console.log('documentTouchListener');
 
     if (!item.contains(e.target)) {
       item.classList.remove('products-image_hover');
@@ -20253,6 +20253,7 @@ $('.products-image').each(function () {
   };
 
   var itemTouchListener = function itemTouchListener(e) {
+    console.log('itemTouchListener');
     item.classList.add('products-image_hover');
     document.addEventListener('touchstart', documentTouchListener);
   };

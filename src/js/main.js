@@ -1462,7 +1462,7 @@ $('.products-image').each(function () {
     let canClick = false
     
     const documentTouchListener = (e) => {
-        console.log(item, item.contains(e.target))
+        console.log('documentTouchListener')
         if (!item.contains(e.target)) {
             item.classList.remove('products-image_hover');
         }
@@ -1470,6 +1470,7 @@ $('.products-image').each(function () {
     }
     
     const itemTouchListener = (e) => {
+        console.log('itemTouchListener')
         item.classList.add('products-image_hover');
         document.addEventListener('touchstart', documentTouchListener);
     }
