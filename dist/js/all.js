@@ -20261,8 +20261,8 @@ function initProductsImageOnMobile() {
       console.log(hoveredItem, item, hoveredItem == item);
 
       if (hoveredItem == item) {
-        var link = $(item).closest('a');
-        console.log(link);
+        var href = $(item).find('a').first().attr('href');
+        console.log(href);
       }
 
       $('.products-image').removeClass('products-image_hover');

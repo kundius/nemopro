@@ -1484,8 +1484,8 @@ function initProductsImageOnMobile () {
         item.addEventListener('touchstart', function (e) {
             console.log(hoveredItem, item, hoveredItem == item);
             if (hoveredItem == item) {
-                let link = $(item).closest('a');
-                console.log(link);
+                let href = $(item).find('a').first().attr('href');
+                console.log(href);
             }
             $('.products-image').removeClass('products-image_hover');
             $(item).addClass('products-image_hover');
