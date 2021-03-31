@@ -1472,26 +1472,25 @@ function initProductsImageOnMobile () {
     let hoveredItem = null;
 
     document.addEventListener('touchstart', function (e) {
-        console.log('touch document');
         if (hoveredItem && !hoveredItem.contains(e.target)) {
-            hoveredItem.classList.remove('products-image_hover');
+            $(hoveredItem).removeClass('products-image_hover');
         }
     });
 
     $('.products-image').each(function () {
         let item = this;
         let canClick = false;
+
         item.addEventListener('touchstart', function (e) {
-            console.log('touch item');
             hoveredItem = item;
-            canClick = true;
             $('.products-image').removeClass('products-image_hover');
             $(item).addClass('products-image_hover');
         });
         item.addEventListener('click', function (e) {
-            console.log('click item');
-            if (canClick) return;
-            e.preventDefault();
+            if (!canClick) {
+                canClick = true;
+                e.preventDefault();
+            }
         });
     });
 }
