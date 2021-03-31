@@ -20242,12 +20242,19 @@ $('.products-image').each(function () {
   var item = this;
   var canClick = false;
 
-  var secondTouchListener = function secondTouchListener(e) {
+  var documentTouchListener = function documentTouchListener(e) {
+    console.log(item, item.contains(e.target));
+
     if (!item.contains(e.target)) {
       item.classList.remove('products-image_hover');
     }
 
     document.removeEventListener('touchstart', secondTouchListener);
+  };
+
+  var itemTouchListener = function itemTouchListener(e) {
+    item.classList.add('products-image_hover');
+    document.addEventListener('touchstart', documentTouchListener);
   };
 
   if (window.matchMedia("(min-width: 768px)").matches) {
@@ -20258,10 +20265,7 @@ $('.products-image').each(function () {
       item.classList.remove('products-image_hover');
     });
   } else {
-    item.addEventListener('touchstart', function (e) {
-      item.classList.add('products-image_hover');
-      document.addEventListener('touchstart', secondTouchListener);
-    });
+    item.addEventListener('touchstart', itemTouchListener);
     this.addEventListener('click', function (e) {
       if (canClick) return;
       e.preventDefault();
