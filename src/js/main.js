@@ -1481,16 +1481,16 @@ function initProductsImageOnMobile () {
         let item = this;
 
         item.addEventListener('touchstart', function (e) {
+            if (hoveredItem == item) {
+                let link = $(item).closest('a');
+                console.log(link);
+            }
             hoveredItem = item;
             $('.products-image').removeClass('products-image_hover');
-            $('.products-image').data('clicked', false);
             $(item).addClass('products-image_hover');
         });
         item.addEventListener('click', function (e) {
-            if (!$(item).data('clicked')) {
-                $(item).data('clicked', true);
-                e.preventDefault();
-            }
+            e.preventDefault();
         });
     });
 }
