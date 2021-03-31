@@ -1471,7 +1471,7 @@ $('.products-image').each(function () {
             e.preventDefault();
             $(this).toggleClass('products-image_hover');
         });*/
-        this.addEventListener('touchenter', function (e) {
+        this.addEventListener('touchstart', function (e) {
             console.log(e);
             // this.classList.add('products-image_hover');
         });
