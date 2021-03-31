@@ -20257,9 +20257,10 @@ function initProductsImageOnMobile() {
   $('.products-image').each(function () {
     var item = this;
     item.addEventListener('touchstart', function (e) {
+      console.log(hoveredItem, item, hoveredItem == item);
+
       if (hoveredItem == item) {
         var link = $(item).closest('a');
-        console.log(link);
       }
 
       hoveredItem = item;
