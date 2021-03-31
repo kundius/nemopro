@@ -1491,7 +1491,7 @@ function initProductsImageOnMobile () {
             hoveredItem = item;
         });
         item.addEventListener('click', function (e) {
-            if (!$(item).data('canClick', true)) {
+            if (!$(item).data('canClick')) {
                 e.preventDefault();
             }
         });
