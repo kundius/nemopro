@@ -1482,7 +1482,6 @@ function initProductsImageOnMobile () {
         let item = this;
 
         item.addEventListener('touchstart', function (e) {
-            console.log(hoveredItem, item, hoveredItem == item);
             if (hoveredItem == item) {
                 let href = $(item).find('a').first().attr('href');
                 window.location = href;

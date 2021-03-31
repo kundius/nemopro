@@ -20258,8 +20258,6 @@ function initProductsImageOnMobile() {
   $('.products-image').each(function () {
     var item = this;
     item.addEventListener('touchstart', function (e) {
-      console.log(hoveredItem, item, hoveredItem == item);
-
       if (hoveredItem == item) {
         var href = $(item).find('a').first().attr('href');
         window.location = href;
