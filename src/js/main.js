@@ -1466,7 +1466,7 @@ $('.products-image').each(function () {
         if (!item.contains(e.target)) {
             item.classList.remove('products-image_hover');
         }
-        document.removeEventListener('touchstart', secondTouchListener);
+        document.removeEventListener('touchstart', documentTouchListener);
     }
     
     const itemTouchListener = (e) => {

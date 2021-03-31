@@ -20249,7 +20249,7 @@ $('.products-image').each(function () {
       item.classList.remove('products-image_hover');
     }
 
-    document.removeEventListener('touchstart', secondTouchListener);
+    document.removeEventListener('touchstart', documentTouchListener);
   };
 
   var itemTouchListener = function itemTouchListener(e) {
