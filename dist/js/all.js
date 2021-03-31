@@ -20267,6 +20267,7 @@ function initProductsImageOnMobile() {
       $(item).addClass('products-image_hover');
     });
     item.addEventListener('click', function (e) {
+      console.log('click item');
       if (canClick) return;
       e.preventDefault();
     });
