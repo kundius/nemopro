@@ -20259,7 +20259,7 @@ function initProductsImageOnMobile() {
   $('.products-image').on('touchstart', function () {
     $('.products-image').data('canClick', false);
 
-    if (hoveredItem == item) {
+    if (hoveredItem == this) {
       $(this).data('canClick', true);
     }
 
