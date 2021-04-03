@@ -20267,7 +20267,7 @@ function initProductsImageOnMobile() {
     $(this).addClass('products-image_hover');
     hoveredItem = this;
   });
-  $('.products-image').on('click', function () {
+  $('.products-image').on('click', function (e) {
     if (!$(this).data('canClick')) {
       e.preventDefault();
     }
