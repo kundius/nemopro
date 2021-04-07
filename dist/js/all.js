@@ -20240,10 +20240,10 @@ $('.js-home-slider').each(function () {
 });
 
 function initProductsImageOnDesktop() {
-  $('.products-image').on('mouseenter', function () {
+  $(document).on('mouseenter', '.products-image', function () {
     this.classList.add('products-image_hover');
   });
-  $('.products-image').on('mouseleave', function () {
+  $(document).on('mouseleave', '.products-image', function () {
     this.classList.remove('products-image_hover');
   });
 }
@@ -20256,7 +20256,7 @@ function initProductsImageOnMobile() {
       hoveredItem = null;
     }
   });
-  $('.products-image').on('touchstart', function () {
+  $(document).on('touchstart', '.products-image', function () {
     $('.products-image').data('canClick', false);
 
     if (hoveredItem == this) {
@@ -20267,7 +20267,7 @@ function initProductsImageOnMobile() {
     $(this).addClass('products-image_hover');
     hoveredItem = this;
   });
-  $('.products-image').on('click', function (e) {
+  $(document).on('click', '.products-image', function (e) {
     if (!$(this).data('canClick')) {
       e.preventDefault();
     }
