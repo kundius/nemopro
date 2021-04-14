@@ -12197,14 +12197,14 @@ td.u-product-options__items {
     width: 18px;
     height: 18px;
   }
-  &_active {
-    color: #019934;
-  }
   &:hover {
     background: #169bbb;
     color: #002837;
-    &_active {
-      color: #019934;
-    }
+  }
+  &_active {
+    color: #019934;
+    // &:hover {
+    //   color: #019934;
+    // }
   }
 }
