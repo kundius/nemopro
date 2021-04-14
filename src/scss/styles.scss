@@ -9241,9 +9241,9 @@ th.forum-headline__replies {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 6px 0;
+    min-height: 38px;
     @media (max-width: $breakpoint-medium-max) {
-        padding: 2px 0 5px;
+        min-height: 32px;
     }
 }
 
@@ -9459,7 +9459,6 @@ th.forum-headline__replies {
         color: #169bbb;
         border-radius: 50%;
         margin-left: 19px;
-        margin-right: 4px;
         flex-shrink: 0;
         &.full,
         &:hover {
@@ -12183,9 +12182,9 @@ td.u-product-options__items {
 .toolbar-modern-office {
   display: inline-block;
   background: #005976;
-  border-radius: 13px;
-  width: 26px;
-  height: 26px;
+  border-radius: 14px;
+  width: 28px;
+  height: 28px;
   position: relative;
   color: #002837;
   svg {
