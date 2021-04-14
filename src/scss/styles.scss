@@ -9330,55 +9330,6 @@ th.forum-headline__replies {
     }
 }
 
-.toolbar-modern-office {
-    display: flex;
-    align-items: center;
-}
-
-.toolbar-modern-office__auth {
-    color: #fff;
-    line-height: 23px;
-    min-height: 23px;
-    border-radius: 20px;
-    white-space: nowrap;
-    text-shadow: none;
-    padding: 0 6px;
-    font-size: 12px;
-    border: 1px solid #01718f;
-    background: #064261;
-    background: -moz-linear-gradient(top,#064261 0,#04283b 50%,#064160 100%);
-    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#064261),color-stop(50%,#04283b),color-stop(100%,#064160));
-    background: -webkit-linear-gradient(top,#064261 0,#04283b 50%,#064160 100%);
-    background: -o-linear-gradient(top,#064261 0,#04283b 50%,#064160 100%);
-    background: -ms-linear-gradient(top,#064261 0,#04283b 50%,#064160 100%);
-    background: linear-gradient(to bottom,#064261 0,#04283b 50%,#064160 100%);
-    &:hover {
-        text-decoration: none;
-        color: #fff;
-        background: #0c6c9e;
-        background: -moz-linear-gradient(top,#0c6c9e 0,#07405e 50%,#0c6b9c 100%);
-        background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#0c6c9e),color-stop(50%,#07405e),color-stop(100%,#0c6b9c));
-        background: -webkit-linear-gradient(top,#0c6c9e 0,#07405e 50%,#0c6b9c 100%);
-        background: -o-linear-gradient(top,#0c6c9e 0,#07405e 50%,#0c6b9c 100%);
-        background: -ms-linear-gradient(top,#0c6c9e 0,#07405e 50%,#0c6b9c 100%);
-        background: linear-gradient(to bottom,#0c6c9e 0,#07405e 50%,#0c6b9c 100%);
-    }
-}
-
-.toolbar-modern-office__login {
-    color: #ffffff;
-    font-size: 15px;
-    text-decoration: underline;
-    margin-left: 16px;
-    &:hover {
-        text-decoration: none;
-        color: #fff;
-    }
-    @media (max-width: $breakpoint-medium-max) {
-        display: none;
-    }
-}
-
 .header-sticky {
     z-index: 990 !important;
 }
@@ -12226,5 +12177,33 @@ td.u-product-options__items {
     @media (max-width: $breakpoint-small-max) {
       bottom: 4px;
     }
+  }
+}
+
+.toolbar-modern-office {
+  display: flex;
+  align-items: center;
+}
+
+.toolbar-modern-office__login,
+.toolbar-modern-office__profile {
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  background: #005976;
+  &::before {
+    content: '';
+    display: block;
+    width: 26px;
+    height: 26px;
+    background: url('../img/icon-auth.svg') no-repeat 50% 50%;
+    background-size: cover;
+  }
+  span {
+    line-height: 26px;
+    display: block;
+    padding: 0 8px;
+    font-size: 14px;
+    color: #169bbb;
   }
 }
