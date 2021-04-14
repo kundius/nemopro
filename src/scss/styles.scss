@@ -10752,16 +10752,19 @@ td.u-product-options__items {
 }*/
 
 .u-product-delivery__title {
-    font-size: 20px;
-    color: #19191b;
-    line-height: 1.6;
-    font-weight: 700;
-    margin-bottom: 12px;
-    @media (max-width: $breakpoint-small-max) {
-        font-size: 18px;
-        line-height: 1.2;
-        margin-bottom: 17px;
-    }
+  font-size: 20px;
+  color: #19191b;
+  line-height: 1.6;
+  font-weight: 700;
+  margin-bottom: 12px;
+  @media (max-width: $breakpoint-small-max) {
+    font-size: 14px;
+    line-height: 1.2;
+    margin-bottom: 17px;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    text-align: center;
+  }
 }
 
 .u-calc {
@@ -10772,19 +10775,19 @@ td.u-product-options__items {
 }
 
 .u-calc__title {
-    color: #62625f;
-    font-size: 19px;
-    line-height: 1;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
-    margin-bottom: 20px;
-    @media (max-width: $breakpoint-small-max) {
-        color: #005976;
-        font-weight: bold;
-        font-size: 20px;
-        margin-bottom: 25px;
-    }
+  color: #62625f;
+  font-size: 19px;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+  @media (max-width: $breakpoint-small-max) {
+    color: #005976;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
 }
 
 .u-calc-city {
