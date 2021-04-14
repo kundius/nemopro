@@ -12185,25 +12185,24 @@ td.u-product-options__items {
   align-items: center;
 }
 
-.toolbar-modern-office__login,
-.toolbar-modern-office__profile {
-  display: flex;
-  align-items: center;
-  padding: 2px;
+.toolbar-modern-office__button {
+  display: inline-block;
   background: #005976;
-  &::before {
-    content: '';
-    display: block;
-    width: 26px;
-    height: 26px;
-    background: url('../img/icon-auth.svg') no-repeat 50% 50%;
-    background-size: cover;
+  border-radius: 13px;
+  width: 26px;
+  height: 26px;
+  position: relative;
+  color: #002837;
+  svg {
+    fill: currentColor;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
   }
-  span {
-    line-height: 26px;
-    display: block;
-    padding: 0 8px;
-    font-size: 14px;
-    color: #169bbb;
+  &_active {
+    color: #019934;
   }
 }
