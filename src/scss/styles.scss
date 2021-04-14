@@ -12181,11 +12181,6 @@ td.u-product-options__items {
 }
 
 .toolbar-modern-office {
-  display: flex;
-  align-items: center;
-}
-
-.toolbar-modern-office__button {
   display: inline-block;
   background: #005976;
   border-radius: 13px;
@@ -12204,5 +12199,12 @@ td.u-product-options__items {
   }
   &_active {
     color: #019934;
+  }
+  &:hover {
+    background: #169bbb;
+    color: #002837;
+    &_active {
+      color: #019934;
+    }
   }
 }
