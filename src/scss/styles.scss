@@ -9509,6 +9509,7 @@ th.forum-headline__replies {
         border-radius: 50%;
         margin-left: 19px;
         margin-right: 4px;
+        flex-shrink: 0;
         &.full,
         &:hover {
             border-color: #ffee00;
