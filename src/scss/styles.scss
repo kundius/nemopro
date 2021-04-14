@@ -12203,8 +12203,8 @@ td.u-product-options__items {
   }
   &_active {
     color: #019934;
-    // &:hover {
-    //   color: #019934;
-    // }
+    &:hover {
+      color: #019934;
+    }
   }
 }
