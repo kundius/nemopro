@@ -10494,37 +10494,36 @@ td.u-product-options__items {
 }
 
 .u-product-remains__value {
-    color: #079d24;
-    font-size: 16px;
-    text-decoration: underline;
-    text-align: center;
-    white-space: nowrap;
-    box-sizing: border-box;
-    padding-right: 30px;
-    width: 180px;
+  color: #666;
+  font-size: 16px;
+}
+
+.u-product-remains__value span {
+  color: #079d24;
+  font-size: 16px;
+  text-decoration: underline;
+  text-align: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+  &::before {
+    content: '';
+    width: 8px;
+    height: 4px;
+    border-left: 3px solid red;
+    border-bottom: 3px solid red;
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+    transform: rotate(-45deg);
+    position: relative;
+    top: -1px;
+  }
+  &._expected {
+    color: #e4b213;
     &::before {
-        content: '';
-        width: 8px;
-        height: 4px;
-        border-left: 3px solid red;
-        border-bottom: 3px solid red;
-        display: inline-block;
-        margin-right: 8px;
-        vertical-align: middle;
-        transform: rotate(-45deg);
-        position: relative;
-        top: -1px;
+      display: none;
     }
-    &._expected {
-        color: #e4b213;
-        &::before {
-            display: none;
-        }
-    }
-    @media (max-width: $breakpoint-mini-max) {
-        width: 130px;
-        padding-right: 20px;
-    }
+  }
 }
 
 
