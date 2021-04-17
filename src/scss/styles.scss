@@ -10480,8 +10480,9 @@ td.u-product-options__items {
 
 .u-product-remains {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   margin-top: 15px;
+  justify-content: space-between;
 }
 
 .u-product-remains__label {
@@ -10494,7 +10495,7 @@ td.u-product-options__items {
 }
 
 .u-product-remains__value {
-  color: #666;
+  color: #888;
   font-size: 16px;
 }
 
@@ -10505,6 +10506,7 @@ td.u-product-options__items {
   text-align: center;
   white-space: nowrap;
   box-sizing: border-box;
+  margin-right: 6px;
   &::before {
     content: '';
     width: 8px;
@@ -10524,6 +10526,13 @@ td.u-product-options__items {
       display: none;
     }
   }
+}
+
+.u-product-remains-desc {
+  font-size: 18px;
+  color: #888;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
 }
 
 
