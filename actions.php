@@ -21,17 +21,17 @@ $modx->setLogTarget('FILE');
 $modx->error->message = null;
 
 define('MODX_ACTION_MODE', true);
-$NemoproFavorites = $modx->getService('nemopro', 'NemoproFavorites', $modx->getOption('nemopro.core_path', null, $modx->getOption('core_path') . 'components/nemopro/') . 'model/nemopro/');
-if ($modx->error->hasError() || !($NemoproFavorites instanceof NemoproFavorites)) {
+$Favorites = $modx->getService('nemopro', 'Favorites', $modx->getOption('nemopro.core_path', null, $modx->getOption('core_path') . 'components/nemopro/') . 'model/nemopro/');
+if ($modx->error->hasError() || !($Favorites instanceof Favorites)) {
     die('Error');
 }
 
 switch($_REQUEST['action']){
     case 'favorites/add':
-        $response = $NemoproFavorites->add((int)$_POST['id']);
+        $response = $Favorites->add((int)$_POST['id']);
         break;
     case 'favorites/remove':
-        $response = $NemoproFavorites->remove((int)$_POST['id']);
+        $response = $Favorites->remove((int)$_POST['id']);
         break;
     case 'get/autocomplete/city':
         /** @var gl $gl */
