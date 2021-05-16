@@ -30,10 +30,10 @@ if ($modx->error->hasError() || !($Favorites instanceof Favorites)) {
 
 switch($_REQUEST['action']){
     case 'favorites/add':
-        $response = $Favorites->add((int)$_POST['id']);
+        $response = $Favorites->add((int)$_REQUEST['id']);
         break;
     case 'favorites/remove':
-        $response = $Favorites->remove((int)$_POST['id']);
+        $response = $Favorites->remove((int)$_REQUEST['id']);
         break;
     case 'get/autocomplete/city':
         /** @var gl $gl */
