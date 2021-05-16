@@ -20,6 +20,8 @@ $modx->setLogLevel(modX::LOG_LEVEL_ERROR);
 $modx->setLogTarget('FILE');
 $modx->error->message = null;
 
+$modx->switchContext('web');
+
 define('MODX_ACTION_MODE', true);
 $Favorites = $modx->getService('nemopro', 'Favorites', $modx->getOption('nemopro.core_path', null, $modx->getOption('core_path') . 'components/nemopro/') . 'model/nemopro/');
 if ($modx->error->hasError() || !($Favorites instanceof Favorites)) {
