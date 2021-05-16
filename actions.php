@@ -1,20 +1,38 @@
 <?php
-// ini_set('error_reporting', E_ALL);
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 
-if(empty($_REQUEST['action'])) exit('unresolve');
+if (empty($_REQUEST['action'])) {
+    die('Access denied');
+} else {
+    $action = $_REQUEST['action'];
+}
 
 // Подключаем
 define('MODX_API_MODE', true);
 require '../../index.php';
 
 // Включаем обработку ошибок
-$modx->getService('error','error.modError');
-$modx->setLogLevel(modX::LOG_LEVEL_INFO);
-$modx->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
+$modx->getService('error', 'error.modError');
+$modx->getRequest();
+$modx->setLogLevel(modX::LOG_LEVEL_ERROR);
+$modx->setLogTarget('FILE');
+$modx->error->message = null;
+
+define('MODX_ACTION_MODE', true);
+$NemoproFavorites = $modx->getService('nemopro', 'NemoproFavorites', $modx->getOption('nemopro.core_path', null, $modx->getOption('core_path') . 'components/nemopro/') . 'model/nemopro/');
+if ($modx->error->hasError() || !($NemoproFavorites instanceof NemoproFavorites)) {
+    die('Error');
+}
 
 switch($_REQUEST['action']){
+    case 'favorites/add':
+        $response = $NemoproFavorites->add((int)$_POST['id']);
+        break;
+    case 'favorites/remove':
+        $response = $NemoproFavorites->remove((int)$_POST['id']);
+        break;
     case 'get/autocomplete/city':
         /** @var gl $gl */
         // if (!$gl = $modx->getService('gl', 'gl',
@@ -59,9 +77,9 @@ switch($_REQUEST['action']){
         break;
 }
 
-if (is_array($output)) {
-	$output = $modx->toJSON($output);
+if (is_array($response)) {
+    $response = json_encode($response);
 }
 
 @session_write_close();
-exit($output);
+exit($response);
