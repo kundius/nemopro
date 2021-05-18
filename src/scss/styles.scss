@@ -12229,13 +12229,10 @@ td.u-product-options__items {
   font-size: 20px;
   border-radius: 0;
   padding: 0;
+  cursor: pointer;
   svg {
     fill: currentColor;
   }
-}
-
-.msfavorites-toggle:hover {
-  color: #026282;
 }
 
 .msfavorites-toggle_added {
