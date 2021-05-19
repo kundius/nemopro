@@ -9248,6 +9248,14 @@ th.forum-headline__replies {
     }
 }
 
+.toolbar-modern__buttons {
+  display: flex;
+  align-items: center;
+  * + * {
+    margin-left: 8px;
+  }
+}
+
 .toolbar-modern-contacts {
     display: flex;
     line-height: 1;
