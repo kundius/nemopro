@@ -12291,14 +12291,14 @@ td.u-product-options__items {
   font-size: 18px;
 }
 
-.msfavorites-list .filters {
+.msfavorites-nodata {
+
+}
+
+.filters-wrap_empty .filters {
   justify-content: flex-end;
 }
 
-.msfavorites-list .filter-select {
+.filters-wrap_empty .filter-select {
   flex-grow: 0;
-}
-
-.msfavorites-nodata {
-
 }
