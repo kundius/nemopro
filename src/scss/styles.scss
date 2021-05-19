@@ -12277,3 +12277,28 @@ td.u-product-options__items {
 .msfavorites-toggle_added + .uk-dropdown .msfavorites-toggle__tooltip-remove {
   display: block;
 }
+
+.msfavorites-title {
+  text-transform: uppercase;
+  font-size: 31px;
+  line-height: 1.15;
+  color: #026282;
+  margin: 0 0 32px;
+}
+
+.msfavorites-info {
+  text-align: center;
+  font-size: 18px;
+}
+
+.msfavorites-list .filters {
+  justify-content: flex-end;
+}
+
+.msfavorites-list .filter-select {
+  flex-grow: 0;
+}
+
+.msfavorites-nodata {
+
+}
