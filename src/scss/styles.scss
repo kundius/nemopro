@@ -4112,27 +4112,28 @@ jdiv {
   display: -ms-flex;
   display: -o-flex;
   display: flex;
-    span {
-        background: url('../img/star-gray.svg') no-repeat 0 50%;
-        width: 16px;
-        height: 16px;
-        background-size: auto 100%;
-        display: inline-block;
-        margin-right: 4px;
-        position: relative;
-        &:last-child {
-            margin-right: 0;
-        }
+  margin-left: auto;
+  span {
+    background: url('../img/star-gray.svg') no-repeat 0 50%;
+    width: 16px;
+    height: 16px;
+    background-size: auto 100%;
+    display: inline-block;
+    margin-right: 4px;
+    position: relative;
+    &:last-child {
+      margin-right: 0;
     }
-    i {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: url('../img/star.svg') no-repeat 0 50%;
-        background-size: auto 100%;
-    }
+  }
+  i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/star.svg') no-repeat 0 50%;
+    background-size: auto 100%;
+  }
 }
 
 .product-review {
@@ -10057,6 +10058,7 @@ th.forum-headline__replies {
 .u-product-share {
     position: relative;
     z-index: 20;
+    margin-right: 8px;
     &.uk-open .u-product-share__box {
       width: 208px;
     }
