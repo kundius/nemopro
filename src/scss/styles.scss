@@ -9256,6 +9256,33 @@ th.forum-headline__replies {
   }
 }
 
+.toolbar-modern__buttons-item {
+  display: inline-block;
+  background: #005976;
+  border-radius: 16px;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  color: #ffffff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    fill: currentColor;
+  }
+  &:hover {
+    background: #169bbb;
+    color: #002837;
+  }
+  &_active {
+    color: #019934;
+    &:hover {
+      color: #019934;
+    }
+  }
+}
+
 .toolbar-modern-contacts {
     display: flex;
     line-height: 1;
@@ -12181,35 +12208,6 @@ td.u-product-options__items {
   .swiper-pagination-fraction {
     @media (max-width: $breakpoint-small-max) {
       bottom: 4px;
-    }
-  }
-}
-
-.toolbar-modern-office {
-  display: inline-block;
-  background: #005976;
-  border-radius: 14px;
-  width: 28px;
-  height: 28px;
-  position: relative;
-  color: #002837;
-  svg {
-    fill: currentColor;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 18px;
-    height: 18px;
-  }
-  &:hover {
-    background: #169bbb;
-    color: #002837;
-  }
-  &_active {
-    color: #019934;
-    &:hover {
-      color: #019934;
     }
   }
 }
