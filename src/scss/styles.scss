@@ -12207,7 +12207,8 @@ td.u-product-options__items {
 }
 
 .uk-dropdown, .uk-dropdown-blank {
-  width: 200px;
+  width: auto;
+  min-width: 200px;
 }
 
 .uk-dropdown {
