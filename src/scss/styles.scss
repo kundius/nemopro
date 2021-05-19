@@ -10100,28 +10100,6 @@ th.forum-headline__replies {
     transition: transform .3s ease;
 }
 
-.u-custom-dropdown {
-  background: #f7f6f6;
-  font-size: 16px;
-  color: #010a0c;
-  line-height: 1.15;
-  border: 1px solid #9ba5af;
-  border-radius: 6px;
-  text-align: center;
-  padding: 10px 20px;
-  width: auto;
-  strong {
-    font-weight: 500;
-  }
-  strong,
-  span {
-    color: #0092b3;
-  }
-  @media (max-width: $breakpoint-mini-max) {
-    display: none;
-  }
-}
-
 .u-product-price {
   position: relative;
   line-height: 1;
@@ -12216,6 +12194,25 @@ td.u-product-options__items {
     &:hover {
       color: #019934;
     }
+  }
+}
+
+.uk-dropdown {
+  background: #f7f6f6;
+  font-size: 16px;
+  color: #010a0c;
+  line-height: 1.15;
+  border: 1px solid #9ba5af;
+  border-radius: 6px;
+  text-align: center;
+  padding: 10px 20px;
+  width: auto;
+  strong {
+    font-weight: 500;
+  }
+  strong,
+  span {
+    color: #0092b3;
   }
 }
 
