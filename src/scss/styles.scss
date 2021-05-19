@@ -12241,3 +12241,19 @@ td.u-product-options__items {
 .msfavorites-toggle_added {
   color: #026282;
 }
+
+.msfavorites-toggle__tooltip-add {
+  display: block;
+}
+
+.msfavorites-toggle__tooltip-remove {
+  display: none;
+}
+
+.msfavorites-toggle_added .msfavorites-toggle__tooltip-add {
+  display: none;
+}
+
+.msfavorites-toggle_added .msfavorites-toggle__tooltip-remove {
+  display: block;
+}
