@@ -12204,6 +12204,10 @@ td.u-product-options__items {
   }
 }
 
+.uk-dropdown, .uk-dropdown-blank {
+  width: 220px;
+}
+
 .uk-dropdown {
   background: #f7f6f6;
   font-size: 16px;
@@ -12212,7 +12216,6 @@ td.u-product-options__items {
   border: 1px solid #9ba5af;
   border-radius: 6px;
   padding: 10px 20px;
-  width: auto;
   strong {
     font-weight: 500;
   }
