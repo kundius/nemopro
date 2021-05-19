@@ -10048,7 +10048,6 @@ th.forum-headline__replies {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  overflow: hidden;
   position: relative;
   @media (max-width: $breakpoint-small-max) {
     margin-top: 10px;
@@ -10059,7 +10058,7 @@ th.forum-headline__replies {
     position: relative;
     z-index: 20;
     &.uk-open .u-product-share__box {
-        transform: translateX(0);
+      width: 208px;
     }
 }
 
@@ -10090,14 +10089,22 @@ th.forum-headline__replies {
 }
 
 .u-product-share__box {
-    background-color: #e4b213;
-    left: 0;
-    top: 0;
-    position: absolute;
-    width: 208px;
-    padding: 8px;
-    transform: translateX(-100%);
-    transition: transform .3s ease;
+  background-color: #e4b213;
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 0;
+  overflow: hidden;
+  transition: width .3s ease;
+  height: 40px;
+}
+
+.u-product-share__box-inner {
+  width: 208px;
+  padding: 8px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .u-product-price {
