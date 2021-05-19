@@ -12250,10 +12250,10 @@ td.u-product-options__items {
   display: none;
 }
 
-.msfavorites-toggle_added .msfavorites-toggle__tooltip-add {
+.msfavorites-toggle_added + .uk-dropdown .msfavorites-toggle__tooltip-add {
   display: none;
 }
 
-.msfavorites-toggle_added .msfavorites-toggle__tooltip-remove {
+.msfavorites-toggle_added + .uk-dropdown .msfavorites-toggle__tooltip-remove {
   display: block;
 }
