@@ -12280,15 +12280,22 @@ td.u-product-options__items {
 
 .msfavorites-title {
   text-transform: uppercase;
-  font-size: 31px;
+  font-size: 32px;
   line-height: 1.15;
   color: #026282;
-  margin: 0 0 32px;
+  margin: 10px 0 22px;
 }
 
 .msfavorites-info {
   text-align: center;
-  font-size: 18px;
+  font-size: 19px;
+  max-width: 960px;
+  line-height: 1.25;
+  margin: 16px auto;
+}
+
+.msfavorites-list {
+  margin-bottom: 64px;
 }
 
 .msfavorites-nodata {
