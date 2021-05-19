@@ -938,9 +938,9 @@ function optionsWidth () {
     });
 }
 
-$('.js-discount-dropdown').each(function() {
+$('.js-custom-dropdown').each(function() {
     const dropdown = UIkit.dropdown(this, {
-        pos: 'top-right',
+        pos: this.dataset.pos,
         remaintime: 0,
         mode: window.matchMedia("(min-width: 640px)").matches ? 'hover' : 'click'
     });
