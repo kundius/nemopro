@@ -12327,3 +12327,19 @@ td.u-product-options__items {
 .filters_empty .filter-select {
   flex-grow: 0;
 }
+
+.msfavorites-remove {
+  background: transparent;
+  margin-left: auto;
+  border: none;
+  font-size: 16px;
+  color: #005976;
+  padding: 0;
+  text-decoration: underline;
+  margin-bottom: 6px;
+  margin-top: 6px;
+}
+
+.msfavorites-remove::after {
+  content: 'x';
+}
