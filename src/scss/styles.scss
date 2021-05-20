@@ -12337,6 +12337,8 @@ td.u-product-options__items {
   padding: 0;
   margin-bottom: 6px;
   margin-top: 6px;
+  display: flex;
+  align-items: center;
 }
 
 .msfavorites-remove span {
@@ -12360,6 +12362,8 @@ td.u-product-options__items {
   color: #005976;
   padding: 0;
   margin-top: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .msfavorites-clear span {
