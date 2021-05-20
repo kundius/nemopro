@@ -12341,5 +12341,8 @@ td.u-product-options__items {
 }
 
 .msfavorites-remove::after {
-  content: 'x';
+  display: block;
+  content: "\f00d";
+  font-family: FontAwesome;
+  color: #ff0101;
 }
