@@ -12305,6 +12305,10 @@ td.u-product-options__items {
   }
 }
 
+.msfavorites-info a {
+  text-decoration: underline;
+}
+
 .msfavorites-list {
   margin-bottom: 64px;
 }
@@ -12392,4 +12396,19 @@ td.u-product-options__items {
   color: #c01116;
   margin-left: 6px;
   text-decoration: none;
+}
+
+.cart-info {
+  text-align: center;
+  font-size: 18px;
+  max-width: 960px;
+  line-height: 1.25;
+  margin: 16px auto;
+  @media (max-width: $breakpoint-mini-max) {
+    font-size: 14px;
+  }
+}
+
+.cart-info a {
+  text-decoration: underline;
 }
