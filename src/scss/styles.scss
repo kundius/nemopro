@@ -12351,3 +12351,26 @@ td.u-product-options__items {
   margin-left: 6px;
   text-decoration: none;
 }
+
+.msfavorites-clear {
+  background: transparent;
+  margin-left: auto;
+  border: none;
+  font-size: 18px;
+  color: #005976;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.msfavorites-clear span {
+  text-decoration: underline;
+}
+
+.msfavorites-clear::after {
+  display: block;
+  content: "\f00d";
+  font-family: FontAwesome;
+  color: #c01116;
+  margin-left: 6px;
+  text-decoration: none;
+}
