@@ -12302,6 +12302,18 @@ td.u-product-options__items {
   margin-bottom: 64px;
 }
 
+.msfavorites-list #mse2_msfavorites|product {
+  display: none;
+}
+
+.msfavorites-list {
+  justify-content: flex-end;
+}
+
+.msfavorites-list .filter-select {
+  flex-grow: 0;
+}
+
 .msfavorites-nodata {
 
 }
