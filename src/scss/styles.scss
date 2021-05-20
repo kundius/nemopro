@@ -2223,7 +2223,9 @@ jdiv {
 }
 
 .products-cell {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .products-list-narrow {
