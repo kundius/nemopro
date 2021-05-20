@@ -12302,15 +12302,15 @@ td.u-product-options__items {
   margin-bottom: 64px;
 }
 
-.msfavorites-list #mse2_msfavorites|product {
+.msfavorites-list [id="mse2_msfavorites|product"] {
   display: none;
 }
 
-.msfavorites-list {
+.msfavorites-list .filters {
   justify-content: flex-end;
 }
 
-.msfavorites-list .filter-select {
+.msfavorites-list .filters .filter-select {
   flex-grow: 0;
 }
 
