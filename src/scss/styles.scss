@@ -12339,10 +12339,15 @@ td.u-product-options__items {
   margin-top: 6px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .msfavorites-remove span {
   text-decoration: underline;
+}
+
+.msfavorites-remove:hover span {
+  text-decoration: none;
 }
 
 .msfavorites-remove::after {
@@ -12364,10 +12369,15 @@ td.u-product-options__items {
   margin-top: 20px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .msfavorites-clear span {
   text-decoration: underline;
+}
+
+.msfavorites-clear:hover span {
+  text-decoration: none;
 }
 
 .msfavorites-clear::after {
