@@ -12267,6 +12267,9 @@ td.u-product-options__items {
   border-radius: 0;
   padding: 0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   svg {
     fill: currentColor;
   }
