@@ -12326,6 +12326,12 @@ td.u-product-options__items {
   display: none;
 }
 
+.msfavorites-list [id="mse2_msoption|view"] {
+  @media (min-width: $breakpoint-small) {
+    flex-grow: 0;
+  }
+}
+
 .msfavorites-list [id="mse2_ms|vendor"] {
   @media (min-width: $breakpoint-small) {
     margin-right: auto;
