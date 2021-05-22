@@ -9296,6 +9296,12 @@ th.forum-headline__replies {
       color: #019934;
     }
   }
+  &.active {
+    color: #fe0;
+    &:hover {
+      color: #fe0;
+    }
+  }
 }
 
 .toolbar-modern-contacts {
@@ -12267,7 +12273,7 @@ td.u-product-options__items {
 }
 
 .msfavorites-toggle_added {
-  color: #026282;
+  color: #fe0;
 }
 
 .msfavorites-toggle__tooltip-add {
