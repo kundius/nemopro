@@ -12352,6 +12352,14 @@ td.u-product-options__items {
   }
 }
 
+.msfavorites-list .mse2_results_nodata {
+  font-size: 0;
+  &::before {
+    content: 'Вы ещё не добавили товары в избранные.';
+    font-size: 19px;
+  }
+}
+
 .msfavorites-nodata {
 
 }
