@@ -5854,6 +5854,8 @@ th.forum-headline__replies {
 .menu-profile {
   padding: 0 10px;
   margin: 0 -10px 20px;
+  display: flex;
+  flex-wrap: wrap;
   box-shadow: inset 0 -5px 10px -8px #000;
   &:after {
     content: '';
@@ -5863,7 +5865,9 @@ th.forum-headline__replies {
   > li {
     margin: 2px 1px 0;
     list-style: none;
-    float: left;
+    @media (max-width: $breakpoint-small-max) {
+      width: calc(50% - 2px);
+    }
     > a {
       font-size: 16px;
       color: #ffffff;
@@ -5873,6 +5877,7 @@ th.forum-headline__replies {
       display: block;
       text-decoration: none;
       padding: 14px 25px;
+      text-align: center;
       text-shadow: -0.788px -0.616px 0px rgb( 0, 0, 0 );
       &:hover {
         background-color: #05a5c9;
