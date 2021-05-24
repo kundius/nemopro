@@ -5927,12 +5927,10 @@ th.forum-headline__replies {
 
 .profile {
   margin: 35px 0 90px;
-}
-.profile__left {
-  text-align: right;
+  display: flex;
+  justify-content: center;
 }
 .profile__avatar {
-  float: left;
   margin-right: 32px;
   img {
     width: 100px;
@@ -5940,15 +5938,11 @@ th.forum-headline__replies {
   }
 }
 .profile__right {
-  padding-left: 132px;
 }
 .profile__login {
   font-size: 18px;
   font-weight: bold;
   color: #004c63;
-  i {
-    margin-left: -19px;
-  }
 }
 .profile__title {
   color: #333333;
@@ -7226,18 +7220,19 @@ th.forum-headline__replies {
       background-color: rgb( 88, 215, 226 );
   }
 
-    @media (max-width: $breakpoint-small-max) {
-        right: 20px;
-        bottom: 30px;
-        width: 48px;
-        height: 48px;
-        padding-top: 8px;
-        line-height: 1.5;
-        font-size: 10px;
-        i {
-            font-size: 14px;
-        }
+  @media (max-width: $breakpoint-small-max) {
+    left: 20px;
+    right: auto;
+    bottom: 30px;
+    width: 48px;
+    height: 48px;
+    padding-top: 8px;
+    line-height: 1.5;
+    font-size: 10px;
+    i {
+      font-size: 14px;
     }
+  }
 }
 
 .yashare-auto-init {
@@ -11062,10 +11057,17 @@ td.u-product-options__items {
 }
 
 .u-calc-info {
-    margin-top: 25px;
-    color: #6d6968;
-    font-size: 16px;
-    line-height: 1.2;
+  margin-top: 25px;
+  color: #6d6968;
+  font-size: 16px;
+  line-height: 1.2;
+  margin-left: 25px;
+  margin-right: 25px;
+  @media (max-width: $breakpoint-small-max) {
+    font-size: 15px;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .u-product-discuss {
