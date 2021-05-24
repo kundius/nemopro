@@ -5898,32 +5898,34 @@ th.forum-headline__replies {
         background: -ms-linear-gradient(top,  #05a5c9 0%,#016f8c 100%); /* IE10+ */
         background: linear-gradient(to bottom,  #05a5c9 0%,#016f8c 100%); /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05a5c9', endColorstr='#016f8c',GradientType=0 ); /* IE6-9 */
-
         position: relative;
-        &:after,
-        &:before {
-          content: '';
-          display: block;
-          position: absolute;
-          left: 50%;
-          width: 0;
-          height: 0;
-        }
-        &:after {
-          border-style: solid;
-          border-width: 5px 5px 0;
-          border-color: #016f8c transparent transparent transparent;
-          margin-left: -5px;
-          bottom: -5px;
-          z-index: 20;
-        }
-        &:before {
-          border-style: solid;
-          border-width: 6px 6px 0;
-          border-color: #004f65 transparent transparent transparent;
-          margin-left: -6px;
-          bottom: -7px;
-          z-index: 10;
+
+        @media (min-width: $breakpoint-medium) {
+          &:after,
+          &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 50%;
+            width: 0;
+            height: 0;
+          }
+          &:after {
+            border-style: solid;
+            border-width: 5px 5px 0;
+            border-color: #016f8c transparent transparent transparent;
+            margin-left: -5px;
+            bottom: -5px;
+            z-index: 20;
+          }
+          &:before {
+            border-style: solid;
+            border-width: 6px 6px 0;
+            border-color: #004f65 transparent transparent transparent;
+            margin-left: -6px;
+            bottom: -7px;
+            z-index: 10;
+          }
         }
       }
     }
