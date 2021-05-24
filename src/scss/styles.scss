@@ -10589,6 +10589,10 @@ td.u-product-options__items {
   box-sizing: border-box;
   padding-right: 30px;
   width: 180px;
+  @media (max-width: $breakpoint-mini-max) {
+    width: 130px;
+    padding-right: 20px;
+  }
 }
 
 .u-product-remains__value:before {
