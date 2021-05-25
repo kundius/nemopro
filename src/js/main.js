@@ -1499,3 +1499,31 @@ if (window.matchMedia("(min-width: 768px)").matches) {
     initProductsImageOnMobile();
 }
 
+$('.u-feedback-message').each(function () {
+
+})
+
+
+function initFeedbackMessageOnDesktop () {
+    $('.u-feedback-message').on('mouseenter', function() {
+        this.classList.add('u-feedback-message_active');
+    });
+    $('.u-feedback-message').on('mouseleave', function() {
+        this.classList.remove('u-feedback-message_active');
+    });
+}
+
+function initFeedbackMessageOnMobile () {
+    $('.u-feedback-message').on('click', function() {
+        this.classList.add('u-feedback-message_active');
+    });
+    $('.u-feedback-message').on('focusout', function () {
+        this.classList.remove('u-feedback-message_active');
+    });
+}
+
+if (window.matchMedia("(min-width: 768px)").matches) {
+    initFeedbackMessageOnDesktop();
+} else {
+    initFeedbackMessageOnMobile();
+}

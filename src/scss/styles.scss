@@ -2419,7 +2419,6 @@ jdiv {
   border: 1px solid #01556b;
   background-color: #ffffff;
   position: relative;
-  overflow: hidden;
   margin-top: 10px;
 }
 
@@ -7201,7 +7200,7 @@ th.forum-headline__replies {
   z-index: 999;
   display: block;
   right: 20px;
-  bottom: 20px;
+  bottom: 60px;
   width: 64px;
   height: 64px;
   border-radius: 6px;
@@ -11454,7 +11453,7 @@ td.u-product-options__items {
     height: 38px;
     box-sizing: border-box;
     background: #016a9a;
-    &:hover {
+    &_active {
         .u-feedback-message__front {
             transform: translateY(100%);
         }
