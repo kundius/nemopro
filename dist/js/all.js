@@ -20293,10 +20293,19 @@ function initFeedbackMessageOnDesktop() {
 
 function initFeedbackMessageOnMobile() {
   $('.u-feedback-message').on('click', function () {
-    this.classList.add('u-feedback-message_active');
-  });
-  $('.u-feedback-message').on('focusout', function () {
-    this.classList.remove('u-feedback-message_active');
+    var el = this;
+    el.classList.add('u-feedback-message_active');
+
+    var outsideClick = function outsideClick(e) {
+      var itsChildren = el.contains(e.target);
+
+      if (e.target != el && !itsChildren) {
+        el.classList.remove('u-feedback-message_active');
+        document.removeEventListener('click', outsideClick);
+      }
+    };
+
+    document.addEventListener('click', outsideClick);
   });
 }
 
