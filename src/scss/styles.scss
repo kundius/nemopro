@@ -4114,6 +4114,9 @@ jdiv {
   display: -o-flex;
   display: flex;
   margin-left: auto;
+  @media (max-width: $breakpoint-mini-max) {
+    margin-right: auto;
+  }
   span {
     background: url('../img/star-gray.svg') no-repeat 0 50%;
     width: 16px;
