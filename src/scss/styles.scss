@@ -7583,25 +7583,28 @@ th.forum-headline__replies {
 
 .coupon-sticker {
   position: absolute;
-  width: 5em; // 80px
+  width: 80px;
   background: #fe0000;
-  left: 0.625em; // 10px
-  top: 0.3125em; // -5px
+  left: 10px;
+  top: -5px;
   z-index: 5;
-  border-radius: 0 0.1875em 0 0; // 3px
+  border-radius: 0 3px 0 0;
   .u-product-gallery & {
-    border-radius: 0.1875em 0.1875em 0 0; // 3px
+    border-radius: 3px 3px 0 0;
+  }
+  &_small {
+    
   }
 }
 
 .coupon-sticker__angle {
   position: absolute;
   top: 0;
-  left: -0.375em; // 6px
+  left: -6px;
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 0 0.3125em 0.375em; // 5px 6px
+  border-width: 0 0 5px 6px;
   border-color: transparent transparent #dc3535 transparent;
   .u-product-gallery & {
     display: none;
@@ -7615,9 +7618,9 @@ th.forum-headline__replies {
   height: 50%;
   width: 50%;
   background: #FE0000;
-  box-shadow: 0 0.1875em 0.1875em -1px rgba(0, 0, 0, 0.3); // 3px
+  box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.3);
   transform: skew(0,26deg);
-  top: calc(50% + 0.625em); // 10px
+  top: calc(50% + 10px);
   z-index: 10;
 }
 
@@ -7628,9 +7631,9 @@ th.forum-headline__replies {
   height: 50%;
   width: 50%;
   background: #FE0000;
-  box-shadow: 0 0.1875em 0.1875em -1px rgba(0, 0, 0, 0.3); // 3px
+  box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.3);
   transform: skew(0,-26deg);
-  top: calc(50% + 0.625em); // 10px
+  top: calc(50% + 10px);
   z-index: 10;
 }
 
