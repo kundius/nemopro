@@ -7593,7 +7593,9 @@ th.forum-headline__replies {
     border-radius: 3px 3px 0 0;
   }
   &_small {
-    
+    top: -3px;
+    left: 5px;
+    width: 50px;
   }
 }
 
@@ -7609,6 +7611,9 @@ th.forum-headline__replies {
   .u-product-gallery & {
     display: none;
   }
+  .coupon-sticker_small & {
+    border-width: 0 0 3px 3px;
+  }
 }
 
 .coupon-sticker::before {
@@ -7622,6 +7627,10 @@ th.forum-headline__replies {
   transform: skew(0,26deg);
   top: calc(50% + 10px);
   z-index: 10;
+  .coupon-sticker_small & {
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.3);
+    top: calc(50% + 7px);
+  }
 }
 
 .coupon-sticker:after {
@@ -7635,6 +7644,10 @@ th.forum-headline__replies {
   transform: skew(0,-26deg);
   top: calc(50% + 10px);
   z-index: 10;
+  .coupon-sticker_small & {
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.3);
+    top: calc(50% + 7px);
+  }
 }
 
 .coupon-sticker__inner {
@@ -7657,12 +7670,20 @@ th.forum-headline__replies {
   line-height: 1;
   margin-top: 4px;
   margin-bottom: 4px;
+  .coupon-sticker_small & {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 8px;
+  }
 }
 
 .coupon-sticker__price {
   font-size: 16px;
   text-transform: uppercase;
   font-weight: 600;
+  .coupon-sticker_small & {
+    font-size: 12px;
+  }
 }
 
 .coupon-sticker__price i {
