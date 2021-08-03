@@ -7593,7 +7593,7 @@ th.forum-headline__replies {
     border-radius: 3px 3px 0 0;
   }
   &_small {
-    top: -3px;
+    top: -4px;
     left: 5px;
     width: 50px;
   }
@@ -7612,7 +7612,8 @@ th.forum-headline__replies {
     display: none;
   }
   .coupon-sticker_small & {
-    border-width: 0 0 3px 3px;
+    border-width: 0 0 4px 4px;
+    left: -4px;
   }
 }
 
