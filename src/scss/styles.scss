@@ -7627,14 +7627,15 @@ th.forum-headline__replies {
   box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.3);
   transform: skew(0,26deg);
   top: calc(50% + 10px);
-  z-index: 10;
-  .coupon-sticker_small & {
-    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.3);
-    top: calc(50% + 7px);
-  }
+  z-index: 11;
 }
 
-.coupon-sticker:after {
+.coupon-sticker_small::before {
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.3);
+  top: calc(50% + 7px);
+}
+
+.coupon-sticker::after {
   content: "";
   right: 0;
   position: absolute;
@@ -7645,10 +7646,11 @@ th.forum-headline__replies {
   transform: skew(0,-26deg);
   top: calc(50% + 10px);
   z-index: 10;
-  .coupon-sticker_small & {
-    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.3);
-    top: calc(50% + 7px);
-  }
+}
+
+.coupon-sticker_small::after {
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.3);
+  top: calc(50% + 7px);
 }
 
 .coupon-sticker__inner {
@@ -7672,8 +7674,8 @@ th.forum-headline__replies {
   margin-top: 4px;
   margin-bottom: 4px;
   .coupon-sticker_small & {
-    margin-top: 2px;
-    margin-bottom: 2px;
+    margin-top: 3px;
+    margin-bottom: 3px;
     font-size: 8px;
   }
 }
