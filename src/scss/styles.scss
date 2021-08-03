@@ -7596,6 +7596,9 @@ th.forum-headline__replies {
     top: -4px;
     left: 5px;
     width: 50px;
+    .uk-icon-rub {
+      display: none;
+    }
   }
 }
 
@@ -7632,7 +7635,7 @@ th.forum-headline__replies {
 
 .coupon-sticker_small::before {
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.3);
-  top: calc(50% + 7px);
+  top: calc(50% + 4px);
 }
 
 .coupon-sticker::after {
@@ -7650,7 +7653,7 @@ th.forum-headline__replies {
 
 .coupon-sticker_small::after {
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.3);
-  top: calc(50% + 7px);
+  top: calc(50% + 4px);
 }
 
 .coupon-sticker__inner {
@@ -7677,6 +7680,7 @@ th.forum-headline__replies {
     margin-top: 3px;
     margin-bottom: 3px;
     font-size: 8px;
+    display: none;
   }
 }
 
@@ -7686,6 +7690,7 @@ th.forum-headline__replies {
   font-weight: 600;
   .coupon-sticker_small & {
     font-size: 12px;
+    padding: 6px 0;
   }
 }
 
