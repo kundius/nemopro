@@ -8310,6 +8310,10 @@ th.forum-headline__replies {
     position: absolute;
     transform: rotate(-54deg) skewY(22deg);
   }
+  &_active::after {
+    top: 15px;
+    transform: rotate(126deg) skewY(22deg);
+  }
   @media (max-width: $breakpoint-mini-max) {
     display: block;
   }

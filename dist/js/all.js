@@ -20487,7 +20487,10 @@ if (window.matchMedia("(min-width: 768px)").matches) {
   initFeedbackMessageOnMobile();
 }
 
-function initHiddenFilterOnMobile() {
+function initFilterBar() {
+  var sticky = UIkit.sticky($('.filters-wrap'), {
+    top: $('.filters-wrap').height()
+  });
   $('.filters-toggle-on-moblie').on('click', function () {
     $('#mse2_filters').toggleClass('filters-hidden-on-moblie');
     $(this).toggleClass('filters-toggle-on-moblie_active');
@@ -20495,4 +20498,4 @@ function initHiddenFilterOnMobile() {
   });
 }
 
-initHiddenFilterOnMobile();
+initFilterBar();
