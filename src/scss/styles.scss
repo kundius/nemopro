@@ -8289,7 +8289,7 @@ th.forum-headline__replies {
         display: none;
       }
       &.uk-active .filters {
-        display: block;
+        display: grid;
       }
       &_hidden.uk-active .filters {
         display: none;
