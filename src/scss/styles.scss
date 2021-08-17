@@ -8280,7 +8280,7 @@ th.forum-headline__replies {
     display: none;
   }
   .filters-wrap.uk-active & {
-    display: block;
+    display: grid;
   }
 }
 
