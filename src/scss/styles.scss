@@ -8283,13 +8283,16 @@ th.forum-headline__replies {
 //     display: grid;
 //   }
 // }
-.filters-wrap_hidden {
+.filters-wrap {
     @media (max-width: $breakpoint-mini-max) {
-      .filters {
+      &_hidden .filters {
         display: none;
       }
       &.uk-active .filters {
         display: block;
+      }
+      &_hidden.uk-active .filters {
+        display: none;
       }
     }
 }
