@@ -20481,16 +20481,18 @@ if (window.matchMedia("(min-width: 768px)").matches) {
 
 function initFilterBar() {
   if ($.cookie('show-filters') == 'true') {
-    $('.filters-wrap').removeClass('filters-wrap_hidden');
-    $('#mse2_filters').removeClass('filters-hidden-on-moblie');
+    $('.filters-wrap').removeClass('filters-wrap_hidden'); // $('#mse2_filters').removeClass('filters-hidden-on-moblie');
+
     $('.filters-toggle-on-moblie').addClass('filters-toggle-on-moblie_active');
+    window.dispatchEvent(new Event('resize'));
   }
 
   $(document).on('click', '.filters-wrap__toggle', function () {
-    $('.filters-wrap').toggleClass('filters-wrap_hidden');
-    $('#mse2_filters').toggleClass('filters-hidden-on-moblie');
+    $('.filters-wrap').toggleClass('filters-wrap_hidden'); // $('#mse2_filters').toggleClass('filters-hidden-on-moblie');
+
     $('.filters-toggle-on-moblie').toggleClass('filters-toggle-on-moblie_active');
     $.cookie('show-filters', !$('.filters-wrap').hasClass('filters-wrap_hidden'));
+    window.dispatchEvent(new Event('resize'));
   }); // var sticky = UIkit.sticky($('.filters-wrap'), {
   //     top: $('.filters-wrap').height()
   // });

@@ -8275,13 +8275,23 @@ th.forum-headline__replies {
     }
 }
 
-.filters-hidden-on-moblie {
-  @media (max-width: $breakpoint-mini-max) {
-    display: none;
-  }
-  .filters-wrap.uk-active & {
-    display: grid;
-  }
+// .filters-hidden-on-moblie {
+//   @media (max-width: $breakpoint-mini-max) {
+//     display: none;
+//   }
+//   .filters-wrap.uk-active & {
+//     display: grid;
+//   }
+// }
+.filters-wrap_hidden {
+    @media (max-width: $breakpoint-mini-max) {
+      .filters {
+        display: none;
+      }
+      &.uk-active .filters {
+        display: block;
+      }
+    }
 }
 
 .filters-toggle-on-moblie {
