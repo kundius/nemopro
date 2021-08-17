@@ -20491,6 +20491,7 @@ function initHiddenFilterOnMobile() {
   $('.filters-toggle-on-moblie').on('click', function () {
     $('#mse2_filters').toggleClass('filters-hidden-on-moblie');
     $(this).toggleClass('filters-toggle-on-moblie_active');
+    window.dispatchEvent(new Event('resize'));
   });
 }
 

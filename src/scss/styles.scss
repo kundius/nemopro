@@ -8279,6 +8279,9 @@ th.forum-headline__replies {
   @media (max-width: $breakpoint-mini-max) {
     display: none;
   }
+  .filters-wrap.uk-active & {
+    display: block;
+  }
 }
 
 .filters-toggle-on-moblie {
