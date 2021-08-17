@@ -8284,8 +8284,9 @@ th.forum-headline__replies {
 .filters-toggle-on-moblie {
   background-color: #005976;
   color: #fff;
+  display: none;
   @media (max-width: $breakpoint-mini-max) {
-    display: none;
+    display: block;
   }
   .filters-wrap.uk-active & {
     display: none;
