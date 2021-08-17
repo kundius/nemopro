@@ -1538,12 +1538,12 @@ function initFilterBar () {
     $('.filters-toggle-on-moblie').on('click', function() {
         if ($('#mse2_filters').hasClass('filters-hidden-on-moblie')) {
             $('#mse2_filters').removeClass('filters-hidden-on-moblie');
-            $(this).removeClass('filters-toggle-on-moblie_active');
+            $(this).addClass('filters-toggle-on-moblie_active');
             $('.filters-wrap').removeClass('filters-wrap_hidden');
             $.cookie('show-filters', !$('.filters-wrap').hasClass('filters-wrap_hidden'));
         } else {
             $('#mse2_filters').addClass('filters-hidden-on-moblie');
-            $(this).addClass('filters-toggle-on-moblie_active');
+            $(this).removeClass('filters-toggle-on-moblie_active');
             $('.filters-wrap').addClass('filters-wrap_hidden');
             $.cookie('show-filters', !$('.filters-wrap').hasClass('filters-wrap_hidden'));
         }
