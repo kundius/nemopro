@@ -8275,14 +8275,6 @@ th.forum-headline__replies {
     }
 }
 
-// .filters-hidden-on-moblie {
-//   @media (max-width: $breakpoint-mini-max) {
-//     display: none;
-//   }
-//   .filters-wrap.uk-active & {
-//     display: grid;
-//   }
-// }
 .filters-wrap {
     @media (max-width: $breakpoint-mini-max) {
       &_hidden .filters {
