@@ -8285,9 +8285,28 @@ th.forum-headline__replies {
 }
 
 .filters-toggle-on-moblie {
-  background-color: #005976;
+  background-color: #01718f;
   color: #fff;
   display: none;
+  width: 100%;
+  border: none;
+  text-align: left;
+  padding: 0 15px;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 32px;
+  border-radius: 0;
+  position: relative;
+  &::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
   @media (max-width: $breakpoint-mini-max) {
     display: block;
   }
@@ -8303,9 +8322,6 @@ th.forum-headline__replies {
     border: none;
     flex-grow: 1;
     box-sizing: border-box;
-    @media (max-width: $breakpoint-mini-max) {
-        padding-left: 10px;
-    }
 }
 
 .filter-select__title {
