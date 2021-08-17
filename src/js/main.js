@@ -1523,41 +1523,36 @@ if (window.matchMedia("(min-width: 768px)").matches) {
 
 
 function initFilterBar () {
-    if($.cookie('show-filters') == 'true') {
+    if ($.cookie('show-filters') == 'true') {
         $('.filters-wrap').removeClass('filters-wrap_hidden');
-        // $('#mse2_filters').removeClass('filters-hidden-on-moblie');
+        $('#mse2_filters').removeClass('filters-hidden-on-moblie');
         $('.filters-toggle-on-moblie').addClass('filters-toggle-on-moblie_active');
         window.dispatchEvent(new Event('resize'));
     }
+
     $(document).on('click', '.filters-wrap__toggle', function() {
         $('.filters-wrap').toggleClass('filters-wrap_hidden');
-        // $('#mse2_filters').toggleClass('filters-hidden-on-moblie');
+        $('#mse2_filters').toggleClass('filters-hidden-on-moblie');
         $('.filters-toggle-on-moblie').toggleClass('filters-toggle-on-moblie_active');
         $.cookie('show-filters', !$('.filters-wrap').hasClass('filters-wrap_hidden'));
         window.dispatchEvent(new Event('resize'));
     });
-    // var sticky = UIkit.sticky($('.filters-wrap'), {
-    //     top: $('.filters-wrap').height()
-    // });
 
     $('.filters-toggle-on-moblie').on('click', function() {
         $('#mse2_filters').toggleClass('filters-hidden-on-moblie');
         $('.filters-toggle-on-moblie').toggleClass('filters-toggle-on-moblie_active');
         $('.filters-wrap').toggleClass('filters-wrap_hidden');
         $.cookie('show-filters', !$('.filters-wrap').hasClass('filters-wrap_hidden'));
-        // if ($('#mse2_filters').hasClass('filters-hidden-on-moblie')) {
-        //     $('#mse2_filters').removeClass('filters-hidden-on-moblie');
-        //     $('.filters-toggle-on-moblie').addClass('filters-toggle-on-moblie_active');
-        //     $('.filters-wrap').removeClass('filters-wrap_hidden');
-        //     $.cookie('show-filters', !$('.filters-wrap').hasClass('filters-wrap_hidden'));
-        // } else {
-        //     $('#mse2_filters').addClass('filters-hidden-on-moblie');
-        //     $('.filters-toggle-on-moblie').removeClass('filters-toggle-on-moblie_active');
-        //     $('.filters-wrap').addClass('filters-wrap_hidden');
-        //     $.cookie('show-filters', !$('.filters-wrap').hasClass('filters-wrap_hidden'));
-        // }
         window.dispatchEvent(new Event('resize'));
-        // sticky.update();
-    });filters-wrap_hidden
+    });
+
+    $('.filters-wrap').on({
+        'active.uk.sticky': function(e) {
+            console.log("active.uk.sticky", e);
+        },
+        'inactive.uk.sticky	': function(e) {
+            console.log("inactive.uk.sticky", e);
+        }
+    });
 }
 initFilterBar();
