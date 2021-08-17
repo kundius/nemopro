@@ -1528,3 +1528,12 @@ if (window.matchMedia("(min-width: 768px)").matches) {
 } else {
     initFeedbackMessageOnMobile();
 }
+
+
+function initHiddenFilterOnMobile () {
+    $('.filters-toggle-on-moblie').on('click', function() {
+        $('#mse2_filters').toggleClass('filters-hidden-on-moblie');
+        $(this).toggleClass('filters-toggle-on-moblie_active');
+    });
+}
+initHiddenFilterOnMobile();

@@ -8203,15 +8203,9 @@ th.forum-headline__replies {
 }
 
 .filters {
-    display: flex;
-    margin-left: -20px;
-    //margin-bottom: 34px;
-    //margin-top: 29px;
-    justify-content: space-between;
-    @media (max-width: $breakpoint-mini-max) {
-        margin-left: -10px;
-        flex-wrap: wrap;
-    }
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 }
 
 .filters-wrap {
@@ -8281,13 +8275,29 @@ th.forum-headline__replies {
     }
 }
 
+.filters-hidden-on-moblie {
+  @media (max-width: $breakpoint-mini-max) {
+    display: none;
+  }
+}
+
+.filters-toggle-on-moblie {
+  background-color: #005976;
+  color: #fff;
+  @media (max-width: $breakpoint-mini-max) {
+    display: none;
+  }
+  .filters-wrap.uk-active & {
+    display: none;
+  }
+}
+
 .filter-select {
     display: block;
     margin: 0;
-    padding: 5px 0 5px 20px;
+    padding: 5px 0;
     border: none;
     flex-grow: 1;
-    max-width: 50%;
     box-sizing: border-box;
     @media (max-width: $breakpoint-mini-max) {
         padding-left: 10px;
