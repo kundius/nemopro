@@ -12595,6 +12595,11 @@ td.u-product-options__items {
 .contacts-offices-item__image {
   width: 40%;
   margin-right: 20px;
+  position: relative;
+  @media (max-width: $breakpoint-medium-max) {
+    width: 100%;
+    margin-right: 0;
+  }
 }
 
 .contacts-offices-item__image img {
