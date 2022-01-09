@@ -12576,7 +12576,9 @@ td.u-product-options__items {
   margin-top: 24px;
   margin-bottom: 24px;
   @media (max-width: $breakpoint-medium-max) {
-    margin-left: -24px;
+    margin-left: -16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
 }
 
@@ -12584,7 +12586,7 @@ td.u-product-options__items {
   width: 50%;
   padding-left: 48px;
   @media (max-width: $breakpoint-medium-max) {
-    padding-left: 24px;
+    padding-left: 16px;
   }
 }
 
@@ -12623,13 +12625,17 @@ td.u-product-options__items {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
-  color: #77daee;
+  transform: translate(-50%,-50%);
+  color: #014b63;
   text-transform: uppercase;
-  font-size: 24px;
+  font-size: 20px;
   padding: 10px;
-  border: 2px solid currentColor;
   border-radius: 12px;
+  background: #57d4e9;
+  text-align: center;
+  width: 150px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   @media (max-width: $breakpoint-medium-max) {
       display: block;
   }
