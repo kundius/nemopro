@@ -12569,3 +12569,34 @@ td.u-product-options__items {
 .cart-info a {
   text-decoration: underline;
 }
+
+.contacts-offices {
+  display: flex;
+  margin-left: -48px;
+}
+
+.contacts-offices__item {
+  width: 50%;
+  padding-left: 48px;
+}
+
+.contacts-offices-item {
+  display: flex;
+  margin-left: -24px;
+}
+
+.contacts-offices-item__image {
+  width: 50%;
+  padding-left: 24px;
+}
+
+.contacts-offices-item__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.contacts-offices-item__title {
+  width: 50%;
+  padding-left: 24px;
+}
