@@ -9865,18 +9865,18 @@ th.forum-headline__replies {
             display: block;
             text-align: center;
             cursor: pointer;
-            background-color: #f1f5c9;
+            background-color: #e5b612;
             line-height: 33px;
-            color: #7c7979;
+            color: #014b63;
             font-size: 16px;
             &:hover {
-                background-color: darken(#f1f5c9, 5%);
-                color: #7c7979;
+                background-color: darken(#e5b612, 5%);
+                color: #014b63;
             }
         }
         &.active {
             a {
-              background-color: #5b9aab;
+              background-color: #026282;
               color: #fff;
             }
         }
