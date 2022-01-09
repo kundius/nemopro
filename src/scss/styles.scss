@@ -12575,21 +12575,26 @@ td.u-product-options__items {
   margin-left: -48px;
   margin-top: 24px;
   margin-bottom: 24px;
+  @media (max-width: $breakpoint-medium-max) {
+    margin-left: -24px;
+  }
 }
 
 .contacts-offices__item {
   width: 50%;
   padding-left: 48px;
+  @media (max-width: $breakpoint-medium-max) {
+    padding-left: 24px;
+  }
 }
 
 .contacts-offices-item {
   display: flex;
-  margin-left: -24px;
 }
 
 .contacts-offices-item__image {
   width: 40%;
-  padding-left: 24px;
+  margin-right: 20px;
 }
 
 .contacts-offices-item__image img {
@@ -12600,8 +12605,17 @@ td.u-product-options__items {
 
 .contacts-offices-item__title {
   width: 60%;
-  padding-left: 24px;
   font-size: 20px;
   line-height: 1.5;
   color: #444;
+  @media (max-width: $breakpoint-medium-max) {
+      display: none;
+  }
+}
+
+.contacts-offices-item__image-label {
+  display: none;
+  @media (max-width: $breakpoint-medium-max) {
+      display: block;
+  }
 }
