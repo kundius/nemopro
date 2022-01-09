@@ -12573,6 +12573,8 @@ td.u-product-options__items {
 .contacts-offices {
   display: flex;
   margin-left: -48px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .contacts-offices__item {
@@ -12586,7 +12588,7 @@ td.u-product-options__items {
 }
 
 .contacts-offices-item__image {
-  width: 50%;
+  width: 40%;
   padding-left: 24px;
 }
 
@@ -12597,6 +12599,9 @@ td.u-product-options__items {
 }
 
 .contacts-offices-item__title {
-  width: 50%;
+  width: 60%;
   padding-left: 24px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #444;
 }
