@@ -1953,11 +1953,16 @@ jdiv {
     overflow: hidden;
     z-index: 10;
     color: #000;
-    padding: 15px;
+    padding: 2px 0 1px;
     font-size: 15px;
     font-weight: 700;
     line-height: 1;
-    letter-spacing: 0.02em;
+    letter-spacing: .02em;
+    border: 2px solid currentColor;
+    border-radius: 6px;
+    width: 60px;
+    text-align: center;
+    margin-bottom: 3px;
     &._new {
         color: #009933;
     }
@@ -2240,7 +2245,6 @@ jdiv {
 .products-item__coupon-label {
   font-size: 12px;
   text-transform: lowercase;
-  margin-top: 4px;
   margin-bottom: 4px;
   text-align: center;
 }
