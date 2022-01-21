@@ -2007,7 +2007,7 @@ jdiv {
     flex-grow: 1;
 }
 
-.products-item__price-old {
+.products-item__price-old-value {
     text-decoration: line-through;
     font-size: 12px;
     font-weight: bold;
@@ -2236,11 +2236,11 @@ jdiv {
   background: #fe0000;
   text-align: center;
   color: #fff;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, .6);
+  // text-shadow: 1px 1px 2px rgba(0, 0, 0, .6);
   line-height: 1;
   border-radius: 6px;
   min-width: 60px;
-  padding: 6px 2px;
+  padding: 6px 6px;
   width: 100%;
 }
 
