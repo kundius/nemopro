@@ -2222,6 +2222,39 @@ jdiv {
   }
 }
 
+.products-item__info-lt {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 5;
+}
+
+.products-item__coupon {
+  background: #fe0000;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, .6);
+  line-height: 1;
+  border-radius: 8px;
+}
+
+.products-item__coupon-label {
+  font-size: 12px;
+  text-transform: lowercase;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.products-item__coupon-price {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  i {
+    font-size: 80%;
+  }
+}
+
 .products-cell {
   padding-bottom: 10px;
   display: flex;
