@@ -2265,6 +2265,10 @@ jdiv {
   i {
     font-size: 80%;
   }
+  & + .uk-dropdown {
+    width: 500px;
+    max-width: 100%;
+  }
 }
 
 .products-cell {
