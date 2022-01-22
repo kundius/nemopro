@@ -2267,7 +2267,10 @@ jdiv {
   }
   & + .uk-dropdown {
     width: 500px;
-    max-width: 100%;
+    // max-width: 100%;
+    @media (max-width: $breakpoint-small-max) {
+        width: auto;
+    }
   }
 }
 
