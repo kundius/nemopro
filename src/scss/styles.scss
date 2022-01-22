@@ -2272,11 +2272,12 @@ jdiv {
   i {
     font-size: 80%;
   }
-  & + .uk-dropdown {
-    width: 320px;
-    @media (max-width: $breakpoint-small-max) {
-        width: 320px;
-    }
+}
+
+.uk-dropdown__coupon {
+  width: 320px;
+  @media (max-width: $breakpoint-small-max) {
+      width: 320px;
   }
 }
 
