@@ -2254,6 +2254,9 @@ jdiv {
   right: 12px;
   top: 12px;
   z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .products-item__coupon {
@@ -2275,6 +2278,12 @@ jdiv {
 }
 
 .products-item .msfavorites-toggle {
+  background: #005975;
+  width: 36px;
+  height: 36px;
+}
+
+.products-item .mscomparison-toggle {
   background: #005975;
   width: 36px;
   height: 36px;
