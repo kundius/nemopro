@@ -2274,13 +2274,6 @@ jdiv {
   }
 }
 
-.uk-dropdown__coupon {
-  width: 320px;
-  @media (max-width: $breakpoint-small-max) {
-      width: 320px;
-  }
-}
-
 .products-item .msfavorites-toggle {
   background: #005975;
   width: 36px;
@@ -12424,6 +12417,13 @@ td.u-product-options__items {
 .uk-dropdown, .uk-dropdown-blank {
   width: auto;
   min-width: 200px;
+}
+
+.uk-dropdown__coupon {
+  width: 320px;
+  @media (max-width: $breakpoint-small-max) {
+      width: 320px;
+  }
 }
 
 .uk-dropdown {
