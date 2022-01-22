@@ -12732,3 +12732,171 @@ td.u-product-options__items {
       display: block;
   }
 }
+
+.mscomparison-toggle {
+  background: #0b8fae;
+  border: none;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    fill: currentColor;
+  }
+}
+
+.mscomparison-toggle_added {
+  color: #fe0;
+}
+
+.mscomparison-toggle__tooltip-add {
+  display: block;
+}
+
+.mscomparison-toggle__tooltip-remove {
+  display: none;
+}
+
+.mscomparison-toggle_added + .uk-dropdown .mscomparison-toggle__tooltip-add {
+  display: none;
+}
+
+.mscomparison-toggle_added + .uk-dropdown .mscomparison-toggle__tooltip-remove {
+  display: block;
+}
+
+.mscomparison-title {
+  text-transform: uppercase;
+  font-size: 32px;
+  line-height: 1.15;
+  color: #026282;
+  margin: 10px 0 22px;
+}
+
+.mscomparison-info {
+  text-align: center;
+  font-size: 19px;
+  max-width: 960px;
+  line-height: 1.25;
+  margin: 16px auto;
+  @media (max-width: $breakpoint-mini-max) {
+    font-size: 14px;
+  }
+}
+
+.mscomparison-info a {
+  text-decoration: underline;
+}
+
+.mscomparison-list {
+  margin-bottom: 64px;
+}
+
+.mscomparison-list [id="mse2_mscomparison|product"] {
+  display: none;
+}
+
+.mscomparison-list [id="mse2_msoption|view"] {
+  @media (min-width: $breakpoint-small) {
+    margin-left: auto;
+    flex-grow: 0;
+  }
+}
+
+.mscomparison-list [id="mse2_ms|vendor"] {
+  @media (min-width: $breakpoint-small) {
+    flex-grow: 0;
+  }
+}
+
+.mscomparison-list [id="mse2_sort"] {
+  @media (min-width: $breakpoint-small) {
+    flex-grow: 0;
+  }
+}
+
+.mscomparison-list [id="mse2_sort"] + .filter-select {
+  @media (min-width: $breakpoint-small) {
+    flex-grow: 0;
+  }
+}
+
+.mscomparison-list .mse2_results_nodata {
+  font-size: 0;
+  &::before {
+    content: 'Вы ещё не добавили товары в избранные.';
+    font-size: 19px;
+  }
+}
+
+.mscomparison-nodata {
+
+}
+
+.mscomparison-remove {
+  background: transparent;
+  margin-left: auto;
+  border: none;
+  font-size: 16px;
+  color: #005976;
+  padding: 0;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mscomparison-remove span {
+  text-decoration: underline;
+}
+
+.mscomparison-remove:hover span {
+  text-decoration: none;
+}
+
+.mscomparison-remove::after {
+  display: block;
+  content: "\f00d";
+  font-family: FontAwesome;
+  color: #c01116;
+  margin-left: 6px;
+  text-decoration: none;
+}
+
+.mscomparison-clear {
+  background: transparent;
+  margin-left: auto;
+  border: none;
+  font-size: 18px;
+  color: #005976;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mscomparison-clear span {
+  text-decoration: underline;
+}
+
+.mscomparison-clear:hover span {
+  text-decoration: none;
+}
+
+.mscomparison-clear::after {
+  display: block;
+  content: "\f00d";
+  font-family: FontAwesome;
+  color: #c01116;
+  margin-left: 6px;
+  text-decoration: none;
+}
