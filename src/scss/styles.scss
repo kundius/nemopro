@@ -7733,10 +7733,10 @@ th.forum-headline__replies {
   text-transform: lowercase;
   line-height: 1;
   padding-top: 4px;
-  margin-bottom: 4px;
+  padding-bottom: 4px;
   .coupon-sticker_small & {
-    margin-top: 3px;
-    margin-bottom: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     font-size: 8px;
     display: none;
   }
