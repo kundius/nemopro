@@ -2273,9 +2273,9 @@ jdiv {
     font-size: 80%;
   }
   & + .uk-dropdown {
-    width: 360px;
+    width: 320px;
     @media (max-width: $breakpoint-small-max) {
-        width: 280px;
+        width: 320px;
     }
   }
 }
