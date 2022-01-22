@@ -2249,6 +2249,13 @@ jdiv {
   z-index: 5;
 }
 
+.products-item__info-rt {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 5;
+}
+
 .products-item__coupon {
   background: #fe0000;
   text-align: center;
@@ -2267,9 +2274,8 @@ jdiv {
   }
   & + .uk-dropdown {
     width: 360px;
-    // max-width: 100%;
     @media (max-width: $breakpoint-small-max) {
-        width: auto;
+        width: calc(100vw - 20px);
     }
   }
 }
