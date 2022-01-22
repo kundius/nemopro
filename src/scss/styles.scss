@@ -8749,6 +8749,16 @@ th.forum-headline__replies {
     }
 }
 
+.cart-item-info__coupon {
+  top: -4px;
+  left: 5px;
+  position: absolute;
+  .coupon-sticker {
+    left: initial;
+    top: initial;
+  }
+}
+
 .cart-item-info__title {
     font-size: 16px;
     line-height: 1.5;
