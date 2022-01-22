@@ -10294,6 +10294,11 @@ th.forum-headline__replies {
 .u-product-rating__buttons {
   gap: 8px;
   display: flex;
+  .mscomparison-toggle {
+    @media (min-width: $breakpoint-small) {
+      display: none;
+    }
+  }
 }
 
 .u-product-share {
