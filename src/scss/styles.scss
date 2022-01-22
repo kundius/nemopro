@@ -8757,6 +8757,7 @@ th.forum-headline__replies {
   .coupon-sticker {
     left: initial;
     top: initial;
+    position: relative;
   }
 }
 
@@ -10250,6 +10251,18 @@ th.forum-headline__replies {
   }
   @media (max-width: $breakpoint-mini-max) {
       max-width: calc(100vw - 20px);
+  }
+}
+
+.u-product-gallery__coupon {
+  position: absolute;
+  left: 10px;
+  top: -5px;
+  display: flex;
+  .coupon-sticker {
+    left: auto;
+    top: auto;
+    position: relative;
   }
 }
 
