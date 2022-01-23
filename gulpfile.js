@@ -103,7 +103,7 @@ function js() {
     // config.srcDir + 'js/flexmenu.min.js',
     // config.srcDir + 'js/mobilemenu.js',
     config.srcDir + 'js/main.js'
-  ], {read: false})
+  ])
     .pipe(tap(function (file) {
       log.info('bundling ' + file.path);
       // replace file contents with browserify's bundle stream
@@ -116,7 +116,8 @@ function js() {
     .pipe(uglify())
     // write sourcemaps
     .pipe(sourcemaps.write('./'))
-    .pipe(dest('dest'))
+    .pipe(concat('all.js'))
+    .pipe(dest('dest/js'))
 }
 
 function modx(){
