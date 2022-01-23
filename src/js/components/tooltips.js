@@ -38,6 +38,7 @@ const tippy = require('tippy.js')
 console.log(tippy)
 
 tippy.default('[data-tooltip-coupon]', {
-  content: 'My tooltip!'
+  allowHTML: true,
+  content: 'На 100% опубликованной суммы<br>Вы можете выбрать товары в подарок!<br><br>Подробнее в разделе «скидки и акции».'
 })
 
