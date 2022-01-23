@@ -6,10 +6,8 @@ const couponInstance = tippy.default('[data-tooltip-coupon]', {
   content: '<div style="text-align: center">На 100% опубликованной суммы<br>Вы можете выбрать товары в подарок!<br><br>Подробнее в разделе «скидки и акции».</div>'
 })
 
-console.log(couponInstance)
-
 window.addEventListener('scroll', () => {
   couponInstance.forEach(instance => {
-    instance.hide()
+    instance.hideWithInteractivity()
   })
 })
