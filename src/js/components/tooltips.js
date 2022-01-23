@@ -10,7 +10,8 @@ console.log(couponInstance)
 
 window.addEventListener('scroll', (e) => {
   couponInstance.forEach(instance => {
-    instance.hideWithInteractivity(e)
-    // instance.hide()
+    // instance.hideWithInteractivity(e)
+    instance.hide()
+    instance.enable()
   })
 })
