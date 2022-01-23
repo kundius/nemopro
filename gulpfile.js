@@ -1,5 +1,9 @@
 const { src, dest, parallel, watch, series } = require('gulp')
 const babel = require('gulp-babel')
+const browserify = require('browserify')
+const log = require('gulplog')
+const tap = require('gulp-tap')
+const buffer = require('gulp-buffer')
 const sourcemaps = require('gulp-sourcemaps')
 const sass = require('gulp-sass')
 const postcss = require('gulp-postcss')
@@ -48,6 +52,35 @@ function css() {
     .pipe(dest('dist/css'))
 }
 
+// function js() {
+//   return src([
+//     './node_modules/jquery/dist/jquery.min.js',
+//     './node_modules/swiper/swiper-bundle.min.js',
+//     './node_modules/jquery-migrate/dist/jquery-migrate.min.js',
+//     './node_modules/uikit/dist/js/uikit.min.js',
+//     './node_modules/uikit/dist/js/components/sticky.min.js',
+//     './node_modules/uikit/dist/js/components/notify.min.js',
+//     // './node_modules/uikit/dist/js/components/tooltip.min.js',
+//     // './node_modules/uikit/dist/js/components/slider.min.js',
+//     './node_modules/slick-carousel/slick/slick.min.js',
+//     './node_modules/choices.js/public/assets/scripts/choices.min.js',
+//     './node_modules/autocompleter/autocomplete.js',
+//     './node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
+//     './node_modules/jquery-form/dist/jquery.form.min.js',
+//     './node_modules/jquery-validation/dist/jquery.validate.min.js',
+//     './node_modules/jquery-validation/dist/localization/messages_ru.min.js',
+//     './node_modules/jquery.cookie/jquery.cookie.js',
+//     './node_modules/webfontloader/webfontloader.js',
+//     config.srcDir + 'js/flexmenu.min.js',
+//     config.srcDir + 'js/mobilemenu.js',
+//     config.srcDir + 'js/main.js'
+//   ])
+//     .pipe(babel({
+//       presets: ["@babel/env"]
+//     }))
+//     .pipe(concat('all.js'))
+//     .pipe(dest('dist/js'))
+// }
 function js() {
   return src([
     './node_modules/jquery/dist/jquery.min.js',
@@ -70,12 +103,20 @@ function js() {
     config.srcDir + 'js/flexmenu.min.js',
     config.srcDir + 'js/mobilemenu.js',
     config.srcDir + 'js/main.js'
-  ])
-    .pipe(babel({
-      presets: ["@babel/env"]
+  ], {read: false})
+    .pipe(tap(function (file) {
+      log.info('bundling ' + file.path);
+      // replace file contents with browserify's bundle stream
+      file.contents = browserify(file.path, {debug: true}).bundle();
     }))
-    .pipe(concat('all.js'))
-    .pipe(dest('dist/js'))
+    // transform streaming contents into buffer contents (because gulp-sourcemaps does not support streaming contents)
+    .pipe(buffer())
+    // load and init sourcemaps
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(uglify())
+    // write sourcemaps
+    .pipe(sourcemaps.write('./'))
+    .pipe(dest('dest'))
 }
 
 function modx(){
