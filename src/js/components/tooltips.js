@@ -12,6 +12,7 @@ window.addEventListener('scroll', (e) => {
   couponInstance.forEach(instance => {
     // instance.hideWithInteractivity(e)
     instance.hide()
-    instance.clearDelayTimeouts()
+    instance.disable()
+    instance.enable()
   })
 })
