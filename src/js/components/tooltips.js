@@ -20,8 +20,13 @@ window.addEventListener('scroll', () => {
   //   // instance.hideWithInteractivity(e)
     // instance.hide()
     // instance.show()
-    instance.disable()
-    instance.enable()
+    // instance.disable()
+    instance.setProps({
+      touch: false
+    })
+    instance.setProps({
+      touch: true
+    })
   //   tippy.hideAll()
     // instance.reference.dispatchEvent(new Event('touchend'))
   })
