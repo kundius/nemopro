@@ -22,10 +22,12 @@ window.addEventListener('scroll', () => {
     // instance.show()
     // instance.disable()
     instance.setProps({
-      touch: false
+      // touch: false
+      triggerTarget: instance.reference
     })
     instance.setProps({
-      touch: true
+      // touch: true
+      triggerTarget: null
     })
   //   tippy.hideAll()
     // instance.reference.dispatchEvent(new Event('touchend'))
