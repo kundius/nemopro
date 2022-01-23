@@ -7,7 +7,7 @@ tippy.default('[data-tooltip-coupon]', {
   content: '<div style="text-align: center">На 100% опубликованной суммы<br>Вы можете выбрать товары в подарок!<br><br>Подробнее в разделе «скидки и акции».</div>'
 })
 
-const tooltipPriceTemplate = document.getElementById('tooltip-price');
+const tooltipPriceTemplate = document.getElementById('tooltip-price')
 tippy.default('[data-tooltip-price]', {
   allowHTML: true,
   theme: 'light',
