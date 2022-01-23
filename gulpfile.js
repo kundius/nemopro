@@ -39,7 +39,7 @@ function images() {
 
 function css() {
   return src([
-    // './node_modules/tippy.js/dist/tippy.css',
+    './node_modules/tippy.js/dist/tippy.css',
     './node_modules/tippy.js/themes/light.css',
     './node_modules/slick-carousel/slick/slick.css',
     './node_modules/choices.js/public/assets/styles/choices.min.css',
