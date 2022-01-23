@@ -1,6 +1,6 @@
-const FloatingUI = require('@floating-ui/dom')
+// const FloatingUI = require('@floating-ui/dom')
 
-console.log(FloatingUI)
+// console.log(FloatingUI)
 
 function number_format( number, decimals, dec_point, thousands_sep ) {
 	// +   original by: Jonas Raoni Soares Silva (http://www.jsfromhell.com)
