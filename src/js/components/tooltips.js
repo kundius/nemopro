@@ -9,20 +9,20 @@ const couponInstance = tippy.default('[data-tooltip-coupon]', {
 
 console.log(couponInstance)
 
-window.addEventListener('scroll', (e) => {
+window.addEventListener('scroll', () => {
   tippy.hideAll()
-  window.dispatchEvent(new Event('click'))
-  window.dispatchEvent(new Event('touchstart'))
-  window.dispatchEvent(new Event('touchmove'))
-  window.dispatchEvent(new Event('touchcancel'))
-  window.dispatchEvent(new Event('touchend'))
-  // couponInstance.forEach(instance => {
+  // window.dispatchEvent(new Event('click'))
+  // window.dispatchEvent(new Event('touchstart'))
+  // window.dispatchEvent(new Event('touchmove'))
+  // window.dispatchEvent(new Event('touchcancel'))
+  // window.dispatchEvent(new Event('touchend'))
+  couponInstance.forEach(instance => {
   //   // instance.hideWithInteractivity(e)
     // instance.hide()
     // instance.show()
-  //   // instance.disable()
-  //   // instance.enable()
+    instance.disable()
+    instance.enable()
   //   tippy.hideAll()
     // instance.reference.dispatchEvent(new Event('touchend'))
-  // })
+  })
 })
