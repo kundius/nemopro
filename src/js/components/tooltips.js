@@ -8,12 +8,14 @@ tippy.default('[data-tooltip-coupon]', {
 })
 
 const tooltipPriceTemplate = document.getElementById('tooltip-price')
-tippy.default('[data-tooltip-price]', {
-  allowHTML: true,
-  theme: 'light',
-  trigger: 'mouseenter click',
-  content: tooltipPriceTemplate.innerHTML
-})
+if (tooltipPriceTemplate) {
+  tippy.default('[data-tooltip-price]', {
+    allowHTML: true,
+    theme: 'light',
+    trigger: 'mouseenter click',
+    content: tooltipPriceTemplate.innerHTML
+  })
+}
 
 window.addEventListener('scroll', () => {
   tippy.hideAll()
