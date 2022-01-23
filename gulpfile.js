@@ -116,7 +116,7 @@ function js() {
     .pipe(uglify())
     // write sourcemaps
     .pipe(sourcemaps.write('./'))
-    .pipe(concat('all.js'))
+    // .pipe(concat('all.js'))
     .pipe(dest('dest/js'))
 }
 
