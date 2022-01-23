@@ -31,6 +31,7 @@
     "node-sass": "^4.14.1"
   },
   "dependencies": {
+    "@floating-ui/dom": "^0.2.0",
     "@tarekraafat/autocomplete.js": "^7.0.0",
     "autocomplete-js": "^2.7.1",
     "autocompleter": "^5.1.0",
