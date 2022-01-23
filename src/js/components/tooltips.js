@@ -17,6 +17,6 @@ window.addEventListener('scroll', (e) => {
   //   // instance.disable()
   //   // instance.enable()
   //   tippy.hideAll()
-    instance.reference.dispatchEvent(new Event('click'))
+    instance.reference.dispatchEvent(new Event('touchend'))
   })
 })
