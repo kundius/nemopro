@@ -37,7 +37,7 @@ const tippy = require('tippy.js')
 
 console.log(tippy)
 
-tippy('[data-tooltip-coupon]', {
+tippy.default('[data-tooltip-coupon]', {
   content: 'My tooltip!'
 })
 
