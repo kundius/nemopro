@@ -52,57 +52,39 @@ function css() {
     .pipe(dest('dist/css'))
 }
 
-// function js() {
-//   return src([
-//     './node_modules/jquery/dist/jquery.min.js',
-//     './node_modules/swiper/swiper-bundle.min.js',
-//     './node_modules/jquery-migrate/dist/jquery-migrate.min.js',
-//     './node_modules/uikit/dist/js/uikit.min.js',
-//     './node_modules/uikit/dist/js/components/sticky.min.js',
-//     './node_modules/uikit/dist/js/components/notify.min.js',
-//     // './node_modules/uikit/dist/js/components/tooltip.min.js',
-//     // './node_modules/uikit/dist/js/components/slider.min.js',
-//     './node_modules/slick-carousel/slick/slick.min.js',
-//     './node_modules/choices.js/public/assets/scripts/choices.min.js',
-//     './node_modules/autocompleter/autocomplete.js',
-//     './node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
-//     './node_modules/jquery-form/dist/jquery.form.min.js',
-//     './node_modules/jquery-validation/dist/jquery.validate.min.js',
-//     './node_modules/jquery-validation/dist/localization/messages_ru.min.js',
-//     './node_modules/jquery.cookie/jquery.cookie.js',
-//     './node_modules/webfontloader/webfontloader.js',
-//     config.srcDir + 'js/flexmenu.min.js',
-//     config.srcDir + 'js/mobilemenu.js',
-//     config.srcDir + 'js/main.js'
-//   ])
-//     .pipe(babel({
-//       presets: ["@babel/env"]
-//     }))
-//     .pipe(concat('all.js'))
-//     .pipe(dest('dist/js'))
-// }
 function js() {
   return src([
-    // './node_modules/jquery/dist/jquery.min.js',
-    // './node_modules/swiper/swiper-bundle.min.js',
-    // './node_modules/jquery-migrate/dist/jquery-migrate.min.js',
-    // './node_modules/uikit/dist/js/uikit.min.js',
-    // './node_modules/uikit/dist/js/components/sticky.min.js',
-    // './node_modules/uikit/dist/js/components/notify.min.js',
-    // // './node_modules/uikit/dist/js/components/tooltip.min.js',
-    // // './node_modules/uikit/dist/js/components/slider.min.js',
-    // './node_modules/slick-carousel/slick/slick.min.js',
-    // './node_modules/choices.js/public/assets/scripts/choices.min.js',
-    // './node_modules/autocompleter/autocomplete.js',
-    // './node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
-    // './node_modules/jquery-form/dist/jquery.form.min.js',
-    // './node_modules/jquery-validation/dist/jquery.validate.min.js',
-    // './node_modules/jquery-validation/dist/localization/messages_ru.min.js',
-    // './node_modules/jquery.cookie/jquery.cookie.js',
-    // './node_modules/webfontloader/webfontloader.js',
-    // config.srcDir + 'js/flexmenu.min.js',
-    // config.srcDir + 'js/mobilemenu.js',
+    './node_modules/jquery/dist/jquery.min.js',
+    './node_modules/swiper/swiper-bundle.min.js',
+    './node_modules/jquery-migrate/dist/jquery-migrate.min.js',
+    './node_modules/uikit/dist/js/uikit.min.js',
+    './node_modules/uikit/dist/js/components/sticky.min.js',
+    './node_modules/uikit/dist/js/components/notify.min.js',
+    // './node_modules/uikit/dist/js/components/tooltip.min.js',
+    // './node_modules/uikit/dist/js/components/slider.min.js',
+    './node_modules/slick-carousel/slick/slick.min.js',
+    './node_modules/choices.js/public/assets/scripts/choices.min.js',
+    './node_modules/autocompleter/autocomplete.js',
+    './node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
+    './node_modules/jquery-form/dist/jquery.form.min.js',
+    './node_modules/jquery-validation/dist/jquery.validate.min.js',
+    './node_modules/jquery-validation/dist/localization/messages_ru.min.js',
+    './node_modules/jquery.cookie/jquery.cookie.js',
+    './node_modules/webfontloader/webfontloader.js',
+    config.srcDir + 'js/flexmenu.min.js',
+    config.srcDir + 'js/mobilemenu.js',
     config.srcDir + 'js/main.js'
+  ])
+    .pipe(babel({
+      presets: ["@babel/env"]
+    }))
+    .pipe(concat('all.js'))
+    .pipe(dest('dist/js'))
+}
+
+function browserifyJs() {
+  return src([
+    config.srcDir + 'js/browserify.js'
   ])
     .pipe(tap(function (file) {
       log.info('bundling ' + file.path);
@@ -117,7 +99,7 @@ function js() {
     // write sourcemaps
     .pipe(sourcemaps.write('./'))
     // .pipe(concat('all.js'))
-    .pipe(dest('dest/js'))
+    .pipe(dest('dist/js'))
 }
 
 function modx(){
@@ -133,13 +115,14 @@ function modx(){
 exports.fonts = fonts
 exports.images = images
 exports.js = js
+exports.browserifyJs = browserifyJs
 exports.css = css
 exports.modx = modx
-exports.build = parallel(fonts, images, css, js, modx)
+exports.build = parallel(fonts, images, css, js, browserifyJs, modx)
 exports.default = function() {
   watch(config.srcDir + 'scss/**/*', css)
   watch(config.srcDir + 'css/**/*', css)
-  watch(config.srcDir + 'js/**/*', js)
+  watch(config.srcDir + 'js/**/*', [js, browserifyJs])
   watch(config.srcDir + 'fonts/**/*', fonts)
   watch(config.srcDir + 'img/**/*', images)
 }
