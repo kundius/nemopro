@@ -17,19 +17,20 @@ window.addEventListener('scroll', () => {
   // window.dispatchEvent(new Event('touchmove'))
   // window.dispatchEvent(new Event('touchcancel'))
   // window.dispatchEvent(new Event('touchend'))
-  couponInstance.forEach(instance => {
-  // //   // instance.hideWithInteractivity(e)
-  //   // instance.hide()
-  //   // instance.show()
-  //   // instance.disable()
-  //   // instance.setProps({
-  //   //   trigger: 'click'
-  //   // })
-  //   // instance.setProps({
-  //   //   // touch: true
-  //   //   triggerTarget: null
-  //   // })
-  //   // tippy.hideAll()
-    instance.reference.dispatchEvent(new Event('blur'))
-  })
+  document.activeElement.blur()
+  // couponInstance.forEach(instance => {
+  // // //   // instance.hideWithInteractivity(e)
+  // //   // instance.hide()
+  // //   // instance.show()
+  // //   // instance.disable()
+  // //   // instance.setProps({
+  // //   //   trigger: 'click'
+  // //   // })
+  // //   // instance.setProps({
+  // //   //   // touch: true
+  // //   //   triggerTarget: null
+  // //   // })
+  // //   // tippy.hideAll()
+  //   instance.reference.dispatchEvent(new Event('blur'))
+  // })
 })
