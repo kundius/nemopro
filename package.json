@@ -51,6 +51,7 @@
     "slick-carousel": "^1.8.1",
     "svg4everybody": "^2.1.9",
     "swiper": "^6.8.1",
+    "tippy.js": "^6.3.7",
     "uikit": "^2.27.4",
     "vanilla-lazyload": "^12.1.0",
     "webfontloader": "^1.6.28"
