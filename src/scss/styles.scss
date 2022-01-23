@@ -12926,6 +12926,13 @@ td.u-product-options__items {
 
 .tippy-content {
   padding: 16px;
+  strong {
+    font-weight: 500;
+  }
+  strong,
+  span {
+    color: #0092b3;
+  }
 }
 
 .tippy-box {
