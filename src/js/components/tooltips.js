@@ -9,5 +9,7 @@ const couponInstance = tippy.default('[data-tooltip-coupon]', {
 console.log(couponInstance)
 
 window.addEventListener('scroll', () => {
-  couponInstance.hide()
+  couponInstance.forEach(instance => {
+    instance.hide()
+  })
 })
