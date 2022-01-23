@@ -83,7 +83,7 @@ function js() {
 }
 
 function browserifyJs() {
-  return src(config.srcDir + 'js/browserify/main.js')
+  return src(config.srcDir + 'js/browserify.js')
     .pipe(tap(function (file) {
       log.info('bundling ' + file.path);
       // replace file contents with browserify's bundle stream
