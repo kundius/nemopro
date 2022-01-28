@@ -9558,6 +9558,10 @@ th.forum-headline__replies {
     width: 100%;
 }
 
+.header-sticky-placeholder {
+  height: 115px;
+}
+
 @media (min-width: $breakpoint-large) {
     .header-modern {
         background-color: #005976;
