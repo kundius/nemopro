@@ -9766,6 +9766,7 @@ th.forum-headline__replies {
 }
 
 @media (max-width: $breakpoint-medium-max) {
+  .uk-offcanvas.uk-active .header-modern-phone,
   .uk-offcanvas.uk-active .header-modern-cart,
   .uk-offcanvas.uk-active .toolbar-modern,
   .uk-offcanvas.uk-active .header-modern__wrap::before,
@@ -9945,6 +9946,7 @@ th.forum-headline__replies {
         padding-right: 55px;
         width: 100%;
         box-sizing: border-box;
+        transition: transform .3s ease;
         &:hover {
             text-decoration: none;
             color: #fff;
