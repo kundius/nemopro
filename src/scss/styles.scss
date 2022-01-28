@@ -9407,6 +9407,7 @@ th.forum-headline__replies {
         left: 0;
         width: 100%;
         z-index: 900;
+        transition: transform .3s ease;
     }
 }
 
@@ -9765,6 +9766,13 @@ th.forum-headline__replies {
 }
 
 @media (max-width: $breakpoint-medium-max) {
+  .uk-offcanvas.uk-active .header-modern-cart,
+  .uk-offcanvas.uk-active .toolbar-modern,
+  .uk-offcanvas.uk-active .header-modern__wrap::before,
+  .uk-offcanvas.uk-active .header-modern__logo {
+    transform: translateX(270px);
+  }
+
     .header-modern {
         background-color: #005976;
         margin-bottom: 5px;
@@ -9788,6 +9796,7 @@ th.forum-headline__replies {
             background-color: rgb(0, 89, 118);
             height: 48px;
             z-index: 900;
+            transition: transform .3s ease;
         }
     }
 
@@ -9800,6 +9809,7 @@ th.forum-headline__replies {
         left: 5px;
         top: 35px;
         z-index: 940;
+        transition: transform .3s ease;
     }
 
     .header-modern__catalog {
@@ -9878,6 +9888,7 @@ th.forum-headline__replies {
         right: 5px;
         top: 34px;
         z-index: 930;
+        transition: transform .3s ease;
         &.full,
         &:hover {
             border-color: #ffee00;
