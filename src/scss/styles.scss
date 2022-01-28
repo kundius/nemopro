@@ -9566,7 +9566,9 @@ th.forum-headline__replies {
 }
 
 .header-sticky-placeholder {
-  height: 115px;
+  @media (min-width: $breakpoint-large) {
+    height: 115px;
+  }
 }
 
 @media (min-width: $breakpoint-large) {
