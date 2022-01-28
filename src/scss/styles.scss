@@ -9766,13 +9766,13 @@ th.forum-headline__replies {
 }
 
 @media (max-width: $breakpoint-medium-max) {
-  .uk-offcanvas.uk-active .header-modern-phone,
-  .uk-offcanvas.uk-active .header-modern-cart,
-  .uk-offcanvas.uk-active .toolbar-modern,
-  .uk-offcanvas.uk-active .header-modern__wrap::before,
-  .uk-offcanvas.uk-active .header-modern__logo {
-    transform: translateX(270px);
-  }
+  // .uk-offcanvas.uk-active .header-modern-phone,
+  // .uk-offcanvas.uk-active .header-modern-cart,
+  // .uk-offcanvas.uk-active .toolbar-modern,
+  // .uk-offcanvas.uk-active .header-modern__wrap::before,
+  // .uk-offcanvas.uk-active .header-modern__logo {
+  //   transform: translateX(270px);
+  // }
 
     .header-modern {
         background-color: #005976;
@@ -9941,6 +9941,7 @@ th.forum-headline__replies {
         text-decoration: none;
         position: fixed;
         top: 38px;
+        left: 0;
         z-index: 920;
         padding-left: 115px;
         padding-right: 55px;
