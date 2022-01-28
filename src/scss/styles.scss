@@ -9547,6 +9547,11 @@ th.forum-headline__replies {
         font-size: 13px;
         letter-spacing: -0.1px;
     }
+    @media (max-width: $breakpoint-large-max) {
+      span {
+        display: none;
+      }
+    }
     @media (max-width: $breakpoint-medium-max) {
         display: none;
     }
