@@ -9558,9 +9558,11 @@ th.forum-headline__replies {
 }
 
 .header-sticky {
+  @media (min-width: $breakpoint-large) {
     z-index: 990;
     position: fixed;
     width: 100%;
+  }
 }
 
 .header-sticky-placeholder {
