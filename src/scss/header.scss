@@ -7,7 +7,7 @@
 .service-menu__inner {
   display: flex;
   justify-content: space-between;
-  margin: 0 -8px;
+  // margin: 0 -8px;
 }
 
 .service-menu__item {
@@ -306,6 +306,30 @@
   }
 }
 
-.header__inner {
+.header-grid {
   display: grid;
+}
+
+.header-grid__logo {
+  grid-row: 1 / 3;
+}
+
+.header-grid__catalog {
+  grid-row: 1 / 3;
+}
+
+.header-grid__contacts {
+  grid-row: 2 / 3;
+}
+
+.header-grid__phone {
+  grid-row: 1 / 2;
+}
+
+.header-grid__buttons {
+  grid-row: 1 / 3;
+}
+
+.header-grid__cart {
+  grid-row: 1 / 3;
 }
