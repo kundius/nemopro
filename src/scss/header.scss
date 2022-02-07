@@ -151,11 +151,6 @@
     font-size: 13px;
     letter-spacing: -0.1px;
   }
-  @media (max-width: $breakpoint-large-max) {
-    span {
-    display: none;
-    }
-  }
   @media (max-width: $breakpoint-medium-max) {
     display: none;
   }
@@ -188,8 +183,11 @@
   align-items: center;
   * + * {
     margin-left: 24px;
-    @media (max-width: $breakpoint-medium-max) {
-      margin-left: 8px;
+    // @media (max-width: $breakpoint-medium-max) {
+    //   margin-left: 8px;
+    // }
+    @media (max-width: #{$breakpoint-large-max + $breakpoint-xlarge - $breakpoint-large}) {
+      margin-left: 12px;
     }
   }
 }
