@@ -7,6 +7,7 @@
 .service-menu__inner {
   display: flex;
   justify-content: space-between;
+  margin: 0 -8px;
 }
 
 .service-menu__item {
@@ -15,16 +16,13 @@
   display: flex;
   color: #fff;
   white-space: nowrap;
-  span {
-    border-bottom: 1px solid currentColor;
+  text-decoration: none;
+  padding: 0 8px;
+  &:hover {
+    background-color: #004961;
   }
-  a {
-    color: inherit;
-    text-decoration: none;
-    padding: 0 8px;
-    &:hover {
-      background-color: #004961;
-    }
+  span {
+    border-bottom: 1px solid rgba(255, 255, 255, .6);
   }
   &_how-to {
     order: 10;
