@@ -65,7 +65,7 @@
 .header-contacts {
   display: flex;
   line-height: 1;
-  font-size: 19px;
+  font-size: 18px;
   color: #ffffff;
   font-weight: 300;
   @media (max-width: $breakpoint-medium-max) {
@@ -75,7 +75,7 @@
 
 .header-contacts__label {
   color: #fff;
-  margin-right: 27px;
+  margin-right: 15px;
   letter-spacing: 0.5px;
   &:hover {
     color: #fff;
@@ -93,7 +93,7 @@
   display: flex;
   letter-spacing: 0.5px;
   li {
-    margin-left: 13px;
+    margin-left: 10px;
     @media (max-width: $breakpoint-medium-max) {
       margin-left: 5px;
     }
@@ -114,7 +114,7 @@
 .header-contacts__more {
   color: #ffffff;
   text-decoration: underline;
-  margin-left: 13px;
+  margin-left: 10px;
   @media (max-width: $breakpoint-medium-max) {
     margin-left: 5px;
   }
@@ -128,7 +128,7 @@
   content: '>';
   display: inline-block;
   transform: rotate(90deg);
-  margin-left: 17px;
+  margin-left: 10px;
   vertical-align: middle;
   position: relative;
   top: -1px;
