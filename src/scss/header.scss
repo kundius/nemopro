@@ -12,11 +12,16 @@
 .service-menu__item {
   font-size: 16px;
   line-height: 36px;
+  display: flex;
   color: #fff;
   white-space: nowrap;
+  span {
+    border-bottom: 1px solid currentColor;
+  }
   a {
     color: inherit;
-    text-decoration: underline;
+    text-decoration: none;
+    padding: 0 8px;
     &:hover {
       background-color: #004961;
     }
