@@ -1,0 +1,64 @@
+//@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,500,700&subset=cyrillic');
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,700i,800&subset=latin,cyrillic');
+//@import url('http://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,700i,800&display=swap&subset=cyrillic');
+
+@import "../../node_modules/uikit/dist/scss/uikit-mixins";
+
+// LESS related
+@import "../../node_modules/uikit/dist/scss/core/variables";
+
+// Defaults
+@import "../../node_modules/uikit/dist/scss/core/base";
+
+// Layout
+@import "../../node_modules/uikit/dist/scss/core/grid";
+//@import "../../node_modules/uikit/dist/scss/core/panel";
+//@import "../../node_modules/uikit/dist/scss/core/block";
+//@import "../../node_modules/uikit/dist/scss/core/article";
+//@import "../../node_modules/uikit/dist/scss/core/comment";
+//@import "../../node_modules/uikit/dist/scss/core/cover";
+
+// Navs
+//@import "../../node_modules/uikit/dist/scss/core/nav";
+//@import "../../node_modules/uikit/dist/scss/core/navbar";
+//@import "../../node_modules/uikit/dist/scss/core/subnav";
+//@import "../../node_modules/uikit/dist/scss/core/breadcrumb";
+//@import "../../node_modules/uikit/dist/scss/core/pagination";
+//@import "../../node_modules/uikit/dist/scss/core/tab";
+//@import "../../node_modules/uikit/dist/scss/core/thumbnav";
+
+// Elements
+@import "../../node_modules/uikit/dist/scss/core/list";
+@import "../../node_modules/uikit/dist/scss/core/description-list";
+@import "../../node_modules/uikit/dist/scss/core/table";
+@import "../../node_modules/uikit/dist/scss/core/form";
+
+// Common
+@import "../../node_modules/uikit/dist/scss/core/button";
+@import "../../node_modules/uikit/dist/scss/core/icon";
+@import "../../node_modules/uikit/dist/scss/core/close";
+//@import "../../node_modules/uikit/dist/scss/core/badge";
+@import "../../node_modules/uikit/dist/scss/core/alert";
+//@import "../../node_modules/uikit/dist/scss/core/thumbnail";
+//@import "../../node_modules/uikit/dist/scss/core/overlay";
+//@import "../../node_modules/uikit/dist/scss/core/column";
+//@import "../../node_modules/uikit/dist/scss/core/animation";
+
+// JavaScript
+@import "../../node_modules/uikit/dist/scss/core/dropdown";
+@import "../../node_modules/uikit/dist/scss/core/modal";
+@import "../../node_modules/uikit/dist/scss/core/offcanvas";
+@import "../../node_modules/uikit/dist/scss/core/switcher";
+
+// Need to be loaded last
+@import "../../node_modules/uikit/dist/scss/core/text";
+@import "../../node_modules/uikit/dist/scss/core/utility";
+@import "../../node_modules/uikit/dist/scss/core/flex";
+@import "../../node_modules/uikit/dist/scss/core/contrast";
+@import "../../node_modules/uikit/dist/scss/core/print";
+
+// Components
+@import "../../node_modules/uikit/dist/scss/components/sticky";
+@import "../../node_modules/uikit/dist/scss/components/notify";
+@import "../../node_modules/uikit/dist/scss/components/tooltip";
+@import "../../node_modules/uikit/dist/scss/components/slider";
