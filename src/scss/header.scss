@@ -58,7 +58,6 @@
   display: none;
 }
 
-
 .header-contacts {
   display: flex;
   line-height: 1;
@@ -221,4 +220,9 @@
       color: #fe0;
     }
   }
+}
+
+.header__logo {
+  display: block;
+  width: 180px;
 }
