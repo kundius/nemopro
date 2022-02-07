@@ -7,7 +7,7 @@
 .service-menu__inner {
   display: flex;
   justify-content: space-between;
-  // margin: 0 -8px;
+  margin: 0 -8px;
 }
 
 .service-menu__item {
@@ -331,6 +331,7 @@
 
 .header-grid__phone {
   grid-row: 1 / 2;
+  display: flex;
 }
 
 .header-grid__buttons {
