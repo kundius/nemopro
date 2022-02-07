@@ -77,6 +77,9 @@
   color: #fff;
   margin-right: 27px;
   letter-spacing: 0.5px;
+  &:hover {
+    color: #fff;
+  }
   @media (max-width: $breakpoint-medium-max) {
     margin-right: 5px;
   }
@@ -160,7 +163,7 @@
 .header__catalog {
   border-radius: 6px;
   background-color: #e5b612;
-  color: #005974;
+  color: #002837;
   font-size: 19px;
   font-weight: 700;
   line-height: 21.33px;
@@ -304,5 +307,5 @@
 }
 
 .header__inner {
-
+  display: grid;
 }
