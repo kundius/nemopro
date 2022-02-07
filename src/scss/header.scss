@@ -65,10 +65,8 @@
   font-size: 19px;
   color: #ffffff;
   font-weight: 300;
-  margin-top: 6px;
   @media (max-width: $breakpoint-medium-max) {
     font-size: 13px;
-    margin-top: 0;
   }
 }
 
@@ -128,6 +126,29 @@
   vertical-align: middle;
   position: relative;
   top: -1px;
+  @media (max-width: $breakpoint-medium-max) {
+    display: none;
+  }
+}
+
+.header-contacts__phone {
+  color: #fdfdfd;
+  font-size: 25px;
+  line-height: 1;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+  span {
+    font-size: 13px;
+    letter-spacing: -0.1px;
+  }
+  @media (max-width: $breakpoint-large-max) {
+    span {
+    display: none;
+    }
+  }
   @media (max-width: $breakpoint-medium-max) {
     display: none;
   }
