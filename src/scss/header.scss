@@ -164,16 +164,17 @@
   border-radius: 6px;
   background-color: #e5b612;
   color: #002837;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 21.33px;
+  line-height: 1.2;
   text-transform: uppercase;
-  padding: 12px 23px;
+  padding: 5px 16px;
   text-align: center;
   display: inline-flex;
   &:hover {
     text-decoration: none;
     background: #ffce23;
+    color: #002837;
   }
   @media (max-width: $breakpoint-large-max) {
     font-size: 16px;
@@ -232,13 +233,13 @@
 
 .header__logo {
   display: block;
-  width: 180px;
+  width: 144px;
 }
 
 .header-modern-cart {
   position: relative;
-  width: 70px;
-  height: 70px;
+  width: 55px;
+  height: 55px;
   border: 2px solid #169bbb;
   color: #169bbb;
   border-radius: 50%;
@@ -260,16 +261,16 @@
   position: absolute;
   left: -2px;
   top: -2px;
-  font-weight: bold;
-  font-size: 14px;
+  font-weight: 700;
+  font-size: 12px;
   color: #005974;
   line-height: 1;
   text-align: center;
   border-radius: 100%;
-  min-width: 18px;
-  background: #ffee00;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  min-width: 14px;
+  background: #fe0;
+  padding-top: 1px;
+  padding-bottom: 1px;
   display: none;
   .full & {
     display: block;
@@ -280,10 +281,11 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
   fill: currentColor;
-  width: 34px;
-  height: 34px;
+  width: 26px;
+  height: 26px;
+  margin-top: -3px;
 }
 
 .header-modern-cart__price {
@@ -292,15 +294,18 @@
   left: -2px;
   right: -2px;
   bottom: -2px;
-  font-weight: bold;
-  font-size: 12px;
-  color: rgb(0, 89, 116);
+  font-weight: 700;
+  font-size: 11px;
+  color: #005974;
   line-height: 1;
   text-align: center;
   border-radius: 10px;
-  background: rgb(255, 238, 0);
-  padding-top: 3px;
-  padding-bottom: 1px;
+  background: #fe0;
+  padding-top: 1px;
+  padding-bottom: 0;
+  .uk-icon-rub {
+    font-size: 9px;
+  }
   .full & {
     display: block;
   }
