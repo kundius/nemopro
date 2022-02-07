@@ -110,6 +110,10 @@
 .header-contacts__more {
   color: #ffffff;
   text-decoration: underline;
+  margin-left: 13px;
+  @media (max-width: $breakpoint-medium-max) {
+    margin-left: 5px;
+  }
   &:hover {
     text-decoration: none;
     color: #fff;
