@@ -11,6 +11,7 @@
 
 .service-menu__item {
   font-size: 16px;
+  line-height: 36px;
   color: #fff;
   white-space: nowrap;
   a {
@@ -47,4 +48,8 @@
   &_guarantee {
     order: 60;
   }
+}
+
+.service-menu__catalog {
+  display: none;
 }
