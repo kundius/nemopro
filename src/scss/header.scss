@@ -1,2 +1,50 @@
 @import "variables";
 
+.service-menu {
+  background: #005976;
+}
+
+.service-menu__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.service-menu__item {
+  font-size: 16px;
+  color: #fff;
+  white-space: nowrap;
+  a {
+    color: inherit;
+    text-decoration: underline;
+    &:hover {
+      background-color: #004961;
+    }
+  }
+  &_how-to {
+    order: 10;
+  }
+  &_discount {
+    order: 70;
+  }
+  &_credit {
+    order: 30;
+  }
+  &_reviews {
+    order: 90;
+  }
+  &_track {
+    order: 50;
+  }
+  &_payment {
+    order: 20;
+  }
+  &_delivery {
+    order: 40;
+  }
+  &_articles {
+    order: 80;
+  }
+  &_guarantee {
+    order: 60;
+  }
+}
