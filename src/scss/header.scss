@@ -237,6 +237,7 @@
   border-radius: 50%;
   margin-left: 19px;
   flex-shrink: 0;
+  display: inline-flex;
   &.full,
   &:hover {
     border-color: #ffee00;
@@ -296,4 +297,8 @@
   .full & {
     display: block;
   }
+}
+
+.header__inner {
+
 }
