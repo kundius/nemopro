@@ -149,12 +149,6 @@
   @media (max-width: $breakpoint-medium-max) {
     background-color: #005976;
     background: linear-gradient(to bottom, #002837 0, #002837 32px, #005976 32px, #005976 100%);
-    // &::before {
-    //   content: '';
-    //   height: 32px;
-    //   background: #002837;
-    //   position: absolute;
-    // }
   }
 }
 
@@ -172,11 +166,6 @@
   @media (max-width: $breakpoint-medium-max) {
     font-size: 13px;
     min-height: 32px;
-    // background: #002837;
-    // margin-left: -5px;
-    // margin-right: -5px;
-    // padding-left: 5px;
-    // padding-right: 5px;
     display: flex;
     align-items: center;
   }
@@ -191,6 +180,7 @@
   }
   @media (max-width: $breakpoint-medium-max) {
     margin-right: 5px;
+    display: none;
   }
 }
 
@@ -300,9 +290,12 @@
     @media (max-width: #{$breakpoint-medium-max + (($breakpoint-xlarge - $breakpoint-large) / 2)}) {
       margin-left: 12px;
     }
+    @media (max-width: $breakpoint-medium-max) {
+      margin-left: 8px;
+    }
   }
   @media (max-width: $breakpoint-medium-max) {
-    margin-left: -120px;
+    margin-left: -84px;
   }
 }
 
@@ -319,9 +312,9 @@
   align-items: center;
   justify-content: center;
   @media (max-width: $breakpoint-medium-max) {
-    width: 28px;
-    height: 28px;
-    font-size: 16px;
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
   }
   svg {
     fill: currentColor;
@@ -479,7 +472,7 @@
   grid-column: 5 / 6;
   @media (max-width: $breakpoint-medium-max) {
     grid-row: 1 / 2;
-    grid-column: 1 / 5;
+    grid-column: 1 / 4;
   }
 }
 
