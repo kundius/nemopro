@@ -241,9 +241,21 @@
     text-decoration: none;
     color: #fff;
   }
-  span {
-    font-size: 13px;
-    letter-spacing: -0.1px;
+  @media (max-width: $breakpoint-medium-max) {
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: -.5px;
+  }
+}
+
+.header__phone span {
+  font-size: 13px;
+  letter-spacing: -0.1px;
+  @media (max-width: $breakpoint-medium-max) {
+    font-size: 10px;
+    display: block;
+    margin-top: 4px;
+    letter-spacing: -.1px;
   }
 }
 
