@@ -278,7 +278,9 @@
   fill: currentColor;
   width: 26px;
   height: 26px;
-  margin-top: -3px;
+  .header-modern-cart.full & {
+    margin-top: -3px;
+  }
 }
 
 .header-modern-cart__price {
