@@ -68,9 +68,16 @@
       line-height: 1;
       padding: 6px 0;
       border-right: 1px solid #00435a;
+      text-decoration: none;
     }
-    &_track {
-      border-right: none;
+    &_track,
+    &_payment,
+    &_delivery,
+    &_articles,
+    &_guarantee {
+      font-size: 12px;
+      line-height: 1;
+      padding: 6px 0;
     }
     &_how-to {
       order: 10;
@@ -104,6 +111,15 @@
 
 .service-menu__catalog {
   display: none;
+  color: #023c4e;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 29px;
+  border-radius: 6px;
+  background-color: #e5b612;
+  text-transform: uppercase;
+  text-align: center;
+  box-sizing: initial;
   @media (max-width: $breakpoint-medium-max) {
     display: block;
     order: 55;
