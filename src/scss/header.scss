@@ -417,6 +417,9 @@
   }
   @media (max-width: $breakpoint-medium-max) {
     display: none;
+    .full & {
+      display: none;
+    }
   }
 }
 
