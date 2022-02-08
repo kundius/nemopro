@@ -9,6 +9,7 @@
   justify-content: space-between;
   margin: 0 -8px;
   @media (max-width: $breakpoint-medium-max) {
+    justify-content: initial;
     margin: 0 -5px;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
@@ -67,7 +68,7 @@
       background-color: #002837;
       font-size: 12px;
       line-height: 1;
-      padding: 6px 0;
+      padding: 6px 5px;
       border-right: 1px solid #00435a;
       text-decoration: none;
     }
@@ -80,7 +81,7 @@
     &_guarantee {
       font-size: 12px;
       line-height: 1;
-      padding: 6px 0;
+      padding: 6px 5px;
     }
     &_how-to {
       order: 10;
@@ -117,13 +118,21 @@
   color: #023c4e;
   font-size: 12px;
   font-weight: 700;
-  line-height: 29px;
+  line-height: 28px;
+  margin-left: 5px;
+  margin-right: 5px;
   border-radius: 6px;
   background-color: #e5b612;
   text-transform: uppercase;
   text-align: center;
   box-sizing: initial;
   align-self: center;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    background: #ffce23;
+    color: #002837;
+  }
   @media (max-width: $breakpoint-medium-max) {
     display: block;
     order: 55;
