@@ -8,6 +8,12 @@
   display: flex;
   justify-content: space-between;
   margin: 0 -8px;
+  @media (max-width: $breakpoint-medium-max) {
+    margin: 0;
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+  }
 }
 
 .service-menu__item {
@@ -52,10 +58,43 @@
   &_guarantee {
     order: 60;
   }
+  @media (max-width: $breakpoint-medium-max) {
+    &_how-to {
+      order: 10;
+    }
+    &_discount {
+      order: 20;
+    }
+    &_credit {
+      order: 30;
+    }
+    &_reviews {
+      order: 40;
+    }
+    &_track {
+      order: 50;
+    }
+    &_payment {
+      order: 60;
+    }
+    &_delivery {
+      order: 70;
+    }
+    &_articles {
+      order: 80;
+    }
+    &_guarantee {
+      order: 90;
+    }
+  }
 }
 
 .service-menu__catalog {
   display: none;
+  @media (max-width: $breakpoint-medium-max) {
+    display: block;
+    order: 55;
+  }
 }
 
 .header {
