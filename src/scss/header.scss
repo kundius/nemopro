@@ -9,10 +9,9 @@
   justify-content: space-between;
   margin: 0 -8px;
   @media (max-width: $breakpoint-medium-max) {
-    margin: 0;
-    flex-wrap: wrap;
+    margin: 0 -5px;
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
@@ -59,6 +58,20 @@
     order: 60;
   }
   @media (max-width: $breakpoint-medium-max) {
+    &_how-to,
+    &_discount,
+    &_credit,
+    &_reviews,
+    &_track {
+      background-color: #002837;
+      font-size: 12px;
+      line-height: 1;
+      padding: 6px 0;
+      border-right: 1px solid #00435a;
+    }
+    &_track {
+      border-right: none;
+    }
     &_how-to {
       order: 10;
     }
