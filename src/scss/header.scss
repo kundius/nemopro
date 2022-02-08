@@ -346,8 +346,6 @@
   width: 144px;
   @media (max-width: $breakpoint-medium-max) {
     width: 114px;
-    margin-top: 4px;
-    margin-bottom: 4px;
   }
 }
 
@@ -453,6 +451,9 @@
   // @media (max-width: $breakpoint-medium-max) {
   //   grid-template-columns: min-content 1fr max-content 1fr min-content;
   // }
+  @media (max-width: $breakpoint-medium-max) {
+    min-height: 48px;
+  }
 }
 
 .header-grid__logo {
