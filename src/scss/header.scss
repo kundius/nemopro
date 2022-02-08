@@ -142,7 +142,7 @@
 .header {
   background: #002837;
   z-index: 990;
-  position: fixed;
+  position: sticky;
   width: 100%;
   left: 0;
   top: 0;
@@ -150,6 +150,7 @@
 
 .header-placeholder {
   height: 60px;
+  display: none;
 }
 
 .header-contacts {
