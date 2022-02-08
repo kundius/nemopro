@@ -180,6 +180,8 @@
   }
   @media (max-width: $breakpoint-medium-max) {
     margin-right: 5px;
+  }
+  @media (max-width: 420px) {
     display: none;
   }
 }
