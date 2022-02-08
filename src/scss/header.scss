@@ -70,7 +70,9 @@
       border-right: 1px solid #00435a;
       text-decoration: none;
     }
-    &_track,
+    &_track {
+      border-right: none;
+    }
     &_payment,
     &_delivery,
     &_articles,
