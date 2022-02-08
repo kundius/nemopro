@@ -146,6 +146,9 @@
   width: 100%;
   left: 0;
   top: 0;
+  @media (max-width: $breakpoint-medium-max) {
+    background-color: #005976;
+  }
 }
 
 .header-placeholder {
@@ -314,6 +317,9 @@
 .header__logo {
   display: block;
   width: 144px;
+  @media (max-width: $breakpoint-medium-max) {
+    width: 114px;
+  }
 }
 
 .header-modern-cart {
