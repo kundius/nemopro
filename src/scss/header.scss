@@ -11,20 +11,21 @@
   @media (max-width: $breakpoint-medium-max) {
     margin: 0 -5px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto auto auto;
   }
 }
 
 .service-menu__item {
   font-size: 16px;
   line-height: 1;
-  display: flex;
   color: #fff;
   text-decoration: underline;
   padding: 4px 8px;
+  display: flex;
   text-align: center;
   align-items: center;
   min-height: 36px;
+  justify-content: center;
   &:hover {
     background-color: #004961;
     text-decoration: underline;
@@ -122,6 +123,7 @@
   text-transform: uppercase;
   text-align: center;
   box-sizing: initial;
+  align-self: center;
   @media (max-width: $breakpoint-medium-max) {
     display: block;
     order: 55;
