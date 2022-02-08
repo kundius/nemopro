@@ -348,6 +348,10 @@
     border-color: #ffee00;
     color: #ffee00;
   }
+  @media (max-width: $breakpoint-medium-max) {
+    width: 44px;
+    height: 44px;
+  }
 }
 
 .header-modern-cart__count {
@@ -381,6 +385,13 @@
   .header-modern-cart.full & {
     margin-top: -3px;
   }
+  @media (max-width: $breakpoint-medium-max) {
+    width: 24px;
+    height: 24px;
+    .header-modern-cart.full & {
+      margin-top: 0;
+    }
+  }
 }
 
 .header-modern-cart__price {
@@ -404,6 +415,9 @@
   .full & {
     display: block;
   }
+  @media (max-width: $breakpoint-medium-max) {
+    display: none;
+  }
 }
 
 .header-grid {
@@ -414,6 +428,9 @@
   grid-template-columns: min-content 1fr min-content 1fr max-content 1fr min-content 28px min-content;
   @media (max-width: #{$breakpoint-medium-max + (($breakpoint-xlarge - $breakpoint-large) / 2)}) {
     grid-template-columns: min-content 1fr min-content 1fr max-content 1fr min-content 16px min-content;
+  }
+  @media (max-width: $breakpoint-medium-max) {
+    grid-template-columns: min-content 1fr max-content 1fr min-content;
   }
 }
 
