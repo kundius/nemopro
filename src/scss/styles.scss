@@ -3159,6 +3159,25 @@ jdiv {
     margin-right: -18px !important;
     cursor: pointer;
 }
+#ya-site-form2 .ya-site-form__input-text {
+  padding: 0 12px;
+  height: 32px;
+  border-radius: 6px;
+}
+#ya-site-form2 .ya-site-form__submit {
+  background: #e5b612;
+  border: none;
+  font-weight: 600;
+  line-height: 32px;
+  border-radius: 6px;
+  background-color: #e5b612;
+  text-transform: uppercase;
+  padding: 0 12px;
+  text-align: center;
+  box-sizing: initial;
+  cursor: pointer;
+  display: block;
+}
 .left-menu__lvl2 {
   list-style: none;
   display: block;
