@@ -8237,13 +8237,13 @@ th.forum-headline__replies {
     }
     &.uk-active {
         border-bottom-color: #ccc;
-        top: 116px !important;
+        // top: 116px !important;
         &.filters-wrap_hidden {
             transform: translateY(-100%);
         }
-        @media (max-width: $breakpoint-medium-max) {
-            top: 80px !important;
-        }
+        // @media (max-width: $breakpoint-medium-max) {
+        //     top: 80px !important;
+        // }
     }
     .button-blue {
         width: 100%;
