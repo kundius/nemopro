@@ -6,9 +6,10 @@ if (filterEl) {
   // const filterSticky = UIkit.sticky(filterEl, {
   //   top: window.matchMedia("(min-width: 960px)").matches ? 60 : 80,
   // });
+  const rect = filterEl.getBoundingClientRect();
   window.addEventListener("scroll", function () {
-    const rect = filterEl.getBoundingClientRect();
-    if (window.scrollY > 280) {
+    console.log(rect)
+    if (window.scrollY > rect.bottom) {
       filterEl.classList.add("filters-wrap_fixed");
       filterEl.style.width = `${rect.width}px`
       filterEl.parentElement.style.paddingTop = `${rect.height}px`
