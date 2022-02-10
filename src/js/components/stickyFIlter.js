@@ -3,9 +3,6 @@ const toggleEl = document.querySelector(".filters-wrap__toggle");
 const toggleOnMobileEl = document.querySelector(".filters-toggle-on-moblie");
 
 if (filterEl) {
-  // const filterSticky = UIkit.sticky(filterEl, {
-  //   top: window.matchMedia("(min-width: 960px)").matches ? 60 : 80,
-  // });
   const rect = filterEl.getBoundingClientRect();
   const baseTop = rect.top + window.scrollY
   const baseBottom = rect.bottom + window.scrollY
