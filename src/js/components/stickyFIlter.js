@@ -7,12 +7,15 @@ if (filterEl) {
   //   top: window.matchMedia("(min-width: 960px)").matches ? 60 : 80,
   // });
   const rect = filterEl.getBoundingClientRect();
+  const baseTop = rect.top + window.scrollY
+  const baseBottom = rect.bottom + window.scrollY
   const headerHeight = window.matchMedia("(min-width: 960px)").matches ? 60 : 80;
   let isFixed = false;
   let isOpened = false;
 
   window.addEventListener("scroll", function () {
-    if (window.scrollY > (isOpened ? rect.top + window.pageYOffset : rect.bottom + window.pageYOffset)) {
+    console.log(window.scrollY, baseTop, baseBottom)
+    if (window.scrollY > (isOpened ? baseTop : baseBottom)) {
       filterEl.classList.add("filters-wrap_fixed");
       filterEl.style.width = `${rect.width}px`;
       filterEl.parentElement.style.paddingTop = `${rect.height}px`;
