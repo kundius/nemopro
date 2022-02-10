@@ -9,7 +9,7 @@ if (msefilter) {
   const headerHeight = window.matchMedia(media).matches ? 60 : 80;
 
   let isFixed = false;
-  let isOpened = false;
+  let isHidden = true;
 
   window.addEventListener("scroll", function () {
     const rect = filterEl.getBoundingClientRect();
@@ -19,16 +19,15 @@ if (msefilter) {
       filterEl.style.width = `${rect.width}px`;
       msefilter.style.paddingTop = `${rect.height}px`;
       isFixed = true;
+      if (isHidden) {
+        filterEl.classList.add("filters-wrap_hidden");
+      }
     } else {
       filterEl.classList.remove("filters-wrap_fixed");
       filterEl.style.width = null;
       msefilter.style.paddingTop = null;
       isFixed = false;
-    }
-    if (isOpened) {
       filterEl.classList.remove("filters-wrap_hidden");
-    } else {
-      filterEl.classList.add("filters-wrap_hidden");
     }
   });
 
