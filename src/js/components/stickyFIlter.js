@@ -1,5 +1,7 @@
 const Sticksy = require('sticksy')
 
+console.log(Sticksy)
+
 const stickyEl = document.querySelector('.filters-wrap')
 
 if (stickyEl) {
