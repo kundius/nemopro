@@ -163,7 +163,7 @@
 .header-contacts {
   display: flex;
   line-height: 1;
-  font-size: 18px;
+  font-size: 16px;
   color: #ffffff;
   font-weight: 300;
   @media (max-width: $breakpoint-medium-max) {
@@ -178,6 +178,7 @@
   color: #fff;
   margin-right: 18px;
   letter-spacing: 0.5px;
+  display: none;
   &:hover {
     color: #fff;
   }
@@ -197,7 +198,7 @@
   display: flex;
   letter-spacing: 0.5px;
   li {
-    margin-left: 18px;
+    margin-left: 16px;
     @media (max-width: $breakpoint-medium-max) {
       margin-left: 5px;
     }
@@ -265,6 +266,7 @@
 .header__phone span {
   font-size: 13px;
   letter-spacing: -0.1px;
+  display: none;
   @media (max-width: $breakpoint-medium-max) {
     font-size: 10px;
     display: block;
@@ -483,6 +485,12 @@
   @media (max-width: $breakpoint-medium-max) {
     display: none;
   }
+}
+
+.header-grid__contacts-and-phone {
+  display: flex;
+  gap: 28px;
+  align-items: center;
 }
 
 .header-grid__contacts {
