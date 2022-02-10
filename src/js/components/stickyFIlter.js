@@ -31,13 +31,15 @@ if (msefilter) {
     }
   });
 
-  // toggleEl.addEventListener("click", function () {
-  //   if (isOpened) {
-  //     close();
-  //   } else {
-  //     open();
-  //   }
-  // });
+  toggleEl.addEventListener("click", function () {
+    if (isHidden) {
+      filterEl.classList.remove("filters-wrap_hidden");
+      isHidden = false;
+    } else {
+      filterEl.classList.add("filters-wrap_hidden");
+      isHidden = true;
+    }
+  });
 
   // toggleOnMobileEl.addEventListener("click", function () {
   //   if (isOpened) {
