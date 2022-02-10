@@ -3,19 +3,18 @@ const toggleEl = document.querySelector(".filters-wrap__toggle");
 const toggleOnMobileEl = document.querySelector(".filters-toggle-on-moblie");
 
 if (filterEl) {
-  const rect = filterEl.getBoundingClientRect();
-  const baseTop = rect.top + window.scrollY;
+  const baseTop = filterEl.getBoundingClientRect().top + window.scrollY;
   // const baseBottom = rect.bottom + window.scrollY;
   const headerHeight = window.matchMedia("(min-width: 960px)").matches
     ? 60
     : 80;
-  let filterHeight = rect.height
   let isFixed = false;
   let isOpened = false;
 
   window.addEventListener("scroll", function () {
-    console.log((isOpened ? baseTop : baseTop + filterHeight))
-    if (window.scrollY > (isOpened ? baseTop : baseTop + filterHeight) - headerHeight) {
+    const rect = filterEl.getBoundingClientRect();
+    console.log((isOpened ? baseTop : baseTop + rect.height))
+    if (window.scrollY > (isOpened ? baseTop : baseTop + rect.height) - headerHeight) {
       filterEl.classList.add("filters-wrap_fixed");
       filterEl.style.width = `${rect.width}px`;
       filterEl.parentElement.style.paddingTop = `${rect.height}px`;
@@ -47,17 +46,11 @@ if (filterEl) {
   const open = () => {
     filterEl.classList.remove("filters-wrap_hidden");
     isOpened = true;
-    setTimeout(() => {
-      filterHeight = filterEl.getBoundingClientRect().height
-    }, 0)
   };
 
   const close = () => {
     filterEl.classList.add("filters-wrap_hidden");
     isOpened = false;
-    setTimeout(() => {
-      filterHeight = filterEl.getBoundingClientRect().height
-    }, 0)
   };
 }
 
