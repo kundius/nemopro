@@ -120,6 +120,13 @@
   }
 }
 
+.service-menu__fix-lenght {
+  display: none;
+  @media (max-width: $breakpoint-medium-max) {
+    display: inline;
+  }
+}
+
 .service-menu__catalog {
   display: none;
   color: #023c4e;
