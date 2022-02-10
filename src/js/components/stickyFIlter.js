@@ -15,7 +15,7 @@ if (filterEl) {
 
   window.addEventListener("scroll", function () {
     console.log(window.scrollY, baseTop, baseBottom)
-    if (window.scrollY > (isOpened ? baseTop : baseBottom)) {
+    if (window.scrollY > ((isOpened ? baseTop : baseBottom) - headerHeight)) {
       filterEl.classList.add("filters-wrap_fixed");
       filterEl.style.width = `${rect.width}px`;
       filterEl.parentElement.style.paddingTop = `${rect.height}px`;
