@@ -40,10 +40,6 @@ if (filterEl) {
     }
   });
 
-  window.addEventListener("resize", function () {
-    rect = getRect();
-  });
-
   toggleEl.addEventListener("click", function () {
     if (isOpened) {
       close();
@@ -62,13 +58,13 @@ if (filterEl) {
 
   const open = () => {
     filterEl.classList.remove("filters-wrap_hidden");
-    window.dispatchEvent(new Event("resize"));
+    rect = getRect();
     isOpened = true;
   };
 
   const close = () => {
     filterEl.classList.add("filters-wrap_hidden");
-    window.dispatchEvent(new Event("resize"));
+    rect = getRect();
     isOpened = false;
   };
 }
