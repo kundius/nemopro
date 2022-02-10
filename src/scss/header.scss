@@ -21,8 +21,7 @@
   line-height: 1;
   color: #fff;
   text-decoration: underline;
-  padding: 4px 8px;
-  padding-bottom: 6px;
+  padding: 4px 8px 6px;
   display: flex;
   text-align: center;
   align-items: center;
@@ -73,7 +72,7 @@
       background-color: #002837;
       font-size: 12px;
       line-height: 1;
-      padding: 6px 5px;
+      padding: 4px 5px 6px;
       border-right: 1px solid #00435a;
       text-decoration: none;
     }
@@ -86,7 +85,7 @@
     &_guarantee {
       font-size: 12px;
       line-height: 1;
-      padding: 6px 5px;
+      padding: 4px 5px 6px;
     }
     &_how-to {
       order: 10;
