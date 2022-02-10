@@ -8227,17 +8227,17 @@ th.forum-headline__replies {
 }
 
 .filters-wrap {
-    background-color: #ffffff;
-    border-bottom: 1px solid transparent;
-    z-index: 200 !important;
-    // transition: transform .3s ease;
-    @media (max-width: $breakpoint-mini-max) {
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-    .button-blue {
-        width: 100%;
-    }
+  background-color: #ffffff;
+  border-bottom: 1px solid transparent;
+  z-index: 200 !important;
+  // transition: transform .3s ease;
+  @media (max-width: $breakpoint-mini-max) {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .button-blue {
+    width: 100%;
+  }
 }
 
 .filters-wrap.filters-wrap_fixed {
@@ -8247,6 +8247,19 @@ th.forum-headline__replies {
   @media (max-width: $breakpoint-medium-max) {
     top: 80px;
   }
+  .filters-wrap__toggle {
+    display: block;
+  }
+}
+
+.filters-wrap.filters-wrap_hidden {
+  transform: translateY(-100%);
+  .filters-wrap__toggle span:first-child {
+    display: none;
+  }
+  .filters-wrap__toggle span:last-child {
+    display: inline;
+  }
 }
 
 .filters-wrap.filters-wrap_fixed.filters-wrap_hidden {
@@ -8254,46 +8267,37 @@ th.forum-headline__replies {
 }
 
 .filters-wrap__toggle {
-    position: absolute;
-    top: 100%;
-    right: 10px;
-    line-height: 28px;
-    border-radius: 0 0 10px 10px;
-    padding: 0 20px;
-    background-color: #fff;
-    color: #236ba6;
-    text-decoration: underline;
-    box-shadow: 0 1px 5px rgba(6, 61, 90, 0.8);
-    border: none;
-    cursor: pointer;
-    display: none;
-    &:focus {
-        outline: none;
+  position: absolute;
+  top: 100%;
+  right: 10px;
+  line-height: 28px;
+  border-radius: 0 0 10px 10px;
+  padding: 0 20px;
+  background-color: #fff;
+  color: #236ba6;
+  text-decoration: underline;
+  box-shadow: 0 1px 5px rgba(6, 61, 90, 0.8);
+  border: none;
+  cursor: pointer;
+  display: none;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: #f1f1f1;
+  }
+  span {
+    &:first-child {
+      display: inline;
     }
-    &:hover {
-        background-color: #f1f1f1;
+    &:last-child {
+      display: none;
     }
-    span {
-        &:first-child {
-            display: inline;
-            // .filters-wrap_hidden & {
-            //     display: none;
-            // }
-        }
-        &:last-child {
-            display: none;
-            // .filters-wrap_hidden & {
-            //     display: inline;
-            // }
-        }
-    }
-    // .filters-wrap_fixed & {
-    //     display: block;
-    // }
-    @media (max-width: $breakpoint-mini-max) {
-        width: 100%;
-        right: 0;
-    }
+  }
+  @media (max-width: $breakpoint-mini-max) {
+    width: 100%;
+    right: 0;
+  }
 }
 
 // .filters-wrap {

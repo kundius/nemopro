@@ -17,14 +17,18 @@ if (msefilter) {
     if (window.scrollY > baseTop - headerHeight) {
       filterEl.classList.add("filters-wrap_fixed");
       filterEl.style.width = `${rect.width}px`;
-      filterEl.parentElement.style.paddingTop = `${rect.height}px`;
+      msefilter.style.paddingTop = `${rect.height}px`;
       isFixed = true;
-      isOpened = false
     } else {
       filterEl.classList.remove("filters-wrap_fixed");
       filterEl.style.width = null;
-      filterEl.parentElement.style.paddingTop = null;
+      msefilter.style.paddingTop = null;
       isFixed = false;
+    }
+    if (isOpened) {
+      filterEl.classList.remove("filters-wrap_hidden");
+    } else {
+      filterEl.classList.add("filters-wrap_hidden");
     }
   });
 
