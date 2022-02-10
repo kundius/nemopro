@@ -2953,9 +2953,8 @@ jdiv {
     background-color: #fff;
     width: 53px;
     height: 52px;
-    position: absolute;
-    right: 0;
-    top: 0;
+    position: relative;
+    margin-left: auto;
     &::before {
         content: '';
         position: absolute;
