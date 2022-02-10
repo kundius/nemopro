@@ -8235,6 +8235,17 @@ th.forum-headline__replies {
         padding-top: 5px;
         padding-bottom: 5px;
     }
+    &.filters-wrap_fixed {
+      position: fixed;
+      top: 60px;
+      border-bottom-color: #ccc;
+      &.filters-wrap_hidden {
+          transform: translateY(-100%);
+      }
+      @media (max-width: $breakpoint-medium-max) {
+          top: 80px;
+      }
+    }
     &.uk-active {
         border-bottom-color: #ccc;
         // top: 116px !important;

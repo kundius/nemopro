@@ -3,8 +3,20 @@ const toggleEl = document.querySelector(".filters-wrap__toggle");
 const toggleOnMobileEl = document.querySelector(".filters-toggle-on-moblie");
 
 if (filterEl) {
-  const filterSticky = UIkit.sticky(filterEl, {
-    top: window.matchMedia("(min-width: 960px)").matches ? 60 : 80,
+  // const filterSticky = UIkit.sticky(filterEl, {
+  //   top: window.matchMedia("(min-width: 960px)").matches ? 60 : 80,
+  // });
+  window.addEventListener("scroll", function () {
+    const rect = filterEl.getBoundingClientRect();
+    if (window.scrollY > rect.bottom) {
+      filterEl.classList.add("filters-wrap_fixed");
+      filterEl.style.width = `${rect.width}px`
+      filterEl.parentElement.style.paddingTop = `${rect.height}px`
+    } else {
+      filterEl.classList.remove("filters-wrap_fixed");
+      filterEl.style.width = null
+      filterEl.parentElement.style.paddingTop = null
+    }
   });
 
   toggleEl.addEventListener("click", function () {
@@ -14,7 +26,7 @@ if (filterEl) {
     window.dispatchEvent(new Event("resize"));
   });
 
-  toggleOnMobileEl.on("click", function () {
+  toggleOnMobileEl.addEventListener("click", function () {
     toggleOnMobileEl.classList.toggle("filters-toggle-on-moblie_active");
     filterEl.classList.toggle("filters-wrap_hidden");
     // $.cookie('show-filters', !$('.filters-wrap').hasClass('filters-wrap_hidden'));
