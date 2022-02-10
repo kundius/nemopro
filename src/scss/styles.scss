@@ -8295,6 +8295,7 @@ th.forum-headline__replies {
             }
         }
     }
+    .filters-wrap_fixed &,
     .filters-wrap.uk-active & {
         display: block;
     }
@@ -8309,8 +8310,14 @@ th.forum-headline__replies {
       &_hidden .filters {
         display: none;
       }
+      &_fixed .filters {
+        display: grid;
+      }
       &.uk-active .filters {
         display: grid;
+      }
+      &.filters-wrap_hidden.filters-wrap_active .filters {
+        display: none;
       }
       &_hidden.uk-active .filters {
         display: none;
@@ -8352,6 +8359,9 @@ th.forum-headline__replies {
     display: block;
   }
   .filters-wrap.uk-active & {
+    display: none;
+  }
+  .filters-wrap_fixed & {
     display: none;
   }
 }
