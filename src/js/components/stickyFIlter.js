@@ -3,31 +3,17 @@ const toggleEl = document.querySelector(".filters-wrap__toggle");
 const toggleOnMobileEl = document.querySelector(".filters-toggle-on-moblie");
 
 if (filterEl) {
-  const getRect = () => {
-    const rect = filterEl.getBoundingClientRect();
-    const baseTop = rect.top + window.scrollY;
-    const baseBottom = rect.bottom + window.scrollY;
-    const headerHeight = window.matchMedia("(min-width: 960px)").matches
-      ? 60
-      : 80;
-    return {
-      width: rect.width,
-      height: rect.height,
-      baseTop,
-      baseBottom,
-      headerHeight,
-    };
-  };
-
-  let rect = getRect();
+  const rect = filterEl.getBoundingClientRect();
+  const baseTop = rect.top + window.scrollY;
+  // const baseBottom = rect.bottom + window.scrollY;
+  const headerHeight = window.matchMedia("(min-width: 960px)").matches
+    ? 60
+    : 80;
   let isFixed = false;
   let isOpened = false;
 
   window.addEventListener("scroll", function () {
-    if (
-      window.scrollY >
-      (isOpened ? rect.baseTop : rect.baseBottom) - rect.headerHeight
-    ) {
+    if (window.scrollY > (isOpened ? baseTop : baseTop + filterEl.clientHeight) - headerHeight) {
       filterEl.classList.add("filters-wrap_fixed");
       filterEl.style.width = `${rect.width}px`;
       filterEl.parentElement.style.paddingTop = `${rect.height}px`;
@@ -58,13 +44,11 @@ if (filterEl) {
 
   const open = () => {
     filterEl.classList.remove("filters-wrap_hidden");
-    rect = getRect();
     isOpened = true;
   };
 
   const close = () => {
     filterEl.classList.add("filters-wrap_hidden");
-    rect = getRect();
     isOpened = false;
   };
 }
