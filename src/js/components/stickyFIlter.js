@@ -13,6 +13,7 @@ if (filterEl) {
   let isOpened = false;
 
   window.addEventListener("scroll", function () {
+    console.log((isOpened ? baseTop : baseTop + filterEl.clientHeight))
     if (window.scrollY > (isOpened ? baseTop : baseTop + filterEl.clientHeight) - headerHeight) {
       filterEl.classList.add("filters-wrap_fixed");
       filterEl.style.width = `${rect.width}px`;
