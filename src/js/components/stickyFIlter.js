@@ -7,11 +7,12 @@ if (filterEl) {
   //   top: window.matchMedia("(min-width: 960px)").matches ? 60 : 80,
   // });
   const rect = filterEl.getBoundingClientRect();
+  const headerHeight = window.matchMedia("(min-width: 960px)").matches ? 60 : 80;
   let isFixed = false;
   let isOpened = false;
 
   window.addEventListener("scroll", function () {
-    if (window.scrollY > (isOpened ? rect.top : rect.bottom)) {
+    if (window.scrollY > ((isOpened ? rect.top : rect.bottom) - headerHeight)) {
       console.log(window.scrollY, isOpened ? rect.top : rect.bottom);
       filterEl.classList.add("filters-wrap_fixed");
       filterEl.style.width = `${rect.width}px`;
