@@ -7,35 +7,53 @@ if (filterEl) {
   //   top: window.matchMedia("(min-width: 960px)").matches ? 60 : 80,
   // });
   const rect = filterEl.getBoundingClientRect();
+  let isFixed = false;
+  let isOpened = false;
 
   window.addEventListener("scroll", function () {
-    console.log(rect)
+    console.log(rect);
     if (window.scrollY > rect.bottom) {
       filterEl.classList.add("filters-wrap_fixed");
-      filterEl.style.width = `${rect.width}px`
-      filterEl.parentElement.style.paddingTop = `${rect.height}px`
+      filterEl.style.width = `${rect.width}px`;
+      filterEl.parentElement.style.paddingTop = `${rect.height}px`;
+      isFixed = true;
     } else {
       filterEl.classList.remove("filters-wrap_fixed");
-      filterEl.style.width = null
-      filterEl.parentElement.style.paddingTop = null
+      filterEl.style.width = null;
+      filterEl.parentElement.style.paddingTop = null;
+      isFixed = false;
     }
   });
 
   toggleEl.addEventListener("click", function () {
-    filterEl.classList.add("filters-wrap_animation");
-    filterEl.classList.toggle("filters-wrap_hidden");
-    toggleOnMobileEl.classList.toggle("filters-toggle-on-moblie_active");
-    // $.cookie('show-filters', !$('.filters-wrap').hasClass('filters-wrap_hidden'));
-    window.dispatchEvent(new Event("resize"));
+    if (isOpened) {
+      open();
+    } else {
+      close();
+    }
   });
 
   toggleOnMobileEl.addEventListener("click", function () {
-    filterEl.classList.add("filters-wrap_animation");
-    toggleOnMobileEl.classList.toggle("filters-toggle-on-moblie_active");
-    filterEl.classList.toggle("filters-wrap_hidden");
-    // $.cookie('show-filters', !$('.filters-wrap').hasClass('filters-wrap_hidden'));
-    window.dispatchEvent(new Event("resize"));
+    if (isOpened) {
+      open();
+    } else {
+      close();
+    }
   });
+
+  const open = () => {
+    filterEl.classList.remove("filters-wrap_hidden");
+    toggleOnMobileEl.classList.remove("filters-toggle-on-moblie_active");
+    window.dispatchEvent(new Event("resize"));
+    isOpened = true;
+  };
+  
+  const close = () => {
+    toggleOnMobileEl.classList.add("filters-toggle-on-moblie_active");
+    filterEl.classList.add("filters-wrap_hidden");
+    window.dispatchEvent(new Event("resize"));
+    isOpened = false;
+  };
 }
 
 // function initFilterBar () {

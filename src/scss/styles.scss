@@ -8230,12 +8230,10 @@ th.forum-headline__replies {
     background-color: #ffffff;
     border-bottom: 1px solid transparent;
     z-index: 200 !important;
+    transition: transform .3s ease;
     @media (max-width: $breakpoint-mini-max) {
         padding-top: 5px;
         padding-bottom: 5px;
-    }
-    &.filters-wrap_animation {
-      transition: transform .3s ease;
     }
     &.filters-wrap_fixed {
       position: fixed;
