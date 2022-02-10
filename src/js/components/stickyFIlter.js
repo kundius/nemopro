@@ -1,24 +1,25 @@
-const filterEl = document.querySelector(".filters-wrap");
-const toggleEl = document.querySelector(".filters-wrap__toggle");
-const toggleOnMobileEl = document.querySelector(".filters-toggle-on-moblie");
+const msefilter = document.querySelector("#mse2_mfilter");
+const media = "(min-width: 960px)";
 
-if (filterEl) {
-  const baseTop = filterEl.getBoundingClientRect().top + window.scrollY;
-  // const baseBottom = rect.bottom + window.scrollY;
-  const headerHeight = window.matchMedia("(min-width: 960px)").matches
-    ? 60
-    : 80;
+if (msefilter) {
+  const filterEl = msefilter.querySelector(".filters-wrap");
+  const toggleEl = msefilter.querySelector(".filters-wrap__toggle");
+  const toggleOnMobileEl = msefilter.querySelector(".filters-toggle-on-moblie");
+  const baseTop = msefilter.getBoundingClientRect().top + window.scrollY;
+  const headerHeight = window.matchMedia(media).matches ? 60 : 80;
+
   let isFixed = false;
   let isOpened = false;
 
   window.addEventListener("scroll", function () {
     const rect = filterEl.getBoundingClientRect();
-    console.log((isOpened ? baseTop : baseTop + rect.height))
-    if (window.scrollY > (isOpened ? baseTop : baseTop + rect.height) - headerHeight) {
+    // console.log((isOpened ? baseTop : baseTop + rect.height))
+    if (window.scrollY > baseTop - headerHeight) {
       filterEl.classList.add("filters-wrap_fixed");
       filterEl.style.width = `${rect.width}px`;
       filterEl.parentElement.style.paddingTop = `${rect.height}px`;
       isFixed = true;
+      isOpened = false
     } else {
       filterEl.classList.remove("filters-wrap_fixed");
       filterEl.style.width = null;
@@ -27,31 +28,31 @@ if (filterEl) {
     }
   });
 
-  toggleEl.addEventListener("click", function () {
-    if (isOpened) {
-      close();
-    } else {
-      open();
-    }
-  });
+  // toggleEl.addEventListener("click", function () {
+  //   if (isOpened) {
+  //     close();
+  //   } else {
+  //     open();
+  //   }
+  // });
 
-  toggleOnMobileEl.addEventListener("click", function () {
-    if (isOpened) {
-      close();
-    } else {
-      open();
-    }
-  });
+  // toggleOnMobileEl.addEventListener("click", function () {
+  //   if (isOpened) {
+  //     close();
+  //   } else {
+  //     open();
+  //   }
+  // });
 
-  const open = () => {
-    filterEl.classList.remove("filters-wrap_hidden");
-    isOpened = true;
-  };
+  // const open = () => {
+  //   filterEl.classList.remove("filters-wrap_hidden");
+  //   isOpened = true;
+  // };
 
-  const close = () => {
-    filterEl.classList.add("filters-wrap_hidden");
-    isOpened = false;
-  };
+  // const close = () => {
+  //   filterEl.classList.add("filters-wrap_hidden");
+  //   isOpened = false;
+  // };
 }
 
 // function initFilterBar () {
