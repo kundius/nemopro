@@ -11,6 +11,7 @@ if (filterEl) {
       ? 60
       : 80;
     return {
+      width: rect.width,
       height: rect.height,
       baseTop,
       baseBottom,
