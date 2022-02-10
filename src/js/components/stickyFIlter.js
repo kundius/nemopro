@@ -1,4 +1,4 @@
-const Sticksy = require('sticksy')
+require('sticksy')
 
 console.log(Sticksy)
 
