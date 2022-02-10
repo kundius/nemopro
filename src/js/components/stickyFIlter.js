@@ -27,17 +27,17 @@ if (filterEl) {
 
   toggleEl.addEventListener("click", function () {
     if (isOpened) {
-      open();
-    } else {
       close();
+    } else {
+      open();
     }
   });
 
   toggleOnMobileEl.addEventListener("click", function () {
     if (isOpened) {
-      open();
-    } else {
       close();
+    } else {
+      open();
     }
   });
 
