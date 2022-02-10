@@ -9,12 +9,13 @@ if (filterEl) {
   const headerHeight = window.matchMedia("(min-width: 960px)").matches
     ? 60
     : 80;
+  let filterHeight = rect.height
   let isFixed = false;
   let isOpened = false;
 
   window.addEventListener("scroll", function () {
-    console.log((isOpened ? baseTop : baseTop + filterEl.clientHeight))
-    if (window.scrollY > (isOpened ? baseTop : baseTop + filterEl.clientHeight) - headerHeight) {
+    console.log((isOpened ? baseTop : baseTop + filterHeight))
+    if (window.scrollY > (isOpened ? baseTop : baseTop + filterHeight) - headerHeight) {
       filterEl.classList.add("filters-wrap_fixed");
       filterEl.style.width = `${rect.width}px`;
       filterEl.parentElement.style.paddingTop = `${rect.height}px`;
@@ -46,11 +47,17 @@ if (filterEl) {
   const open = () => {
     filterEl.classList.remove("filters-wrap_hidden");
     isOpened = true;
+    setTimeout(() => {
+      filterHeight = filterEl.getBoundingClientRect().height
+    }, 0)
   };
 
   const close = () => {
     filterEl.classList.add("filters-wrap_hidden");
     isOpened = false;
+    setTimeout(() => {
+      filterHeight = filterEl.getBoundingClientRect().height
+    }, 0)
   };
 }
 
