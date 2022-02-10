@@ -1,11 +1,10 @@
-const filterEl = document.querySelector('.filters-wrap')
+const filterEl = document.querySelector(".filters-wrap");
 
 if (filterEl) {
   const filterSticky = UIkit.sticky(filterEl, {
-    top: 60
+    top: window.matchMedia("(min-width: 960px)").matches ? 60 : 80,
   });
 }
-
 
 // function initFilterBar () {
 //   // if ($.cookie('show-filters') == 'true') {
@@ -29,4 +28,3 @@ if (filterEl) {
 //   });
 // }
 // initFilterBar();
-
