@@ -8234,8 +8234,10 @@ th.forum-headline__replies {
         padding-top: 5px;
         padding-bottom: 5px;
     }
-    &.filters-wrap_fixed {
+    &.filters-wrap_animation {
       transition: transform .3s ease;
+    }
+    &.filters-wrap_fixed {
       position: fixed;
       top: 60px;
       border-bottom-color: #ccc;

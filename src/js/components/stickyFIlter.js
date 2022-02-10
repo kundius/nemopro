@@ -7,6 +7,7 @@ if (filterEl) {
   //   top: window.matchMedia("(min-width: 960px)").matches ? 60 : 80,
   // });
   const rect = filterEl.getBoundingClientRect();
+
   window.addEventListener("scroll", function () {
     console.log(rect)
     if (window.scrollY > rect.bottom) {
@@ -21,6 +22,7 @@ if (filterEl) {
   });
 
   toggleEl.addEventListener("click", function () {
+    filterEl.classList.add("filters-wrap_animation");
     filterEl.classList.toggle("filters-wrap_hidden");
     toggleOnMobileEl.classList.toggle("filters-toggle-on-moblie_active");
     // $.cookie('show-filters', !$('.filters-wrap').hasClass('filters-wrap_hidden'));
@@ -28,6 +30,7 @@ if (filterEl) {
   });
 
   toggleOnMobileEl.addEventListener("click", function () {
+    filterEl.classList.add("filters-wrap_animation");
     toggleOnMobileEl.classList.toggle("filters-toggle-on-moblie_active");
     filterEl.classList.toggle("filters-wrap_hidden");
     // $.cookie('show-filters', !$('.filters-wrap').hasClass('filters-wrap_hidden'));
