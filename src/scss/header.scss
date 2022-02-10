@@ -44,7 +44,7 @@
     order: 30;
   }
   &_reviews {
-    order: 90;
+    order: 100;
   }
   &_track {
     order: 50;
@@ -62,7 +62,7 @@
     order: 60;
   }
   &_contacts {
-    order: 100;
+    order: 90;
   }
   @media (max-width: $breakpoint-medium-max) {
     &_how-to,
