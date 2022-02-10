@@ -1,14 +1,9 @@
-require('sticksy')
+const filterEl = document.querySelector('.filters-wrap')
 
-console.log(Sticksy)
-
-const stickyEl = document.querySelector('.filters-wrap')
-
-if (stickyEl) {
-  const sticky = new Sticksy(stickyEl, {
-    topSpacing: 60
-  })
-
+if (filterEl) {
+  const filterSticky = UIkit.sticky(filterEl, {
+    top: 60
+  });
 }
 
 
