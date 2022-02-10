@@ -8,7 +8,7 @@ if (filterEl) {
   // });
   window.addEventListener("scroll", function () {
     const rect = filterEl.getBoundingClientRect();
-    if (window.scrollY > rect.bottom + rect.height) {
+    if (window.scrollY > 280) {
       filterEl.classList.add("filters-wrap_fixed");
       filterEl.style.width = `${rect.width}px`
       filterEl.parentElement.style.paddingTop = `${rect.height}px`
