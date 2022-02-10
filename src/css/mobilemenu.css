@@ -149,6 +149,7 @@
 
 .mobilemenu .menu ul>li a:hover {
     background: rgb(0, 89, 118);
+    color: #fff;
 }
 
 .mobilemenu .menu ul>li>ul>li a {
