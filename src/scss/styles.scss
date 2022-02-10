@@ -8337,6 +8337,9 @@ th.forum-headline__replies {
   .filters-wrap_fixed & {
     display: none;
   }
+  .filters-wrap_hidden & {
+    margin-top: 0;
+  }
   .filters-wrap_hidden &::after {
     top: 7px;
     transform: rotate(-54deg) skewY(22deg);

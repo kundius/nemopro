@@ -43,13 +43,11 @@ if (filterEl) {
 
   const open = () => {
     filterEl.classList.remove("filters-wrap_hidden");
-    toggleOnMobileEl.classList.remove("filters-toggle-on-moblie_active");
     window.dispatchEvent(new Event("resize"));
     isOpened = true;
   };
   
   const close = () => {
-    toggleOnMobileEl.classList.add("filters-toggle-on-moblie_active");
     filterEl.classList.add("filters-wrap_hidden");
     window.dispatchEvent(new Event("resize"));
     isOpened = false;
