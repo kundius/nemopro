@@ -14,7 +14,7 @@ if (msefilter) {
   window.addEventListener("scroll", function () {
     const rect = filterEl.getBoundingClientRect();
     // console.log((isOpened ? baseTop : baseTop + rect.height))
-    if (window.scrollY > (isHidden ? baseTop : baseTop + rect.height) - headerHeight) {
+    if (window.scrollY > (isHidden ? baseTop + rect.height : baseTop) - headerHeight) {
       filterEl.classList.add("filters-wrap_fixed");
       filterEl.style.width = `${rect.width}px`;
       msefilter.style.paddingTop = `${rect.height}px`;
