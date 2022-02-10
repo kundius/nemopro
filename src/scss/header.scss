@@ -61,6 +61,9 @@
   &_guarantee {
     order: 60;
   }
+  &_contacts {
+    order: 100;
+  }
   @media (max-width: $breakpoint-medium-max) {
     &_how-to,
     &_discount,
@@ -111,6 +114,9 @@
     }
     &_guarantee {
       order: 90;
+    }
+    &_contacts {
+      display: none;
     }
   }
 }
@@ -283,7 +289,7 @@
   font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
-  padding: 16px 16px;
+  padding: 13px 16px 11px;
   text-align: center;
   display: inline-flex;
   &:hover {
@@ -359,8 +365,8 @@
 
 .header-modern-cart {
   position: relative;
-  width: 54px;
-  height: 54px;
+  width: 48px;
+  height: 48px;
   border: 2px solid #169bbb;
   color: #169bbb;
   border-radius: 50%;
@@ -404,8 +410,8 @@
   top: 50%;
   transform: translate(-50%,-50%);
   fill: currentColor;
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
   .header-modern-cart.full & {
     margin-top: -3px;
   }
@@ -494,7 +500,7 @@
 }
 
 .header-grid__contacts {
-  margin-top: 2px;
+  // margin-top: 2px;
   // grid-row: 2 / 3;
   // grid-column: 5 / 6;
   @media (max-width: $breakpoint-medium-max) {
