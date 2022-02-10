@@ -12506,6 +12506,10 @@ td.u-product-options__items {
   svg {
     fill: currentColor;
   }
+  &:hover {
+    background: #169bbb;
+    color: #002837;
+  }
 }
 
 .msfavorites-toggle_added {
@@ -12683,6 +12687,10 @@ td.u-product-options__items {
   justify-content: center;
   svg {
     fill: currentColor;
+  }
+  &:hover {
+    background: #169bbb;
+    color: #002837;
   }
 }
 
