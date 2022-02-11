@@ -60,6 +60,32 @@ if (msefilter) {
     stickEl.style.transform = null;
   };
 
+  const hideMain = () => {
+    stickEl.style.transform = "translateY(-100%)";
+    isHidden = true;
+    toggleEl.innerHTML = toggleEl.dataset.open;
+  };
+
+  const openMain = () => {
+    stickEl.style.transform = "translateY(0)";
+    isHidden = false;
+    toggleEl.innerHTML = toggleEl.dataset.close;
+  };
+
+  const hideOnMobile = () => {
+    wrapEl.classList.remove("filters-wrap_on-mobile-visible");
+    formEl.style.display = "none";
+    toggleOnMobileEl.style.marginTop = null;
+    isVisibleOnMobile = false;
+  };
+
+  const openOnMobile = () => {
+    wrapEl.classList.add("filters-wrap_on-mobile-visible");
+    formEl.style.display = "grid";
+    toggleOnMobileEl.style.marginTop = "20px";
+    isVisibleOnMobile = true;
+  };
+
   window.addEventListener("scroll", function () {
     // console.log('stickyTop', stickyTop)
     if (window.scrollY > stickyTop) {
@@ -71,36 +97,22 @@ if (msefilter) {
 
   toggleEl.addEventListener("click", function () {
     if (isHidden) {
-      stickEl.style.transform = "translateY(0)";
-      isHidden = false;
-      toggleEl.innerHTML = toggleEl.dataset.close;
+      openMain();
 
       if (isMobile) {
-        wrapEl.classList.add("filters-wrap_on-mobile-visible");
-        formEl.style.display = "grid";
-        toggleOnMobileEl.style.marginTop = "20px";
-        isVisibleOnMobile = true;
+        openOnMobile();
       }
     } else {
-      stickEl.style.transform = "translateY(-100%)";
-      isHidden = true;
-      toggleEl.innerHTML = toggleEl.dataset.open;
+      hideMain();
 
       if (isMobile) {
-        wrapEl.classList.remove("filters-wrap_on-mobile-visible");
-        formEl.style.display = "none";
-        toggleOnMobileEl.style.marginTop = null;
-        isVisibleOnMobile = false;
+        hideOnMobile();
       }
     }
 
     calcStickyTop();
 
-    // проверяем, если скролл меньше нижней линии,
-    // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
-    // if (window.scrollY <= stickyTop) {
-    //   unstick();
-    // }
+    // обновить прикрепление с учетом новой позиции
     if (window.scrollY > stickyTop) {
       stick();
     } else {
@@ -110,32 +122,16 @@ if (msefilter) {
 
   toggleOnMobileEl.addEventListener("click", function () {
     if (isVisibleOnMobile) {
-      wrapEl.classList.remove("filters-wrap_on-mobile-visible");
-      formEl.style.display = "none";
-      toggleOnMobileEl.style.marginTop = null;
-      isVisibleOnMobile = false;
-
-      stickEl.style.transform = "translateY(-100%)";
-      isHidden = true;
-      toggleEl.innerHTML = toggleEl.dataset.open;
+      hideOnMobile();
+      hideMain();
     } else {
-      wrapEl.classList.add("filters-wrap_on-mobile-visible");
-      formEl.style.display = "grid";
-      toggleOnMobileEl.style.marginTop = "20px";
-      isVisibleOnMobile = true;
-
-      // stickEl.style.transform = "translateY(0)";
-      // isHidden = false;
-      // toggleEl.innerHTML = toggleEl.dataset.close;
+      openOnMobile();
+      // openMain пропущено, чтобы фильтр был изначально закрыт при прокрутке
     }
 
     calcStickyTop();
 
-    // проверяем, если скролл меньше нижней линии,
-    // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
-    // if (window.scrollY <= stickyTop) {
-    //   unstick();
-    // }
+    // обновить прикрепление с учетом новой позиции
     if (window.scrollY > stickyTop) {
       stick();
     } else {
