@@ -8269,6 +8269,21 @@ th.forum-headline__replies {
   transform: translateY(-100%);
 }
 
+.filters-wrap.filters-wrap_hidden {
+  @media (max-width: $breakpoint-mini-max) {
+//     .filters {
+//       display: grid;
+//     }
+//     .filters-toggle-on-moblie {
+//       margin-top: 20px;
+//       &::after {
+//         top: 14px;
+//         transform: rotate(126deg) skewY(22deg);
+//       }
+//     }
+  }
+}
+
 // .filters-wrap.filters-wrap_visible-on-mobile {
 //   @media (max-width: $breakpoint-mini-max) {
 //     .filters {

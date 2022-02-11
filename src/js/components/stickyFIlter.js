@@ -52,13 +52,30 @@ if (msefilter) {
   });
 
   toggleOnMobileEl.addEventListener("click", function () {
-    if (!isVisibleOnMobile) {
-      filterEl.classList.add("filters-wrap_visible-on-mobile");
-      isVisibleOnMobile = true;
+    if (isHidden) {
+      filterEl.classList.remove("filters-wrap_hidden");
+      isHidden = false;
     } else {
-      filterEl.classList.remove("filters-wrap_visible-on-mobile");
-      isVisibleOnMobile = false;
+      filterEl.classList.add("filters-wrap_hidden");
+      isHidden = true;
+
+      // проверяем, если скролл меньше нижней линии,
+      // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
+      const rect = filterEl.getBoundingClientRect();
+      if (window.scrollY <= baseTop + rect.height - headerHeight) {
+        filterEl.classList.remove("filters-wrap_fixed");
+        filterEl.style.width = null;
+        msefilter.style.paddingTop = null;
+        filterEl.classList.remove("filters-wrap_hidden");
+      }
     }
+    // if (!isVisibleOnMobile) {
+    //   filterEl.classList.add("filters-wrap_visible-on-mobile");
+    //   isVisibleOnMobile = true;
+    // } else {
+    //   filterEl.classList.remove("filters-wrap_visible-on-mobile");
+    //   isVisibleOnMobile = false;
+    // }
   });
 
   // const open = () => {
