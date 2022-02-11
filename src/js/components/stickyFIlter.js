@@ -42,7 +42,8 @@ if (msefilter) {
     // if (isMobile) {
     //   toggleOnMobileEl.style.display = "none";
     // }
-    stickEl.style.position = "fixed";
+    // stickEl.style.position = "fixed";
+    stickEl.classList.add('filters-stick_fixed')
     stickEl.style.top = `${headerEl.clientHeight}px`;
     stickEl.style.width = `${wrapEl.clientWidth}px`;
     stickEl.style.borderBottom = "1px solid #ccc";
@@ -57,7 +58,8 @@ if (msefilter) {
     // if (isMobile) {
     //   toggleOnMobileEl.style.display = "block";
     // }
-    stickEl.style.position = "relative";
+    // stickEl.style.position = "relative";
+    stickEl.classList.remove('filters-stick_fixed')
     stickEl.style.top = null;
     stickEl.style.width = null;
     stickEl.style.borderBottom = null;
