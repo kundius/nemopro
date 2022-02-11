@@ -52,7 +52,7 @@ if (msefilter) {
   });
 
   toggleOnMobileEl.addEventListener("click", function () {
-    if (isVisibleOnMobile) {
+    if (!isVisibleOnMobile) {
       filterEl.classList.add("filters-wrap_visible-on-mobile");
       isVisibleOnMobile = true;
     } else {
