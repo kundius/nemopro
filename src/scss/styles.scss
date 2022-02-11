@@ -8274,6 +8274,13 @@ th.forum-headline__replies {
     .filters {
       display: grid;
     }
+    .filters-toggle-on-moblie {
+      margin-top: 20px;
+      &::after {
+        top: 14px;
+        transform: rotate(126deg) skewY(22deg);
+      }
+    }
   }
 }
 
@@ -8338,7 +8345,6 @@ th.forum-headline__replies {
   line-height: 34px;
   border-radius: 0;
   position: relative;
-  margin-top: 20px;
   text-align: center;
   &::after {
     content: "";
@@ -8347,9 +8353,9 @@ th.forum-headline__replies {
     border-bottom: 2px solid #fff;
     border-left: 2px solid #fff;
     right: 15px;
-    top: 14px;
     position: absolute;
-    transform: rotate(126deg) skewY(22deg);
+    top: 7px;
+    transform: rotate(-54deg) skewY(22deg);
   }
   // .filters-wrap_fixed & {
   //   display: none;
