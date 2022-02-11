@@ -21,7 +21,7 @@ if (msefilter) {
         }
         return window.scrollY > fromTop;
       } else {
-        let fromTop = baseTop - 60;
+        let fromTop = baseTop - 80;
         if (isHidden && isVisibleOnMobile) {
           fromTop += rect.height;
           // fromTop -= 54;
