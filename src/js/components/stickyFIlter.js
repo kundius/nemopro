@@ -9,6 +9,7 @@ if (msefilter) {
   const headerHeight = window.matchMedia(media).matches ? 60 : 80;
 
   let isHidden = true;
+  let isVisibleOnMobile = true;
 
   window.addEventListener("scroll", function () {
     const rect = filterEl.getBoundingClientRect();
@@ -48,32 +49,15 @@ if (msefilter) {
         filterEl.classList.remove("filters-wrap_hidden");
       }
     }
-    // const rect = filterEl.getBoundingClientRect();
-    // if (
-    //   window.scrollY >
-    //   (isHidden ? baseTop + rect.height : baseTop) - headerHeight
-    // ) {
-    //   filterEl.classList.add("filters-wrap_fixed");
-    //   filterEl.style.width = `${rect.width}px`;
-    //   msefilter.style.paddingTop = `${rect.height}px`;
-    //   if (isHidden) {
-    //     filterEl.classList.add("filters-wrap_hidden");
-    //   }
-    // } else {
-    //   filterEl.classList.remove("filters-wrap_fixed");
-    //   filterEl.style.width = null;
-    //   msefilter.style.paddingTop = null;
-    //   filterEl.classList.remove("filters-wrap_hidden");
-    // }
   });
 
-  // toggleOnMobileEl.addEventListener("click", function () {
-  //   if (isOpened) {
-  //     close();
-  //   } else {
-  //     open();
-  //   }
-  // });
+  toggleOnMobileEl.addEventListener("click", function () {
+    if (isVisibleOnMobile) {
+      filterEl.classList.add("filters-wrap_visible-on-mobile");
+    } else {
+      filterEl.classList.remove("filters-wrap_visible-on-mobile");
+    }
+  });
 
   // const open = () => {
   //   filterEl.classList.remove("filters-wrap_hidden");
