@@ -89,6 +89,9 @@ if (msefilter) {
       // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
       if (window.scrollY <= stickyTop) {
         unstick();
+      } else {
+        stick();
+
       }
     }, 0)
   });
