@@ -65,14 +65,14 @@ if (msefilter) {
     if (isHidden) {
       stickEl.style.transform = "translateY(0)";
       if (isMobile) {
-        toggleOnMobileEl.style.display = "none";
+        // toggleOnMobileEl.style.display = "none";
         formEl.style.display = "grid";
       }
       isHidden = false;
     } else {
       stickEl.style.transform = "translateY(-100%)";
       if (isMobile) {
-        toggleOnMobileEl.style.display = "block";
+        // toggleOnMobileEl.style.display = "block";
         if (!isVisibleOnMobile) {
           formEl.style.display = "none";
         }
