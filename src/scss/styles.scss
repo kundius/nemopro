@@ -8234,10 +8234,6 @@ th.forum-headline__replies {
   // background-color: #ffffff;
   // border-bottom: 1px solid transparent;
   // z-index: 200 !important;
-  @media (max-width: $breakpoint-mini-max) {
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
   .button-blue {
     width: 100%;
   }
@@ -8245,6 +8241,10 @@ th.forum-headline__replies {
 
 .filters-stick {
   z-index: 200;
+  @media (max-width: $breakpoint-mini-max) {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
 }
 
 // .filters-wrap.filters-wrap_fixed {

@@ -1,5 +1,4 @@
 const msefilter = document.querySelector("#mse2_mfilter");
-const isMobile = "(max-width: 959px)";
 
 if (msefilter) {
   const headerEl = document.querySelector(".header");
@@ -7,16 +6,14 @@ if (msefilter) {
   const stickEl = msefilter.querySelector(".filters-stick");
   const formEl = msefilter.querySelector(".filters");
   const toggleEl = msefilter.querySelector(".filters-wrap__toggle");
-  const toggleOnMobileEl = msefilter.querySelector(".filters-wrap__toggle-on-moblie");
+  const toggleOnMobileEl = msefilter.querySelector(
+    ".filters-wrap__toggle-on-moblie"
+  );
+  const isMobile = "(max-width: 959px)";
 
   let isHidden = true;
   let isVisibleOnMobile = false;
-  let placeholderHeight = 0;
   let stickyTop = 0;
-
-  const calcPlaceholderHeight = () => {
-    placeholderHeight = stickEl.clientHeight;
-  };
 
   const calcStickyTop = () => {
     stickyTop = msefilter.getBoundingClientRect().top + window.scrollY;
@@ -26,9 +23,8 @@ if (msefilter) {
     }
   };
 
-  calcPlaceholderHeight();
   calcStickyTop();
-  
+
   const stick = () => {
     if (isMobile) {
       toggleOnMobileEl.style.display = "none";
@@ -36,12 +32,13 @@ if (msefilter) {
     stickEl.style.position = "fixed";
     stickEl.style.top = `${headerEl.clientHeight}px`;
     stickEl.style.width = `${wrapEl.clientWidth}px`;
+    stickEl.style.borderBottom = "1px solid #ccc";
     wrapEl.style.paddingTop = `${stickEl.clientHeight}px`;
     toggleEl.style.display = "block";
     if (isHidden) {
       stickEl.style.transform = "translateY(-100%)";
     }
-  }
+  };
 
   const unstick = () => {
     if (isMobile) {
@@ -50,16 +47,17 @@ if (msefilter) {
     stickEl.style.position = "relative";
     stickEl.style.top = null;
     stickEl.style.width = null;
+    stickEl.style.borderBottom = null;
     wrapEl.style.paddingTop = null;
     toggleEl.style.display = "none";
     stickEl.style.transform = null;
-  }
+  };
 
   window.addEventListener("scroll", function () {
     if (window.scrollY > stickyTop) {
-      stick()
+      stick();
     } else {
-      unstick()
+      unstick();
     }
   });
 
@@ -80,13 +78,12 @@ if (msefilter) {
       isHidden = true;
     }
 
-    calcPlaceholderHeight();
     calcStickyTop();
 
     // проверяем, если скролл меньше нижней линии,
     // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
     if (window.scrollY <= stickyTop) {
-      unstick()
+      unstick();
     }
   });
 
@@ -99,13 +96,12 @@ if (msefilter) {
       isVisibleOnMobile = true;
     }
 
-    calcPlaceholderHeight();
     calcStickyTop();
 
     // проверяем, если скролл меньше нижней линии,
     // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
     if (window.scrollY <= stickyTop) {
-      unstick()
+      unstick();
     }
   });
 }
