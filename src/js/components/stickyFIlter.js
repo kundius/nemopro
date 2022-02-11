@@ -95,10 +95,14 @@ if (msefilter) {
   toggleEl.addEventListener("click", function () {
     if (isHidden) {
       stickEl.style.transform = "translateY(0)";
+      formEl.style.dispaly = "block";
       isHidden = false;
       calcStickyTop();
     } else {
       stickEl.style.transform = "translateY(-100%)";
+      if (!isVisibleOnMobile) {
+        formEl.style.dispaly = "none";
+      }
       isHidden = true;
       calcStickyTop();
 
@@ -110,19 +114,19 @@ if (msefilter) {
     }
   });
 
-  toggleOnMobileEl.addEventListener("click", function () {
-    if (isVisibleOnMobile) {
-      formEl.style.display = "none";
-      isVisibleOnMobile = false;
-      calcPlaceholderHeight();
-      calcStickyTop();
-    } else {
-      formEl.style.display = "grid";
-      isVisibleOnMobile = true;
-      calcPlaceholderHeight();
-      calcStickyTop();
-    }
-  });
+  // toggleOnMobileEl.addEventListener("click", function () {
+  //   if (isVisibleOnMobile) {
+  //     formEl.style.display = "none";
+  //     isVisibleOnMobile = false;
+  //     calcPlaceholderHeight();
+  //     calcStickyTop();
+  //   } else {
+  //     formEl.style.display = "grid";
+  //     isVisibleOnMobile = true;
+  //     calcPlaceholderHeight();
+  //     calcStickyTop();
+  //   }
+  // });
 }
 
 // -------------------------------------------------- //
