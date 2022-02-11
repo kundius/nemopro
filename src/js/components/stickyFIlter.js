@@ -39,7 +39,7 @@ if (msefilter) {
   calcStickyTop();
 
   const stick = () => {
-    stickyEl.classList.add("filters-stick_fixed");
+    stickyEl.classList.add("filters-sticky_fixed");
     stickyEl.style.top = `${headerEl.clientHeight}px`;
     stickyEl.style.width = `${wrapEl.clientWidth}px`;
     stickyEl.style.borderBottom = "1px solid #ccc";
@@ -51,7 +51,7 @@ if (msefilter) {
   };
 
   const unstick = () => {
-    stickyEl.classList.remove("filters-stick_fixed");
+    stickyEl.classList.remove("filters-sticky_fixed");
     stickyEl.style.top = null;
     stickyEl.style.width = null;
     stickyEl.style.borderBottom = null;
