@@ -32,10 +32,12 @@ if (msefilter) {
   window.addEventListener("scroll", function () {
     if (window.scrollY > stickyTop) {
       formEl.style.position = 'fixed';
+      formEl.style.top = `${headerEl.clientHeight}px`;
       formEl.style.width = `${wrapEl.clientWidth}px`;
       wrapEl.style.paddingTop = `${placeholderHeight}px`;
     } else {
       formEl.style.position = 'relative';
+      formEl.style.top = null;
       formEl.style.width = null;
       wrapEl.style.paddingTop = null;
     }
