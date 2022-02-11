@@ -114,9 +114,11 @@ if (msefilter) {
     if (isVisibleOnMobile) {
       formEl.style.display = "none";
       isVisibleOnMobile = false;
+      calcStickyTop();
     } else {
-      formEl.style.display = "block";
+      formEl.style.display = "grid";
       isVisibleOnMobile = true;
+      calcStickyTop();
     }
   });
 }
