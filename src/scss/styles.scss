@@ -8221,6 +8221,7 @@ th.forum-headline__replies {
 }
 
 .filters {
+  background-color: #ffffff;
   display: grid;
   column-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -8230,13 +8231,13 @@ th.forum-headline__replies {
 }
 
 .filters-wrap {
-  background-color: #ffffff;
-  border-bottom: 1px solid transparent;
-  z-index: 200 !important;
-  @media (max-width: $breakpoint-mini-max) {
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
+  // background-color: #ffffff;
+  // border-bottom: 1px solid transparent;
+  // z-index: 200 !important;
+  // @media (max-width: $breakpoint-mini-max) {
+  //   padding-top: 5px;
+  //   padding-bottom: 5px;
+  // }
   .button-blue {
     width: 100%;
   }
