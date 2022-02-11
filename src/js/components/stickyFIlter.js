@@ -32,24 +32,32 @@ if (msefilter) {
   //   let isFixed = false;
   //   let isHidden = true;
   //   let isVisibleOnMobile = false;
+  
+  const stick = () => {
+    formEl.style.position = "fixed";
+    formEl.style.top = `${headerEl.clientHeight}px`;
+    formEl.style.width = `${wrapEl.clientWidth}px`;
+    wrapEl.style.paddingTop = `${placeholderHeight}px`;
+    toggleEl.style.display = "block";
+    if (isHidden) {
+      formEl.style.transform = "translateY(-100%)";
+    }
+  }
+
+  const unstick = () => {
+    formEl.style.position = "relative";
+    formEl.style.top = null;
+    formEl.style.width = null;
+    wrapEl.style.paddingTop = null;
+    toggleEl.style.display = "none";
+    formEl.style.transform = null;
+  }
 
   window.addEventListener("scroll", function () {
     if (window.scrollY > stickyTop) {
-      formEl.style.position = "fixed";
-      formEl.style.top = `${headerEl.clientHeight}px`;
-      formEl.style.width = `${wrapEl.clientWidth}px`;
-      wrapEl.style.paddingTop = `${placeholderHeight}px`;
-      toggleEl.style.display = "block";
-      if (isHidden) {
-        formEl.style.transform = "translateY(-100%)";
-      }
+      stick()
     } else {
-      formEl.style.position = "relative";
-      formEl.style.top = null;
-      formEl.style.width = null;
-      wrapEl.style.paddingTop = null;
-      toggleEl.style.display = "none";
-      formEl.style.transform = null;
+      unstick()
     }
     //     const rect = filterEl.getBoundingClientRect();
     //     const isFixed = () => {
@@ -96,12 +104,7 @@ if (msefilter) {
         // проверяем, если скролл меньше нижней линии,
         // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
         if (window.scrollY <= stickyTop) {
-          formEl.style.position = "relative";
-          formEl.style.top = null;
-          formEl.style.width = null;
-          wrapEl.style.paddingTop = null;
-          toggleEl.style.display = "none";
-          formEl.style.transform = null;
+          unstick()
         }
       }
     });
