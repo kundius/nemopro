@@ -8277,20 +8277,20 @@ th.forum-headline__replies {
 //   transform: translateY(-100%);
 // }
 
-// .filters-wrap.filters-wrap_visible-on-mobile {
+.filters-stick_on-mobile-visible {
 //   @media (max-width: $breakpoint-mini-max) {
 //     .filters {
 //       display: grid;
 //     }
-//     .filters-wrap__toggle-on-moblie {
-//       margin-top: 20px;
-//       &::after {
-//         top: 14px;
-//         transform: rotate(126deg) skewY(22deg);
-//       }
-//     }
+    .filters-wrap__toggle-on-moblie {
+      margin-top: 20px;
+      &::after {
+        top: 14px;
+        transform: rotate(126deg) skewY(22deg);
+      }
+    }
 //   }
-// }
+}
 
 // .filters-wrap.filters-wrap_fixed {
 //   @media (max-width: $breakpoint-mini-max) {
