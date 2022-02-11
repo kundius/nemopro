@@ -39,32 +39,26 @@ if (msefilter) {
   calcStickyTop();
 
   const stick = () => {
-    // if (isMobile) {
-    //   toggleOnMobileEl.style.display = "none";
-    // }
-    // stickEl.style.position = "fixed";
     stickEl.classList.add('filters-stick_fixed')
     stickEl.style.top = `${headerEl.clientHeight}px`;
     stickEl.style.width = `${wrapEl.clientWidth}px`;
     stickEl.style.borderBottom = "1px solid #ccc";
     wrapEl.style.paddingTop = `${stickEl.clientHeight}px`;
     toggleEl.style.display = "block";
+    toggleEl.innerHTML = toggleEl.dataset.unstick
     if (isHidden) {
       stickEl.style.transform = "translateY(-100%)";
     }
   };
 
   const unstick = () => {
-    // if (isMobile) {
-    //   toggleOnMobileEl.style.display = "block";
-    // }
-    // stickEl.style.position = "relative";
     stickEl.classList.remove('filters-stick_fixed')
     stickEl.style.top = null;
     stickEl.style.width = null;
     stickEl.style.borderBottom = null;
     wrapEl.style.paddingTop = null;
     toggleEl.style.display = "none";
+    toggleEl.innerHTML = toggleEl.dataset.stick
     stickEl.style.transform = null;
   };
 

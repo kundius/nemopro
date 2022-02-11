@@ -8241,14 +8241,14 @@ th.forum-headline__replies {
 .filters-stick {
   z-index: 200;
   background: #ffffff;
-}
-
-.filters-stick_fixed {
-  position: fixed;
   @media (max-width: $breakpoint-mini-max) {
     padding-top: 5px;
     padding-bottom: 5px;
   }
+}
+
+.filters-stick_fixed {
+  position: fixed;
 }
 
 // .filters-wrap.filters-wrap_fixed {
