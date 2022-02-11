@@ -13,10 +13,19 @@ if (msefilter) {
 
   window.addEventListener("scroll", function () {
     const rect = filterEl.getBoundingClientRect();
-    if (
-      window.scrollY >
-      (isHidden ? baseTop + rect.height : baseTop) - headerHeight
-    ) {
+    const isFixed = () => {
+      if (window.matchMedia(media).matches) {
+        let fromTop = baseTop - 60;
+        if (isHidden) {
+          fromTop += rect.height;
+        }
+        return window.scrollY > fromTop;
+      } else {
+        let fromTop = baseTop - 60;
+        return window.scrollY > fromTop;
+      }
+    };
+    if (isFixed()) {
       filterEl.classList.add("filters-wrap_fixed");
       filterEl.style.width = `${rect.width}px`;
       msefilter.style.paddingTop = `${rect.height}px`;
