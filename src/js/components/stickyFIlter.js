@@ -60,7 +60,7 @@ if (msefilter) {
     stickyEl.style.transform = null;
   };
 
-  const hideMain = () => {
+  const hideOnSticky = () => {
     stickyEl.style.transform = "translateY(-100%)";
     isHidden = true;
     toggleEl.innerHTML = toggleEl.dataset.open;
@@ -104,7 +104,7 @@ if (msefilter) {
         openOnMobile();
       }
     } else {
-      hideMain();
+      hideOnSticky();
 
       if (isMobile) {
         hideOnMobile();
@@ -120,7 +120,7 @@ if (msefilter) {
   toggleOnMobileEl.addEventListener("click", function () {
     if (isVisibleOnMobile) {
       hideOnMobile();
-      hideMain();
+      hideOnSticky();
     } else {
       openOnMobile();
       // openOnSticky пропущено, чтобы фильтр был изначально закрыт при прокрутке
