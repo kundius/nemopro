@@ -38,12 +38,11 @@ if (msefilter) {
       filterEl.classList.add("filters-wrap_hidden");
       isHidden = true;
 
-      // после д
-      const rect = filterEl.getBoundingClientRect();
-      if (
-        window.scrollY <=
-        (isHidden ? baseTop + rect.height : baseTop) - headerHeight
-      ) {
+      // после скрытия фильтра в плавающем состоянии
+      // может появиться пустое пространство достаточное,
+      // чтобы фильтр перешел в статичное состояние
+      // поэтому проверяем
+      if (window.scrollY <= baseTop - headerHeight) {
         filterEl.classList.remove("filters-wrap_fixed");
         filterEl.style.width = null;
         msefilter.style.paddingTop = null;
