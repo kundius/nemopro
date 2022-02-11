@@ -38,12 +38,8 @@ if (msefilter) {
       filterEl.classList.add("filters-wrap_hidden");
       isHidden = true;
 
-      // после скрытия фильтра в плавающем состоянии
-      // может появиться пустое пространство достаточное,
-      // чтобы фильтр перешел в статичное состояние
-      // поэтому проверяем, если скролл меньше нижней линии,
-      // то убираем фиксацию и так же сокрытие фильтра,
-      // поскольку в спокойном состоянии он открыт
+      // проверяем, если скролл меньше нижней линии,
+      // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
       const rect = filterEl.getBoundingClientRect();
       if (window.scrollY <= baseTop + rect.height - headerHeight) {
         filterEl.classList.remove("filters-wrap_fixed");
