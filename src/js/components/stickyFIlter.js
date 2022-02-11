@@ -114,10 +114,12 @@ if (msefilter) {
     if (isVisibleOnMobile) {
       formEl.style.display = "none";
       isVisibleOnMobile = false;
+      calcPlaceholderHeight();
       calcStickyTop();
     } else {
       formEl.style.display = "grid";
       isVisibleOnMobile = true;
+      calcPlaceholderHeight();
       calcStickyTop();
     }
   });
