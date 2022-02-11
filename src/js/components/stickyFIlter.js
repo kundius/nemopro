@@ -27,6 +27,7 @@ if (msefilter) {
     // console.log('isMobile', isMobile)
     // console.log('isVisibleOnMobile', isVisibleOnMobile)
     // console.log('isHidden', isHidden)
+    console.log('scrollY', window.scrollY)
     console.log('stickyTop', stickyTop)
   };
 
@@ -87,15 +88,13 @@ if (msefilter) {
       isHidden = true;
     }
 
-    setTimeout(() => {
-      calcStickyTop();
-      
-      // проверяем, если скролл меньше нижней линии,
-      // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
-      if (window.scrollY <= stickyTop) {
-        unstick();
-      }
-    }, 0)
+    calcStickyTop();
+    
+    // проверяем, если скролл меньше нижней линии,
+    // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
+    if (window.scrollY <= stickyTop) {
+      unstick();
+    }
   });
 
   toggleOnMobileEl.addEventListener("click", function () {
