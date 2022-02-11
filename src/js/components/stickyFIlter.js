@@ -80,13 +80,15 @@ if (msefilter) {
       isHidden = true;
     }
 
-    calcStickyTop();
-
-    // проверяем, если скролл меньше нижней линии,
-    // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
-    if (window.scrollY <= stickyTop) {
-      unstick();
-    }
+    setTimeout(() => {
+      calcStickyTop();
+  
+      // проверяем, если скролл меньше нижней линии,
+      // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
+      if (window.scrollY <= stickyTop) {
+        unstick();
+      }
+    }, 0)
   });
 
   toggleOnMobileEl.addEventListener("click", function () {
