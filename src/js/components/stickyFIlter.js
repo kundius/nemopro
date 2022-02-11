@@ -1,5 +1,5 @@
 const msefilter = document.querySelector("#mse2_mfilter");
-// const media = "(min-width: 960px)";
+const isMobile = "(max-width: 959px)";
 
 if (msefilter) {
   const headerEl = document.querySelector(".header");
@@ -101,7 +101,7 @@ if (msefilter) {
       calcStickyTop();
     } else {
       stickEl.style.transform = "translateY(-100%)";
-      if (!isVisibleOnMobile) {
+      if (!isVisibleOnMobile && isMobile) {
         formEl.style.display = "none";
       }
       isHidden = true;
@@ -122,17 +122,17 @@ if (msefilter) {
       isVisibleOnMobile = false;
       calcPlaceholderHeight();
       calcStickyTop();
-
-      // проверяем, если скролл меньше нижней линии,
-      // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
-      if (window.scrollY <= stickyTop) {
-        unstick()
-      }
     } else {
       formEl.style.display = "grid";
       isVisibleOnMobile = true;
       calcPlaceholderHeight();
       calcStickyTop();
+    }
+
+    // проверяем, если скролл меньше нижней линии,
+    // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
+    if (window.scrollY <= stickyTop) {
+      unstick()
     }
   });
 }
