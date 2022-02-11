@@ -86,14 +86,15 @@ if (msefilter) {
     isVisibleOnMobile = true;
   };
 
-  window.addEventListener("scroll", function () {
-    // console.log('stickyTop', stickyTop)
+  const onScroll = () => {
     if (window.scrollY > stickyTop) {
       stick();
     } else {
       unstick();
     }
-  });
+  };
+
+  window.addEventListener("scroll", onScroll);
 
   toggleEl.addEventListener("click", function () {
     if (isHidden) {
@@ -113,11 +114,7 @@ if (msefilter) {
     calcStickyTop();
 
     // обновить прикрепление с учетом новой позиции
-    if (window.scrollY > stickyTop) {
-      stick();
-    } else {
-      unstick();
-    }
+    onScroll();
   });
 
   toggleOnMobileEl.addEventListener("click", function () {
@@ -132,11 +129,7 @@ if (msefilter) {
     calcStickyTop();
 
     // обновить прикрепление с учетом новой позиции
-    if (window.scrollY > stickyTop) {
-      stick();
-    } else {
-      unstick();
-    }
+    onScroll();
   });
 }
 
