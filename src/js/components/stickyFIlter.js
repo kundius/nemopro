@@ -37,17 +37,18 @@ if (msefilter) {
     } else {
       filterEl.classList.add("filters-wrap_hidden");
       isHidden = true;
-    }
 
-    const rect = filterEl.getBoundingClientRect();
-    if (
-      window.scrollY <=
-      (isHidden ? baseTop + rect.height : baseTop) - headerHeight
-    ) {
-      filterEl.classList.remove("filters-wrap_fixed");
-      filterEl.style.width = null;
-      msefilter.style.paddingTop = null;
-      filterEl.classList.remove("filters-wrap_hidden");
+      // после д
+      const rect = filterEl.getBoundingClientRect();
+      if (
+        window.scrollY <=
+        (isHidden ? baseTop + rect.height : baseTop) - headerHeight
+      ) {
+        filterEl.classList.remove("filters-wrap_fixed");
+        filterEl.style.width = null;
+        msefilter.style.paddingTop = null;
+        filterEl.classList.remove("filters-wrap_hidden");
+      }
     }
     // const rect = filterEl.getBoundingClientRect();
     // if (
