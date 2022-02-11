@@ -66,7 +66,7 @@ if (msefilter) {
     toggleEl.innerHTML = toggleEl.dataset.open;
   };
 
-  const openMain = () => {
+  const openOnStick = () => {
     stickEl.style.transform = "translateY(0)";
     isHidden = false;
     toggleEl.innerHTML = toggleEl.dataset.close;
@@ -98,7 +98,7 @@ if (msefilter) {
 
   toggleEl.addEventListener("click", function () {
     if (isHidden) {
-      openMain();
+      openOnStick();
 
       if (isMobile) {
         openOnMobile();
@@ -123,7 +123,7 @@ if (msefilter) {
       hideMain();
     } else {
       openOnMobile();
-      // openMain пропущено, чтобы фильтр был изначально закрыт при прокрутке
+      // openOnStick пропущено, чтобы фильтр был изначально закрыт при прокрутке
     }
 
     calcStickyTop();
