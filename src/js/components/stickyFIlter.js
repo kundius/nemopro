@@ -108,12 +108,12 @@ if (msefilter) {
 
   toggleOnMobileEl.addEventListener("click", function () {
     if (isVisibleOnMobile) {
-      stickEl.classList.remove('filters-stick_on-mobile-visible')
+      wrapEl.classList.remove('filters-wrap_on-mobile-visible')
       formEl.style.display = "none";
       toggleOnMobileEl.style.marginTop = null;
       isVisibleOnMobile = false;
     } else {
-      stickEl.classList.add('filters-stick_on-mobile-visible')
+      wrapEl.classList.add('filters-wrap_on-mobile-visible')
       formEl.style.display = "grid";
       toggleOnMobileEl.style.marginTop = "20px";
       isVisibleOnMobile = true;
