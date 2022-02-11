@@ -8,7 +8,6 @@ if (msefilter) {
   const baseTop = msefilter.getBoundingClientRect().top + window.scrollY;
   const headerHeight = window.matchMedia(media).matches ? 60 : 80;
 
-  let isFixed = false;
   let isHidden = true;
 
   window.addEventListener("scroll", function () {
@@ -20,7 +19,6 @@ if (msefilter) {
       filterEl.classList.add("filters-wrap_fixed");
       filterEl.style.width = `${rect.width}px`;
       msefilter.style.paddingTop = `${rect.height}px`;
-      isFixed = true;
       if (isHidden) {
         filterEl.classList.add("filters-wrap_hidden");
       }
@@ -28,7 +26,6 @@ if (msefilter) {
       filterEl.classList.remove("filters-wrap_fixed");
       filterEl.style.width = null;
       msefilter.style.paddingTop = null;
-      isFixed = false;
       filterEl.classList.remove("filters-wrap_hidden");
     }
   });
@@ -40,26 +37,34 @@ if (msefilter) {
     } else {
       filterEl.classList.add("filters-wrap_hidden");
       isHidden = true;
-    }
-    const rect = filterEl.getBoundingClientRect();
-    if (
-      window.scrollY >
-      (isHidden ? baseTop + rect.height : baseTop) - headerHeight
-    ) {
-      filterEl.classList.add("filters-wrap_fixed");
-      filterEl.style.width = `${rect.width}px`;
-      msefilter.style.paddingTop = `${rect.height}px`;
-      isFixed = true;
-      if (isHidden) {
-        filterEl.classList.add("filters-wrap_hidden");
+
+      const rect = filterEl.getBoundingClientRect();
+      if (
+        window.scrollY <=
+        (isHidden ? baseTop + rect.height : baseTop) - headerHeight
+      ) {
+        filterEl.classList.remove("filters-wrap_fixed");
+        filterEl.style.width = null;
+        msefilter.style.paddingTop = null;
       }
-    } else {
-      filterEl.classList.remove("filters-wrap_fixed");
-      filterEl.style.width = null;
-      msefilter.style.paddingTop = null;
-      isFixed = false;
-      filterEl.classList.remove("filters-wrap_hidden");
     }
+    // const rect = filterEl.getBoundingClientRect();
+    // if (
+    //   window.scrollY >
+    //   (isHidden ? baseTop + rect.height : baseTop) - headerHeight
+    // ) {
+    //   filterEl.classList.add("filters-wrap_fixed");
+    //   filterEl.style.width = `${rect.width}px`;
+    //   msefilter.style.paddingTop = `${rect.height}px`;
+    //   if (isHidden) {
+    //     filterEl.classList.add("filters-wrap_hidden");
+    //   }
+    // } else {
+    //   filterEl.classList.remove("filters-wrap_fixed");
+    //   filterEl.style.width = null;
+    //   msefilter.style.paddingTop = null;
+    //   filterEl.classList.remove("filters-wrap_hidden");
+    // }
   });
 
   // toggleOnMobileEl.addEventListener("click", function () {
