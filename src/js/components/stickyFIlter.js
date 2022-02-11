@@ -28,11 +28,6 @@ if (msefilter) {
 
   calcPlaceholderHeight();
   calcStickyTop();
-  //   const baseTop = msefilter.getBoundingClientRect().top + window.scrollY;
-  //   const headerHeight = window.matchMedia(media).matches ? 60 : 80;
-
-  //   let isFixed = false;
-  //   let isHidden = true;
   
   const stick = () => {
     stickEl.style.position = "fixed";
@@ -43,6 +38,9 @@ if (msefilter) {
     if (isHidden) {
       stickEl.style.transform = "translateY(-100%)";
     }
+    if (isMobile) {
+      toggleOnMobileEl.style.display = "none";
+    }
   }
 
   const unstick = () => {
@@ -52,6 +50,9 @@ if (msefilter) {
     wrapEl.style.paddingTop = null;
     toggleEl.style.display = "none";
     stickEl.style.transform = null;
+    if (isMobile) {
+      toggleOnMobileEl.style.display = "block";
+    }
   }
 
   window.addEventListener("scroll", function () {
@@ -60,48 +61,22 @@ if (msefilter) {
     } else {
       unstick()
     }
-    //     const rect = filterEl.getBoundingClientRect();
-    //     const isFixed = () => {
-    //       if (window.matchMedia(media).matches) {
-    //         let fromTop = baseTop - 60;
-    //         if (isHidden) {
-    //           fromTop += rect.height;
-    //         }
-    //         return window.scrollY > fromTop;
-    //       } else {
-    //         let fromTop = baseTop - 80;
-    //         if (isHidden && isVisibleOnMobile) {
-    //           fromTop += rect.height;
-    //         }
-    //         fromTop += 54;
-    //         return window.scrollY > fromTop;
-    //       }
-    //     };
-    //     if (isFixed()) {
-    //       filterEl.classList.add("filters-wrap_fixed");
-    //       filterEl.style.width = `${rect.width}px`;
-    //       msefilter.style.paddingTop = `${rect.height}px`;
-    //       if (isHidden) {
-    //         filterEl.classList.add("filters-wrap_hidden");
-    //       }
-    //     } else {
-    //       filterEl.classList.remove("filters-wrap_fixed");
-    //       filterEl.style.width = null;
-    //       msefilter.style.paddingTop = null;
-    //       filterEl.classList.remove("filters-wrap_hidden");
-    //     }
   });
 
   toggleEl.addEventListener("click", function () {
     if (isHidden) {
       stickEl.style.transform = "translateY(0)";
-      formEl.style.display = "grid";
+      if (isMobile) {
+        formEl.style.display = "grid";
+      }
       isHidden = false;
     } else {
       stickEl.style.transform = "translateY(-100%)";
-      // if (!isVisibleOnMobile && isMobile) {
-      //   formEl.style.display = "none";
-      // }
+      if (isMobile) {
+        if (!isVisibleOnMobile) {
+          formEl.style.display = "none";
+        }
+      }
       isHidden = true;
     }
 
