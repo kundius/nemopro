@@ -9,7 +9,7 @@ if (msefilter) {
   const toggleOnMobileEl = msefilter.querySelector(
     ".filters-wrap__toggle-on-moblie"
   );
-  const isMobile = "(max-width: 959px)";
+  const isMobile = window.matchMedia("(max-width: 959px)").matches;
 
   let isHidden = true;
   let isVisibleOnMobile = false;
@@ -81,17 +81,12 @@ if (msefilter) {
     }
 
     setTimeout(() => {
-      console.log('calcStickyTop', window.scrollY, stickyTop)
       calcStickyTop();
       
-      console.log(window.scrollY, stickyTop)
       // проверяем, если скролл меньше нижней линии,
       // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
       if (window.scrollY <= stickyTop) {
         unstick();
-      } else {
-        stick();
-
       }
     }, 0)
   });
