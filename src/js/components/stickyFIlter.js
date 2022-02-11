@@ -85,25 +85,24 @@ if (msefilter) {
 
     toggleEl.addEventListener("click", function () {
       if (isHidden) {
-  //       filterEl.classList.remove("filters-wrap_hidden");
         formEl.style.transform = "translateY(0)";
         isHidden = false;
         calcStickyTop();
       } else {
         formEl.style.transform = "translateY(-100%)";
-        //       filterEl.classList.add("filters-wrap_hidden");
         isHidden = true;
         calcStickyTop();
 
-  //       // проверяем, если скролл меньше нижней линии,
-  //       // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
-  //       const rect = filterEl.getBoundingClientRect();
-  //       if (window.scrollY <= baseTop + rect.height - headerHeight) {
-  //         filterEl.classList.remove("filters-wrap_fixed");
-  //         filterEl.style.width = null;
-  //         msefilter.style.paddingTop = null;
-  //         filterEl.classList.remove("filters-wrap_hidden");
-  //       }
+        // проверяем, если скролл меньше нижней линии,
+        // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
+        if (window.scrollY <= stickyTop) {
+          formEl.style.position = "relative";
+          formEl.style.top = null;
+          formEl.style.width = null;
+          wrapEl.style.paddingTop = null;
+          toggleEl.style.display = "none";
+          formEl.style.transform = null;
+        }
       }
     });
 
