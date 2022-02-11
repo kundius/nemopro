@@ -26,7 +26,7 @@ if (msefilter) {
         if (isHidden && isVisibleOnMobile) {
           fromTop += rect.height;
         }
-        fromTop -= 54;
+        fromTop += 54;
         return window.scrollY > fromTop;
       }
     };
