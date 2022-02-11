@@ -117,9 +117,9 @@ if (msefilter) {
       toggleOnMobileEl.style.marginTop = null;
       isVisibleOnMobile = false;
 
-      stickEl.style.transform = "translateY(0)";
-      isHidden = false;
-      toggleEl.innerHTML = toggleEl.dataset.close;
+      stickEl.style.transform = "translateY(-100%)";
+      isHidden = true;
+      toggleEl.innerHTML = toggleEl.dataset.open;
     } else {
       wrapEl.classList.add("filters-wrap_on-mobile-visible");
       formEl.style.display = "grid";
