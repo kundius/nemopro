@@ -4,7 +4,7 @@ const msefilter = document.querySelector("#mse2_mfilter");
 if (msefilter) {
   const headerEl = document.querySelector(".header");
   const wrapEl = msefilter.querySelector(".filters-wrap");
-  const formEl = msefilter.querySelector(".filters");
+  const formEl = msefilter.querySelector(".filters-form");
   const toggleEl = msefilter.querySelector(".filters-wrap__toggle");
   const toggleOnMobileEl = msefilter.querySelector(".filters-toggle-on-moblie");
 
@@ -39,16 +39,16 @@ if (msefilter) {
       formEl.style.top = `${headerEl.clientHeight}px`;
       formEl.style.width = `${wrapEl.clientWidth}px`;
       wrapEl.style.paddingTop = `${placeholderHeight}px`;
-      toggleEl.style.display = `block`;
+      toggleEl.style.display = "block";
       if (isHidden) {
-        formEl.style.transform = `translateY(-100%)`;
+        formEl.style.transform = "translateY(-100%)";
       }
     } else {
       formEl.style.position = "relative";
       formEl.style.top = null;
       formEl.style.width = null;
       wrapEl.style.paddingTop = null;
-      toggleEl.style.display = `none`;
+      toggleEl.style.display = "none";
       formEl.style.transform = null;
     }
     //     const rect = filterEl.getBoundingClientRect();
@@ -83,13 +83,15 @@ if (msefilter) {
     //     }
   });
 
-  //   toggleEl.addEventListener("click", function () {
-  //     if (isHidden) {
+    toggleEl.addEventListener("click", function () {
+      if (isHidden) {
   //       filterEl.classList.remove("filters-wrap_hidden");
-  //       isHidden = false;
-  //     } else {
+        formEl.style.transform = "translateY(0)";
+        isHidden = false;
+      } else {
+        formEl.style.transform = "translateY(-100%)";
   //       filterEl.classList.add("filters-wrap_hidden");
-  //       isHidden = true;
+        isHidden = true;
 
   //       // проверяем, если скролл меньше нижней линии,
   //       // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
@@ -100,8 +102,8 @@ if (msefilter) {
   //         msefilter.style.paddingTop = null;
   //         filterEl.classList.remove("filters-wrap_hidden");
   //       }
-  //     }
-  //   });
+      }
+    });
 
   //   toggleOnMobileEl.addEventListener("click", function () {
   //     if (!isVisibleOnMobile) {
