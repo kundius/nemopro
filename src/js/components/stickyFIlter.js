@@ -73,19 +73,21 @@ if (msefilter) {
     if (isHidden) {
       stickEl.style.transform = "translateY(0)";
       if (isMobile) {
-        // toggleOnMobileEl.style.display = "none";
+        wrapEl.classList.add("filters-wrap_on-mobile-visible");
         formEl.style.display = "grid";
         toggleOnMobileEl.style.marginTop = "20px";
+        isVisibleOnMobile = true;
       }
       isHidden = false;
       toggleEl.innerHTML = toggleEl.dataset.close;
     } else {
       stickEl.style.transform = "translateY(-100%)";
       if (isMobile) {
-        // toggleOnMobileEl.style.display = "block";
         if (!isVisibleOnMobile) {
+          wrapEl.classList.remove("filters-wrap_on-mobile-visible");
           formEl.style.display = "none";
           toggleOnMobileEl.style.marginTop = null;
+          isVisibleOnMobile = false;
         }
       }
       isHidden = true;
