@@ -26,9 +26,9 @@ if (msefilter) {
     // }
     // console.log('isMobile', isMobile)
     // console.log('isVisibleOnMobile', isVisibleOnMobile)
-    // console.log('isHidden', isHidden)
-    console.log('scrollY', window.scrollY)
-    console.log('stickyTop', stickyTop)
+    // // console.log('isHidden', isHidden)
+    // console.log('scrollY', window.scrollY)
+    // console.log('stickyTop', stickyTop)
   };
 
   calcStickyTop();
@@ -62,6 +62,7 @@ if (msefilter) {
   };
 
   window.addEventListener("scroll", function () {
+    console.log('stickyTop', stickyTop)
     if (window.scrollY > stickyTop) {
       stick();
     } else {
