@@ -72,16 +72,20 @@ if (msefilter) {
   toggleEl.addEventListener("click", function () {
     if (isHidden) {
       stickEl.style.transform = "translateY(0)";
+      isHidden = false;
+      toggleEl.innerHTML = toggleEl.dataset.close;
+
       if (isMobile) {
         wrapEl.classList.add("filters-wrap_on-mobile-visible");
         formEl.style.display = "grid";
         toggleOnMobileEl.style.marginTop = "20px";
         isVisibleOnMobile = true;
       }
-      isHidden = false;
-      toggleEl.innerHTML = toggleEl.dataset.close;
     } else {
       stickEl.style.transform = "translateY(-100%)";
+      isHidden = true;
+      toggleEl.innerHTML = toggleEl.dataset.open;
+
       if (isMobile) {
         if (!isVisibleOnMobile) {
           wrapEl.classList.remove("filters-wrap_on-mobile-visible");
@@ -90,8 +94,6 @@ if (msefilter) {
           isVisibleOnMobile = false;
         }
       }
-      isHidden = true;
-      toggleEl.innerHTML = toggleEl.dataset.open;
     }
 
     calcStickyTop();
@@ -114,6 +116,10 @@ if (msefilter) {
       formEl.style.display = "none";
       toggleOnMobileEl.style.marginTop = null;
       isVisibleOnMobile = false;
+
+      stickEl.style.transform = "translateY(0)";
+      isHidden = false;
+      toggleEl.innerHTML = toggleEl.dataset.close;
     } else {
       wrapEl.classList.add("filters-wrap_on-mobile-visible");
       formEl.style.display = "grid";
