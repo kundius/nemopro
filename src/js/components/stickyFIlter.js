@@ -88,10 +88,12 @@ if (msefilter) {
   //       filterEl.classList.remove("filters-wrap_hidden");
         formEl.style.transform = "translateY(0)";
         isHidden = false;
+        calcStickyTop();
       } else {
         formEl.style.transform = "translateY(-100%)";
-  //       filterEl.classList.add("filters-wrap_hidden");
+        //       filterEl.classList.add("filters-wrap_hidden");
         isHidden = true;
+        calcStickyTop();
 
   //       // проверяем, если скролл меньше нижней линии,
   //       // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
