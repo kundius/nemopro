@@ -6,7 +6,7 @@ if (msefilter) {
   const wrapEl = msefilter.querySelector(".filters-wrap");
   const formEl = msefilter.querySelector(".filters-form");
   const toggleEl = msefilter.querySelector(".filters-wrap__toggle");
-  const toggleOnMobileEl = msefilter.querySelector(".filters-toggle-on-moblie");
+  const toggleOnMobileEl = msefilter.querySelector(".filters-wrap__toggle-on-moblie");
 
   let isHidden = true;
   let isVisibleOnMobile = false;
@@ -91,33 +91,33 @@ if (msefilter) {
     //     }
   });
 
-    toggleEl.addEventListener("click", function () {
-      if (isHidden) {
-        formEl.style.transform = "translateY(0)";
-        isHidden = false;
-        calcStickyTop();
-      } else {
-        formEl.style.transform = "translateY(-100%)";
-        isHidden = true;
-        calcStickyTop();
+  toggleEl.addEventListener("click", function () {
+    if (isHidden) {
+      formEl.style.transform = "translateY(0)";
+      isHidden = false;
+      calcStickyTop();
+    } else {
+      formEl.style.transform = "translateY(-100%)";
+      isHidden = true;
+      calcStickyTop();
 
-        // проверяем, если скролл меньше нижней линии,
-        // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
-        if (window.scrollY <= stickyTop) {
-          unstick()
-        }
+      // проверяем, если скролл меньше нижней линии,
+      // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
+      if (window.scrollY <= stickyTop) {
+        unstick()
       }
-    });
+    }
+  });
 
-    toggleOnMobileEl.addEventListener("click", function () {
-      if (isVisibleOnMobile) {
-        formEl.style.display = "none";
-        isVisibleOnMobile = false;
-      } else {
-        formEl.style.display = "block";
-        isVisibleOnMobile = true;
-      }
-    });
+  toggleOnMobileEl.addEventListener("click", function () {
+    if (isVisibleOnMobile) {
+      formEl.style.display = "none";
+      isVisibleOnMobile = false;
+    } else {
+      formEl.style.display = "block";
+      isVisibleOnMobile = true;
+    }
+  });
 }
 
 // -------------------------------------------------- //
