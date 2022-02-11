@@ -107,12 +107,12 @@ if (msefilter) {
       isHidden = true;
       calcPlaceholderHeight();
       calcStickyTop();
+    }
 
-      // проверяем, если скролл меньше нижней линии,
-      // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
-      if (window.scrollY <= stickyTop) {
-        unstick()
-      }
+    // проверяем, если скролл меньше нижней линии,
+    // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
+    if (window.scrollY <= stickyTop) {
+      unstick()
     }
   });
 
