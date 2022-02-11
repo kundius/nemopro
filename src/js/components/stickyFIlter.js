@@ -8,111 +8,113 @@ if (msefilter) {
   const toggleEl = msefilter.querySelector(".filters-wrap__toggle");
   const toggleOnMobileEl = msefilter.querySelector(".filters-toggle-on-moblie");
 
-  let isHidden = true
-  let placeholderHeight = 0
-  let stickyTop = 0
+  let isHidden = true;
+  let placeholderHeight = 0;
+  let stickyTop = 0;
 
   const calcPlaceholderHeight = () => {
-    placeholderHeight = formEl.clientHeight
-  }
+    placeholderHeight = formEl.clientHeight;
+  };
 
   const calcStickyTop = () => {
-    stickyTop = msefilter.getBoundingClientRect().top + window.scrollY
-    stickyTop -= headerEl.clientHeight
+    stickyTop = msefilter.getBoundingClientRect().top + window.scrollY;
+    stickyTop -= headerEl.clientHeight;
     if (isHidden) {
-      stickyTop += placeholderHeight
+      stickyTop += placeholderHeight;
     }
-  }
+  };
 
-  calcPlaceholderHeight()
-  calcStickyTop()
-//   const baseTop = msefilter.getBoundingClientRect().top + window.scrollY;
-//   const headerHeight = window.matchMedia(media).matches ? 60 : 80;
+  calcPlaceholderHeight();
+  calcStickyTop();
+  //   const baseTop = msefilter.getBoundingClientRect().top + window.scrollY;
+  //   const headerHeight = window.matchMedia(media).matches ? 60 : 80;
 
-//   let isFixed = false;
-//   let isHidden = true;
-//   let isVisibleOnMobile = false;
+  //   let isFixed = false;
+  //   let isHidden = true;
+  //   let isVisibleOnMobile = false;
 
   window.addEventListener("scroll", function () {
     if (window.scrollY > stickyTop) {
-      formEl.style.position = 'fixed';
+      formEl.style.position = "fixed";
       formEl.style.top = `${headerEl.clientHeight}px`;
       formEl.style.width = `${wrapEl.clientWidth}px`;
       wrapEl.style.paddingTop = `${placeholderHeight}px`;
+      toggleEl.style.display = `block`;
+      if (isHidden) {
+        formEl.style.transform = `translateY(-100%)`;
+      }
     } else {
-      formEl.style.position = 'relative';
+      formEl.style.position = "relative";
       formEl.style.top = null;
       formEl.style.width = null;
       wrapEl.style.paddingTop = null;
+      toggleEl.style.display = `none`;
+      formEl.style.transform = null;
     }
-//     const rect = filterEl.getBoundingClientRect();
-//     const isFixed = () => {
-//       if (window.matchMedia(media).matches) {
-//         let fromTop = baseTop - 60;
-//         if (isHidden) {
-//           fromTop += rect.height;
-//         }
-//         return window.scrollY > fromTop;
-//       } else {
-//         let fromTop = baseTop - 80;
-//         if (isHidden && isVisibleOnMobile) {
-//           fromTop += rect.height;
-//         }
-//         fromTop += 54;
-//         return window.scrollY > fromTop;
-//       }
-//     };
-//     if (isFixed()) {
-//       filterEl.classList.add("filters-wrap_fixed");
-//       filterEl.style.width = `${rect.width}px`;
-//       msefilter.style.paddingTop = `${rect.height}px`;
-//       if (isHidden) {
-//         filterEl.classList.add("filters-wrap_hidden");
-//       }
-//     } else {
-//       filterEl.classList.remove("filters-wrap_fixed");
-//       filterEl.style.width = null;
-//       msefilter.style.paddingTop = null;
-//       filterEl.classList.remove("filters-wrap_hidden");
-//     }
+    //     const rect = filterEl.getBoundingClientRect();
+    //     const isFixed = () => {
+    //       if (window.matchMedia(media).matches) {
+    //         let fromTop = baseTop - 60;
+    //         if (isHidden) {
+    //           fromTop += rect.height;
+    //         }
+    //         return window.scrollY > fromTop;
+    //       } else {
+    //         let fromTop = baseTop - 80;
+    //         if (isHidden && isVisibleOnMobile) {
+    //           fromTop += rect.height;
+    //         }
+    //         fromTop += 54;
+    //         return window.scrollY > fromTop;
+    //       }
+    //     };
+    //     if (isFixed()) {
+    //       filterEl.classList.add("filters-wrap_fixed");
+    //       filterEl.style.width = `${rect.width}px`;
+    //       msefilter.style.paddingTop = `${rect.height}px`;
+    //       if (isHidden) {
+    //         filterEl.classList.add("filters-wrap_hidden");
+    //       }
+    //     } else {
+    //       filterEl.classList.remove("filters-wrap_fixed");
+    //       filterEl.style.width = null;
+    //       msefilter.style.paddingTop = null;
+    //       filterEl.classList.remove("filters-wrap_hidden");
+    //     }
   });
 
-//   toggleEl.addEventListener("click", function () {
-//     if (isHidden) {
-//       filterEl.classList.remove("filters-wrap_hidden");
-//       isHidden = false;
-//     } else {
-//       filterEl.classList.add("filters-wrap_hidden");
-//       isHidden = true;
+  //   toggleEl.addEventListener("click", function () {
+  //     if (isHidden) {
+  //       filterEl.classList.remove("filters-wrap_hidden");
+  //       isHidden = false;
+  //     } else {
+  //       filterEl.classList.add("filters-wrap_hidden");
+  //       isHidden = true;
 
-//       // проверяем, если скролл меньше нижней линии,
-//       // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
-//       const rect = filterEl.getBoundingClientRect();
-//       if (window.scrollY <= baseTop + rect.height - headerHeight) {
-//         filterEl.classList.remove("filters-wrap_fixed");
-//         filterEl.style.width = null;
-//         msefilter.style.paddingTop = null;
-//         filterEl.classList.remove("filters-wrap_hidden");
-//       }
-//     }
-//   });
+  //       // проверяем, если скролл меньше нижней линии,
+  //       // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
+  //       const rect = filterEl.getBoundingClientRect();
+  //       if (window.scrollY <= baseTop + rect.height - headerHeight) {
+  //         filterEl.classList.remove("filters-wrap_fixed");
+  //         filterEl.style.width = null;
+  //         msefilter.style.paddingTop = null;
+  //         filterEl.classList.remove("filters-wrap_hidden");
+  //       }
+  //     }
+  //   });
 
-//   toggleOnMobileEl.addEventListener("click", function () {
-//     if (!isVisibleOnMobile) {
-//       filterEl.classList.add("filters-wrap_visible-on-mobile");
-//       isVisibleOnMobile = true;
-//     } else {
-//       filterEl.classList.remove("filters-wrap_visible-on-mobile");
-//       isVisibleOnMobile = false;
-//     }
-//   });
+  //   toggleOnMobileEl.addEventListener("click", function () {
+  //     if (!isVisibleOnMobile) {
+  //       filterEl.classList.add("filters-wrap_visible-on-mobile");
+  //       isVisibleOnMobile = true;
+  //     } else {
+  //       filterEl.classList.remove("filters-wrap_visible-on-mobile");
+  //       isVisibleOnMobile = false;
+  //     }
+  //   });
 }
 
-
-
 // -------------------------------------------------- //
-
-
 
 // const msefilter = document.querySelector("#mse2_mfilter");
 // const media = "(min-width: 960px)";
@@ -191,8 +193,6 @@ if (msefilter) {
 //     }
 //   });
 // }
-
-
 
 // -------------------------------------------------- //
 
