@@ -41,8 +41,11 @@ if (msefilter) {
       // после скрытия фильтра в плавающем состоянии
       // может появиться пустое пространство достаточное,
       // чтобы фильтр перешел в статичное состояние
-      // поэтому проверяем
-      if (window.scrollY <= baseTop - headerHeight) {
+      // поэтому проверяем, если скролл меньше нижней линии,
+      // то убираем фиксацию и так же сокрытие фильтра,
+      // поскольку в спокойном состоянии он открыт
+      const rect = filterEl.getBoundingClientRect();
+      if (window.scrollY <= baseTop + rect.height - headerHeight) {
         filterEl.classList.remove("filters-wrap_fixed");
         filterEl.style.width = null;
         msefilter.style.paddingTop = null;
