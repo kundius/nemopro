@@ -8301,9 +8301,9 @@ th.forum-headline__replies {
 
 .filters-wrap.filters-wrap_fixed {
   @media (max-width: $breakpoint-mini-max) {
-    // .filters {
-    //   display: grid;
-    // }
+    .filters {
+      display: grid;
+    }
     .filters-toggle-on-moblie {
       display: none;
     }
