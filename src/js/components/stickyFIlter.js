@@ -2,6 +2,7 @@ const msefilter = document.querySelector("#mse2_mfilter");
 // const media = "(min-width: 960px)";
 
 if (msefilter) {
+  const headerEl = document.querySelector(".header");
   const wrapEl = msefilter.querySelector(".filters-wrap");
   const formEl = msefilter.querySelector(".filters");
   const toggleEl = msefilter.querySelector(".filters-wrap__toggle");
@@ -16,7 +17,7 @@ if (msefilter) {
   }
 
   const calcStickyTop = () => {
-    stickyTop = msefilter.getBoundingClientRect().top + window.scrollY 
+    stickyTop = msefilter.getBoundingClientRect().top + window.scrollY - headerEl.clientHeight
   }
 
   calcPlaceholderHeight()
