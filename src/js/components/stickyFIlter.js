@@ -22,7 +22,7 @@ if (msefilter) {
     stickyTop = msefilter.getBoundingClientRect().top + window.scrollY;
     stickyTop -= headerEl.clientHeight;
     if (isHidden) {
-      stickyTop += placeholderHeight;
+      stickyTop += stickEl.clientHeight;
     }
   };
 
@@ -30,29 +30,29 @@ if (msefilter) {
   calcStickyTop();
   
   const stick = () => {
+    if (isMobile) {
+      toggleOnMobileEl.style.display = "none";
+    }
     stickEl.style.position = "fixed";
     stickEl.style.top = `${headerEl.clientHeight}px`;
     stickEl.style.width = `${wrapEl.clientWidth}px`;
-    wrapEl.style.paddingTop = `${placeholderHeight}px`;
+    wrapEl.style.paddingTop = `${stickEl.clientHeight}px`;
     toggleEl.style.display = "block";
     if (isHidden) {
       stickEl.style.transform = "translateY(-100%)";
     }
-    if (isMobile) {
-      toggleOnMobileEl.style.display = "none";
-    }
   }
 
   const unstick = () => {
+    if (isMobile) {
+      toggleOnMobileEl.style.display = "block";
+    }
     stickEl.style.position = "relative";
     stickEl.style.top = null;
     stickEl.style.width = null;
     wrapEl.style.paddingTop = null;
     toggleEl.style.display = "none";
     stickEl.style.transform = null;
-    if (isMobile) {
-      toggleOnMobileEl.style.display = "block";
-    }
   }
 
   window.addEventListener("scroll", function () {
