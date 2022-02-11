@@ -20,7 +20,7 @@ if (msefilter) {
     stickyTop = msefilter.getBoundingClientRect().top + window.scrollY
     stickyTop -= headerEl.clientHeight
     if (isHidden) {
-      stickyTop -= placeholderHeight
+      stickyTop += placeholderHeight
     }
   }
 
