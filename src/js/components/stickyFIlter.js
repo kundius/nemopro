@@ -8,6 +8,7 @@ if (msefilter) {
   const baseTop = msefilter.getBoundingClientRect().top + window.scrollY;
   const headerHeight = window.matchMedia(media).matches ? 60 : 80;
 
+  let isFixed = false;
   let isHidden = true;
   let isVisibleOnMobile = false;
 
@@ -24,8 +25,8 @@ if (msefilter) {
         let fromTop = baseTop - 80;
         if (isHidden && isVisibleOnMobile) {
           fromTop += rect.height;
-          fromTop -= 54;
         }
+        fromTop -= 54;
         return window.scrollY > fromTop;
       }
     };
