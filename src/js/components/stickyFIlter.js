@@ -26,9 +26,9 @@ if (msefilter) {
   calcStickyTop();
 
   const stick = () => {
-    if (isMobile) {
-      toggleOnMobileEl.style.display = "none";
-    }
+    // if (isMobile) {
+    //   toggleOnMobileEl.style.display = "none";
+    // }
     stickEl.style.position = "fixed";
     stickEl.style.top = `${headerEl.clientHeight}px`;
     stickEl.style.width = `${wrapEl.clientWidth}px`;
@@ -41,9 +41,9 @@ if (msefilter) {
   };
 
   const unstick = () => {
-    if (isMobile) {
-      toggleOnMobileEl.style.display = "block";
-    }
+    // if (isMobile) {
+    //   toggleOnMobileEl.style.display = "block";
+    // }
     stickEl.style.position = "relative";
     stickEl.style.top = null;
     stickEl.style.width = null;
@@ -65,12 +65,14 @@ if (msefilter) {
     if (isHidden) {
       stickEl.style.transform = "translateY(0)";
       if (isMobile) {
+        toggleOnMobileEl.style.display = "none";
         formEl.style.display = "grid";
       }
       isHidden = false;
     } else {
       stickEl.style.transform = "translateY(-100%)";
       if (isMobile) {
+        toggleOnMobileEl.style.display = "block";
         if (!isVisibleOnMobile) {
           formEl.style.display = "none";
         }
