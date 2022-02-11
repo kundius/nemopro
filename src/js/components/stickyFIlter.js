@@ -47,6 +47,7 @@ if (msefilter) {
       filterEl.classList.remove("filters-wrap_fixed");
       filterEl.style.width = null;
       msefilter.style.paddingTop = null;
+      filterEl.classList.remove("filters-wrap_hidden");
     }
     // const rect = filterEl.getBoundingClientRect();
     // if (
