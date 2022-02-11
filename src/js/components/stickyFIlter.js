@@ -87,12 +87,12 @@ if (msefilter) {
       toggleEl.innerHTML = toggleEl.dataset.open;
 
       if (isMobile) {
-        if (!isVisibleOnMobile) {
+        // if (!isVisibleOnMobile) {
           wrapEl.classList.remove("filters-wrap_on-mobile-visible");
           formEl.style.display = "none";
           toggleOnMobileEl.style.marginTop = null;
           isVisibleOnMobile = false;
-        }
+        // }
       }
     }
 
@@ -125,6 +125,10 @@ if (msefilter) {
       formEl.style.display = "grid";
       toggleOnMobileEl.style.marginTop = "20px";
       isVisibleOnMobile = true;
+
+      stickEl.style.transform = "translateY(0)";
+      isHidden = false;
+      toggleEl.innerHTML = toggleEl.dataset.close;
     }
 
     calcStickyTop();
