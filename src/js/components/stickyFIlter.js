@@ -39,26 +39,24 @@ if (msefilter) {
   calcStickyTop();
 
   const stick = () => {
-    stickEl.classList.add('filters-stick_fixed')
+    stickEl.classList.add("filters-stick_fixed");
     stickEl.style.top = `${headerEl.clientHeight}px`;
     stickEl.style.width = `${wrapEl.clientWidth}px`;
     stickEl.style.borderBottom = "1px solid #ccc";
     wrapEl.style.paddingTop = `${stickEl.clientHeight}px`;
     toggleEl.style.display = "block";
-    toggleEl.innerHTML = toggleEl.dataset.unstick
     if (isHidden) {
       stickEl.style.transform = "translateY(-100%)";
     }
   };
 
   const unstick = () => {
-    stickEl.classList.remove('filters-stick_fixed')
+    stickEl.classList.remove("filters-stick_fixed");
     stickEl.style.top = null;
     stickEl.style.width = null;
     stickEl.style.borderBottom = null;
     wrapEl.style.paddingTop = null;
     toggleEl.style.display = "none";
-    toggleEl.innerHTML = toggleEl.dataset.stick
     stickEl.style.transform = null;
   };
 
@@ -80,6 +78,7 @@ if (msefilter) {
         toggleOnMobileEl.style.marginTop = "20px";
       }
       isHidden = false;
+      toggleEl.innerHTML = toggleEl.dataset.close;
     } else {
       stickEl.style.transform = "translateY(-100%)";
       if (isMobile) {
@@ -90,10 +89,11 @@ if (msefilter) {
         }
       }
       isHidden = true;
+      toggleEl.innerHTML = toggleEl.dataset.open;
     }
 
     calcStickyTop();
-    
+
     // проверяем, если скролл меньше нижней линии,
     // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
     // if (window.scrollY <= stickyTop) {
@@ -108,12 +108,12 @@ if (msefilter) {
 
   toggleOnMobileEl.addEventListener("click", function () {
     if (isVisibleOnMobile) {
-      wrapEl.classList.remove('filters-wrap_on-mobile-visible')
+      wrapEl.classList.remove("filters-wrap_on-mobile-visible");
       formEl.style.display = "none";
       toggleOnMobileEl.style.marginTop = null;
       isVisibleOnMobile = false;
     } else {
-      wrapEl.classList.add('filters-wrap_on-mobile-visible')
+      wrapEl.classList.add("filters-wrap_on-mobile-visible");
       formEl.style.display = "grid";
       toggleOnMobileEl.style.marginTop = "20px";
       isVisibleOnMobile = true;
