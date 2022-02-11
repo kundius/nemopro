@@ -9,7 +9,7 @@ if (msefilter) {
   const headerHeight = window.matchMedia(media).matches ? 60 : 80;
 
   let isHidden = true;
-  let isVisibleOnMobile = true;
+  let isVisibleOnMobile = false;
 
   window.addEventListener("scroll", function () {
     const rect = filterEl.getBoundingClientRect();
