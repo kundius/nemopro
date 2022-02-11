@@ -62,7 +62,7 @@ if (msefilter) {
   };
 
   window.addEventListener("scroll", function () {
-    console.log('stickyTop', stickyTop)
+    // console.log('stickyTop', stickyTop)
     if (window.scrollY > stickyTop) {
       stick();
     } else {
@@ -93,7 +93,12 @@ if (msefilter) {
     
     // проверяем, если скролл меньше нижней линии,
     // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
-    if (window.scrollY <= stickyTop) {
+    // if (window.scrollY <= stickyTop) {
+    //   unstick();
+    // }
+    if (window.scrollY > stickyTop) {
+      stick();
+    } else {
       unstick();
     }
   });
@@ -111,7 +116,12 @@ if (msefilter) {
 
     // проверяем, если скролл меньше нижней линии,
     // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
-    if (window.scrollY <= stickyTop) {
+    // if (window.scrollY <= stickyTop) {
+    //   unstick();
+    // }
+    if (window.scrollY > stickyTop) {
+      stick();
+    } else {
       unstick();
     }
   });
