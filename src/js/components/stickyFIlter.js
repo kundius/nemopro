@@ -97,17 +97,16 @@ if (msefilter) {
       stickEl.style.transform = "translateY(0)";
       formEl.style.display = "grid";
       isHidden = false;
-      calcPlaceholderHeight();
-      calcStickyTop();
     } else {
       stickEl.style.transform = "translateY(-100%)";
-      if (!isVisibleOnMobile && isMobile) {
-        formEl.style.display = "none";
-      }
+      // if (!isVisibleOnMobile && isMobile) {
+      //   formEl.style.display = "none";
+      // }
       isHidden = true;
-      calcPlaceholderHeight();
-      calcStickyTop();
     }
+
+    calcPlaceholderHeight();
+    calcStickyTop();
 
     // проверяем, если скролл меньше нижней линии,
     // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
@@ -120,14 +119,13 @@ if (msefilter) {
     if (isVisibleOnMobile) {
       formEl.style.display = "none";
       isVisibleOnMobile = false;
-      calcPlaceholderHeight();
-      calcStickyTop();
     } else {
       formEl.style.display = "grid";
       isVisibleOnMobile = true;
-      calcPlaceholderHeight();
-      calcStickyTop();
     }
+
+    calcPlaceholderHeight();
+    calcStickyTop();
 
     // проверяем, если скролл меньше нижней линии,
     // то убираем фиксацию и сокрытие фильтра (в спокойном состоянии он открыт)
