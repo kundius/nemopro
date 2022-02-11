@@ -23,7 +23,10 @@ if (msefilter) {
     }
     if (isMobile) {
       if (isHidden) {
-        stickyTop += 54;
+        stickyTop += toggleOnMobileEl.clientHeight;
+        if (isVisibleOnMobile) {
+          stickyTop += 20;
+        }
       }
     }
     // console.log('isMobile', isMobile)
@@ -78,6 +81,7 @@ if (msefilter) {
       if (isMobile) {
         // toggleOnMobileEl.style.display = "none";
         formEl.style.display = "grid";
+        toggleOnMobileEl.style.marginTop = "20px";
       }
       isHidden = false;
     } else {
@@ -86,6 +90,7 @@ if (msefilter) {
         // toggleOnMobileEl.style.display = "block";
         if (!isVisibleOnMobile) {
           formEl.style.display = "none";
+          toggleOnMobileEl.style.marginTop = null;
         }
       }
       isHidden = true;
@@ -108,9 +113,11 @@ if (msefilter) {
   toggleOnMobileEl.addEventListener("click", function () {
     if (isVisibleOnMobile) {
       formEl.style.display = "none";
+      toggleOnMobileEl.style.marginTop = null;
       isVisibleOnMobile = false;
     } else {
       formEl.style.display = "grid";
+      toggleOnMobileEl.style.marginTop = "20px";
       isVisibleOnMobile = true;
     }
 
