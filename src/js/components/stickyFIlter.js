@@ -95,14 +95,14 @@ if (msefilter) {
   toggleEl.addEventListener("click", function () {
     if (isHidden) {
       stickEl.style.transform = "translateY(0)";
-      formEl.style.dispaly = "grid";
+      formEl.style.display = "grid";
       isHidden = false;
       calcPlaceholderHeight();
       calcStickyTop();
     } else {
       stickEl.style.transform = "translateY(-100%)";
       if (!isVisibleOnMobile) {
-        formEl.style.dispaly = "none";
+        formEl.style.display = "none";
       }
       isHidden = true;
       calcPlaceholderHeight();
