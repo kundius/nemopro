@@ -34,9 +34,6 @@ if (msefilter) {
     if (isHidden) {
       filterEl.classList.remove("filters-wrap_hidden");
       isHidden = false;
-    } else {
-      filterEl.classList.add("filters-wrap_hidden");
-      isHidden = true;
 
       const rect = filterEl.getBoundingClientRect();
       if (
@@ -47,6 +44,9 @@ if (msefilter) {
         filterEl.style.width = null;
         msefilter.style.paddingTop = null;
       }
+    } else {
+      filterEl.classList.add("filters-wrap_hidden");
+      isHidden = true;
     }
     // const rect = filterEl.getBoundingClientRect();
     // if (
