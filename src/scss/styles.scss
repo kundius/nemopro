@@ -8225,6 +8225,9 @@ th.forum-headline__replies {
   display: grid;
   column-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  @media (max-width: $breakpoint-mini-max) {
+    display: none;
+  }
 }
 
 .filters-wrap {
@@ -8240,11 +8243,8 @@ th.forum-headline__replies {
   }
 }
 
-.filters-form {
+.filters-stick {
   z-index: 200;
-  @media (max-width: $breakpoint-mini-max) {
-    display: none;
-  }
 }
 
 // .filters-wrap.filters-wrap_fixed {

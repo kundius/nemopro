@@ -4,7 +4,8 @@ const msefilter = document.querySelector("#mse2_mfilter");
 if (msefilter) {
   const headerEl = document.querySelector(".header");
   const wrapEl = msefilter.querySelector(".filters-wrap");
-  const formEl = msefilter.querySelector(".filters-form");
+  const stickEl = msefilter.querySelector(".filters-stick");
+  const formEl = msefilter.querySelector(".filters");
   const toggleEl = msefilter.querySelector(".filters-wrap__toggle");
   const toggleOnMobileEl = msefilter.querySelector(".filters-wrap__toggle-on-moblie");
 
@@ -14,7 +15,7 @@ if (msefilter) {
   let stickyTop = 0;
 
   const calcPlaceholderHeight = () => {
-    placeholderHeight = formEl.clientHeight;
+    placeholderHeight = stickEl.clientHeight;
   };
 
   const calcStickyTop = () => {
@@ -34,23 +35,23 @@ if (msefilter) {
   //   let isHidden = true;
   
   const stick = () => {
-    formEl.style.position = "fixed";
-    formEl.style.top = `${headerEl.clientHeight}px`;
-    formEl.style.width = `${wrapEl.clientWidth}px`;
+    stickEl.style.position = "fixed";
+    stickEl.style.top = `${headerEl.clientHeight}px`;
+    stickEl.style.width = `${wrapEl.clientWidth}px`;
     wrapEl.style.paddingTop = `${placeholderHeight}px`;
     toggleEl.style.display = "block";
     if (isHidden) {
-      formEl.style.transform = "translateY(-100%)";
+      stickEl.style.transform = "translateY(-100%)";
     }
   }
 
   const unstick = () => {
-    formEl.style.position = "relative";
-    formEl.style.top = null;
-    formEl.style.width = null;
+    stickEl.style.position = "relative";
+    stickEl.style.top = null;
+    stickEl.style.width = null;
     wrapEl.style.paddingTop = null;
     toggleEl.style.display = "none";
-    formEl.style.transform = null;
+    stickEl.style.transform = null;
   }
 
   window.addEventListener("scroll", function () {
@@ -93,11 +94,11 @@ if (msefilter) {
 
   toggleEl.addEventListener("click", function () {
     if (isHidden) {
-      formEl.style.transform = "translateY(0)";
+      stickEl.style.transform = "translateY(0)";
       isHidden = false;
       calcStickyTop();
     } else {
-      formEl.style.transform = "translateY(-100%)";
+      stickEl.style.transform = "translateY(-100%)";
       isHidden = true;
       calcStickyTop();
 
