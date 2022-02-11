@@ -21,6 +21,9 @@ if (msefilter) {
     if (isHidden) {
       stickyTop += stickEl.clientHeight;
     }
+    if (isMobile && !isVisibleOnMobile) {
+      stickyTop -= stickEl.clientHeight;
+    }
   };
 
   calcStickyTop();
