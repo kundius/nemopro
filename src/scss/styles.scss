@@ -8238,7 +8238,7 @@ th.forum-headline__replies {
   }
 }
 
-.filters-stick {
+.filters-sticky {
   z-index: 200;
   background: #ffffff;
   @media (max-width: $breakpoint-mini-max) {
@@ -8247,7 +8247,7 @@ th.forum-headline__replies {
   }
 }
 
-.filters-stick_fixed {
+.filters-sticky_fixed {
   position: fixed;
 }
 

@@ -3,7 +3,7 @@ const msefilter = document.querySelector("#mse2_mfilter");
 if (msefilter) {
   const headerEl = document.querySelector(".header");
   const wrapEl = msefilter.querySelector(".filters-wrap");
-  const stickEl = msefilter.querySelector(".filters-stick");
+  const stickyEl = msefilter.querySelector(".filters-sticky");
   const formEl = msefilter.querySelector(".filters");
   const toggleEl = msefilter.querySelector(".filters-wrap__toggle");
   const toggleOnMobileEl = msefilter.querySelector(
@@ -19,7 +19,7 @@ if (msefilter) {
     stickyTop = msefilter.getBoundingClientRect().top + window.scrollY;
     stickyTop -= headerEl.clientHeight;
     if (isHidden) {
-      stickyTop += stickEl.clientHeight;
+      stickyTop += stickyEl.clientHeight;
     }
     if (isMobile) {
       if (isHidden) {
@@ -39,35 +39,35 @@ if (msefilter) {
   calcStickyTop();
 
   const stick = () => {
-    stickEl.classList.add("filters-stick_fixed");
-    stickEl.style.top = `${headerEl.clientHeight}px`;
-    stickEl.style.width = `${wrapEl.clientWidth}px`;
-    stickEl.style.borderBottom = "1px solid #ccc";
-    wrapEl.style.paddingTop = `${stickEl.clientHeight}px`;
+    stickyEl.classList.add("filters-stick_fixed");
+    stickyEl.style.top = `${headerEl.clientHeight}px`;
+    stickyEl.style.width = `${wrapEl.clientWidth}px`;
+    stickyEl.style.borderBottom = "1px solid #ccc";
+    wrapEl.style.paddingTop = `${stickyEl.clientHeight}px`;
     toggleEl.style.display = "block";
     if (isHidden) {
-      stickEl.style.transform = "translateY(-100%)";
+      stickyEl.style.transform = "translateY(-100%)";
     }
   };
 
   const unstick = () => {
-    stickEl.classList.remove("filters-stick_fixed");
-    stickEl.style.top = null;
-    stickEl.style.width = null;
-    stickEl.style.borderBottom = null;
+    stickyEl.classList.remove("filters-stick_fixed");
+    stickyEl.style.top = null;
+    stickyEl.style.width = null;
+    stickyEl.style.borderBottom = null;
     wrapEl.style.paddingTop = null;
     toggleEl.style.display = "none";
-    stickEl.style.transform = null;
+    stickyEl.style.transform = null;
   };
 
   const hideMain = () => {
-    stickEl.style.transform = "translateY(-100%)";
+    stickyEl.style.transform = "translateY(-100%)";
     isHidden = true;
     toggleEl.innerHTML = toggleEl.dataset.open;
   };
 
-  const openOnStick = () => {
-    stickEl.style.transform = "translateY(0)";
+  const openOnSticky = () => {
+    stickyEl.style.transform = "translateY(0)";
     isHidden = false;
     toggleEl.innerHTML = toggleEl.dataset.close;
   };
@@ -98,7 +98,7 @@ if (msefilter) {
 
   toggleEl.addEventListener("click", function () {
     if (isHidden) {
-      openOnStick();
+      openOnSticky();
 
       if (isMobile) {
         openOnMobile();
@@ -123,7 +123,7 @@ if (msefilter) {
       hideMain();
     } else {
       openOnMobile();
-      // openOnStick пропущено, чтобы фильтр был изначально закрыт при прокрутке
+      // openOnSticky пропущено, чтобы фильтр был изначально закрыт при прокрутке
     }
 
     calcStickyTop();
