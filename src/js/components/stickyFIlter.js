@@ -17,7 +17,11 @@ if (msefilter) {
   }
 
   const calcStickyTop = () => {
-    stickyTop = msefilter.getBoundingClientRect().top + window.scrollY - headerEl.clientHeight
+    stickyTop = msefilter.getBoundingClientRect().top + window.scrollY
+    stickyTop -= headerEl.clientHeight
+    if (isHidden) {
+      stickyTop -= placeholderHeight
+    }
   }
 
   calcPlaceholderHeight()
