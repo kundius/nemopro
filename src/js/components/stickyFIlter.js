@@ -87,12 +87,10 @@ if (msefilter) {
       toggleEl.innerHTML = toggleEl.dataset.open;
 
       if (isMobile) {
-        // if (!isVisibleOnMobile) {
-          wrapEl.classList.remove("filters-wrap_on-mobile-visible");
-          formEl.style.display = "none";
-          toggleOnMobileEl.style.marginTop = null;
-          isVisibleOnMobile = false;
-        // }
+        wrapEl.classList.remove("filters-wrap_on-mobile-visible");
+        formEl.style.display = "none";
+        toggleOnMobileEl.style.marginTop = null;
+        isVisibleOnMobile = false;
       }
     }
 
@@ -126,9 +124,9 @@ if (msefilter) {
       toggleOnMobileEl.style.marginTop = "20px";
       isVisibleOnMobile = true;
 
-      stickEl.style.transform = "translateY(0)";
-      isHidden = false;
-      toggleEl.innerHTML = toggleEl.dataset.close;
+      // stickEl.style.transform = "translateY(0)";
+      // isHidden = false;
+      // toggleEl.innerHTML = toggleEl.dataset.close;
     }
 
     calcStickyTop();
