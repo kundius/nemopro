@@ -9,6 +9,7 @@ if (msefilter) {
   const toggleOnMobileEl = msefilter.querySelector(".filters-toggle-on-moblie");
 
   let isHidden = true;
+  let isVisibleOnMobile = false;
   let placeholderHeight = 0;
   let stickyTop = 0;
 
@@ -31,7 +32,6 @@ if (msefilter) {
 
   //   let isFixed = false;
   //   let isHidden = true;
-  //   let isVisibleOnMobile = false;
   
   const stick = () => {
     formEl.style.position = "fixed";
@@ -109,15 +109,15 @@ if (msefilter) {
       }
     });
 
-  //   toggleOnMobileEl.addEventListener("click", function () {
-  //     if (!isVisibleOnMobile) {
-  //       filterEl.classList.add("filters-wrap_visible-on-mobile");
-  //       isVisibleOnMobile = true;
-  //     } else {
-  //       filterEl.classList.remove("filters-wrap_visible-on-mobile");
-  //       isVisibleOnMobile = false;
-  //     }
-  //   });
+    toggleOnMobileEl.addEventListener("click", function () {
+      if (isVisibleOnMobile) {
+        formEl.style.display = "none";
+        isVisibleOnMobile = false;
+      } else {
+        formEl.style.display = "block";
+        isVisibleOnMobile = true;
+      }
+    });
 }
 
 // -------------------------------------------------- //
