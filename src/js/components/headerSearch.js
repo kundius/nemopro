@@ -3,16 +3,32 @@ const search = document.querySelector(".u-header-search");
 
 if (toggle && search) {
   let isVisible = false;
+
+  const open = () => {
+    toggle.classList.add("active");
+    search.classList.add("u-header-search_visible");
+    isVisible = true;
+
+    window.addEventListener("scroll", onScroll);
+  };
+
+  const hide = () => {
+    toggle.classList.remove("active");
+    search.classList.remove("u-header-search_visible");
+    isVisible = false;
+
+    window.removeEventListener("scroll", onScroll);
+  };
+
+  const onScroll = () => hide();
+
   toggle.addEventListener("click", (e) => {
     e.preventDefault();
+
     if (isVisible) {
-      toggle.classList.remove("active");
-      search.classList.remove("u-header-search_visible");
-      isVisible = false;
+      hide();
     } else {
-      toggle.classList.add("active");
-      search.classList.add("u-header-search_visible");
-      isVisible = true;
+      open();
     }
   });
 }
