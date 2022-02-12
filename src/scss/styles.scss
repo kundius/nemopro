@@ -11380,53 +11380,56 @@ td.u-product-options__items {
   &_visible {
     transform: translateY(0);
   }
+  @media (max-width: $breakpoint-medium-max) {
+    top: 80px;
+  }
   @media (max-width: $breakpoint-mini-max) {
     padding: 4px 0;
   }
 }
 
 .u-search-form.ya-site-form {
-    position: relative;
-    input[name="text"] {
-        background-color: #014b63;
-        border: 1px solid #0eb5e2;
-        box-shadow: 0 0 0 1px #067fa4;
-        padding: 0 20px;
-        min-height: 44px;
-        color: #fff;
-        font-size: 18px;
-        width: 100%;
-        &::-moz-placeholder { color: #fff; }
-        &::-webkit-input-placeholder { color: #fff; }
-        &:-ms-input-placeholder { color: #fff; }
-        &::-ms-input-placeholder { color: #fff; }
-        &::placeholder { color: #fff; }
-        @media (max-width: $breakpoint-mini-max) {
-            padding: 0 12px;
-            font-size: 14px;
-            min-height: 24px;
-        }
+  position: relative;
+  input[name="text"] {
+    background-color: #014b63;
+    border: 1px solid #0eb5e2;
+    box-shadow: 0 0 0 1px #067fa4;
+    padding: 0 20px;
+    min-height: 44px;
+    color: #fff;
+    font-size: 18px;
+    width: 100%;
+    &::-moz-placeholder { color: #fff; }
+    &::-webkit-input-placeholder { color: #fff; }
+    &:-ms-input-placeholder { color: #fff; }
+    &::-ms-input-placeholder { color: #fff; }
+    &::placeholder { color: #fff; }
+    @media (max-width: $breakpoint-mini-max) {
+      padding: 0 12px;
+      font-size: 14px;
+      min-height: 32px;
     }
-    input[type="submit"] {
-        position: absolute;
-        background: url(../img/icon-search-white.svg) no-repeat 50% 50%;
-        right: 18px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 28px;
-        height: 28px;
-        display: block;
-        border: none;
-        cursor: pointer;
-        text-indent: -9999px;
-        background-size: cover;
-        padding: 0;
-        @media (max-width: $breakpoint-mini-max) {
-            right: 10px;
-            width: 18px;
-            height: 18px;
-        }
+  }
+  input[type="submit"] {
+    position: absolute;
+    background: url(../img/icon-search-white.svg) no-repeat 50% 50%;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    display: block;
+    border: none;
+    cursor: pointer;
+    text-indent: -9999px;
+    background-size: cover;
+    padding: 0;
+    @media (max-width: $breakpoint-mini-max) {
+      right: 4px;
+      width: 24px;
+      height: 24px;
     }
+  }
 }
 
 .u-rating {
