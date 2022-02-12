@@ -7,8 +7,10 @@ if (toggle && search) {
     e.preventDefault();
     if (isVisible) {
       search.classList.remove("u-header-search_visible");
+      isVisible = false;
     } else {
       search.classList.add("u-header-search_visible");
+      isVisible = true;
     }
   });
 }
