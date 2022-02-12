@@ -96,8 +96,8 @@ if (msefilter) {
     if (window.scrollY > stickyTop) {
       stick();
     } else {
-      unstick();
       hideOnSticky();
+      unstick();
     }
   };
 
