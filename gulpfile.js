@@ -62,8 +62,6 @@ function js() {
     './node_modules/uikit/dist/js/uikit.min.js',
     './node_modules/uikit/dist/js/components/sticky.min.js',
     './node_modules/uikit/dist/js/components/notify.min.js',
-    // './node_modules/uikit/dist/js/components/tooltip.min.js',
-    // './node_modules/uikit/dist/js/components/slider.min.js',
     './node_modules/slick-carousel/slick/slick.min.js',
     './node_modules/choices.js/public/assets/scripts/choices.min.js',
     './node_modules/autocompleter/autocomplete.js',
@@ -73,8 +71,8 @@ function js() {
     './node_modules/jquery-validation/dist/localization/messages_ru.min.js',
     './node_modules/jquery.cookie/jquery.cookie.js',
     './node_modules/webfontloader/webfontloader.js',
-    config.srcDir + 'js/flexmenu.min.js',
-    config.srcDir + 'js/mobilemenu.js',
+    // config.srcDir + 'js/flexmenu.min.js',
+    // config.srcDir + 'js/mobilemenu.js',
     config.srcDir + 'js/main.js'
   ])
     .pipe(babel({
