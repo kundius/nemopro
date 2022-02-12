@@ -1,4 +1,4 @@
-const Coolies = require("js-cookie");
+const Cookies = require("js-cookie");
 
 const msefilter = document.querySelector("#mse2_mfilter");
 
