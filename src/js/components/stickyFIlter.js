@@ -100,6 +100,12 @@ if (msefilter) {
     }
   };
 
+  if (isMobile && isVisibleOnMobile) {
+    wrapEl.classList.add("filters-wrap_on-mobile-visible");
+    formEl.style.display = "grid";
+    toggleOnMobileEl.style.marginTop = "20px";
+  }
+
   window.addEventListener("scroll", onScroll);
 
   toggleEl.addEventListener("click", function () {
