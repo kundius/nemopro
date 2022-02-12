@@ -13007,9 +13007,17 @@ td.u-product-options__items {
     box-sizing: initial;
     margin-right: -18px !important;
     cursor: pointer;
+    width: 65px;
+    margin-left: 5px;
   }
   .ya-site-form__input-text {
     line-height: 32px;
     padding: 0 10px;
+  }
+  .ya-site-form__search-input-layout-r {
+    width: 70px;
+  }
+  .ya-site-form__search-input-layout-l {
+    width: auto;
   }
 }
