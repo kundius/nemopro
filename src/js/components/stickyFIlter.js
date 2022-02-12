@@ -96,8 +96,10 @@ if (msefilter) {
     if (window.scrollY > stickyTop) {
       stick();
     } else {
-      hideOnSticky();
       unstick();
+      isHidden = true;
+      toggleEl.innerHTML = toggleEl.dataset.open;
+      Cookies.set("filterIsHidden", "1");
     }
   };
 
