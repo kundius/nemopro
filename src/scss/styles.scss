@@ -11369,12 +11369,19 @@ td.u-product-options__items {
 
 .u-header-search {
   background: #026282;
-  padding: 10px 0;
-  @media (max-width: $breakpoint-mini-max) {
-    padding: 5px 0;
+  padding: 8px 0;
+  position: fixed;
+  top: 60px;
+  z-index: 190;
+  transform: translateY(-100%);
+  transition: transform .3s ease;
+  left: 0;
+  width: 100%;
+  &_visible {
+    transform: translateY(0);
   }
-  & + .breadcrumbs {
-    margin-top: 0;
+  @media (max-width: $breakpoint-mini-max) {
+    padding: 4px 0;
   }
 }
 
