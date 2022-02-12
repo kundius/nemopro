@@ -3,11 +3,12 @@ const search = document.querySelector(".u-header-search");
 
 if (toggle && search) {
   let isVisible = false;
-  toggle.addEventListener("click", () => {
+  toggle.addEventListener("click", (e) => {
+    e.preventDefault();
     if (isVisible) {
-      search.classList.remove('u-header-search_visible')
+      search.classList.remove("u-header-search_visible");
     } else {
-      search.classList.add('u-header-search_visible')
+      search.classList.add("u-header-search_visible");
     }
-  })
+  });
 }
