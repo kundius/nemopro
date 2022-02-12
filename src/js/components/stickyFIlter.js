@@ -98,10 +98,10 @@ if (msefilter) {
     } else {
       unstick();
     
-      isHidden = true;
-      toggleEl.innerHTML = toggleEl.dataset.open;
-      Cookies.set("filterIsHidden", "1");
-      calcStickyTop();
+      // isHidden = true;
+      // toggleEl.innerHTML = toggleEl.dataset.open;
+      // Cookies.set("filterIsHidden", "1");
+      // calcStickyTop();
     }
   };
 
