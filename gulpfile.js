@@ -69,10 +69,9 @@ function js() {
     './node_modules/jquery-form/dist/jquery.form.min.js',
     './node_modules/jquery-validation/dist/jquery.validate.min.js',
     './node_modules/jquery-validation/dist/localization/messages_ru.min.js',
-    './node_modules/jquery.cookie/jquery.cookie.js',
     './node_modules/webfontloader/webfontloader.js',
     // config.srcDir + 'js/flexmenu.min.js',
-    // config.srcDir + 'js/mobilemenu.js',
+    config.srcDir + 'js/mobilemenu.js',
     config.srcDir + 'js/main.js'
   ])
     .pipe(babel({

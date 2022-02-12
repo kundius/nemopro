@@ -1,7 +1,7 @@
 $(function() {
     $(".mobilemenu").each(function() {
         var mobilemenu = $(this);
-        var overflow = mobilemenu.data('overflow') || scroll
+        var overflow = mobilemenu.data('overflow') || 'scroll'
     
         // дефолтные настройки для скрола
         mobilemenu.find(".wrap").first().data("params", {
@@ -44,11 +44,11 @@ $(function() {
                                         }, 200)
                                     }, 100);
                                 } else {
-                                    setTimeout(function() {
-                                        $('html, body').animate({
-                                            scrollTop: 0
-                                        }, 200)
-                                    }, 100);
+                                    // setTimeout(function() {
+                                    //     $('html, body').animate({
+                                    //         scrollTop: 0
+                                    //     }, 200)
+                                    // }, 100);
                                 }
                                 var o = i.height();
                                 setTimeout(function() {
