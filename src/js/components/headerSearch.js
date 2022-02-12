@@ -6,9 +6,11 @@ if (toggle && search) {
   toggle.addEventListener("click", (e) => {
     e.preventDefault();
     if (isVisible) {
+      toggle.classList.remove("active");
       search.classList.remove("u-header-search_visible");
       isVisible = false;
     } else {
+      toggle.classList.add("active");
       search.classList.add("u-header-search_visible");
       isVisible = true;
     }
