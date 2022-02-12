@@ -97,9 +97,11 @@ if (msefilter) {
       stick();
     } else {
       unstick();
+    
       isHidden = true;
       toggleEl.innerHTML = toggleEl.dataset.open;
       Cookies.set("filterIsHidden", "1");
+      calcStickyTop();
     }
   };
 
