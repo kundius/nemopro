@@ -625,10 +625,10 @@ $('.js-consultant-btn').click(function() {
     jivo_api.open();
 });
 
-$('.js-catalog-menu').flexMenu({
-    linkText: 'Еще <i class="uk-icon-angle-down"></i>',
-    showOnHover: false
-});
+// $('.js-catalog-menu').flexMenu({
+//     linkText: 'Еще <i class="uk-icon-angle-down"></i>',
+//     showOnHover: false
+// });
 
 $(document).on('click', '[data-add-remains]', function(e) {
     e.preventDefault();
