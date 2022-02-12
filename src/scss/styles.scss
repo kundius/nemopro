@@ -2950,33 +2950,36 @@ jdiv {
 //     border-bottom: 2px solid #ffc809 !important;
 // }
 .offcanvas-close {
-    background-color: #fff;
-    width: 53px;
-    height: 52px;
-    position: relative;
-    margin-left: auto;
-    &::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%) rotate(-45deg);
-        transform-origin: 50% 50%;
-        width: 60%;
-        height: 2px;
-        background-color: gray;
-    }
-    &::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%) rotate(45deg);
-        transform-origin: 50% 50%;
-        width: 60%;
-        height: 2px;
-        background-color: gray;
-    }
+  background-color: #fff;
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  margin-left: auto;
+  right: 0;
+  top: 0;
+  z-index: 20;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transform-origin: 50% 50%;
+    width: 60%;
+    height: 2px;
+    background-color: gray;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transform-origin: 50% 50%;
+    width: 60%;
+    height: 2px;
+    background-color: gray;
+  }
 }
 
 .offcanvas-search {
