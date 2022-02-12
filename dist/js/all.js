@@ -19738,7 +19738,6 @@ $('[data-uk-switcher]').on('show.uk.switcher', equalBlocks);
 $('[data-uk-slider]').on('focusitem.uk.slider', equalBlocks);*/
 
 $(document).on('change', '#mse2_filters select', function () {
-  console.log('document on change 759');
   $('html, body').animate({
     scrollTop:
     /*$("#pdopage").offset().top || */

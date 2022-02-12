@@ -2,7 +2,7 @@ const Cookies = require("js-cookie");
 
 const msefilter = document.querySelector("#mse2_mfilter");
 
-if (msefilter) {
+if (false) {
   const headerEl = document.querySelector(".header");
   const wrapEl = msefilter.querySelector(".filters-wrap");
   const stickyEl = msefilter.querySelector(".filters-sticky");
