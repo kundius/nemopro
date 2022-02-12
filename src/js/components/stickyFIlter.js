@@ -1,3 +1,5 @@
+const Coolies = require("js-cookie");
+
 const msefilter = document.querySelector("#mse2_mfilter");
 
 if (msefilter) {
@@ -11,8 +13,8 @@ if (msefilter) {
   );
   const isMobile = window.matchMedia("(max-width: 959px)").matches;
 
-  let isHidden = true;
-  let isVisibleOnMobile = false;
+  let isHidden = !!Cookies.get("filterIsHidden");
+  let isVisibleOnMobile = !!Cookies.get("filterIsVisibleOnMobile");
   let stickyTop = 0;
 
   const calcStickyTop = () => {
@@ -64,12 +66,14 @@ if (msefilter) {
     stickyEl.style.transform = "translateY(-100%)";
     isHidden = true;
     toggleEl.innerHTML = toggleEl.dataset.open;
+    Cookies.set("filterIsHidden", "1");
   };
 
   const openOnSticky = () => {
     stickyEl.style.transform = "translateY(0)";
     isHidden = false;
     toggleEl.innerHTML = toggleEl.dataset.close;
+    Cookies.remove("filterIsHidden");
   };
 
   const hideOnMobile = () => {
@@ -77,6 +81,7 @@ if (msefilter) {
     formEl.style.display = "none";
     toggleOnMobileEl.style.marginTop = null;
     isVisibleOnMobile = false;
+    Cookies.remove("filterIsVisibleOnMobile");
   };
 
   const openOnMobile = () => {
@@ -84,6 +89,7 @@ if (msefilter) {
     formEl.style.display = "grid";
     toggleOnMobileEl.style.marginTop = "20px";
     isVisibleOnMobile = true;
+    Cookies.set("filterIsVisibleOnMobile", "1");
   };
 
   const onScroll = () => {
