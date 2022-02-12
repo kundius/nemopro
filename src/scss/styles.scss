@@ -11410,9 +11410,8 @@ td.u-product-options__items {
       min-height: 32px;
     }
   }
-  input[type="submit"] {
+  button[type="submit"] {
     position: absolute;
-    background: url(../img/icon-search-white.svg) no-repeat 50% 50%;
     right: 18px;
     top: 50%;
     transform: translateY(-50%);
@@ -11421,9 +11420,9 @@ td.u-product-options__items {
     display: block;
     border: none;
     cursor: pointer;
-    text-indent: -9999px;
-    background-size: cover;
     padding: 0;
+    color: #fff;
+    font-size: 16px;
     @media (max-width: $breakpoint-mini-max) {
       right: 4px;
       width: 24px;
