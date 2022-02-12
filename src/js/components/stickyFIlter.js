@@ -15,9 +15,9 @@ if (msefilter) {
 
   let isHidden = !!Cookies.get("filterIsHidden");
   let isVisibleOnMobile = !!Cookies.get("filterIsVisibleOnMobile");
-  let stickyTop = 0;
 
-  const calcStickyTop = () => {
+  const getStickyTop = () => {
+    let stickyTop = 0;
     stickyTop = msefilter.getBoundingClientRect().top + window.scrollY;
     stickyTop -= headerEl.clientHeight;
     if (isHidden) {
@@ -36,9 +36,8 @@ if (msefilter) {
     // // console.log('isHidden', isHidden)
     // console.log('scrollY', window.scrollY)
     // console.log('stickyTop', stickyTop)
+    return stickyTop
   };
-
-  calcStickyTop();
 
   const stick = () => {
     stickyEl.classList.add("filters-sticky_fixed");
@@ -92,26 +91,22 @@ if (msefilter) {
     Cookies.set("filterIsVisibleOnMobile", "1");
   };
 
-  const onScroll = () => {
-    if (window.scrollY > stickyTop) {
-      stick();
-    } else {
-      unstick();
-    
-      // isHidden = true;
-      // toggleEl.innerHTML = toggleEl.dataset.open;
-      // Cookies.set("filterIsHidden", "1");
-      // calcStickyTop();
-    }
-  };
-
   if (isMobile && isVisibleOnMobile) {
     wrapEl.classList.add("filters-wrap_on-mobile-visible");
     formEl.style.display = "grid";
     toggleOnMobileEl.style.marginTop = "20px";
   }
 
-  window.addEventListener("scroll", onScroll);
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > getStickyTop()) {
+      stick();
+    } else {
+      unstick();
+      isHidden = true;
+      toggleEl.innerHTML = toggleEl.dataset.open;
+      Cookies.set("filterIsHidden", "1");
+    }
+  });
 
   toggleEl.addEventListener("click", function () {
     if (isHidden) {
@@ -128,10 +123,13 @@ if (msefilter) {
       }
     }
 
-    calcStickyTop();
-
     // обновить прикрепление с учетом новой позиции
-    onScroll();
+    // onScroll();
+    if (window.scrollY > getStickyTop()) {
+      stick();
+    } else {
+      unstick();
+    }
   });
 
   toggleOnMobileEl.addEventListener("click", function () {
@@ -143,9 +141,12 @@ if (msefilter) {
       // openOnSticky пропущено, чтобы фильтр был изначально закрыт при прокрутке
     }
 
-    calcStickyTop();
-
     // обновить прикрепление с учетом новой позиции
-    onScroll();
+    // onScroll();
+    if (window.scrollY > getStickyTop()) {
+      stick();
+    } else {
+      unstick();
+    }
   });
 }
