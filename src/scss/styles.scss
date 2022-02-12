@@ -11412,21 +11412,21 @@ td.u-product-options__items {
   }
   button[type="submit"] {
     position: absolute;
-    right: 18px;
+    right: 1px;
     top: 50%;
     transform: translateY(-50%);
-    width: 28px;
-    height: 28px;
+    width: 42px;
+    height: 42px;
     display: block;
     border: none;
     cursor: pointer;
     padding: 0;
     color: #fff;
     font-size: 16px;
+    background: transparent;
     @media (max-width: $breakpoint-mini-max) {
-      right: 4px;
-      width: 24px;
-      height: 24px;
+      width: 30px;
+      height: 30px;
     }
   }
 }
