@@ -2939,6 +2939,14 @@ jdiv {
   &:hover {
     background: #005976;
     color: #fff;
+    .offcanvas-close span {
+      &::before {
+        background-color: #fff;
+      }
+      &::after {
+        background-color: #fff;
+      }
+    }
   }
 }
 
