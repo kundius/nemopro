@@ -12921,3 +12921,66 @@ td.u-product-options__items {
   //   width: auto;
   // }
 }
+
+.u-product-achievements {
+  display: flex;
+  justify-content: space-between;
+}
+
+.u-product-achievement {
+  position: relative;
+  width: calc(100% - (230px / 2));
+  border: 6px solid #8bcfde;
+  min-height: 140px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.u-product-achievement__title {
+  font-size: 20px;
+  line-height: 1;
+  color: #0d6b8e;
+  font-weight: bold;
+  position: absolute;
+  left: 10px;
+  top: -8px;
+  padding: 0 10px;
+  background: #ffffff;
+  text-transform: uppercase;
+}
+
+.u-product-achievement__label-1 {
+  font-size: 72px;
+  letter-spacing: -4px;
+  line-height: 56px;
+  color: #0d6b8e;
+  text-transform: uppercase;
+}
+
+.u-product-achievement__label-2 {
+  font-size: 60px;
+  letter-spacing: -4px;
+  line-height: 51px;
+  color: #0d6b8e;
+  text-transform: uppercase;
+}
+
+.u-product-achievement__label-3 {
+  font-size: 72px;
+  letter-spacing: -3px;
+  line-height: 95px;
+  color: #0d6b8e;
+  text-transform: uppercase;
+}
+
+.u-product-achievement__sub {
+  text-transform: uppercase;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 1;
+  color: #0d6b8e;
+  font-weight: 300;
+}
