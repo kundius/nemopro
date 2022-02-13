@@ -1610,19 +1610,18 @@ jdiv {
 }
 
 .products-tabs-title {
-  color: #000000;
+  color: #000;
   font-size: 18px;
   font-weight: 700;
-  line-height: 1;
-  background-color: #ffee00;
+  line-height: 40px;
+  background-color: #fe0;
   text-transform: uppercase;
-  padding: 13px 10px;
+  padding: 0 10px;
   margin-right: 10px;
   float: left;
   letter-spacing: -1px;
 
   @media (max-width: $breakpoint-medium-max) {
-    float: none;
     display: block;
     margin-right: 0;
     margin-bottom: 10px;
@@ -1683,6 +1682,7 @@ jdiv {
 .products-tabs__head {
   margin-bottom: 10px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .products-item {
