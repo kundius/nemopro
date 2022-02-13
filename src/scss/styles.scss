@@ -11209,52 +11209,52 @@ td.u-product-options__items {
   }
 }
 
-.u-product-achievements {
-  line-height: 1;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
-}
+// .u-product-achievements {
+//   line-height: 1;
+//   margin-top: 20px;
+//   margin-bottom: 10px;
+//   text-align: center;
+//   display: flex;
+//   justify-content: space-around;
+// }
 
-.u-product-achievement {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 5px;
-  &:last-child {
-    border-right: 0;
-  }
-}
+// .u-product-achievement {
+//   text-align: center;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   padding: 0 5px;
+//   &:last-child {
+//     border-right: 0;
+//   }
+// }
 
-.u-product-achievement__title {
-  color: #277792;
-  font-weight: bold;
-  font-size: 14px;
-  text-transform: uppercase;
-}
+// .u-product-achievement__title {
+//   color: #277792;
+//   font-weight: bold;
+//   font-size: 14px;
+//   text-transform: uppercase;
+// }
 
-.u-product-achievement__subtitle {
-  color: #277792;
-  font-weight: bold;
-  font-size: 16px;
-  margin-bottom: 5px;
-}
+// .u-product-achievement__subtitle {
+//   color: #277792;
+//   font-weight: bold;
+//   font-size: 16px;
+//   margin-bottom: 5px;
+// }
 
-.u-product-achievement__alt {
-  color: #277792;
-  font-weight: bold;
-  font-size: 12px;
-  margin-bottom: 9px;
-}
+// .u-product-achievement__alt {
+//   color: #277792;
+//   font-weight: bold;
+//   font-size: 12px;
+//   margin-bottom: 9px;
+// }
 
-.u-product-achievement__number {
-  font-size: 30px;
-  color: #277792;
-  font-weight: bold;
-}
+// .u-product-achievement__number {
+//   font-size: 30px;
+//   color: #277792;
+//   font-weight: bold;
+// }
 
 .u-header-search {
   background: #026282;
@@ -12924,6 +12924,7 @@ td.u-product-options__items {
 
 .u-product-achievements {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -12937,6 +12938,9 @@ td.u-product-options__items {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width: $breakpoint-mini-max) {
+    width: 100%;
+  }
 }
 
 .u-product-achievement__title {
