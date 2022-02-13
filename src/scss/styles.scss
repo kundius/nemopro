@@ -2927,13 +2927,26 @@ jdiv {
 // }
 .offcanvas-close {
   background-color: #fff;
+  position: relative;
+  padding: 15px 20px;
+  display: block;
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  &:hover {
+    background: #005976;
+    color: #fff;
+  }
+}
+
+.offcanvas-close span {
   width: 56px;
   height: 56px;
   position: absolute;
-  margin-left: auto;
   right: 0;
   top: 0;
-  z-index: 20;
   &::before {
     content: '';
     position: absolute;
