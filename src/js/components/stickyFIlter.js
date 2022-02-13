@@ -31,11 +31,6 @@ if (msefilter) {
         }
       }
     }
-    // console.log('isMobile', isMobile)
-    // console.log('isVisibleOnMobile', isVisibleOnMobile)
-    // // console.log('isHidden', isHidden)
-    // console.log('scrollY', window.scrollY)
-    // console.log('stickyTop', stickyTop)
     return stickyTop
   };
 
@@ -59,6 +54,9 @@ if (msefilter) {
     wrapEl.style.paddingTop = null;
     toggleEl.style.display = "none";
     stickyEl.style.transform = null;
+    isHidden = true;
+    toggleEl.innerHTML = toggleEl.dataset.open;
+    Cookies.set("filterIsHidden", "1");
   };
 
   const hideOnSticky = () => {
@@ -97,14 +95,17 @@ if (msefilter) {
     toggleOnMobileEl.style.marginTop = "20px";
   }
 
+  if (window.scrollY > getStickyTop()) {
+    stick();
+  } else {
+    unstick();
+  }
+
   window.addEventListener("scroll", () => {
     if (window.scrollY > getStickyTop()) {
       stick();
     } else {
       unstick();
-      isHidden = true;
-      toggleEl.innerHTML = toggleEl.dataset.open;
-      Cookies.set("filterIsHidden", "1");
     }
   });
 

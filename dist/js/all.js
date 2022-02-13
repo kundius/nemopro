@@ -18762,11 +18762,6 @@ $(function () {
                     scrollTop: 0
                   }, 200);
                 }, 100);
-              } else {// setTimeout(function() {
-                //     $('html, body').animate({
-                //         scrollTop: 0
-                //     }, 200)
-                // }, 100);
               }
 
               var o = i.height();
