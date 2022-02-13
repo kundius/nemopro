@@ -12932,7 +12932,7 @@ td.u-product-options__items {
 
 .u-product-achievement {
   position: relative;
-  width: calc(100% / 3 - (230px / 3));
+  width: 320px;
   border: 6px solid #8bcfde;
   min-height: 150px;
   border-radius: 6px;
@@ -12940,8 +12940,14 @@ td.u-product-options__items {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width: $breakpoint-large-max) {
+    width: 300px;
+  }
   @media (max-width: $breakpoint-mini-max) {
     width: 100%;
+    & + & {
+      margin-top: 30px;
+    }
   }
 }
 
