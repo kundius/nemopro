@@ -12949,6 +12949,7 @@ td.u-product-options__items {
   justify-content: space-between;
   margin-top: 30px;
   margin-bottom: 10px;
+  gap: 12px;
 }
 
 .u-product-achievement {
@@ -12965,8 +12966,8 @@ td.u-product-options__items {
     border-width: 4px;
     min-height: 120px;
   }
-  @media (max-width: $breakpoint-mini-max) {
-    width: calc(50% - 6px);
+  @media (max-width: $breakpoint-small-max) {
+    width: 50%;
   }
 }
 
@@ -13028,6 +13029,9 @@ td.u-product-options__items {
   .u-product-achievement__label {
     font-size: 60px;
     letter-spacing: -0.055em;
+    @media (max-width: $breakpoint-medium-max) {
+      font-size: 42px;
+    }
   }
 }
 
