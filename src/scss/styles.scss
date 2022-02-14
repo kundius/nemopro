@@ -12954,7 +12954,8 @@ td.u-product-options__items {
 
 .u-product-achievement {
   position: relative;
-  width: 320px;
+  max-width: 320px;
+  width: 33.33%;
   border: 6px solid #8bcfde;
   min-height: 150px;
   border-radius: 6px;
