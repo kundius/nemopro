@@ -12946,7 +12946,6 @@ td.u-product-options__items {
 
 .u-product-achievements {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -12962,14 +12961,12 @@ td.u-product-options__items {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media (max-width: $breakpoint-large-max) {
-    width: 300px;
+  @media (max-width: $breakpoint-medium-max) {
+    border-width: 4px;
+    min-height: 120px;
   }
   @media (max-width: $breakpoint-mini-max) {
-    width: 100%;
-    & + & {
-      margin-top: 30px;
-    }
+    width: calc(50% - 6px);
   }
 }
 
@@ -12984,6 +12981,12 @@ td.u-product-options__items {
   padding: 0 8px;
   background: #fff;
   text-transform: uppercase;
+  @media (max-width: $breakpoint-medium-max) {
+    font-size: 16px;
+    left: 10px;
+    top: -12px;
+    padding: 0 6px;
+  }
 }
 
 .u-product-achievement__label {
@@ -12992,6 +12995,10 @@ td.u-product-options__items {
   color: #0d6b8e;
   text-transform: uppercase;
   font-weight: 700;
+  @media (max-width: $breakpoint-medium-max) {
+    font-size: 42px;
+    line-height: 42px;
+  }
 }
 
 .u-product-achievement__sub {
@@ -13000,6 +13007,9 @@ td.u-product-options__items {
   line-height: 1;
   color: #0d6b8e;
   font-weight: 300;
+  @media (max-width: $breakpoint-medium-max) {
+    font-size: 14px;
+  }
 }
 
 .u-product-achievement_years {
@@ -13012,6 +13022,9 @@ td.u-product-options__items {
 }
 
 .u-product-achievement_catalog {
+  @media (max-width: $breakpoint-small-max) {
+    display: none;
+  }
   .u-product-achievement__label {
     font-size: 60px;
     letter-spacing: -0.055em;
