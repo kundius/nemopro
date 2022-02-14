@@ -12986,31 +12986,13 @@ td.u-product-options__items {
   text-transform: uppercase;
 }
 
-.u-product-achievement__label-1 {
+.u-product-achievement__label {
   font-size: 72px;
-  letter-spacing: -4px;
   line-height: 72px;
   color: #0d6b8e;
   text-transform: uppercase;
   font-weight: 700;
-}
-
-.u-product-achievement__label-2 {
-  font-size: 60px;
-  letter-spacing: -4px;
-  line-height: 72px;
-  color: #0d6b8e;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-.u-product-achievement__label-3 {
-  font-size: 72px;
-  letter-spacing: -3px;
-  line-height: 72px;
-  color: #0d6b8e;
-  text-transform: uppercase;
-  font-weight: 700;
+  text-shadow: 0px 0px 1px currentColor, 0px 0px 1px currentColor, 0px 0px 1px currentColor, 0px 0px 1px currentColor, 0px 0px 1px currentColor;
 }
 
 .u-product-achievement__sub {
@@ -13019,5 +13001,29 @@ td.u-product-options__items {
   line-height: 1;
   color: #0d6b8e;
   font-weight: 300;
-  letter-spacing: -.005em;
+}
+
+.u-product-achievement_years {
+  .u-product-achievement__label {
+    letter-spacing: -0.05em;
+  }
+  .u-product-achievement__sub {
+    letter-spacing: -.006em;
+  }
+}
+
+.u-product-achievement_catalog {
+  .u-product-achievement__label {
+    font-size: 60px;
+    letter-spacing: -0.055em;
+  }
+}
+
+.u-product-achievement_orders {
+  .u-product-achievement__label {
+    letter-spacing: -0.025em;
+  }
+  .u-product-achievement__sub {
+    letter-spacing: -.032em;
+  }
 }
