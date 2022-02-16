@@ -19845,9 +19845,10 @@ $('.js-detail-gallery').each(function () {
     slidesPerView: perView,
     // freeMode: true,
     loopedSlides: 1,
+    spaceBetween: 5,
     // watchSlidesVisibility: true,
     // watchSlidesProgress: true,
-    // centerInsufficientSlides: true,
+    centerInsufficientSlides: true,
     centeredSlides: true,
     centeredSlidesBounds: true
   });
