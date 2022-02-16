@@ -20175,9 +20175,9 @@ WebFont.load({
 $('.js-detail-gallery').each(function () {
   var $wrapper = $(this);
   var $thumbs = $('.js-detail-gallery-thumbs', this);
-  var $main = $('.js-detail-gallery-main', this); // var perView = 'auto';
+  var $main = $('.js-detail-gallery-main', this);
+  var perView = 'auto'; // var perView = Math.ceil(this.offsetWidth / 64);
 
-  var perView = Math.ceil(this.offsetWidth / 64);
   var windowPerView = Math.ceil(window.innerWidth / 64); // Product Gallery
 
   var galleryThumbs = new Swiper($thumbs[0], {
@@ -20210,10 +20210,11 @@ $('.js-detail-gallery').each(function () {
       delay: 5000,
       disableOnInteraction: false
     }
-  });
-  galleryTop.on('slideChange', function () {
-    galleryThumbs.slideTo(galleryTop.activeIndex); //     // galleryThumbs.update();
-  });
+  }); // galleryTop.on('slideChange', function () {
+  //     galleryThumbs.slideTo(galleryTop.activeIndex);
+  // //     // galleryThumbs.update();
+  // });
+
   $('.js-detail-gallery-main', this).on('click', '.swiper-slide', function () {
     $wrapper.addClass('detail-gallery_lightbox');
     galleryTop.update();
