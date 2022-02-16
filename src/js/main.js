@@ -1078,8 +1078,8 @@ $('.js-detail-gallery').each(function () {
         // freeMode: true,
         loopedSlides: 1,
         spaceBetween: 5,
-        watchSlidesVisibility: true,
-        watchSlidesProgress: true,
+        // watchSlidesVisibility: true,
+        // watchSlidesProgress: true,
         centerInsufficientSlides: true,
         centeredSlides: true,
         centeredSlidesBounds: true
@@ -1102,6 +1102,7 @@ $('.js-detail-gallery').each(function () {
     });
     galleryTop.on('slideChange', function () {
         galleryThumbs.slideTo(galleryTop.activeIndex);
+        galleryThumbs.update();
     });
     $('.js-detail-gallery-main', this).on('click', '.swiper-slide', function () {
         $wrapper.addClass('detail-gallery_lightbox');
