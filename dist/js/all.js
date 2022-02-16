@@ -20185,12 +20185,12 @@ $('.js-detail-gallery').each(function () {
     slidesPerView: perView,
     // freeMode: true,
     // loopedSlides: 0,
-    spaceBetween: 5 // watchSlidesVisibility: true,
+    // spaceBetween: 5,
+    // watchSlidesVisibility: true,
     // watchSlidesProgress: true,
-    // centerInsufficientSlides: true,
-    // centeredSlides: true,
-    // centeredSlidesBounds: true
-
+    centerInsufficientSlides: true,
+    centeredSlides: true,
+    centeredSlidesBounds: true
   });
   var galleryTop = new Swiper($main[0], {
     slidesPerView: 1,
