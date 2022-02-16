@@ -12234,6 +12234,10 @@ td.u-product-options__items {
   }
 }
 
+.swiper-button-next, .swiper-button-prev {
+  color: #01718f;
+}
+
 .detail-gallery-thumbs .swiper-slide.swiper-slide-thumb-active {
   border-color: #00afea;
 }
@@ -12348,6 +12352,7 @@ td.u-product-options__items {
     top: auto;
     margin-top: 0;
     overflow: hidden;
+    color: #ffffff;
     @media (max-width: $breakpoint-small-max) {
       width: 32px;
       height: 32px;
