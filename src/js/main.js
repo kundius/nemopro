@@ -1094,7 +1094,8 @@ $('.js-detail-gallery').each(function () {
         },
         thumbs: {
             swiper: galleryThumbs,
-            autoScrollOffset: 1
+            autoScrollOffset: 1,
+            multipleActiveThumbs: false
         },
         autoplay: {
             delay: 5000,
