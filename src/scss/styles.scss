@@ -12192,7 +12192,6 @@ td.u-product-options__items {
   width: 100%;
   padding-top: 66.66%;
   position: relative;
-  overflow: hidden;
 }
 
 .detail-gallery-main .swiper-wrapper {
@@ -12219,7 +12218,6 @@ td.u-product-options__items {
 .detail-gallery-thumbs {
   margin-top: 10px;
   width: 100%;
-  overflow: hidden;
 }
 
 .detail-gallery-thumbs .swiper-slide {
@@ -12227,7 +12225,6 @@ td.u-product-options__items {
   box-sizing: border-box;
   position: relative;
   cursor: pointer;
-  // width: 64px;
   &:hover {
     border-color: #e4b213;
     // background: #333;
@@ -12279,7 +12276,6 @@ td.u-product-options__items {
     position: absolute;
     left: 0;
     top: 0;
-    overflow: hidden;
 }
 
 .home-slider-thumbs__wrapper {
@@ -12336,7 +12332,6 @@ td.u-product-options__items {
 }
 
 .home-slider-main {
-  overflow: hidden;
   .swiper-pagination-bullet {
     background: #d3cac4;
     opacity: 1;
