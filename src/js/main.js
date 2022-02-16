@@ -1094,17 +1094,17 @@ $('.js-detail-gallery').each(function () {
         },
         thumbs: {
             swiper: galleryThumbs,
-            // autoScrollOffset: Math.ceil(perView / 2)
+            autoScrollOffset: 1
         },
         autoplay: {
             delay: 5000,
             disableOnInteraction: false,
         },
     });
-    galleryTop.on('slideChange', function () {
-        galleryThumbs.slideTo(galleryTop.activeIndex);
-    //     // galleryThumbs.update();
-    });
+    // galleryTop.on('slideChange', function () {
+    //     galleryThumbs.slideTo(galleryTop.activeIndex);
+    // //     // galleryThumbs.update();
+    // });
     $('.js-detail-gallery-main', this).on('click', '.swiper-slide', function () {
         $wrapper.addClass('detail-gallery_lightbox');
         galleryTop.update();
