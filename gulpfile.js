@@ -45,6 +45,7 @@ function css() {
     './node_modules/choices.js/public/assets/styles/choices.min.css',
     './node_modules/autocompleter/autocomplete.css',
     './node_modules/swiper/swiper-bundle.min.css',
+    './node_modules/lightgallery/css/lightgallery-bundle.min.css',
     config.srcDir + 'css/mobilemenu.css',
     config.srcDir + 'scss/styles.scss'
   ])
@@ -58,6 +59,7 @@ function js() {
   return src([
     './node_modules/jquery/dist/jquery.min.js',
     './node_modules/swiper/swiper-bundle.min.js',
+    './node_modules/lightgallery/lightgallery.min.js',
     './node_modules/jquery-migrate/dist/jquery-migrate.min.js',
     './node_modules/uikit/dist/js/uikit.min.js',
     './node_modules/uikit/dist/js/components/sticky.min.js',

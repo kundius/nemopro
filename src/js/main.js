@@ -1063,6 +1063,8 @@ WebFont.load({
     }
 });
 
+console.log(lightGallery)
+
 $('.js-detail-gallery').each(function () {
     var $wrapper = $(this);
     var $thumbs = $('.js-detail-gallery-thumbs', this);
