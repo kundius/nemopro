@@ -1068,7 +1068,7 @@ $('.js-detail-gallery').each(function () {
     var $thumbs = $('.js-detail-gallery-thumbs', this);
     var $main = $('.js-detail-gallery-main', this);
     // var perView = 'auto';
-    var perView = Math.ceil(this.offsetWidth / 64) - 1;
+    var perView = Math.ceil(this.offsetWidth / 64);
     var windowPerView = Math.ceil(window.innerWidth / 64);
 
     // Product Gallery
@@ -1094,7 +1094,7 @@ $('.js-detail-gallery').each(function () {
         },
         thumbs: {
             swiper: galleryThumbs,
-            autoScrollOffset: 1
+            autoScrollOffset: Math.ceil(perView / 2)
         },
         autoplay: {
             delay: 5000,
