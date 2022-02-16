@@ -19843,13 +19843,13 @@ $('.js-detail-gallery').each(function () {
   var galleryThumbs = new Swiper($thumbs[0], {
     allowTouchMove: false,
     slidesPerView: perView,
-    freeMode: true,
+    // freeMode: true,
     loopedSlides: 6,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    centerInsufficientSlides: true,
-    centeredSlides: true,
-    centeredSlidesBounds: true
+    // watchSlidesVisibility: true,
+    // watchSlidesProgress: true,
+    // centerInsufficientSlides: true,
+    centeredSlides: true // centeredSlidesBounds: true
+
   });
   var galleryTop = new Swiper($main[0], {
     slidesPerView: 1,
