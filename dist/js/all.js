@@ -20184,7 +20184,7 @@ $('.js-detail-gallery').each(function () {
     allowTouchMove: false,
     slidesPerView: perView,
     // freeMode: true,
-    // loopedSlides: 0,
+    loopedSlides: 6,
     // spaceBetween: 5,
     // watchSlidesVisibility: true,
     // watchSlidesProgress: true,
@@ -20195,7 +20195,8 @@ $('.js-detail-gallery').each(function () {
   var galleryTop = new Swiper($main[0], {
     slidesPerView: 1,
     loop: true,
-    // loopedSlides: 0, //looped slides should be the same
+    loopedSlides: 6,
+    //looped slides should be the same
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
