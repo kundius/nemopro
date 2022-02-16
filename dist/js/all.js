@@ -20175,27 +20175,27 @@ WebFont.load({
 $('.js-detail-gallery').each(function () {
   var $wrapper = $(this);
   var $thumbs = $('.js-detail-gallery-thumbs', this);
-  var $main = $('.js-detail-gallery-main', this);
-  var perView = 'auto'; // var perView = Math.ceil(this.offsetWidth / 64);
+  var $main = $('.js-detail-gallery-main', this); // var perView = 'auto';
 
+  var perView = Math.ceil(this.offsetWidth / 64);
   var windowPerView = Math.ceil(window.innerWidth / 64); // Product Gallery
 
   var galleryThumbs = new Swiper($thumbs[0], {
     allowTouchMove: false,
     slidesPerView: perView,
-    // freeMode: true,
-    loopedSlides: 6,
+    freeMode: true,
+    loopedSlides: 5,
     // spaceBetween: 5,
     // watchSlidesVisibility: true,
     // watchSlidesProgress: true,
-    centerInsufficientSlides: true,
-    centeredSlides: true,
-    centeredSlidesBounds: true
+    centerInsufficientSlides: true // centeredSlides: true,
+    // centeredSlidesBounds: true
+
   });
   var galleryTop = new Swiper($main[0], {
     slidesPerView: 1,
     loop: true,
-    loopedSlides: 6,
+    loopedSlides: 5,
     //looped slides should be the same
     navigation: {
       nextEl: '.swiper-button-next',
