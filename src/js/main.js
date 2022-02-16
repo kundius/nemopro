@@ -1136,6 +1136,8 @@ $('.js-detail-gallery').each(function () {
         //     disableOnInteraction: false,
         // },
     });
+    galleryTop.controller.control = galleryThumbs;
+    galleryThumbs.controller.control = galleryTop;
     // galleryTop.on('slideChange', function () {
     //     galleryThumbs.slideTo(galleryTop.activeIndex);
     // //     // galleryThumbs.update();
