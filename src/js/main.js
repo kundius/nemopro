@@ -1079,7 +1079,7 @@ $('.js-detail-gallery').each(function () {
         // loopedSlides: 0,
         spaceBetween: 5,
         // watchSlidesVisibility: true,
-        // watchSlidesProgress: true,
+        watchSlidesProgress: true,
         centerInsufficientSlides: true,
         centeredSlides: true,
         centeredSlidesBounds: true

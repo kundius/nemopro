@@ -12192,6 +12192,7 @@ td.u-product-options__items {
   width: 100%;
   padding-top: 66.66%;
   position: relative;
+  overflow: hidden;
 }
 
 .detail-gallery-main .swiper-wrapper {
@@ -12218,6 +12219,7 @@ td.u-product-options__items {
 .detail-gallery-thumbs {
   margin-top: 10px;
   width: 100%;
+  overflow: hidden;
 }
 
 .detail-gallery-thumbs .swiper-slide {
@@ -12333,6 +12335,7 @@ td.u-product-options__items {
 }
 
 .home-slider-main {
+  overflow: hidden;
   .swiper-pagination-bullet {
     background: #d3cac4;
     opacity: 1;
