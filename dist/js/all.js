@@ -20181,35 +20181,67 @@ $('.js-detail-gallery').each(function () {
   var windowPerView = Math.ceil(window.innerWidth / 64); // Product Gallery
 
   var galleryThumbs = new Swiper($thumbs[0], {
-    allowTouchMove: false,
-    slidesPerView: perView,
-    freeMode: true,
-    loopedSlides: 5,
-    // spaceBetween: 5,
-    // watchSlidesVisibility: true,
-    // watchSlidesProgress: true,
-    centerInsufficientSlides: true // centeredSlides: true,
-    // centeredSlidesBounds: true
+    spaceBetween: 10,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    touchRatio: 0.4,
+    slideToClickedSlide: true,
+    loop: true,
+    loopedSlides: 4,
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false
+    } // allowTouchMove: false,
+    // slidesPerView: perView,
+    // freeMode: true,
+    // loopedSlides: 5,
+    // // spaceBetween: 5,
+    // // watchSlidesVisibility: true,
+    // // watchSlidesProgress: true,
+    // centerInsufficientSlides: true,
+    // // centeredSlides: true,
+    // // centeredSlidesBounds: true
 
   });
   var galleryTop = new Swiper($main[0], {
-    slidesPerView: 1,
+    spaceBetween: 10,
+    grabCursor: true,
+    // navigation: {
+    //   nextEl: ".swiper-button-next",
+    //   prevEl: ".swiper-button-prev"
+    // },
     loop: true,
-    loopedSlides: 5,
-    //looped slides should be the same
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    thumbs: {
-      swiper: galleryThumbs // autoScrollOffset: 1,
-      // multipleActiveThumbs: false
-
-    },
+    loopedSlides: 4,
     autoplay: {
       delay: 5000,
       disableOnInteraction: false
-    }
+    },
+    // other parameters
+    on: {
+      click: function click() {
+        /* do something */
+      }
+    },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false
+    } // slidesPerView: 1,
+    // loop: true,
+    // loopedSlides: 5, //looped slides should be the same
+    // navigation: {
+    //     nextEl: '.swiper-button-next',
+    //     prevEl: '.swiper-button-prev',
+    // },
+    // thumbs: {
+    //     swiper: galleryThumbs,
+    //     // autoScrollOffset: 1,
+    //     // multipleActiveThumbs: false
+    // },
+    // autoplay: {
+    //     delay: 5000,
+    //     disableOnInteraction: false,
+    // },
+
   }); // galleryTop.on('slideChange', function () {
   //     galleryThumbs.slideTo(galleryTop.activeIndex);
   // //     // galleryThumbs.update();
