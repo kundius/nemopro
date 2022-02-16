@@ -1067,8 +1067,8 @@ $('.js-detail-gallery').each(function () {
     var $wrapper = $(this);
     var $thumbs = $('.js-detail-gallery-thumbs', this);
     var $main = $('.js-detail-gallery-main', this);
-    var perView = 'auto';
-    // var perView = Math.ceil(this.offsetWidth / 64);
+    // var perView = 'auto';
+    var perView = Math.ceil(this.offsetWidth / (64 - 16));
     var windowPerView = Math.ceil(window.innerWidth / 64);
 
     // Product Gallery
@@ -1079,7 +1079,8 @@ $('.js-detail-gallery').each(function () {
         loopedSlides: 6,
         watchSlidesVisibility: true,
         watchSlidesProgress: true,
-        centerInsufficientSlides: true
+        centerInsufficientSlides: true,
+        centeredSlides: true
     });
     var galleryTop = new Swiper($main[0], {
         slidesPerView: 1,
