@@ -19848,8 +19848,8 @@ $('.js-detail-gallery').each(function () {
     // watchSlidesVisibility: true,
     // watchSlidesProgress: true,
     // centerInsufficientSlides: true,
-    centeredSlides: true // centeredSlidesBounds: true
-
+    centeredSlides: true,
+    centeredSlidesBounds: true
   });
   var galleryTop = new Swiper($main[0], {
     slidesPerView: 1,
