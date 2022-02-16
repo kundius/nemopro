@@ -12221,13 +12221,12 @@ td.u-product-options__items {
 }
 
 .detail-gallery-thumbs .swiper-slide {
-  // border: 2px solid #ffffff;
+  border: 2px solid #ffffff;
   box-sizing: border-box;
   position: relative;
   cursor: pointer;
-  width: 64px;
   &:hover {
-    border-color: #e4b213;
+    // border-color: #e4b213;
     // background: #333;
     // img {
     //   opacity: 0.8;
