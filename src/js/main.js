@@ -1099,6 +1099,9 @@ $('.js-detail-gallery').each(function () {
             disableOnInteraction: false,
         },
     });
+    galleryTop.on('slideChange', function () {
+        galleryThumbs.slideTo(galleryTop.activeIndex);
+    });
     $('.js-detail-gallery-main', this).on('click', '.swiper-slide', function () {
         $wrapper.addClass('detail-gallery_lightbox');
         galleryTop.update();
