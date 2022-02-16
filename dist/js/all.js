@@ -19846,8 +19846,8 @@ $('.js-detail-gallery').each(function () {
     // freeMode: true,
     loopedSlides: 1,
     spaceBetween: 5,
-    // watchSlidesVisibility: true,
-    // watchSlidesProgress: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
     centerInsufficientSlides: true,
     centeredSlides: true,
     centeredSlidesBounds: true
