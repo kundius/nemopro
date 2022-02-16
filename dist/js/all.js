@@ -19862,7 +19862,7 @@ $('.js-detail-gallery').each(function () {
     },
     thumbs: {
       swiper: galleryThumbs,
-      autoScrollOffset: 1
+      autoScrollOffset: perView / 2
     },
     autoplay: {
       delay: 5000,
