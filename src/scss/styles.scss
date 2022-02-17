@@ -12225,9 +12225,13 @@ td.u-product-options__items {
   box-sizing: border-box;
   position: relative;
   cursor: pointer;
-  img {
-    user-select: none;
-    user-drag: none;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
   }
   &:hover {
     // border-color: #e4b213;
