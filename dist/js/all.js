@@ -20209,7 +20209,7 @@ $('.js-detail-gallery').each(function () {
     slidesPerView: 1,
     thumbs: {
       swiper: galleryThumbs,
-      autoScrollOffset: 1
+      autoScrollOffset: -1
     }
   }); // galleryTop.controller.control = galleryThumbs;
   // galleryThumbs.controller.control = galleryTop;
