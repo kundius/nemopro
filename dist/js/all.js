@@ -20175,6 +20175,8 @@ WebFont.load({
   }
 });
 $('.js-detail-gallery').each(function () {
+  var _Swiper;
+
   var $wrapper = $(this);
   var $thumbs = $('.js-detail-gallery-thumbs', this);
   var $main = $('.js-detail-gallery-main', this); // var perView = 'auto';
@@ -20182,19 +20184,19 @@ $('.js-detail-gallery').each(function () {
   var perView = Math.ceil(this.offsetWidth / 64);
   var windowPerView = Math.ceil(window.innerWidth / 64); // Product Gallery
 
-  var galleryThumbs = new Swiper($thumbs[0], _defineProperty({
+  var galleryThumbs = new Swiper($thumbs[0], (_Swiper = {
     spaceBetween: 10,
     centeredSlides: true,
     slidesPerView: "auto",
     touchRatio: 0.4,
     slideToClickedSlide: true,
-    loop: true,
+    loop: false,
     loopedSlides: perView,
     keyboard: {
       enabled: true,
       onlyInViewport: false
     }
-  }, "slidesPerView", perView));
+  }, _defineProperty(_Swiper, "slidesPerView", perView), _defineProperty(_Swiper, "centeredSlidesBounds", true), _Swiper));
   var galleryTop = new Swiper($main[0], {
     spaceBetween: 10,
     grabCursor: true,
@@ -20207,12 +20209,6 @@ $('.js-detail-gallery').each(function () {
     autoplay: {
       delay: 5000,
       disableOnInteraction: false
-    },
-    // other parameters
-    on: {
-      click: function click() {
-        /* do something */
-      }
     },
     keyboard: {
       enabled: true,

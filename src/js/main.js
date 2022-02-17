@@ -1078,7 +1078,7 @@ $('.js-detail-gallery').each(function () {
         slidesPerView: "auto",
         touchRatio: 0.4,
         slideToClickedSlide: true,
-        loop: true,
+        loop: false,
         loopedSlides: perView,
         keyboard: {
           enabled: true,
@@ -1094,26 +1094,20 @@ $('.js-detail-gallery').each(function () {
         // // watchSlidesProgress: true,
         // centerInsufficientSlides: true,
         // // centeredSlides: true,
-        // // centeredSlidesBounds: true
+        centeredSlidesBounds: true
     });
     var galleryTop = new Swiper($main[0], {
         spaceBetween: 10,
         grabCursor: true,
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
         },
         loop: true,
         loopedSlides: perView,
         autoplay: {
             delay: 5000,
             disableOnInteraction: false,
-        },
-        // other parameters
-        on: {
-          click: function() {
-            /* do something */
-          }
         },
         keyboard: {
           enabled: true,
