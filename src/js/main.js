@@ -1083,10 +1083,10 @@ $('.js-detail-gallery').each(function () {
         keyboard: {
           enabled: true,
           onlyInViewport: false
-        }
+        },
 
         // allowTouchMove: false,
-        // slidesPerView: perView,
+        slidesPerView: perView,
         // freeMode: true,
         // loopedSlides: 5,
         // // spaceBetween: 5,
