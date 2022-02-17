@@ -20187,7 +20187,6 @@ $('.js-detail-gallery').each(function () {
     allowTouchMove: false,
     slidesPerView: perView,
     slideToClickedSlide: true,
-    rewind: true,
     // centerInsufficientSlides: true,
     centeredSlides: true,
     centeredSlidesBounds: true // slidesOffsetAfter: 1,
