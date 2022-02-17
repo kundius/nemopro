@@ -20186,9 +20186,9 @@ $('.js-detail-gallery').each(function () {
     loopedSlides: perView,
     allowTouchMove: false,
     slidesPerView: perView,
-    slideToClickedSlide: true,
-    // centerInsufficientSlides: true,
-    centeredSlides: true // centeredSlidesBounds: true,
+    slideToClickedSlide: true // centerInsufficientSlides: true,
+    // centeredSlides: true,
+    // centeredSlidesBounds: true,
     // slidesOffsetAfter: 1,
     // slidesOffsetBefore: 1
 
