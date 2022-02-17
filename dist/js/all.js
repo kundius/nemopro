@@ -20188,8 +20188,8 @@ $('.js-detail-gallery').each(function () {
     slidesPerView: perView,
     slideToClickedSlide: true,
     // centerInsufficientSlides: true,
-    centeredSlides: true,
-    centeredSlidesBounds: true // slidesOffsetAfter: 1,
+    centeredSlides: true // centeredSlidesBounds: true,
+    // slidesOffsetAfter: 1,
     // slidesOffsetBefore: 1
 
   });
