@@ -20186,9 +20186,9 @@ $('.js-detail-gallery').each(function () {
     // loopedSlides: perView,
     allowTouchMove: false,
     slidesPerView: perView,
-    slideToClickedSlide: true // centerInsufficientSlides: true,
-    // centeredSlides: true,
-    // centeredSlidesBounds: true,
+    slideToClickedSlide: true,
+    centerInsufficientSlides: true,
+    centeredSlides: true // centeredSlidesBounds: true,
     // slidesOffsetAfter: 4,
     // slidesOffsetBefore: 4
 
@@ -20213,10 +20213,11 @@ $('.js-detail-gallery').each(function () {
     }
   }); // galleryTop.controller.control = galleryThumbs;
   // galleryThumbs.controller.control = galleryTop;
-
-  galleryTop.on('slideChange', function () {
-    galleryThumbs.slideTo(galleryTop.activeIndex); // //     // galleryThumbs.update();
-  }); // galleryTop.on('slideNextTransitionStart', function () {
+  // galleryTop.on('slideChange', function () {
+  //     galleryThumbs.slideTo(galleryTop.activeIndex);
+  // // //     // galleryThumbs.update();
+  // });
+  // galleryTop.on('slideNextTransitionStart', function () {
   //     galleryThumbs.slideNext();
   // });
   // galleryTop.on('slidePrevTransitionStart', function () {
