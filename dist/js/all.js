@@ -20186,12 +20186,12 @@ $('.js-detail-gallery').each(function () {
     loopedSlides: perView,
     allowTouchMove: false,
     slidesPerView: perView,
-    slideToClickedSlide: true,
-    // centerInsufficientSlides: true,
+    slideToClickedSlide: true // centerInsufficientSlides: true,
     // centeredSlides: true,
     // centeredSlidesBounds: true,
-    slidesOffsetAfter: 4,
-    slidesOffsetBefore: 4
+    // slidesOffsetAfter: 4,
+    // slidesOffsetBefore: 4
+
   });
   var galleryTop = new Swiper($main[0], {
     spaceBetween: 10,
@@ -20218,6 +20218,12 @@ $('.js-detail-gallery').each(function () {
   // //     // galleryThumbs.update();
   // });
 
+  galleryTop.on('slideNextTransitionStart', function () {
+    galleryThumbs.slideNext();
+  });
+  galleryTop.on('slidePrevTransitionStart', function () {
+    galleryThumbs.slidePrev();
+  });
   $('.js-detail-gallery-main', this).on('click', '.swiper-slide', function () {
     $wrapper.addClass('detail-gallery_lightbox');
     galleryTop.update();
