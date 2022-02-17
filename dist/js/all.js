@@ -20185,8 +20185,8 @@ $('.js-detail-gallery').each(function () {
     // slidesPerView: "auto",
     // touchRatio: 0.4,
     slideToClickedSlide: true,
-    slidesOffsetBefore: 2,
-    slidesOffsetAfter: 2,
+    // slidesOffsetBefore: 2,
+    // slidesOffsetAfter: 2,
     loop: false,
     loopedSlides: perView,
     // keyboard: {
