@@ -20213,26 +20213,26 @@ $('.js-detail-gallery').each(function () {
     keyboard: {
       enabled: true,
       onlyInViewport: false
-    } // slidesPerView: 1,
+    },
+    // slidesPerView: 1,
     // loop: true,
     // loopedSlides: 5, //looped slides should be the same
     // navigation: {
     //     nextEl: '.swiper-button-next',
     //     prevEl: '.swiper-button-prev',
     // },
-    // thumbs: {
-    //     swiper: galleryThumbs,
-    //     // autoScrollOffset: 1,
-    //     // multipleActiveThumbs: false
-    // },
-    // autoplay: {
+    thumbs: {
+      swiper: galleryThumbs //     // autoScrollOffset: 1,
+      //     // multipleActiveThumbs: false
+
+    } // autoplay: {
     //     delay: 5000,
     //     disableOnInteraction: false,
     // },
 
-  });
-  galleryTop.controller.control = galleryThumbs;
-  galleryThumbs.controller.control = galleryTop; // galleryTop.on('slideChange', function () {
+  }); // galleryTop.controller.control = galleryThumbs;
+  // galleryThumbs.controller.control = galleryTop;
+  // galleryTop.on('slideChange', function () {
   //     galleryThumbs.slideTo(galleryTop.activeIndex);
   // //     // galleryThumbs.update();
   // });
