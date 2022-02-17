@@ -1079,11 +1079,12 @@ $('.js-detail-gallery').each(function () {
         allowTouchMove: false,
         slidesPerView: perView,
         slideToClickedSlide: true,
+        rewind: true,
         // centerInsufficientSlides: true,
         centeredSlides: true,
         centeredSlidesBounds: true,
-        slidesOffsetAfter: 1,
-        slidesOffsetBefore: 1
+        // slidesOffsetAfter: 1,
+        // slidesOffsetBefore: 1
     });
     var galleryTop = new Swiper($main[0], {
         spaceBetween: 10,
@@ -1101,7 +1102,7 @@ $('.js-detail-gallery').each(function () {
         slidesPerView: 1,
         thumbs: {
             swiper: galleryThumbs,
-            autoScrollOffset: 1
+            // autoScrollOffset: 1
         },
     });
     // galleryTop.controller.control = galleryThumbs;
