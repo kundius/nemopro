@@ -1067,52 +1067,35 @@ $('.js-detail-gallery').each(function () {
     var $wrapper = $(this);
     var $thumbs = $('.js-detail-gallery-thumbs', this);
     var $main = $('.js-detail-gallery-main', this);
-    // var perView = 'auto';
     var perView = Math.ceil(this.offsetWidth / 64);
     var windowPerView = Math.ceil(window.innerWidth / 64);
 
-    console.log($thumbs.length)
-
     // Product Gallery
     var galleryThumbs = new Swiper($thumbs[0], {
-        // spaceBetween: 10,
-        loop: false,
         allowTouchMove: false,
         slidesPerView: perView,
-        slideToClickedSlide: true,
-        // centerInsufficientSlides: true,
-        // centeredSlides: true,
-        // centeredSlidesBounds: true
+        freeMode: true,
+        loopedSlides: 6,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        centerInsufficientSlides: true
     });
     var galleryTop = new Swiper($main[0], {
-        // spaceBetween: 10,
-        grabCursor: true,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
-        },
+        slidesPerView: 1,
         loop: true,
+        loopedSlides: 6, //looped slides should be the same
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        thumbs: {
+            swiper: galleryThumbs,
+        },
         autoplay: {
             delay: 5000,
             disableOnInteraction: false,
         },
-        slidesPerView: 1,
-        thumbs: {
-            swiper: galleryThumbs
-        },
     });
-    // galleryTop.controller.control = galleryThumbs;
-    // galleryThumbs.controller.control = galleryTop;
-    // galleryTop.on('slideChange', function () {
-    //     galleryThumbs.slideTo(galleryTop.activeIndex);
-    // // //     // galleryThumbs.update();
-    // });
-    // galleryTop.on('slideNextTransitionStart', function () {
-    //     galleryThumbs.slideNext();
-    // });
-    // galleryTop.on('slidePrevTransitionStart', function () {
-    //     galleryThumbs.slidePrev();
-    // });
     $('.js-detail-gallery-main', this).on('click', '.swiper-slide', function () {
         $wrapper.addClass('detail-gallery_lightbox');
         galleryTop.update();
