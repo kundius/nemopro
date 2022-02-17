@@ -1074,11 +1074,10 @@ $('.js-detail-gallery').each(function () {
     // Product Gallery
     var galleryThumbs = new Swiper($thumbs[0], {
         spaceBetween: 10,
+        centeredSlides: true,
         // slidesPerView: "auto",
         // touchRatio: 0.4,
         slideToClickedSlide: true,
-        // slidesOffsetBefore: 2,
-        // slidesOffsetAfter: 2,
         loop: false,
         loopedSlides: perView,
         // keyboard: {
@@ -1092,8 +1091,8 @@ $('.js-detail-gallery').each(function () {
         // // spaceBetween: 5,
         // // watchSlidesVisibility: true,
         // // watchSlidesProgress: true,
-        centerInsufficientSlides: true,
-        centeredSlides: true,
+        // centerInsufficientSlides: true,
+        // // centeredSlides: true,
         centeredSlidesBounds: true
     });
     var galleryTop = new Swiper($main[0], {
