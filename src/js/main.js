@@ -1080,10 +1080,10 @@ $('.js-detail-gallery').each(function () {
         slideToClickedSlide: true,
         loop: false,
         loopedSlides: perView,
-        keyboard: {
-            enabled: true,
-            onlyInViewport: false
-        },
+        // keyboard: {
+        //     enabled: true,
+        //     onlyInViewport: false
+        // },
         allowTouchMove: false,
         slidesPerView: perView,
         // freeMode: true,
@@ -1108,14 +1108,14 @@ $('.js-detail-gallery').each(function () {
             delay: 5000,
             disableOnInteraction: false,
         },
-        keyboard: {
-          enabled: true,
-          onlyInViewport: false
-        },
+        // keyboard: {
+        //   enabled: true,
+        //   onlyInViewport: false
+        // },
         slidesPerView: 1,
         thumbs: {
             swiper: galleryThumbs,
-            autoScrollOffset: 1,
+            autoScrollOffset: 0,
             // multipleActiveThumbs: false
         },
     });
