@@ -20178,19 +20178,17 @@ $('.js-detail-gallery').each(function () {
   var $main = $('.js-detail-gallery-main', this); // var perView = 'auto';
 
   var perView = Math.ceil(this.offsetWidth / 64);
-  var windowPerView = Math.ceil(window.innerWidth / 64); // Product Gallery
+  var windowPerView = Math.ceil(window.innerWidth / 64);
+  console.log($thumbs.length); // Product Gallery
 
   var galleryThumbs = new Swiper($thumbs[0], {
     spaceBetween: 10,
     loop: false,
-    // loopedSlides: perView,
     allowTouchMove: false,
     slidesPerView: perView,
-    slideToClickedSlide: true,
-    centerInsufficientSlides: true,
-    centeredSlides: true,
-    centeredSlidesBounds: true // slidesOffsetAfter: 4,
-    // slidesOffsetBefore: 4
+    slideToClickedSlide: true // centerInsufficientSlides: true,
+    // centeredSlides: true,
+    // centeredSlidesBounds: true
 
   });
   var galleryTop = new Swiper($main[0], {
@@ -20201,15 +20199,13 @@ $('.js-detail-gallery').each(function () {
       prevEl: ".swiper-button-prev"
     },
     loop: true,
-    // loopedSlides: perView,
     autoplay: {
       delay: 5000,
       disableOnInteraction: false
     },
     slidesPerView: 1,
     thumbs: {
-      swiper: galleryThumbs // autoScrollOffset: 1
-
+      swiper: galleryThumbs
     }
   }); // galleryTop.controller.control = galleryThumbs;
   // galleryThumbs.controller.control = galleryTop;
