@@ -1074,26 +1074,16 @@ $('.js-detail-gallery').each(function () {
     // Product Gallery
     var galleryThumbs = new Swiper($thumbs[0], {
         spaceBetween: 10,
-        // slidesPerView: "auto",
-        // touchRatio: 0.4,
         loop: false,
         loopedSlides: perView,
-        // keyboard: {
-        //     enabled: true,
-        //     onlyInViewport: false
-        // },
         allowTouchMove: false,
         slidesPerView: perView,
         slideToClickedSlide: true,
-        // freeMode: true,
-        // loopedSlides: 5,
-        // // spaceBetween: 5,
-        // // watchSlidesVisibility: true,
-        // // watchSlidesProgress: true,
-        centerInsufficientSlides: true,
-        // // centeredSlides: true,
+        // centerInsufficientSlides: true,
         centeredSlides: true,
-        centeredSlidesBounds: true
+        centeredSlidesBounds: true,
+        slidesOffsetAfter: 1,
+        slidesOffsetBefore: 1
     });
     var galleryTop = new Swiper($main[0], {
         spaceBetween: 10,
@@ -1108,15 +1098,10 @@ $('.js-detail-gallery').each(function () {
             delay: 5000,
             disableOnInteraction: false,
         },
-        // keyboard: {
-        //   enabled: true,
-        //   onlyInViewport: false
-        // },
         slidesPerView: 1,
         thumbs: {
             swiper: galleryThumbs,
-            autoScrollOffset: 0,
-            // multipleActiveThumbs: false
+            autoScrollOffset: 1
         },
     });
     // galleryTop.controller.control = galleryThumbs;
