@@ -1073,8 +1073,6 @@ $('.js-detail-gallery').each(function () {
     // Product Gallery
     var galleryThumbs = new Swiper($thumbs[0], {
         allowTouchMove: false,
-        simulateTouch: false,
-        slideToClickedSlide: true,
         slidesPerView: perView,
         freeMode: true,
         loopedSlides: 6,
