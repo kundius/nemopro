@@ -20195,7 +20195,8 @@ $('.js-detail-gallery').each(function () {
     keyboard: {
       enabled: true,
       onlyInViewport: false
-    }
+    },
+    allowTouchMove: false
   }, _defineProperty(_Swiper, "slidesPerView", perView), _defineProperty(_Swiper, "centeredSlidesBounds", true), _Swiper));
   var galleryTop = new Swiper($main[0], {
     spaceBetween: 10,
@@ -20214,22 +20215,12 @@ $('.js-detail-gallery').each(function () {
       enabled: true,
       onlyInViewport: false
     },
-    // slidesPerView: 1,
-    // loop: true,
-    // loopedSlides: 5, //looped slides should be the same
-    // navigation: {
-    //     nextEl: '.swiper-button-next',
-    //     prevEl: '.swiper-button-prev',
-    // },
+    slidesPerView: 1,
     thumbs: {
-      swiper: galleryThumbs //     // autoScrollOffset: 1,
-      //     // multipleActiveThumbs: false
+      swiper: galleryThumbs,
+      autoScrollOffset: 1 // multipleActiveThumbs: false
 
-    } // autoplay: {
-    //     delay: 5000,
-    //     disableOnInteraction: false,
-    // },
-
+    }
   }); // galleryTop.controller.control = galleryThumbs;
   // galleryThumbs.controller.control = galleryTop;
   // galleryTop.on('slideChange', function () {

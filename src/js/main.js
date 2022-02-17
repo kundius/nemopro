@@ -1081,11 +1081,10 @@ $('.js-detail-gallery').each(function () {
         loop: false,
         loopedSlides: perView,
         keyboard: {
-          enabled: true,
-          onlyInViewport: false
+            enabled: true,
+            onlyInViewport: false
         },
-
-        // allowTouchMove: false,
+        allowTouchMove: false,
         slidesPerView: perView,
         // freeMode: true,
         // loopedSlides: 5,
@@ -1113,22 +1112,12 @@ $('.js-detail-gallery').each(function () {
           enabled: true,
           onlyInViewport: false
         },
-        // slidesPerView: 1,
-        // loop: true,
-        // loopedSlides: 5, //looped slides should be the same
-        // navigation: {
-        //     nextEl: '.swiper-button-next',
-        //     prevEl: '.swiper-button-prev',
-        // },
+        slidesPerView: 1,
         thumbs: {
             swiper: galleryThumbs,
-        //     // autoScrollOffset: 1,
-        //     // multipleActiveThumbs: false
+            autoScrollOffset: 1,
+            // multipleActiveThumbs: false
         },
-        // autoplay: {
-        //     delay: 5000,
-        //     disableOnInteraction: false,
-        // },
     });
     // galleryTop.controller.control = galleryThumbs;
     // galleryThumbs.controller.control = galleryTop;
