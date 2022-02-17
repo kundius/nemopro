@@ -20182,10 +20182,8 @@ $('.js-detail-gallery').each(function () {
 
   var galleryThumbs = new Swiper($thumbs[0], {
     spaceBetween: 10,
-    centeredSlides: true,
     // slidesPerView: "auto",
     // touchRatio: 0.4,
-    slideToClickedSlide: true,
     loop: false,
     loopedSlides: perView,
     // keyboard: {
@@ -20194,13 +20192,15 @@ $('.js-detail-gallery').each(function () {
     // },
     allowTouchMove: false,
     slidesPerView: perView,
+    slideToClickedSlide: true,
     // freeMode: true,
     // loopedSlides: 5,
     // // spaceBetween: 5,
     // // watchSlidesVisibility: true,
     // // watchSlidesProgress: true,
-    // centerInsufficientSlides: true,
+    centerInsufficientSlides: true,
     // // centeredSlides: true,
+    centeredSlides: true,
     centeredSlidesBounds: true
   });
   var galleryTop = new Swiper($main[0], {
