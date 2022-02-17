@@ -20183,7 +20183,7 @@ $('.js-detail-gallery').each(function () {
   var galleryThumbs = new Swiper($thumbs[0], {
     spaceBetween: 10,
     loop: false,
-    loopedSlides: perView,
+    // loopedSlides: perView,
     allowTouchMove: false,
     slidesPerView: perView,
     slideToClickedSlide: true // centerInsufficientSlides: true,
@@ -20201,7 +20201,7 @@ $('.js-detail-gallery').each(function () {
       prevEl: ".swiper-button-prev"
     },
     loop: true,
-    loopedSlides: perView,
+    // loopedSlides: perView,
     autoplay: {
       delay: 5000,
       disableOnInteraction: false
@@ -20213,17 +20213,16 @@ $('.js-detail-gallery').each(function () {
     }
   }); // galleryTop.controller.control = galleryThumbs;
   // galleryThumbs.controller.control = galleryTop;
-  // galleryTop.on('slideChange', function () {
-  //     galleryThumbs.slideTo(galleryTop.activeIndex);
-  // //     // galleryThumbs.update();
+
+  galleryTop.on('slideChange', function () {
+    galleryThumbs.slideTo(galleryTop.activeIndex); // //     // galleryThumbs.update();
+  }); // galleryTop.on('slideNextTransitionStart', function () {
+  //     galleryThumbs.slideNext();
+  // });
+  // galleryTop.on('slidePrevTransitionStart', function () {
+  //     galleryThumbs.slidePrev();
   // });
 
-  galleryTop.on('slideNextTransitionStart', function () {
-    galleryThumbs.slideNext();
-  });
-  galleryTop.on('slidePrevTransitionStart', function () {
-    galleryThumbs.slidePrev();
-  });
   $('.js-detail-gallery-main', this).on('click', '.swiper-slide', function () {
     $wrapper.addClass('detail-gallery_lightbox');
     galleryTop.update();
