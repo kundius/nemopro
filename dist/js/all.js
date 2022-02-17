@@ -20189,7 +20189,7 @@ $('.js-detail-gallery').each(function () {
     touchRatio: 0.4,
     slideToClickedSlide: true,
     loop: true,
-    loopedSlides: 4,
+    loopedSlides: perView,
     keyboard: {
       enabled: true,
       onlyInViewport: false
@@ -20203,7 +20203,7 @@ $('.js-detail-gallery').each(function () {
     //   prevEl: ".swiper-button-prev"
     // },
     loop: true,
-    loopedSlides: 4,
+    loopedSlides: perView,
     autoplay: {
       delay: 5000,
       disableOnInteraction: false
