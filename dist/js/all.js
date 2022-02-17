@@ -19172,8 +19172,6 @@ $(function () {
 });
 "use strict";
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 // тригерим ресайз окна для обновления закрепленных блоков
 $('[data-uk-switcher]').on('show.uk.switcher', function () {
   $(window).trigger('resize');
@@ -20175,8 +20173,6 @@ WebFont.load({
   }
 });
 $('.js-detail-gallery').each(function () {
-  var _Swiper;
-
   var $wrapper = $(this);
   var $thumbs = $('.js-detail-gallery-thumbs', this);
   var $main = $('.js-detail-gallery-main', this); // var perView = 'auto';
@@ -20184,20 +20180,30 @@ $('.js-detail-gallery').each(function () {
   var perView = Math.ceil(this.offsetWidth / 64);
   var windowPerView = Math.ceil(window.innerWidth / 64); // Product Gallery
 
-  var galleryThumbs = new Swiper($thumbs[0], (_Swiper = {
+  var galleryThumbs = new Swiper($thumbs[0], {
     spaceBetween: 10,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    touchRatio: 0.4,
+    // slidesPerView: "auto",
+    // touchRatio: 0.4,
     slideToClickedSlide: true,
+    slidesOffsetBefore: 2,
+    slidesOffsetAfter: 2,
     loop: false,
     loopedSlides: perView,
     // keyboard: {
     //     enabled: true,
     //     onlyInViewport: false
     // },
-    allowTouchMove: false
-  }, _defineProperty(_Swiper, "slidesPerView", perView), _defineProperty(_Swiper, "centeredSlidesBounds", true), _Swiper));
+    allowTouchMove: false,
+    slidesPerView: perView,
+    // freeMode: true,
+    // loopedSlides: 5,
+    // // spaceBetween: 5,
+    // // watchSlidesVisibility: true,
+    // // watchSlidesProgress: true,
+    centerInsufficientSlides: true,
+    centeredSlides: true,
+    centeredSlidesBounds: true
+  });
   var galleryTop = new Swiper($main[0], {
     spaceBetween: 10,
     grabCursor: true,
