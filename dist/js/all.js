@@ -20182,7 +20182,7 @@ $('.js-detail-gallery').each(function () {
   console.log($thumbs.length); // Product Gallery
 
   var galleryThumbs = new Swiper($thumbs[0], {
-    spaceBetween: 10,
+    // spaceBetween: 10,
     loop: false,
     allowTouchMove: false,
     slidesPerView: perView,
@@ -20192,7 +20192,7 @@ $('.js-detail-gallery').each(function () {
 
   });
   var galleryTop = new Swiper($main[0], {
-    spaceBetween: 10,
+    // spaceBetween: 10,
     grabCursor: true,
     navigation: {
       nextEl: ".swiper-button-next",
