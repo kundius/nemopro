@@ -1081,7 +1081,7 @@ $('.js-detail-gallery').each(function () {
         slideToClickedSlide: true,
         centerInsufficientSlides: true,
         centeredSlides: true,
-        // centeredSlidesBounds: true,
+        centeredSlidesBounds: true,
         // slidesOffsetAfter: 4,
         // slidesOffsetBefore: 4
     });
