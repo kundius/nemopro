@@ -12225,6 +12225,7 @@ td.u-product-options__items {
   box-sizing: border-box;
   position: relative;
   cursor: pointer;
+  user-select: none;
   &::after {
     content: '';
     position: absolute;
