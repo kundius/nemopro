@@ -184,6 +184,10 @@ $('.js-left-menu-toggle').click(function() {
     });
 });
 
+$('.left-menu .parent').click(function() {
+    console.log('menu clicked')
+});
+
 $(document).ready(function(){
 	$(".slideout-menu__lvl1 > .js-left-menu-toggle").click(function(){
 		$(".slideout-menu").toggleClass("slideout-sticky");
