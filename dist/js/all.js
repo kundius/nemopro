@@ -18995,7 +18995,9 @@ $('.js-left-menu-toggle').click(function () {
   });
 });
 $('.left-menu .parent').click(function () {
-  console.log('menu clicked');
+  $('html, body').animate({
+    scrollTop: 0
+  }, 500);
 });
 $(document).ready(function () {
   $(".slideout-menu__lvl1 > .js-left-menu-toggle").click(function () {
