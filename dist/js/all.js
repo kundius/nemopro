@@ -18736,9 +18736,9 @@ $(function () {
       $this.prepend('<li class="menu_title"><a href="' + $parent.attr('href') + '">' + $parent.text() + '</a></li>');
       $this.prepend('<li class="menu_back"><a href="#" rel="nofollow"><i class="uk-icon-angle-left svg"></i> ' + ($grandparent.length ? $grandparent.text() : 'Каталог') + '</a></li>');
     });
-    $(".menu a, .social-icons a", mobilemenu).click(function (e) {
-      var t = $(this);
-      if (t.hasClass("parent")) e.preventDefault(), mobilemenu.isDowndrop ? t.closest("li").hasClass("expanded") ? t.closest("li").removeClass("expanded") : t.closest("li").addClass("expanded") : (t.closest("li").addClass("expanded"), function () {
+
+    function showItem(target) {
+      mobilemenu.isDowndrop ? target.closest("li").hasClass("expanded") ? target.closest("li").removeClass("expanded") : target.closest("li").addClass("expanded") : (target.closest("li").addClass("expanded"), function () {
         if (!mobilemenu.isDowndrop) {
           var e = mobilemenu.find(".scroller").first(),
               t = mobilemenu.find(".wrap").first();
@@ -18767,13 +18767,15 @@ $(function () {
             t.data("params", a);
           }
         }
-      }());else {
-        if (t.closest("li").hasClass("counters")) {
-          var a = t.attr("href");
-          void 0 !== a && (window.location.href = a, window.location.reload());
-        }
+      }());
+    }
 
-        t.closest(".menu_back").length || CloseMobileMenu();
+    $(".menu a, .social-icons a", mobilemenu).click(function (event) {
+      var target = $(this);
+
+      if (target.hasClass("parent")) {
+        event.preventDefault();
+        showItem(target);
       }
     });
     $(".dropdown .menu_back", mobilemenu).click(function (e) {

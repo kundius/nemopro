@@ -18,48 +18,45 @@ $(function() {
             $this.prepend('<li class="menu_title"><a href="' + $parent.attr('href') + '">' + $parent.text() + '</a></li>');
             $this.prepend('<li class="menu_back"><a href="#" rel="nofollow"><i class="uk-icon-angle-left svg"></i> ' + ($grandparent.length ? $grandparent.text() : 'Каталог') + '</a></li>');
         });
-        
-        $(".menu a, .social-icons a", mobilemenu).click(function(e) {
-            var t = $(this);
-            if (t.hasClass("parent"))
-                e.preventDefault(),
-                mobilemenu.isDowndrop ? t.closest("li").hasClass("expanded") ? t.closest("li").removeClass("expanded") : t.closest("li").addClass("expanded") : (t.closest("li").addClass("expanded"),
-                function() {
-                    if (!mobilemenu.isDowndrop) {
-                        var e = mobilemenu.find(".scroller").first()
-                          , t = mobilemenu.find(".wrap").first();
-                        if (t.length) {
-                            var a = t.data("params")
-                              , i = mobilemenu.find(".expanded>.dropdown").eq(a.depth);
-                            if (i.length) {
-                                a.scroll[a.depth] = parseInt(mobilemenu.scrollTop()),
-                                a.height[a.depth + 1] = Math.max(i.height(), a.depth ? mobilemenu.find(".expanded>.dropdown").eq(a.depth - 1).height() : t.height()),
-                                e.css("height", a.height[a.depth + 1] + "px"),
-                                ++a.depth,
-                                t.css("transform", "translateX(" + -100 * a.depth + "%)");
-                                if (overflow === 'scroll') {
-                                    setTimeout(function() {
-                                        mobilemenu.animate({
-                                            scrollTop: 0
-                                        }, 200)
-                                    }, 100);
-                                }
-                                var o = i.height();
+
+        function showItem (target) {            
+            mobilemenu.isDowndrop ? target.closest("li").hasClass("expanded") ? target.closest("li").removeClass("expanded") : target.closest("li").addClass("expanded") : (target.closest("li").addClass("expanded"),
+            function() {
+                if (!mobilemenu.isDowndrop) {
+                    var e = mobilemenu.find(".scroller").first()
+                      , t = mobilemenu.find(".wrap").first();
+                    if (t.length) {
+                        var a = t.data("params")
+                          , i = mobilemenu.find(".expanded>.dropdown").eq(a.depth);
+                        if (i.length) {
+                            a.scroll[a.depth] = parseInt(mobilemenu.scrollTop()),
+                            a.height[a.depth + 1] = Math.max(i.height(), a.depth ? mobilemenu.find(".expanded>.dropdown").eq(a.depth - 1).height() : t.height()),
+                            e.css("height", a.height[a.depth + 1] + "px"),
+                            ++a.depth,
+                            t.css("transform", "translateX(" + -100 * a.depth + "%)");
+                            if (overflow === 'scroll') {
                                 setTimeout(function() {
-                                    o ? e.css("height", o + "px") : e.css("height", "")
-                                }, 200)
+                                    mobilemenu.animate({
+                                        scrollTop: 0
+                                    }, 200)
+                                }, 100);
                             }
-                            t.data("params", a)
+                            var o = i.height();
+                            setTimeout(function() {
+                                o ? e.css("height", o + "px") : e.css("height", "")
+                            }, 200)
                         }
+                        t.data("params", a)
                     }
-                }());
-            else {
-                if (t.closest("li").hasClass("counters")) {
-                    var a = t.attr("href");
-                    void 0 !== a && (window.location.href = a,
-                    window.location.reload())
                 }
-                t.closest(".menu_back").length || CloseMobileMenu()
+            }());
+        }
+        
+        $(".menu a, .social-icons a", mobilemenu).click(function(event) {
+            var target = $(this);
+            if (target.hasClass("parent")) {
+                event.preventDefault();
+                showItem(target);
             }
         });
         $(".dropdown .menu_back", mobilemenu).click(function(e) {
