@@ -18737,7 +18737,7 @@ $(function () {
       $this.prepend('<li class="menu_back"><a href="#" rel="nofollow"><i class="uk-icon-angle-left svg"></i> ' + ($grandparent.length ? $grandparent.text() : 'Каталог') + '</a></li>');
     });
 
-    function showItem(target) {
+    var showItem = function showItem(target) {
       mobilemenu.isDowndrop ? target.closest("li").hasClass("expanded") ? target.closest("li").removeClass("expanded") : target.closest("li").addClass("expanded") : (target.closest("li").addClass("expanded"), function () {
         if (!mobilemenu.isDowndrop) {
           var e = mobilemenu.find(".scroller").first(),
@@ -18768,7 +18768,7 @@ $(function () {
           }
         }
       }());
-    }
+    };
 
     $(".menu a, .social-icons a", mobilemenu).click(function (event) {
       var target = $(this);
