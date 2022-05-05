@@ -18995,6 +18995,7 @@ $('.js-left-menu-toggle').click(function () {
   });
 });
 $('.left-menu .parent').click(function () {
+  console.log('scroll top');
   $('html, body').animate({
     scrollTop: 0
   }, 500);
