@@ -18814,13 +18814,17 @@ $(function () {
     });
   });
   $(".left-menu .parent-active").each(function () {
-    $(this).click();
+    // $(this).click();
+    var target = $(this);
+    showItem(target);
   });
   var offcanvasInitialExecuted = false;
   $('#uk-offcanvas').on('show.uk.offcanvas', function () {
     if (!offcanvasInitialExecuted) {
       $(".parent-active", this).each(function () {
-        $(this).click();
+        // $(this).click();
+        var target = $(this);
+        showItem(target);
       });
       offcanvasInitialExecuted = true;
     }
