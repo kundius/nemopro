@@ -1,13 +1,13 @@
-.ui-front {
+body .ui-front {
   z-index: 985;
 }
-.ui-menu .ui-menu-item-wrapper {
+body .ui-menu .ui-menu-item-wrapper {
   padding: 0;
 }
-.ui-menu .ui-menu-item {
+body .ui-menu .ui-menu-item {
   border-bottom: 1px solid #a2a2a2;
 }
-.ui-menu .ui-menu-item:last-child {
+body .ui-menu .ui-menu-item:last-child {
   border-bottom: none;
 }
 .mse2-ac-item {
