@@ -36,28 +36,7 @@ if (toggle && search) {
 }
 
 jQuery(function () {
-  // const _renderMenu = function (ul, items) {
-  //   console.log(ul, this);
-  //   const _this = this;
-  //   $.each(items, function (index, item) {
-  //     _this._renderItemData(ul, item);
-  //   });
-  // };
-  // console.log($('input[name="query"]').autocomplete( "widget" ).addClass('ddd-ddd-ddd'));
-  // $('input[name="query"]').data("ui-autocomplete")._renderMenu = _renderMenu;
   $('input[name="query"]').autocomplete({
-  //   // change: function( event, ui ) {
-  //   //   console.log('change');
-  //   // },
-  //   // close: function( event, ui ) {
-  //   //   console.log('close');
-  //   // },
-  //   // create: function( event, ui ) {
-  //   //   console.log('create');
-  //   // },
-  //   // focus: function( event, ui ) {
-  //   //   console.log('focus');
-  //   // },
     open: function(e) {
       const menu = $('.ui-menu:visible');
       const input = $(e.target);
@@ -66,17 +45,9 @@ jQuery(function () {
         close = $('<li class="mse2-ac-close">Закрыть</li>').appendTo(menu);
         close.on('click', function() {
           input.val('');
+          input.autocomplete('close');
         });
       }
     },
-  //   // response: function( event, ui ) {
-  //   //   console.log('response');
-  //   // },
-  //   // search: function( event, ui ) {
-  //   //   console.log('search');
-  //   // },
-  //   // select: function( event, ui ) {
-  //   //   console.log('select');
-  //   // }
   });
 });
