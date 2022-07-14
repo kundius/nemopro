@@ -35,7 +35,7 @@ if (toggle && search) {
   });
 }
 
-// jQuery(function () {
+jQuery(function () {
   const _renderMenu = function (ul, items) {
     console.log(ul, this);
     const _this = this;
@@ -70,4 +70,4 @@ if (toggle && search) {
   //   //   console.log('select');
   //   // }
   // });
-// });
+});
