@@ -35,10 +35,11 @@ if (toggle && search) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+jQuery(function() {
   $('input[name="query"]').autocomplete({
     create: function( event, ui ) {
       console.log(ui);
     }
   });
 });
+
