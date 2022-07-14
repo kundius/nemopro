@@ -17,6 +17,8 @@ if (toggle && search) {
     search.classList.remove("u-header-search_visible");
     isVisible = false;
 
+    $('input[name="query"]', search).autocomplete('close');
+
     window.removeEventListener("scroll", onScroll);
   };
 
