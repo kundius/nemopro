@@ -61,10 +61,12 @@ jQuery(function () {
     open: function(e) {
       const menu = $('.ui-menu:visible');
       const input = $(e.target);
-      const close = menu.find('.mse2-ac-close');
-      console.log(close);
+      let close = menu.find('.mse2-ac-close');
       if (close.length === 0) {
-        menu.append('<li><button class="mse2-ac-close">Закрыть</button></li>');
+        close = $('<li class="mse2-ac-close">Закрыть</li>').appendTo(menu);
+        close.on('click', function() {
+          input.val('');
+        });
       }
     },
   //   // response: function( event, ui ) {
