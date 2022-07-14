@@ -36,6 +36,7 @@ if (toggle && search) {
 }
 
 jQuery(function () {
+  console.log($('input[name="query"]').data("ui-autocomplete"));
   const _renderMenu = function (ul, items) {
     console.log(ul, this);
     const _this = this;
