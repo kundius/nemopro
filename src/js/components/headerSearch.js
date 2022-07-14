@@ -35,8 +35,10 @@ if (toggle && search) {
   });
 }
 
-$('input[name="query"]').autocomplete({
-  create: function( event, ui ) {
-    console.log(ui);
-  }
+document.addEventListener("DOMContentLoaded", () => {
+  $('input[name="query"]').autocomplete({
+    create: function( event, ui ) {
+      console.log(ui);
+    }
+  });
 });
