@@ -58,9 +58,14 @@ jQuery(function () {
   //   // focus: function( event, ui ) {
   //   //   console.log('focus');
   //   // },
-    open: function( event, ui ) {
-      console.log('open', event);
-      console.log($('.ui-menu:visible'));
+    open: function(e) {
+      const menu = $('.ui-menu:visible');
+      const input = $(e.target);
+      const close = menu.find('.mse2-ac-close');
+      console.log(close);
+      if (!close) {
+        menu.append('<li><button class="mse2-ac-close">Закрыть</button></li>');
+      }
     },
   //   // response: function( event, ui ) {
   //   //   console.log('response');
