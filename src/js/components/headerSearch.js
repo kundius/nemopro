@@ -34,3 +34,9 @@ if (toggle && search) {
     }
   });
 }
+
+$('input[name="query"]').autocomplete({
+  open: function( event, ui ) {
+    console.log(ui);
+  }
+});
