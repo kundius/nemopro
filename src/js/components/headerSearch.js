@@ -36,7 +36,7 @@ if (toggle && search) {
 }
 
 $('input[name="query"]').autocomplete({
-  open: function( event, ui ) {
+  create: function( event, ui ) {
     console.log(ui);
   }
 });
