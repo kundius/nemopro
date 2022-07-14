@@ -36,16 +36,16 @@ if (toggle && search) {
 }
 
 jQuery(function () {
-  const _renderMenu = function (ul, items) {
-    console.log(ul, this);
-    const _this = this;
-    $.each(items, function (index, item) {
-      _this._renderItemData(ul, item);
-    });
-  };
-  console.log($('input[name="query"]').autocomplete( "widget" ).addClass('ddd-ddd-ddd'));
+  // const _renderMenu = function (ul, items) {
+  //   console.log(ul, this);
+  //   const _this = this;
+  //   $.each(items, function (index, item) {
+  //     _this._renderItemData(ul, item);
+  //   });
+  // };
+  // console.log($('input[name="query"]').autocomplete( "widget" ).addClass('ddd-ddd-ddd'));
   // $('input[name="query"]').data("ui-autocomplete")._renderMenu = _renderMenu;
-  // $('input[name="query"]').autocomplete({
+  $('input[name="query"]').autocomplete({
   //   // change: function( event, ui ) {
   //   //   console.log('change');
   //   // },
@@ -58,9 +58,9 @@ jQuery(function () {
   //   // focus: function( event, ui ) {
   //   //   console.log('focus');
   //   // },
-  //   open: function( event, ui ) {
-  //     console.log('open', event);
-  //   },
+    open: function( event, ui ) {
+      console.log('open', event);
+    },
   //   // response: function( event, ui ) {
   //   //   console.log('response');
   //   // },
@@ -70,5 +70,5 @@ jQuery(function () {
   //   // select: function( event, ui ) {
   //   //   console.log('select');
   //   // }
-  // });
+  });
 });
