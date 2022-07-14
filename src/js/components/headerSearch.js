@@ -43,7 +43,7 @@ jQuery(function () {
       _this._renderItemData(ul, item);
     });
   };
-  console.log($('input[name="query"]').autocomplete( "instance" )._renderMenu = _renderMenu);
+  console.log($('input[name="query"]').autocomplete( "widget" ));
   // $('input[name="query"]').data("ui-autocomplete")._renderMenu = _renderMenu;
   // $('input[name="query"]').autocomplete({
   //   // change: function( event, ui ) {
