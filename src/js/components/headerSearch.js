@@ -60,6 +60,7 @@ jQuery(function () {
   //   // },
     open: function( event, ui ) {
       console.log('open', event);
+      console.log($('.ui-menu:visible'));
     },
   //   // response: function( event, ui ) {
   //   //   console.log('response');
