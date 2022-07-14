@@ -33,13 +33,17 @@ if (toggle && search) {
   });
 }
 
-jQuery(function () {
-  $('input[name="query"]').each(function () {
-    const input = $(this);
+$('input[name="query"]').each(function () {
+  const input = $(this);
 
-    const onScroll = () => {
-      input.autocomplete("close");
-    };
+  const onScroll = () => {
+    input.autocomplete("close");
+  };
+
+  let initialized = false;
+
+  input.on("focus", function () {
+    if (initialized) return;
 
     input.autocomplete({
       open: function (e) {
@@ -59,5 +63,7 @@ jQuery(function () {
         window.removeEventListener("scroll", onScroll);
       },
     });
+
+    initialized = true;
   });
 });
