@@ -17,7 +17,7 @@ if (toggle && search) {
     search.classList.remove("u-header-search_visible");
     isVisible = false;
 
-    $('input[name="query"]', search).autocomplete('close');
+    $('input[name="query"]', search).autocomplete("close");
 
     window.removeEventListener("scroll", onScroll);
   };
@@ -35,33 +35,39 @@ if (toggle && search) {
   });
 }
 
-jQuery(function() {
-  console.log('loaded', $('input[name="query"]'));
-  $('input[name="query"]').autocomplete({
-    // change: function( event, ui ) {
-    //   console.log('change');
-    // },
-    // close: function( event, ui ) {
-    //   console.log('close');
-    // },
-    // create: function( event, ui ) {
-    //   console.log('create');
-    // },
-    // focus: function( event, ui ) {
-    //   console.log('focus');
-    // },
-    open: function( event, ui ) {
-      console.log('open', event);
-    },
-    // response: function( event, ui ) {
-    //   console.log('response');
-    // },
-    // search: function( event, ui ) {
-    //   console.log('search');
-    // },
-    // select: function( event, ui ) {
-    //   console.log('select');
-    // }
-  });
+jQuery(function () {
+  const _renderMenu = function (ul, items) {
+    console.log(ul, this);
+    const _this = this;
+    $.each(items, function (index, item) {
+      _this._renderItemData(ul, item);
+    });
+  };
+  $('input[name="query"]').data("ui-autocomplete")._renderMenu = _renderMenu;
+  // $('input[name="query"]').autocomplete({
+  //   // change: function( event, ui ) {
+  //   //   console.log('change');
+  //   // },
+  //   // close: function( event, ui ) {
+  //   //   console.log('close');
+  //   // },
+  //   // create: function( event, ui ) {
+  //   //   console.log('create');
+  //   // },
+  //   // focus: function( event, ui ) {
+  //   //   console.log('focus');
+  //   // },
+  //   open: function( event, ui ) {
+  //     console.log('open', event);
+  //   },
+  //   // response: function( event, ui ) {
+  //   //   console.log('response');
+  //   // },
+  //   // search: function( event, ui ) {
+  //   //   console.log('search');
+  //   // },
+  //   // select: function( event, ui ) {
+  //   //   console.log('select');
+  //   // }
+  // });
 });
-
