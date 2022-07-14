@@ -36,6 +36,7 @@ if (toggle && search) {
 }
 
 jQuery(function() {
+  console.log('loaded', $('input[name="query"]'));
   $('input[name="query"]').autocomplete({
     create: function( event, ui ) {
       console.log(ui);
