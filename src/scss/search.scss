@@ -20,10 +20,13 @@ body .ui-menu .ui-menu-item:last-child {
   padding: 0 20px;
   background-color: #fff;
   color: #236ba6;
-  text-decoration: underline;
-  box-shadow: 0 1px 5px rgba(6, 61, 90, .8);
+  box-shadow: 0 1px 5px rgba(6, 61, 90, 0.8);
   border: none;
   cursor: pointer;
+}
+.mse2-ac-close:hover {
+  color: #fff;
+  background: #236ba6;
 }
 .mse2-ac-close::after {
   content: '✕';
