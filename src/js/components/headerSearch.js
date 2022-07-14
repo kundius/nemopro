@@ -63,7 +63,7 @@ jQuery(function () {
       const input = $(e.target);
       const close = menu.find('.mse2-ac-close');
       console.log(close);
-      if (!close) {
+      if (!close.length === 0) {
         menu.append('<li><button class="mse2-ac-close">Закрыть</button></li>');
       }
     },
