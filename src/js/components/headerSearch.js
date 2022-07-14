@@ -51,7 +51,7 @@ jQuery(function() {
     //   console.log('focus');
     // },
     open: function( event, ui ) {
-      console.log('open', ui);
+      console.log('open', event);
     },
     // response: function( event, ui ) {
     //   console.log('response');
