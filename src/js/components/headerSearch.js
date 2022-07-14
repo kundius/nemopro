@@ -17,8 +17,6 @@ if (toggle && search) {
     search.classList.remove("u-header-search_visible");
     isVisible = false;
 
-    $('input[name="query"]', search).autocomplete("close");
-
     window.removeEventListener("scroll", onScroll);
   };
 
@@ -36,18 +34,31 @@ if (toggle && search) {
 }
 
 jQuery(function () {
-  $('input[name="query"]').autocomplete({
-    open: function(e) {
-      const menu = $('.ui-menu:visible');
-      const input = $(e.target);
-      let close = menu.find('.mse2-ac-close');
-      if (close.length === 0) {
-        close = $('<li class="mse2-ac-close">Закрыть</li>').appendTo(menu);
-        close.on('click', function() {
-          input.val('');
-          input.autocomplete('close');
-        });
-      }
-    },
+  $('input[name="query"]').each(function () {
+    const input = $(this);
+
+    const onScroll = () => {
+      input.autocomplete("close");
+    };
+
+    input.autocomplete({
+      open: function (e) {
+        const menu = $(".ui-menu:visible");
+        const input = $(e.target);
+        let close = menu.find(".mse2-ac-close");
+        if (close.length === 0) {
+          close = $('<li class="mse2-ac-close">Закрыть</li>').appendTo(menu);
+          close.on("click", function () {
+            input.val("");
+            input.autocomplete("close");
+          });
+        }
+
+        window.addEventListener("scroll", onScroll);
+      },
+      close: function (e) {
+        window.removeEventListener("scroll", onScroll);
+      },
+    });
   });
 });
