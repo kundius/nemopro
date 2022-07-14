@@ -44,7 +44,6 @@ jQuery(function () {
     input.autocomplete({
       open: function (e) {
         const menu = $(".ui-menu:visible");
-        const input = $(e.target);
         let close = menu.find(".mse2-ac-close");
         if (close.length === 0) {
           close = $('<li class="mse2-ac-close">Закрыть</li>').appendTo(menu);

@@ -10,6 +10,22 @@ body .ui-menu .ui-menu-item {
 body .ui-menu .ui-menu-item:last-child {
   border-bottom: none;
 }
+.mse2-ac-close {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 28px;
+  border-radius: 0 0 10px 10px;
+  padding: 0 20px;
+  background-color: #fff;
+  color: #236ba6;
+  text-decoration: underline;
+  box-shadow: 0 1px 5px rgba(6, 61, 90, .8);
+  border: none;
+  cursor: pointer;
+  display: none;
+}
 .mse2-ac-item {
   display: flex;
   align-items: center;
