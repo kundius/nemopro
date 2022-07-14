@@ -36,7 +36,6 @@ if (toggle && search) {
 }
 
 jQuery(function () {
-  console.log($('input[name="query"]').autocomplete( "instance" ));
   const _renderMenu = function (ul, items) {
     console.log(ul, this);
     const _this = this;
@@ -44,7 +43,8 @@ jQuery(function () {
       _this._renderItemData(ul, item);
     });
   };
-  $('input[name="query"]').data("ui-autocomplete")._renderMenu = _renderMenu;
+  console.log($('input[name="query"]').autocomplete( "instance" )._renderMenu = _renderMenu);
+  // $('input[name="query"]').data("ui-autocomplete")._renderMenu = _renderMenu;
   // $('input[name="query"]').autocomplete({
   //   // change: function( event, ui ) {
   //   //   console.log('change');
