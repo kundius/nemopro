@@ -24,7 +24,11 @@ body .ui-menu .ui-menu-item:last-child {
   box-shadow: 0 1px 5px rgba(6, 61, 90, .8);
   border: none;
   cursor: pointer;
-  display: none;
+}
+.mse2-ac-close::after {
+  content: '✕';
+  display: inline-block;
+  margin-left: 4px;
 }
 .mse2-ac-item {
   display: flex;
