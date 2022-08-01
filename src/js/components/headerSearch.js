@@ -18,6 +18,7 @@ if (toggle && search) {
     toggle.classList.remove("active");
     search.classList.remove("u-header-search_visible");
     isVisible = false;
+    input.blur();
 
     window.removeEventListener("scroll", onScroll);
   };
