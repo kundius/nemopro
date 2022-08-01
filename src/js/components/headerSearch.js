@@ -27,9 +27,8 @@ if (toggle && search) {
           }
 
           const children = menu.children('.ui-menu-item');
-          console.log(children.length);
           if (children.length > 5) {
-            console.log(children.last());
+            children.last().replaceWith(`<li class="mse2-ac-more"><a href="/search?query=${$input.val()}">Показать все</a></li>`);
           }
         }
       });
