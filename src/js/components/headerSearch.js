@@ -3,11 +3,13 @@ const search = document.querySelector(".u-header-search");
 
 if (toggle && search) {
   let isVisible = false;
+  const input = search.querySelector('[name="query"]');
 
   const open = () => {
     toggle.classList.add("active");
     search.classList.add("u-header-search_visible");
     isVisible = true;
+    input.focus();
 
     window.addEventListener("scroll", onScroll);
   };
