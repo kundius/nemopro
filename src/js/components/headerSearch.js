@@ -14,9 +14,11 @@ if (toggle && search) {
     input.focus();
 
     if (!autocompleteInitialized) {
+      console.log(autocompleteInitialized);
       $input.autocomplete({
         open: function (e) {
           const menu = $(".ui-menu:visible");
+          console.log(menu);
           let close = menu.find(".mse2-ac-close");
           if (close.length === 0) {
             close = $('<li class="mse2-ac-close">Закрыть</li>').appendTo(menu);

@@ -1,5 +1,10 @@
+@import "variables";
+
 body .ui-front {
-  z-index: 985;
+  margin-top: 8px;
+  @media (max-width: $breakpoint-mini-max) {
+    margin-top: 4px;
+  }
 }
 body .ui-menu .ui-menu-item-wrapper {
   padding: 0;
@@ -32,7 +37,7 @@ body .ui-widget.ui-widget-content {
   background: #236ba6;
 }
 .mse2-ac-close::after {
-  content: '✕';
+  content: "✕";
   display: inline-block;
   margin-left: 4px;
 }
