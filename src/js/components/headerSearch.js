@@ -14,7 +14,7 @@ if (toggle && search) {
     input.focus();
 
     if (!autocompleteInitialized) {
-      console.log(autocompleteInitialized);
+      console.log($input);
       $input.autocomplete({
         open: function (e) {
           const menu = $(".ui-menu:visible");
