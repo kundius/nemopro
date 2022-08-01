@@ -10,6 +10,9 @@ body .ui-menu .ui-menu-item {
 body .ui-menu .ui-menu-item:last-child {
   border-bottom: none;
 }
+body .ui-widget.ui-widget-content {
+  border: none;
+}
 .mse2-ac-close {
   position: absolute;
   top: 100%;
@@ -38,12 +41,6 @@ body .ui-menu .ui-menu-item:last-child {
   align-items: center;
 }
 .mse2-ac-item__separator {
-  width: 1px;
-  min-width: 1px;
-  height: 100%;
-  min-height: 48px;
-  background: #a2a2a2;
-  flex-shrink: 0;
 }
 .mse2-ac-item__image {
   width: 48px;
@@ -57,6 +54,7 @@ body .ui-menu .ui-menu-item:last-child {
   margin-left: 8px;
   margin-right: 8px;
   line-height: 1;
+  padding: 8px 0;
 }
 .mse2-ac-item__price {
   font-weight: bold;
