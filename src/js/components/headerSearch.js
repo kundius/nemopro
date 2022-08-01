@@ -26,7 +26,11 @@ if (toggle && search) {
             });
           }
 
-          console.log(menu.children());
+          const children = menu.children('.ui-menu-item');
+          console.log(children.length);
+          if (children.length > 5) {
+            console.log(children.last());
+          }
         }
       });
 
