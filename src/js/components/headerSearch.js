@@ -63,11 +63,12 @@ if (toggle && search) {
     // if (window.scrollY - prevScroll) {
 
     // }
+    console.log(window.scrollY, prevScroll, scrolled)
 
     scrolled += window.scrollY - prevScroll;
     prevScroll = window.scrollY;
-    console.log($input.autocomplete( "search" ));
-    console.log($input.autocomplete( "instance" ));
+    $input.autocomplete( "search" );
+    // console.log($input.autocomplete( "instance" ));
 
     // console.log(scrolled);
 
