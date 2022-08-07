@@ -49,7 +49,10 @@ if (toggle && search) {
     window.removeEventListener("scroll", onScroll);
   };
 
-  const onScroll = () => hide();
+  const onScroll = (e) => {
+    console.log(e);
+    // hide();
+  }
 
   toggle.addEventListener("click", (e) => {
     e.preventDefault();
