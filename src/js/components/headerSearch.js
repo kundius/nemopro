@@ -76,9 +76,10 @@ if (toggle && search) {
     scrolled += Math.abs((window.scrollY - prevScroll));
 
     prevScroll = window.scrollY;
-    $input.autocomplete( "search" );
-    console.log($input.autocomplete( "instance" ));
-    console.log($input.autocomplete( "widget" ));
+    // $input.autocomplete( "search" );
+    // console.log($input.autocomplete( "instance" ));
+    // console.log($input.autocomplete( "widget" ));
+    $input.autocomplete( "widget" ).css('top', $input.autocomplete( "instance" ).element.get(0).getBoundingClientRect().bottom + window.scrollY)
     // console.log($input.autocomplete( "instance" ).element.get(0).getBoundingClientRect().bottom);
 
     console.log(scrolled);
