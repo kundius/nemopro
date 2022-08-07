@@ -49,7 +49,7 @@ if (toggle && search) {
     //       .bottom + window.scrollY
     //   );
 
-    if (scrolled > 48) {
+    if (scrolled > 80) {
       hide();
     }
   };
