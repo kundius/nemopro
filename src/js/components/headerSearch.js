@@ -71,7 +71,7 @@ if (toggle && search) {
     //       .bottom + window.scrollY
     //   );
 
-    if (scrolled > 20) {
+    if (scrolled > 24) {
       hide();
     }
   };
