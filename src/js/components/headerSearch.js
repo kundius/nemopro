@@ -68,7 +68,8 @@ if (toggle && search) {
     scrolled += window.scrollY - prevScroll;
     prevScroll = window.scrollY;
     $input.autocomplete( "search" );
-    // console.log($input.autocomplete( "instance" ));
+    // console.log($input.autocomplete( "instance" ).get(0).getBoundingClientRect(););
+    console.log($input.autocomplete( "instance" ).get(0).getBoundingClientRect().bottom);
 
     // console.log(scrolled);
 
