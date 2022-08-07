@@ -1,5 +1,3 @@
-const { throttle, debounce } = require("throttle-debounce");
-
 const toggle = document.querySelector(".js-header-search-toggle");
 const search = document.querySelector(".u-header-search");
 
@@ -7,7 +5,7 @@ if (toggle && search) {
   let isVisible = false;
   const input = search.querySelector('[name="query"]');
   const $input = $(input);
-  let autocompleteInitialized = false;
+  // let autocompleteInitialized = false;
   let prevScroll = window.scrollY;
   let scrolled = 0;
 
@@ -17,32 +15,10 @@ if (toggle && search) {
     isVisible = true;
     input.focus();
 
-    if (!autocompleteInitialized) {
-      $input.autocomplete({
-        open: function (e) {
-          const menu = $(".ui-menu:visible");
-          let close = menu.find(".mse2-ac-close");
-          if (close.length === 0) {
-            close = $('<li class="mse2-ac-close">Закрыть</li>').appendTo(menu);
-            close.on("click", function () {
-              $input.val("");
-              hide();
-            });
-          }
+    // if (!autocompleteInitialized) {
 
-          const children = menu.children(".ui-menu-item");
-          if (children.length > 5) {
-            children
-              .last()
-              .replaceWith(
-                `<li class="mse2-ac-more"><a href="/search?query=${$input.val()}">Показать все</a></li>`
-              );
-          }
-        },
-      });
-
-      autocompleteInitialized = true;
-    }
+    //   autocompleteInitialized = true;
+    // }
 
     window.addEventListener("scroll", onScroll);
   };
@@ -112,37 +88,39 @@ if (toggle && search) {
   // });
 }
 
-// $('input[name="query"]').each(function () {
-//   const input = $(this);
+$('input[name="query"]').each(function () {
+  const input = $(this);
 
 //   const onScroll = () => {
 //     input.autocomplete("close");
 //   };
 
-//   let initialized = false;
+  let initialized = false;
 
-//   input.on("focus", function () {
-//     if (initialized) return;
+  input.on("focus", function () {
+    $input.autocomplete({
+      open: function (e) {
+        const menu = $(".ui-menu:visible");
+        let close = menu.find(".mse2-ac-close");
+        if (close.length === 0) {
+          close = $('<li class="mse2-ac-close">Закрыть</li>').appendTo(menu);
+          close.on("click", function () {
+            $input.val("");
+            hide();
+          });
+        }
 
-//     input.autocomplete({
-//       open: function (e) {
-//         const menu = $(".ui-menu:visible");
-//         let close = menu.find(".mse2-ac-close");
-//         if (close.length === 0) {
-//           close = $('<li class="mse2-ac-close">Закрыть</li>').appendTo(menu);
-//           close.on("click", function () {
-//             input.val("");
-//             input.autocomplete("close");
-//           });
-//         }
+        const children = menu.children(".ui-menu-item");
+        if (children.length > 5) {
+          children
+            .last()
+            .replaceWith(
+              `<li class="mse2-ac-more"><a href="/search?query=${$input.val()}">Показать все</a></li>`
+            );
+        }
+      },
+    });
 
-//         window.addEventListener("scroll", onScroll);
-//       },
-//       close: function (e) {
-//         window.removeEventListener("scroll", onScroll);
-//       },
-//     });
-
-//     initialized = true;
-//   });
-// });
+    initialized = true;
+  });
+});
