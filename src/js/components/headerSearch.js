@@ -59,30 +59,17 @@ if (toggle && search) {
   };
 
   const onScroll = (e) => {
-    // let forward = window.scrollY > prevScroll
-    // if (window.scrollY - prevScroll) {
-
-    // }
-    // console.log(window.scrollY, prevScroll, scrolled)
-
-    // let diff = window.scrollY - prevScroll
-    // let newScrolled = Math.abs(scrolled + (window.scrollY - prevScroll));
-    // console.log(newScrolled);
-    // if (newScrolled < scrolled) {
-    //   scrolled = 0
-    // } else {
-    //   scrolled = newScrolled;
-    // }
-    scrolled += Math.abs((window.scrollY - prevScroll));
-
+    scrolled += Math.abs(window.scrollY - prevScroll);
     prevScroll = window.scrollY;
-    // $input.autocomplete( "search" );
-    // console.log($input.autocomplete( "instance" ));
-    // console.log($input.autocomplete( "widget" ));
-    $input.autocomplete( "widget" ).css('top', $input.autocomplete( "instance" ).element.get(0).getBoundingClientRect().bottom + window.scrollY)
-    // console.log($input.autocomplete( "instance" ).element.get(0).getBoundingClientRect().bottom);
 
-    console.log(scrolled);
+    $input.autocomplete("search");
+    // $input
+    //   .autocomplete("widget")
+    //   .css(
+    //     "top",
+    //     $input.autocomplete("instance").element.get(0).getBoundingClientRect()
+    //       .bottom + window.scrollY
+    //   );
 
     if (scrolled > 20) {
       hide();
