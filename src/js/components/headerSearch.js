@@ -6,7 +6,7 @@ if (toggle && search) {
   const input = search.querySelector('[name="query"]');
   const $input = $(input);
   let autocompleteInitialized = false;
-  let prevScroll = window.scrollY;
+  let prevScroll = null;
   let scrolled = 0;
 
   const open = () => {
@@ -37,6 +37,10 @@ if (toggle && search) {
   };
 
   const onScroll = (e) => {
+    if (prevScroll === null) {
+      prevScroll = window.scrollY
+    }
+
     scrolled += Math.abs(window.scrollY - prevScroll);
     prevScroll = window.scrollY;
 

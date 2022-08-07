@@ -48,22 +48,26 @@ body .ui-widget.ui-widget-content {
 }
 .mse2-ac-close::before {
   content: "";
-  width: 18px;
+  width: 20px;
   height: 2px;
   background: currentColor;
   position: absolute;
   left: 50%;
   top: 50%;
+  transform-origin: 0 0;
+  border-radius: 2px;
   transform: rotate(-45deg) translate(-50%, -50%);
 }
 .mse2-ac-close::after {
   content: "";
-  width: 18px;
+  width: 20px;
   height: 2px;
   background: currentColor;
   position: absolute;
   left: 50%;
   top: 50%;
+  transform-origin: 0 0;
+  border-radius: 2px;
   transform: rotate(45deg) translate(-50%, -50%);
 }
 .mse2-ac-item {
