@@ -61,7 +61,8 @@ if (toggle && search) {
   const onScroll = (e) => {
     scrolled += Math.abs(window.scrollY - prevScroll);
     prevScroll = window.scrollY;
-    $input.autocomplete( "option", "position", { my : "right top", at: "right bottom" } );
+    $input.autocomplete( "disable" );
+    $input.autocomplete( "enable" );
 
     // console.log(scrolled);
 
