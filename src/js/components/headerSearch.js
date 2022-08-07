@@ -108,6 +108,7 @@ $('input[name="query"]').each(function () {
           close = $('<li class="mse2-ac-close">Закрыть</li>').appendTo(menu);
           close.on("click", function () {
             input.val("");
+            input.autocomplete("close");
             // hide();
           });
         }
