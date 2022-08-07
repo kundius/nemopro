@@ -1,3 +1,5 @@
+const { throttle, debounce } = require("throttle-debounce");
+
 const toggle = document.querySelector(".js-header-search-toggle");
 const search = document.querySelector(".u-header-search");
 
@@ -26,11 +28,15 @@ if (toggle && search) {
             });
           }
 
-          const children = menu.children('.ui-menu-item');
+          const children = menu.children(".ui-menu-item");
           if (children.length > 5) {
-            children.last().replaceWith(`<li class="mse2-ac-more"><a href="/search?query=${$input.val()}">Показать все</a></li>`);
+            children
+              .last()
+              .replaceWith(
+                `<li class="mse2-ac-more"><a href="/search?query=${$input.val()}">Показать все</a></li>`
+              );
           }
-        }
+        },
       });
 
       autocompleteInitialized = true;
@@ -48,11 +54,20 @@ if (toggle && search) {
 
     window.removeEventListener("scroll", onScroll);
   };
+    
+  const debounceFunc = debounce(
+    100,
+    (num) => {
+      console.log('num:', num);
+    },
+    { atBegin: false }
+  );
 
   const onScroll = (e) => {
-    console.log(e);
+    debounceFunc(1);
+
     // hide();
-  }
+  };
 
   toggle.addEventListener("click", (e) => {
     e.preventDefault();
@@ -63,7 +78,7 @@ if (toggle && search) {
       open();
     }
   });
-  
+
   // $input.on("focus", function () {
   //   if (autocompleteInitialized) return;
 
