@@ -1,11 +1,11 @@
 @import "variables";
 
 body .ui-front {
-  margin-top: 8px;
+  // margin-top: 8px;
   z-index: 986;
-  @media (max-width: $breakpoint-mini-max) {
-    margin-top: 4px;
-  }
+  // @media (max-width: $breakpoint-mini-max) {
+  //   margin-top: 4px;
+  // }
 }
 body .ui-menu .ui-menu-item-wrapper {
   padding: 0;
