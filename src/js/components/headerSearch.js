@@ -5,7 +5,7 @@ if (toggle && search) {
   let isVisible = false;
   const input = search.querySelector('[name="query"]');
   const $input = $(input);
-  // let autocompleteInitialized = false;
+  let autocompleteInitialized = false;
   let prevScroll = window.scrollY;
   let scrolled = 0;
 
@@ -15,10 +15,12 @@ if (toggle && search) {
     isVisible = true;
     input.focus();
 
-    // if (!autocompleteInitialized) {
-
-    //   autocompleteInitialized = true;
-    // }
+    if (!autocompleteInitialized) {
+      $input.autocomplete({
+        close: hide,
+      });
+      autocompleteInitialized = true;
+    }
 
     window.addEventListener("scroll", onScroll);
   };
@@ -91,9 +93,9 @@ if (toggle && search) {
 $('input[name="query"]').each(function () {
   const input = $(this);
 
-//   const onScroll = () => {
-//     input.autocomplete("close");
-//   };
+  //   const onScroll = () => {
+  //     input.autocomplete("close");
+  //   };
 
   let initialized = false;
 
@@ -106,7 +108,7 @@ $('input[name="query"]').each(function () {
           close = $('<li class="mse2-ac-close">Закрыть</li>').appendTo(menu);
           close.on("click", function () {
             input.val("");
-            hide();
+            // hide();
           });
         }
 
