@@ -2,6 +2,7 @@
 
 body .ui-front {
   margin-top: 8px;
+  z-index: 986;
   @media (max-width: $breakpoint-mini-max) {
     margin-top: 4px;
   }
