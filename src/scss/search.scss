@@ -54,7 +54,7 @@ body .ui-widget.ui-widget-content {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: rotate(-45deg);
+  transform: rotate(-45deg) translate(-50%, -50%);
 }
 .mse2-ac-close::after {
   content: "";
@@ -64,7 +64,7 @@ body .ui-widget.ui-widget-content {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: rotate(45deg);
+  transform: rotate(45deg) translate(-50%, -50%);
 }
 .mse2-ac-item {
   display: flex;
