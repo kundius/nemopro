@@ -59,21 +59,29 @@ if (toggle && search) {
   };
 
   const onScroll = (e) => {
-    let forward = window.scrollY > prevScroll
+    // let forward = window.scrollY > prevScroll
     // if (window.scrollY - prevScroll) {
 
     // }
-    console.log(window.scrollY, prevScroll, scrolled)
+    // console.log(window.scrollY, prevScroll, scrolled)
 
-    scrolled += window.scrollY - prevScroll;
+    // let diff = window.scrollY - prevScroll
+    let newScrolled = Math.abs(scrolled + (window.scrollY - prevScroll));
+    console.log(newScrolled);
+    if (newScrolled < scrolled) {
+      scrolled = 0
+    } else {
+      scrolled = newScrolled;
+    }
+
     prevScroll = window.scrollY;
     $input.autocomplete( "search" );
     // console.log($input.autocomplete( "instance" ).get(0).getBoundingClientRect(););
-    console.log($input.autocomplete( "instance" ).get(0).getBoundingClientRect().bottom);
+    console.log($input.autocomplete( "instance" )[0].getBoundingClientRect().bottom);
 
     // console.log(scrolled);
 
-    if (scrolled > Math.abs(50)) {
+    if (scrolled > 50) {
       hide();
     }
   };
