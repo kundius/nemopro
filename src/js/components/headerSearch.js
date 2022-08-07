@@ -98,14 +98,14 @@ $('input[name="query"]').each(function () {
   let initialized = false;
 
   input.on("focus", function () {
-    $input.autocomplete({
+    input.autocomplete({
       open: function (e) {
         const menu = $(".ui-menu:visible");
         let close = menu.find(".mse2-ac-close");
         if (close.length === 0) {
           close = $('<li class="mse2-ac-close">Закрыть</li>').appendTo(menu);
           close.on("click", function () {
-            $input.val("");
+            input.val("");
             hide();
           });
         }
@@ -115,7 +115,7 @@ $('input[name="query"]').each(function () {
           children
             .last()
             .replaceWith(
-              `<li class="mse2-ac-more"><a href="/search?query=${$input.val()}">Показать все</a></li>`
+              `<li class="mse2-ac-more"><a href="/search?query=${input.val()}">Показать все</a></li>`
             );
         }
       },
