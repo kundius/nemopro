@@ -61,9 +61,11 @@ if (toggle && search) {
   const onScroll = (e) => {
     scrolled += Math.abs(window.scrollY - prevScroll);
     prevScroll = window.scrollY;
+    $input.autocomplete( "option", "position", { my : "right top", at: "right bottom" } );
+
     // console.log(scrolled);
 
-    if (scrolled > 50) {
+    if (scrolled > 500) {
       hide();
     }
   };
