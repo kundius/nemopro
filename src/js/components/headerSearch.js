@@ -77,8 +77,9 @@ if (toggle && search) {
 
     prevScroll = window.scrollY;
     $input.autocomplete( "search" );
-    // console.log($input.autocomplete( "instance" ).get(0).getBoundingClientRect(););
-    console.log($input.autocomplete( "instance" ).element.get(0).getBoundingClientRect().bottom);
+    console.log($input.autocomplete( "instance" ));
+    console.log($input.autocomplete( "widget" ));
+    // console.log($input.autocomplete( "instance" ).element.get(0).getBoundingClientRect().bottom);
 
     console.log(scrolled);
 
