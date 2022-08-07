@@ -59,14 +59,19 @@ if (toggle && search) {
   };
 
   const onScroll = (e) => {
-    scrolled += Math.abs(window.scrollY - prevScroll);
+    let forward = window.scrollY > prevScroll
+    // if (window.scrollY - prevScroll) {
+
+    // }
+
+    scrolled += window.scrollY - prevScroll;
     prevScroll = window.scrollY;
     console.log($input.autocomplete( "search" ));
     console.log($input.autocomplete( "instance" ));
 
     // console.log(scrolled);
 
-    if (scrolled > 500) {
+    if (scrolled > Math.abs(50)) {
       hide();
     }
   };
