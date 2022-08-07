@@ -8,6 +8,8 @@ if (toggle && search) {
   const input = search.querySelector('[name="query"]');
   const $input = $(input);
   let autocompleteInitialized = false;
+  let prevScroll = window.scrollY;
+  let scrolled = 0;
 
   const open = () => {
     toggle.classList.add("active");
@@ -54,17 +56,11 @@ if (toggle && search) {
 
     window.removeEventListener("scroll", onScroll);
   };
-    
-  const debounceFunc = debounce(
-    100,
-    (num) => {
-      console.log('num:', num);
-    },
-    { atBegin: false }
-  );
 
   const onScroll = (e) => {
-    debounceFunc(1);
+    scrolled += Math.abs(window.scrollY - prevScroll);
+    prevScroll = window.scrollY;
+    console.log(scrolled);
 
     // hide();
   };
