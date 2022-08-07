@@ -78,11 +78,11 @@ if (toggle && search) {
     prevScroll = window.scrollY;
     $input.autocomplete( "search" );
     // console.log($input.autocomplete( "instance" ).get(0).getBoundingClientRect(););
-    console.log($input.autocomplete( "instance" )[0]);
+    console.log($input.autocomplete( "instance" ));
 
     // console.log(scrolled);
 
-    if (scrolled > 50) {
+    if (scrolled > 20) {
       hide();
     }
   };
