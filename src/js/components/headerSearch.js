@@ -53,6 +53,7 @@ if (toggle && search) {
     isVisible = false;
     input.blur();
     $input.autocomplete("close");
+    scrolled = 0;
 
     window.removeEventListener("scroll", onScroll);
   };
@@ -60,9 +61,11 @@ if (toggle && search) {
   const onScroll = (e) => {
     scrolled += Math.abs(window.scrollY - prevScroll);
     prevScroll = window.scrollY;
-    console.log(scrolled);
+    // console.log(scrolled);
 
-    // hide();
+    if (scrolled > 50) {
+      hide();
+    }
   };
 
   toggle.addEventListener("click", (e) => {
