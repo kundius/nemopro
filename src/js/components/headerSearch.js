@@ -86,6 +86,7 @@ $('input[name="query"]').each(function () {
           close.on("click", function () {
             input.val("");
             input.autocomplete("close");
+            console.log(input._onAutocompleteClose);
             if (typeof input._onAutocompleteClose !== 'undefined') {
               input._onAutocompleteClose();
             }
