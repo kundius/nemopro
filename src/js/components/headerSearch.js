@@ -72,20 +72,21 @@ if (toggle && search) {
 }
 
 $('input[name="query"]').each(function () {
-  const input = $(this);
+  const input = this;
+  const $input = $(this);
 
   let initialized = false;
 
-  input.on("focus", function () {
-    input.autocomplete({
+  $input.on("focus", function () {
+    $input.autocomplete({
       open: function (e) {
         const menu = $(".ui-menu:visible");
         let close = menu.find(".mse2-ac-close");
         if (close.length === 0) {
           close = $('<li class="mse2-ac-close"></li>').appendTo(menu);
           close.on("click", function () {
-            input.val("");
-            input.autocomplete("close");
+            $input.val("");
+            $input.autocomplete("close");
             console.log(input._onAutocompleteClose);
             if (typeof input._onAutocompleteClose !== 'undefined') {
               input._onAutocompleteClose();
@@ -98,7 +99,7 @@ $('input[name="query"]').each(function () {
           children
             .last()
             .replaceWith(
-              `<li class="mse2-ac-more"><a href="/search?query=${input.val()}">Показать все</a></li>`
+              `<li class="mse2-ac-more"><a href="/search?query=${$input.val()}">Показать все</a></li>`
             );
         }
       },
