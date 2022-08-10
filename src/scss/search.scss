@@ -28,7 +28,7 @@ body .ui-widget.ui-widget-content {
   background: #fff;
 }
 .ui-widget-content .mse2-ac-more a {
-  color: #016a88;
+  color: #002837;
   text-decoration: underline;
   display: block;
   padding: 8px;
@@ -40,16 +40,15 @@ body .ui-widget.ui-widget-content {
   right: 0;
   height: 42px;
   width: 42px;
-  background-color: #fff;
-  color: #236ba6;
+  background-color: #e5b612;
+  color: #002837;
+  border-bottom: 1px solid #a2a2a2;
   cursor: pointer;
-  border: 1px solid #a2a2a2;
   border-top: none;
   border-right: none;
 }
 .mse2-ac-close:hover {
-  color: #fff;
-  background: #236ba6;
+  background: #ffce23;
 }
 .mse2-ac-close::before {
   content: "";
