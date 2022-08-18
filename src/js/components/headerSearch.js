@@ -41,7 +41,7 @@ if (toggle && search) {
       prevScroll = window.scrollY
     }
 
-    scrolled += window.scrollY + prevScroll;
+    scrolled += prevScroll - window.scrollY;
     console.log(scrolled, window.scrollY, prevScroll);
 
     prevScroll = window.scrollY;
