@@ -41,7 +41,9 @@ if (toggle && search) {
       prevScroll = window.scrollY
     }
 
-    scrolled += Math.abs(window.scrollY - prevScroll);
+    scrolled += window.scrollY + prevScroll;
+    console.log(scrolled, window.scrollY, prevScroll);
+
     prevScroll = window.scrollY;
 
     $input.autocomplete("search");
