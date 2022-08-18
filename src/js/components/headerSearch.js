@@ -50,7 +50,7 @@ if (toggle && search) {
       scrolled = 0;
     }
 
-    scrolled += Math.abs(window.scrollY - prevScroll);
+    scrolled += Math.abs(scrollDir ? window.scrollY - prevScroll : prevScroll - window.scrollY);
 
     prevScroll = window.scrollY;
     prevScrollDir = window.scrollY >= prevScroll ? 1 : -1;
