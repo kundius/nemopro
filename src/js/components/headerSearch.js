@@ -43,13 +43,13 @@ if (toggle && search) {
 
     if (window.scrollY >= prevScroll) {
       // down
-      scrolled = scrolled + window.scrollY - prevScroll;
+      scrolled = scrolled + (window.scrollY - prevScroll);
       console.log('down', scrolled, window.scrollY, prevScroll);
       // scrolled += prevScroll - window.scrollY;
     } else {
       // up
-      scrolled = scrolled - prevScroll - window.scrollY;
-      console.log('up', scrolled, window.scrollY, prevScroll);
+      scrolled = scrolled - (prevScroll - window.scrollY);
+      console.log('up', scrolled, window.scrollY, prevScroll, window.scrollY - prevScroll);
     }
     // scrolled += prevScroll - window.scrollY;
 
