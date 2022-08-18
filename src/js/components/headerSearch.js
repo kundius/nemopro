@@ -45,6 +45,7 @@ if (toggle && search) {
 
     scrollDir = window.scrollY >= prevScroll ? 1 : -1;
 
+    console.log(scrollDir, prevScrollDir, scrolled);
     if (scrollDir != prevScrollDir) {
       scrolled = 0;
     }
