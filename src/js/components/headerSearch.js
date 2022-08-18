@@ -41,14 +41,14 @@ if (toggle && search) {
       prevScroll = window.scrollY
     }
 
-    if (window.scrollY > prevScroll) {
+    if (window.scrollY >= prevScroll) {
       // down
-      scrolled += Math.max(0, scrolled + window.scrollY - prevScroll);
+      scrolled = Math.max(0, scrolled + window.scrollY - prevScroll);
       console.log('down', scrolled, window.scrollY, prevScroll);
       // scrolled += prevScroll - window.scrollY;
     } else {
       // up
-      scrolled -= Math.max(0, scrolled - prevScroll - window.scrollY);
+      scrolled = Math.max(0, scrolled - prevScroll - window.scrollY);
       console.log('up', scrolled, window.scrollY, prevScroll);
     }
     // scrolled += prevScroll - window.scrollY;
