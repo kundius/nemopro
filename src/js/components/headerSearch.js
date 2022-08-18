@@ -6,7 +6,9 @@ if (toggle && search) {
   const input = search.querySelector('[name="query"]');
   const $input = $(input);
   // let autocompleteInitialized = false;
-  let prevScroll = null;
+  let prevScroll = window.scrollY;
+  let scrollDir = 1;
+  let prevScrollDir = 1;
   let scrolled = 0;
 
   const open = () => {
@@ -37,23 +39,20 @@ if (toggle && search) {
   };
 
   const onScroll = (e) => {
-    if (prevScroll === null) {
-      prevScroll = window.scrollY
+    // if (prevScroll === null) {
+    //   prevScroll = window.scrollY
+    // }
+
+    scrollDir = window.scrollY >= prevScroll ? 1 : -1;
+
+    if (scrollDir != prevScrollDir) {
+      scrolled = 0;
     }
 
-    if (window.scrollY >= prevScroll) {
-      // down
-      scrolled = scrolled + (window.scrollY - prevScroll);
-      console.log('down', scrolled, window.scrollY, prevScroll);
-      // scrolled += prevScroll - window.scrollY;
-    } else {
-      // up
-      scrolled = scrolled - (prevScroll - window.scrollY);
-      console.log('up', scrolled, window.scrollY, prevScroll, window.scrollY - prevScroll);
-    }
-    // scrolled += prevScroll - window.scrollY;
+    scrolled += Math.abs(window.scrollY - prevScroll);
 
     prevScroll = window.scrollY;
+    prevScrollDir = window.scrollY >= prevScroll ? 1 : -1;
 
     $input.autocomplete("search");
     // $input
