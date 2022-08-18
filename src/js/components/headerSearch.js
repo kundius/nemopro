@@ -93,14 +93,7 @@ $('input[name="query"]').each(function () {
           });
         }
 
-        const children = menu.children(".ui-menu-item");
-        if (children.length > 5) {
-          children
-            .last()
-            .replaceWith(
-              `<li class="mse2-ac-more"><a href="/search?query=${$input.val()}">Показать все</a></li>`
-            );
-        }
+        menu.append(`<li class="mse2-ac-more"><a href="/search?query=${$input.val()}">Показать все</a></li>`);
       },
     });
 
