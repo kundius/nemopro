@@ -7,8 +7,8 @@ if (toggle && search) {
   const $input = $(input);
   // let autocompleteInitialized = false;
   let prevScroll = null;
-  let scrollDir = 1;
-  let prevScrollDir = 1;
+  let scrollDir = null;
+  let prevScrollDir = null;
   let scrolled = 0;
 
   const open = () => {
@@ -44,6 +44,10 @@ if (toggle && search) {
     }
 
     scrollDir = window.scrollY >= prevScroll ? 1 : -1;
+
+    if (prevScrollDir === null) {
+      prevScrollDir = scrollDir;
+    }
 
     if (scrollDir != prevScrollDir) {
       scrolled = 0;
