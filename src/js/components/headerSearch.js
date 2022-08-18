@@ -98,7 +98,7 @@ $(function() {
           const menu = $(".ui-menu:visible");
           let close = menu.find(".mse2-ac-close");
           if (close.length === 0) {
-            close = $('<li class="mse2-ac-wrapper ui-menu-item mse2-ac-close"></li>').appendTo(menu);
+            close = $('<li class="ui-menu-item mse2-ac-close"></li>').appendTo(menu);
             close.on("click", function () {
               $input.val("");
               $input.autocomplete("close");
@@ -108,7 +108,7 @@ $(function() {
             });
           }
   
-          menu.append(`<li class="mse2-ac-wrapper ui-menu-item mse2-ac-more"><a href="/search?query=${$input.val()}">Показать все</a></li>`);
+          menu.append(`<li class="ui-menu-item mse2-ac-more"><a href="/search?query=${$input.val()}">Показать все</a></li>`);
         },
       });
   
