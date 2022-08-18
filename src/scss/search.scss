@@ -19,6 +19,17 @@ body .ui-menu .ui-menu-item {
 body .ui-widget.ui-widget-content {
   border: none;
 }
+body .ui-state-active,
+body .ui-widget-content .ui-state-active,
+body .ui-widget-header .ui-state-active,
+body a.ui-button:active,
+body .ui-button:active,
+body .ui-button.ui-state-active:hover {
+  border: 1px solid #01718f;
+  background: #01718f;
+  font-weight: normal;
+  color: #fff;
+}
 .ui-widget-content .mse2-ac-more {
   background-color: #014b63;
   color: #ffffff;
