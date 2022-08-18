@@ -39,13 +39,8 @@ if (toggle && search) {
   };
 
   const onScroll = (e) => {
-    // if (prevScroll === null) {
-    //   prevScroll = window.scrollY
-    // }
-
     scrollDir = window.scrollY >= prevScroll ? 1 : -1;
 
-    console.log(scrollDir, prevScrollDir, scrolled);
     if (scrollDir != prevScrollDir) {
       scrolled = 0;
     }
