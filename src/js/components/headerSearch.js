@@ -53,7 +53,7 @@ if (toggle && search) {
     scrolled += Math.abs(scrollDir ? window.scrollY - prevScroll : prevScroll - window.scrollY);
 
     prevScroll = window.scrollY;
-    prevScrollDir = window.scrollY >= prevScroll ? 1 : -1;
+    prevScrollDir = scrollDir;
 
     $input.autocomplete("search");
     // $input
