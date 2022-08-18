@@ -107,7 +107,7 @@ $('input[name="query"]').each(function () {
           });
         }
 
-        menu.append(`<li class="mse2-ac-more"><a href="/search?query=${$input.val()}">Показать все</a></li>`);
+        menu.append(`<li class="mse2-ac-wrapper ui-menu-item mse2-ac-more"><a href="/search?query=${$input.val()}">Показать все</a></li>`);
       },
     });
 
