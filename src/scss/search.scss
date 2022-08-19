@@ -102,10 +102,9 @@ body .ui-menu .mse2-ac-close::after {
 .mse2-ac-item__title {
   flex-grow: 1;
   font-size: 14px;
-  margin-left: 8px;
-  margin-right: 8px;
   line-height: 1;
   padding: 8px 0;
+  margin-right: 8px;
 }
 .mse2-ac-item__coupon {
   background: #fe0000;
@@ -115,10 +114,10 @@ body .ui-menu .mse2-ac-close::after {
   border-radius: 6px;
   min-width: 60px;
   padding: 5px;
-  width: 100%;
   font-size: 16px;
   text-transform: uppercase;
   font-weight: 600;
+  margin-right: 8px;
 }
 .mse2-ac-item__price {
   font-weight: bold;
