@@ -30,27 +30,27 @@ body .ui-button.ui-state-active:hover {
   font-weight: normal;
   color: #fff;
 }
-.ui-widget-content .mse2-ac-more {
+.ui-menu.ui-widget-content .mse2-ac-more.ui-menu-item {
   background-color: #014b63;
   color: #ffffff;
-  border-bottom: 1px solid #a2a2a2;
+  border-bottom: none;
   position: absolute;
   left: 0;
   right: 0;
   top: 100%;
   z-index: 1;
 }
-.ui-widget-content .mse2-ac-more:hover {
+.ui-menu.ui-widget-content .mse2-ac-more.ui-menu-item:hover {
   background: #002837;
 }
-.ui-widget-content .mse2-ac-more a {
+.ui-menu.ui-widget-content .mse2-ac-more.ui-menu-item a {
   color: inherit;
   text-decoration: underline;
   display: block;
   padding: 8px;
   text-align: center;
 }
-.mse2-ac-close {
+.ui-menu.ui-widget-content .mse2-ac-more.ui-menu-item {
   position: absolute;
   top: 100%;
   right: 0;
@@ -64,10 +64,10 @@ body .ui-button.ui-state-active:hover {
   border-top: none;
   border-right: none;
 }
-.mse2-ac-close:hover {
+.ui-menu.ui-widget-content .mse2-ac-more.ui-menu-item:hover {
   background: #002837;
 }
-.mse2-ac-close::before {
+.ui-menu.ui-widget-content .mse2-ac-more.ui-menu-item::before {
   content: "";
   width: 20px;
   height: 1px;
@@ -79,7 +79,7 @@ body .ui-button.ui-state-active:hover {
   border-radius: 2px;
   transform: rotate(-45deg) translate(-50%, -50%);
 }
-.mse2-ac-close::after {
+.ui-menu.ui-widget-content .mse2-ac-more.ui-menu-item::after {
   content: "";
   width: 20px;
   height: 1px;
