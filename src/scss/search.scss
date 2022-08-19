@@ -50,7 +50,7 @@ body .ui-button.ui-state-active:hover {
   padding: 8px;
   text-align: center;
 }
-.ui-menu.ui-widget-content .mse2-ac-more.ui-menu-item {
+.ui-menu.ui-widget-content .mse2-ac-close.ui-menu-item {
   position: absolute;
   top: 100%;
   right: 0;
@@ -64,10 +64,10 @@ body .ui-button.ui-state-active:hover {
   border-top: none;
   border-right: none;
 }
-.ui-menu.ui-widget-content .mse2-ac-more.ui-menu-item:hover {
+.ui-menu.ui-widget-content .mse2-ac-close.ui-menu-item:hover {
   background: #002837;
 }
-.ui-menu.ui-widget-content .mse2-ac-more.ui-menu-item::before {
+.ui-menu.ui-widget-content .mse2-ac-close.ui-menu-item::before {
   content: "";
   width: 20px;
   height: 1px;
