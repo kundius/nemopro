@@ -98,13 +98,13 @@ body .ui-menu .mse2-ac-close::after {
   height: 48px;
   display: block;
   flex-shrink: 0;
+  margin-right: 8px;
 }
 .mse2-ac-item__title {
   flex-grow: 1;
   font-size: 14px;
   line-height: 1;
   padding: 8px 0;
-  margin-right: 8px;
 }
 .mse2-ac-item__coupon {
   background: #fe0000;
