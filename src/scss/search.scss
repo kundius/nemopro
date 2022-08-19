@@ -119,9 +119,6 @@ body .ui-menu .mse2-ac-close::after {
   font-weight: 600;
   margin-top: 2px;
 }
-.mse2-ac-item__coupon i {
-  font-size: 9px;
-}
 .mse2-ac-item__price {
   font-weight: bold;
   font-size: 16px;
@@ -136,7 +133,7 @@ body .ui-menu .mse2-ac-close::after {
   text-align: right;
 }
 .mse2-ac-item__price i {
-  font-size: 14px;
+  font-size: 90%;
 }
 .mse2-ac-item__price-old {
   color: red;
