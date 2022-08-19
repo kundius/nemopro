@@ -118,13 +118,17 @@ body .ui-button.ui-state-active:hover {
   line-height: 1;
   margin-left: 8px;
   margin-right: 8px;
+  position: relative;
 }
 .mse2-ac-item__price i {
   font-size: 12px;
 }
 .mse2-ac-item__price-old {
   color: red;
-  font-size: 18px;
+  font-size: 12px;
+  position: absolute;
+  bottom: 100%;
+  right: 0;
 }
 .ui-state-active,
 .ui-widget-content .ui-state-active,
