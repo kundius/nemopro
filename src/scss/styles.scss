@@ -2566,25 +2566,27 @@ jdiv {
   font-size: 14px;
   font-weight: bold;
   color: #333333;
-  line-height: 1.2;
-  padding: 13px 0 4px;
+  line-height: 1.25;
 }
 .h-review__address {
   font-size: 12px;
   color: #333333;
-  line-height: 1.2;
+  line-height: 1.25;
+}
+.h-review__headline {
+  display: flex;
+  align-items: center;
 }
 .h-review__links {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  line-height: 1;
+  display: flex;
+  margin-left: 12px;
 }
 .h-review__vk {
-  background: url("../img/icon-vk.jpg") no-repeat;
-  width: 30px;
-  height: 30px;
+  background: url(/files/vk.png) no-repeat;
+  width: 25px;
+  height: 25px;
   display: inline-block;
+  background-size: cover;
 }
 .h-review__desc {
     font-size: 12px;
@@ -2592,10 +2594,10 @@ jdiv {
     font-style: italic;
     position: relative;
     clear: both;
-    margin: 18px 0 10px 16px;
+    margin: 0;
     line-height: 1.25;
     p {
-        margin: 0;
+      margin: 0;
     }
 }
 .h-review__quote {
