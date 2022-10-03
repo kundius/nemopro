@@ -2557,9 +2557,15 @@ jdiv {
     border-radius: 10px;
     display: block;
   }
+  @media (max-width: $breakpoint-mini-max) {
+    width: 80px;
+  }
 }
 .h-review__info {
-  flex-grow: 1;
+  width: calc(100% - 112px);
+  @media (max-width: $breakpoint-mini-max) {
+    width: calc(100% - 92px);
+  }
 }
 .h-review__name {
   font-size: 14px;
