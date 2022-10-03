@@ -2547,20 +2547,19 @@ jdiv {
 }
 .h-review {
   margin: 25px 0;
+  display: flex;
 }
 .h-review__image {
-  margin-right: 7px;
-  float: left;
+  margin-right: 12px;
+  width: 100px;
+  flex-shrink: 0;
   img {
     border-radius: 10px;
     display: block;
   }
 }
 .h-review__info {
-  overflow: hidden;
-  position: relative;
-  padding-bottom: 36px;
-  min-height: 100px;
+  flex-grow: 1;
 }
 .h-review__name {
   font-size: 14px;
@@ -2579,7 +2578,7 @@ jdiv {
 }
 .h-review__links {
   display: flex;
-  margin-left: 12px;
+  margin: -4px 12px;
 }
 .h-review__vk {
   background: url(/files/vk.png) no-repeat;
