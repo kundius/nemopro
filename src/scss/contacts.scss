@@ -93,6 +93,7 @@
 }
 
 .contacts-cdek__description {
+  width: 100%;
 }
 
 .contacts-cdek__description p {
@@ -101,4 +102,8 @@
 
 .contacts-cdek__description p + p {
   margin-top: 15px;
+}
+
+.contacts-cdek__widget {
+  width: 100%;
 }
