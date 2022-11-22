@@ -2,6 +2,7 @@
 @import "uikit";
 @import "header";
 @import "search";
+@import "contacts";
 
 [class*=uk-icon-] {
     font-family: $icon-font;
@@ -12139,6 +12140,14 @@ td.u-product-options__items {
   flex-direction: column;
 }
 
+.detail-gallery_contacts .detail-gallery-main {
+  padding-top: 75%;
+}
+
+.detail-gallery_contacts .detail-gallery-thumbs {
+  margin-top: 10px;
+}
+
 .detail-gallery_lightbox {
   background: #000000;
   position: fixed;
@@ -12229,7 +12238,6 @@ td.u-product-options__items {
 }
 
 .detail-gallery-thumbs .swiper-slide {
-  border: 2px solid #ffffff;
   box-sizing: border-box;
   position: relative;
   cursor: pointer;
@@ -12241,6 +12249,7 @@ td.u-product-options__items {
     top: 0;
     right: 0;
     bottom: 0;
+    border: 2px solid #ffffff;
   }
   &:hover {
     // border-color: #e4b213;
@@ -12255,7 +12264,7 @@ td.u-product-options__items {
   color: #01718f;
 }
 
-.detail-gallery-thumbs .swiper-slide.swiper-slide-thumb-active {
+.detail-gallery-thumbs .swiper-slide.swiper-slide-thumb-active::after {
   border-color: #00afea;
 }
 
