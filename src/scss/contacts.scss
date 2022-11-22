@@ -13,7 +13,7 @@
 
 .contacts-details__gallery {
   padding-left: 35px;
-  padding-top: 35px;
+  padding-top: 15px;
   width: calc(100% / 3);
   @media (max-width: $breakpoint-mini-max) {
     width: 100%;
@@ -22,7 +22,7 @@
 
 .contacts-details__description {
   padding-left: 35px;
-  padding-top: 35px;
+  padding-top: 15px;
   width: calc((100% / 3) * 2);
   @media (max-width: $breakpoint-mini-max) {
     width: 100%;
@@ -57,6 +57,10 @@
 .contacts-path__description {
   width: 50%;
   padding-right: 5%;
+  @media (max-width: $breakpoint-mini-max) {
+    padding-right: 0;
+    width: 100%;
+  }
 }
 
 .contacts-path__description p {
@@ -69,6 +73,9 @@
 
 .contacts-path__image {
   width: 50%;
+  @media (max-width: $breakpoint-mini-max) {
+    width: 100%;
+  }
 }
 
 .contacts-path__image img {
@@ -107,4 +114,8 @@
 
 .contacts-cdek__widget {
   width: 100%;
+}
+
+.contacts-calc {
+  margin: 45px 0;
 }
