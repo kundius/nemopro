@@ -12145,7 +12145,7 @@ td.u-product-options__items {
 }
 
 .detail-gallery_contacts .detail-gallery-thumbs {
-  margin-top: 10px;
+  margin-top: 0;
 }
 
 .detail-gallery_lightbox {
@@ -12249,7 +12249,7 @@ td.u-product-options__items {
     top: 0;
     right: 0;
     bottom: 0;
-    border: 2px solid #ffffff;
+    border: 2px solid transparent;
   }
   &:hover {
     // border-color: #e4b213;
