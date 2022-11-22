@@ -52,6 +52,10 @@
   text-transform: uppercase;
   width: 100%;
   margin-bottom: 15px;
+  @media (max-width: $breakpoint-mini-max) {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
 }
 
 .contacts-path__description {
@@ -75,6 +79,7 @@
   width: 50%;
   @media (max-width: $breakpoint-mini-max) {
     width: 100%;
+    margin-top: 15px;
   }
 }
 
@@ -97,6 +102,10 @@
   text-transform: uppercase;
   width: 100%;
   margin-bottom: 15px;
+  @media (max-width: $breakpoint-mini-max) {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
 }
 
 .contacts-cdek__description {
