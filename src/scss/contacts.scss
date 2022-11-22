@@ -1,0 +1,34 @@
+@import "variables";
+
+.contacts-details {
+	display: flex;
+  flex-wrap: wrap;
+  margin-left: -35px;
+  margin-top: -35px;
+}
+
+.contacts-details__gallery {
+  padding-left: 35px;
+  padding-top: 35px;
+  width: calc(100% / 3);
+  @media (max-width: $breakpoint-mini-max) {
+    width: 100%;
+  }
+}
+
+.contacts-details__description {
+  padding-left: 35px;
+  padding-top: 35px;
+  width: calc((100% / 3) * 2);
+  @media (max-width: $breakpoint-mini-max) {
+    width: 100%;
+  }
+}
+
+.contacts-map {
+  margin: 30px 0;
+}
+
+.contacts-content {
+
+}
