@@ -1780,6 +1780,11 @@ jdiv {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
+    user-select: none;
+}
+
+.products-item__image {
+    user-select: none;
 }
 
 .products-image__flipper > div:first-child {
@@ -10690,6 +10695,14 @@ td.u-product-options__items {
     width: 130px;
     padding-right: 20px;
   }
+}
+
+.u-product-remains__value._expected {
+    color: #e65100;
+}
+
+.u-product-remains__value._expected::before {
+    visibility: hidden;
 }
 
 .u-product-remains__value:before {

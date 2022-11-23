@@ -19481,11 +19481,11 @@ $(function () {
     payments: [2]
   }, {
     id: 2,
-    label: 'Курьером по Москве',
+    label: 'ТК СДЭК по Москве',
     payments: [1, 3]
   }, {
     id: 3,
-    label: 'Курьером по Москве (за МКАД)',
+    label: 'ТК СДЭК по Москве (за МКАД)',
     payments: [1, 3]
   }, {
     id: 4,
@@ -19497,11 +19497,11 @@ $(function () {
     payments: [1]
   }, {
     id: 6,
-    label: 'Служба СДЭК (до пункта выдачи)',
+    label: 'ТК СДЭК (до пункта выдачи)',
     payments: [1, 3]
   }, {
     id: 7,
-    label: 'Служба СДЭК (до двери получателя)',
+    label: 'ТК СДЭК (до двери получателя)',
     payments: [1, 3]
   }];
   var payments = [{
@@ -19633,24 +19633,24 @@ $(function () {
         } else if ([2, 3].indexOf(delivery.id) !== -1) {
           if (payment.id === 1) {
             if (costInput.value < 5000) {
-              resultTime.innerHTML = delivery.id === 2 ? 'Завтра' : '1-2 дня';
+              resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня';
               resultPrice.innerHTML = '350 руб.';
             } else if (costInput.value >= 5000 && costInput.value < 8000) {
-              resultTime.innerHTML = delivery.id === 2 ? 'Завтра' : '1-2 дня';
+              resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня';
               resultPrice.innerHTML = '300 руб.';
             } else if (costInput.value >= 8000) {
-              resultTime.innerHTML = delivery.id === 2 ? 'Завтра' : '1-2 дня';
+              resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня';
               resultPrice.innerHTML = 'Бесплатно';
             }
           } else if (payment.id === 3) {
             if (costInput.value < 5000) {
-              resultTime.innerHTML = delivery.id === 2 ? 'Завтра' : '1-2 дня';
+              resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня';
               resultPrice.innerHTML = '350 + ' + costInput.value * 0.04 + ' = ' + (costInput.value * 0.04 + 400) + ' руб.';
             } else if (costInput.value >= 5000 && costInput.value < 8000) {
-              resultTime.innerHTML = delivery.id === 2 ? 'Завтра' : '1-2 дня';
+              resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня';
               resultPrice.innerHTML = '300 + ' + costInput.value * 0.04 + ' = ' + (costInput.value * 0.04 + 300) + ' руб.';
             } else if (costInput.value >= 8000) {
-              resultTime.innerHTML = delivery.id === 2 ? 'Завтра' : '1-2 дня';
+              resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня';
               resultPrice.innerHTML = '0 + ' + costInput.value * 0.04 + ' = ' + costInput.value * 0.04 + ' руб.';
             }
           } else {
