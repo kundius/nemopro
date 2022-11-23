@@ -6046,9 +6046,11 @@ th.forum-headline__replies {
 
 .main {
   padding-left: 10px;
+  padding-bottom: 30px;
 
   @media (max-width: $breakpoint-small-max) {
     padding-left: 0;
+    padding-bottom: 0;
   }
 }
 .main h1 {
