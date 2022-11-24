@@ -10703,24 +10703,6 @@ td.u-product-options__items {
     color: #e65100;
 }
 
-.u-product-remains__value._expected::before {
-    visibility: hidden;
-}
-
-.u-product-remains__value:before {
-  content: "";
-  width: 8px;
-  height: 4px;
-  border-left: 3px solid red;
-  border-bottom: 3px solid red;
-  display: inline-block;
-  margin-right: 8px;
-  vertical-align: middle;
-  transform: rotate(-45deg);
-  position: relative;
-  top: -1px;
-}
-
 .u-product-remains-desc {
   font-size: 18px;
   color: #888;
