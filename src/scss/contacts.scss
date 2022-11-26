@@ -214,20 +214,24 @@
 
 .cdek-placeholder__pls-1 {
   position: absolute;
-  left: 10px;
-  bottom: 10px;
+  left: 0;
+  bottom: 0;
   width: 322px;
   height: 61px;
   background: url('../img/pls-1.png') no-repeat 50% 50%;
   background-size: cover;
+  opacity: 0.8;
 }
 
 .cdek-placeholder__pls-2 {
   position: absolute;
+  left: 10px;
+  bottom: 10px;
   width: 85px;
   height: 55px;
   background: url('../img/pls-2.png') no-repeat 50% 50%;
   background-size: cover;
+  opacity: 0.8;
 }
 
 .cdek-placeholder__pls-3 {
@@ -238,6 +242,7 @@
   height: 320px;
   background: url('../img/pls-3.png') no-repeat 50% 50%;
   background-size: cover;
+  opacity: 0.8;
 }
 
 .cdek-placeholder__button {
