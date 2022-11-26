@@ -186,7 +186,6 @@
 
 .cdek-widget {
   position: relative;
-  background: #002837;
 }
 
 .cdek-map {
@@ -199,6 +198,7 @@
   top: 0;
   right: 0;
   bottom: 0;
+  background: #002837;
   transition: all 1s ease;
 }
 
@@ -216,12 +216,13 @@
 .cdek-placeholder__pls-1 {
   position: absolute;
   left: 0;
-  top: 0;
+  top: 4px;
   width: 322px;
   height: 61px;
   background: url('../img/pls-1.png') no-repeat 50% 50%;
   background-size: cover;
   opacity: 0.6;
+  padding: 11px 1px 1px 41px;
 }
 
 .cdek-placeholder__pls-2 {
