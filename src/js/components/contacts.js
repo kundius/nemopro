@@ -19,11 +19,12 @@ widgets.forEach((widget) => {
       hidecash: true,
       hidedelt: true,
     });
-    placeholder.classList.add('cdek-placeholder_hidden')
   };
 
   handler.addEventListener("click", function (e) {
     e.preventDefault();
+
+    placeholder.classList.add("cdek-placeholder_hidden");
 
     if (init) {
       load();
