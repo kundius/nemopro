@@ -12,6 +12,7 @@ widgets.forEach((widget) => {
   const load = () => {
     new ISDEKWidjet({
       defaultCity: city,
+      cityFrom: city,
       link: target,
       path: "assets/nemopro/cdek/scripts/",
       servicepath: "assets/nemopro/cdek/scripts/service.php",
