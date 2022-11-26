@@ -186,6 +186,7 @@
 
 .cdek-widget {
   position: relative;
+  background: #002837;
 }
 
 .cdek-map {
@@ -198,7 +199,7 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background: #002837;
+  transition: all 1s ease;
 }
 
 .cdek-placeholder__image {
@@ -258,7 +259,6 @@
   padding: 12px 24px;
   border-radius: 2px;
   white-space: nowrap;
-  transition: all 1s ease;
 }
 
 .cdek-placeholder_hidden {
