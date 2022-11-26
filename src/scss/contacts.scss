@@ -183,3 +183,45 @@
 .contacts-express__description p + p {
   margin-top: 15px;
 }
+
+.cdek-widget {
+  position: relative;
+}
+
+.cdek-map {
+  height: 320px;
+}
+
+.cdek-placeholder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #002837;
+}
+
+.cdek-placeholder__image {
+  position: absolute;
+  background-position: 50% 50%;
+  background-size: auto 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.cdek-placeholder__button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: #fff;
+  font-family: inherit;
+  border: none;
+  background: #002837;
+  padding: 12px 24px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
