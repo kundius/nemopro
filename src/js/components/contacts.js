@@ -2,12 +2,18 @@ const handler = document.querySelector("#cdek-handler");
 const map = document.querySelector("#cdek-map");
 
 if (handler && map) {
+  let init = false
   handler.addEventListener("click", function (e) {
     e.preventDefault();
 
+    if (init) return
+
     const script = document.createElement("script");
+    script.id = 'ISDEKscript';
     script.onload = function () {
-      new ISDEKWidjet({
+      console.log(map.dataset.city)
+      
+      console.log(new ISDEKWidjet({
         defaultCity: map.dataset.city,
         link: "cdek-map",
         path: "assets/nemopro/cdek/scripts/",
@@ -17,7 +23,9 @@ if (handler && map) {
         hidedress: true,
         hidecash: true,
         hidedelt: true,
-      });
+      }));
+
+      init = true;
     };
     script.src = "assets/nemopro/cdek/widjet.js";
 
