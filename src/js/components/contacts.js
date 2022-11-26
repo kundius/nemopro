@@ -1,4 +1,4 @@
-let init = false;
+let initVendor = false;
 
 const widgets = document.querySelectorAll(".cdek-widget") || [];
 widgets.forEach((widget) => {
@@ -6,6 +6,8 @@ widgets.forEach((widget) => {
   const handler = widget.querySelector(".cdek-placeholder__button");
   const target = widget.dataset.target;
   const city = widget.dataset.city;
+
+  let initMap = false;
 
   const load = () => {
     new ISDEKWidjet({
@@ -19,21 +21,24 @@ widgets.forEach((widget) => {
       hidecash: true,
       hidedelt: true,
     });
+    initMap = true;
   };
 
   handler.addEventListener("click", function (e) {
     e.preventDefault();
 
+    if (initMap) return;
+
     placeholder.classList.add("cdek-placeholder_hidden");
 
-    if (init) {
+    if (initVendor) {
       load();
     } else {
       const script = document.createElement("script");
       script.id = "ISDEKscript";
       script.onload = function () {
         load();
-        init = true;
+        initVendor = true;
       };
       script.src = "assets/nemopro/cdek/widjet.js";
       document.head.appendChild(script);
