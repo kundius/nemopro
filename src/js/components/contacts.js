@@ -2,28 +2,25 @@ const handler = document.querySelector("#cdek-handler");
 const map = document.querySelector("#cdek-map");
 
 if (handler && map) {
-  var script = document.createElement('script');
-script.onload = function () {
-  alert("loaded");
-    //do stuff with the script
-};
-script.src = 'assets/nemopro/cdek/widjet.js';
+  handler.addEventListener("click", function (e) {
+    e.preventDefault();
 
-document.head.appendChild(script); //or something of the likes
+    const script = document.createElement("script");
+    script.onload = function () {
+      new ISDEKWidjet({
+        defaultCity: map.dataset.city,
+        link: "cdek-map",
+        path: "assets/nemopro/cdek/scripts/",
+        servicepath: "assets/nemopro/cdek/scripts/service.php",
+        country: 'Россия',
+        choose: false,
+        hidedress: true,
+        hidecash: true,
+        hidedelt: true,
+      });
+    };
+    script.src = "assets/nemopro/cdek/widjet.js";
 
-
-  // handler.addEventListener('click', function(e) {
-  //   e.preventDefault();
-  //   var widjet = new ISDEKWidjet({
-  //     defaultCity: 'Москва',
-  //     link: 'cdek-map',
-  //     path: '{'site_url' | config}assets/nemopro/cdek/scripts/',
-  //     servicepath: '{'site_url' | config}assets/nemopro/cdek/scripts/service.php',
-  //     choose: false,
-  //     hidedress: true,
-  //     hidecash: true,
-  //     hidedelt: true,
-
-  //   });
-  //   });
+    document.head.appendChild(script);
+  });
 }
