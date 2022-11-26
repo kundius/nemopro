@@ -2,15 +2,16 @@ const handler = document.querySelector("#cdek-handler");
 const map = document.querySelector("#cdek-map");
 
 if (handler && map) {
-//   var script = document.createElement('assets/nemopro/cdek/widjet.js');
+//   var script = document.createElement('script');
 // script.onload = function () {
+//   alert("loaded");
 //     //do stuff with the script
 // };
-// script.src = something;
+// script.src = 'assets/nemopro/cdek/widjet.js';
 
 // document.head.appendChild(script); //or something of the likes
 
-  import("https://nemopro.ru/assets/nemopro/cdek/widjet.js")
+  import("http://dev.nemopro.ru/assets/nemopro/cdek/widjet.js")
     .then((obj) => {
       console.log(obj);
       alert("loaded");
