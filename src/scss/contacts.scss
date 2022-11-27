@@ -292,13 +292,6 @@
   position: relative;
 }
 
-* + .ymaps-widget {
-  margin-top: 45px;
-  @media (max-width: $breakpoint-mini-max) {
-    margin-top: 30px;
-  }
-}
-
 .ymaps-map {
   height: 320px;
 }
