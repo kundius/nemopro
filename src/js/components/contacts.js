@@ -1,7 +1,7 @@
-let initVendor = false;
+let initCdekVendor = false;
 
-const widgets = document.querySelectorAll(".cdek-widget") || [];
-widgets.forEach((widget) => {
+const cdekWidgets = document.querySelectorAll(".cdek-widget") || [];
+cdekWidgets.forEach((widget) => {
   const placeholder = widget.querySelector(".cdek-placeholder");
   const handler = widget.querySelector(".cdek-placeholder__button");
   const target = widget.dataset.target;
@@ -32,17 +32,39 @@ widgets.forEach((widget) => {
 
     placeholder.classList.add("cdek-placeholder_hidden");
 
-    if (initVendor) {
+    if (initCdekVendor) {
       load();
     } else {
       const script = document.createElement("script");
       script.id = "ISDEKscript";
       script.onload = function () {
         load();
-        initVendor = true;
+        initCdekVendor = true;
       };
       script.src = "assets/nemopro/cdek/widjet.js";
       document.head.appendChild(script);
     }
+  });
+});
+
+const ymapsWidgets = document.querySelectorAll(".ymaps-widget") || [];
+ymapsWidgets.forEach((widget) => {
+  const map = widget.querySelector(".ymaps-map");
+  const placeholder = widget.querySelector(".ymaps-placeholder");
+  const handler = widget.querySelector(".ymaps-placeholder__button");
+  const um = widget.dataset.um;
+
+  let initMap = false;
+
+  handler.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    if (initMap) return;
+
+    placeholder.classList.add("cdek-placeholder_hidden");
+
+    const script = document.createElement("script");
+    script.src = `https://api-maps.yandex.ru/services/constructor/1.0/js/?um=${um}&amp;width=100%&amp;height=320&amp;lang=ru_RU`;
+    map.appendChild(script);
   });
 });
