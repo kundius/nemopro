@@ -4933,6 +4933,9 @@ label.error {
       display: inline-block;
       //white-space: nowrap;
   }
+  @media (max-width: $breakpoint-mini-max) {
+    margin-top: 4px;
+  }
 }
 .contacts__desc {
     margin: 20px 0;
