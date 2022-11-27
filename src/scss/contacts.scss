@@ -1,7 +1,7 @@
 @import "variables";
 
 .contacts-row + .contacts-row {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .contacts-details {
@@ -13,7 +13,7 @@
 
 .contacts-details__gallery {
   padding-left: 35px;
-  padding-top: 15px;
+  padding-top: 20px;
   width: calc(100% / 3);
   @media (max-width: $breakpoint-mini-max) {
     width: 100%;
@@ -22,7 +22,7 @@
 
 .contacts-details__description {
   padding-left: 35px;
-  padding-top: 15px;
+  padding-top: 20px;
   width: calc((100% / 3) * 2);
   @media (max-width: $breakpoint-mini-max) {
     width: 100%;
@@ -51,7 +51,7 @@
   text-align: center;
   color: #005976;
   font-size: 24px;
-  line-height: 30px;
+  line-height: 1.25;
   text-transform: uppercase;
   width: 100%;
   margin-bottom: 15px;
@@ -64,6 +64,8 @@
 .contacts-path__description {
   width: 50%;
   padding-right: 5%;
+  font-size: 16px;
+  line-height: 1.25;
   @media (max-width: $breakpoint-mini-max) {
     padding-right: 0;
     width: 100%;
@@ -104,7 +106,7 @@
   text-align: center;
   color: #005976;
   font-size: 24px;
-  line-height: 30px;
+  line-height: 1.25;
   text-transform: uppercase;
   width: 100%;
   margin-bottom: 15px;
@@ -117,6 +119,8 @@
 .contacts-cdek__description {
   width: 100%;
   margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.25;
 }
 
 .contacts-cdek__description p {
@@ -130,6 +134,8 @@
 .contacts-cdek__footer {
   width: 100%;
   margin-top: 15px;
+  font-size: 16px;
+  line-height: 1.25;
 }
 
 .contacts-cdek__footer p {
@@ -162,7 +168,7 @@
   text-align: center;
   color: #005976;
   font-size: 24px;
-  line-height: 30px;
+  line-height: 1.25;
   text-transform: uppercase;
   width: 100%;
   margin-bottom: 15px;
@@ -174,6 +180,8 @@
 
 .contacts-express__description {
   width: 100%;
+  font-size: 16px;
+  line-height: 1.25;
 }
 
 .contacts-express__description p {

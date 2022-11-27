@@ -4914,18 +4914,15 @@ label.error {
 }
 
 .contacts__label {
-  color: #333333;
   font-size: 16px;
-  font-weight: 700;
-  line-height: 30px;
+  line-height: 1.25;
   background-color: #ffeb4a;
   padding: 0 2px;
+  display: inline-block;
 }
 .contacts__value {
-  color: #333333;
   font-size: 16px;
-  font-weight: 700;
-  line-height: 30px;
+  line-height: 1.25;
   a {
     color: #0099cc;
     text-decoration: underline;
@@ -11040,6 +11037,12 @@ td.u-product-options__items {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-left: -9px;
+    margin-top: -9px;
+    @media (max-width: $breakpoint-small-max) {
+      margin-left: -12px;
+      margin-top: -12px;
+    }
     .choices__list--dropdown .choices__item--selectable {
         padding-right: 10px;
         &::after {
@@ -11079,10 +11082,12 @@ td.u-product-options__items {
 
 .u-calc-form__group {
     width: 41.6%;
-    margin-bottom: 9px;
+    padding-top: 9px;
+    padding-left: 9px;
     @media (max-width: $breakpoint-small-max) {
         width: 100%;
-        margin-bottom: 12px;
+        padding-top: 12px;
+        padding-left: 12px;
     }
 }
 
