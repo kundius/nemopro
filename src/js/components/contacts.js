@@ -57,7 +57,7 @@ ymapsWidgets.forEach((widget) => {
 
   let initMap = false;
 
-  image.style.backgroundImage = `url("https://api-maps.yandex.ru/services/constructor/1.0/static/?um=${um}&amp;width=1158&amp;height=320&amp;lang=ru_RU")`
+  // image.style.backgroundImage = `url("https://api-maps.yandex.ru/services/constructor/1.0/static/?um=${um}&amp;width=1158&amp;height=320&amp;lang=ru_RU")`
 
   handler.addEventListener("click", function (e) {
     e.preventDefault();
