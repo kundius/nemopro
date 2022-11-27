@@ -9921,8 +9921,9 @@ th.forum-headline__replies {
         border-color: transparent transparent #fff;
     }
     .choices[data-type*="select-one"] .choices__inner {
-        padding-bottom: 5px;
-        padding-top: 5px;
+        padding-bottom: 3px;
+        padding-top: 3px;
+        min-height: 42px;
     }
 }
 
