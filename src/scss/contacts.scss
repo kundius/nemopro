@@ -7,13 +7,13 @@
 .contacts-details {
 	display: flex;
   flex-wrap: wrap;
-  margin-left: -35px;
-  margin-top: -15px;
+  margin-left: -30px;
+  margin-top: -30px;
 }
 
 .contacts-details__gallery {
-  padding-left: 35px;
-  padding-top: 35px;
+  padding-left: 30px;
+  padding-top: 30px;
   width: calc(100% / 3);
   @media (max-width: $breakpoint-mini-max) {
     width: 100%;
@@ -21,8 +21,8 @@
 }
 
 .contacts-details__description {
-  padding-left: 35px;
-  padding-top: 35px;
+  padding-left: 30px;
+  padding-top: 30px;
   width: calc((100% / 3) * 2);
   @media (max-width: $breakpoint-mini-max) {
     width: 100%;
@@ -30,7 +30,7 @@
 }
 
 * + .contacts-map {
-  margin-top: 35px;
+  margin-top: 30px;
 }
 
 .contacts-content {
