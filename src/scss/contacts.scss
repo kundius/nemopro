@@ -29,8 +29,8 @@
   }
 }
 
-.contacts-map {
-  margin: 30px 0;
+* + .contacts-map {
+  margin-top: 30px;
 }
 
 .contacts-content {
@@ -41,9 +41,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 45px 0;
+}
+
+* + .contacts-path {
+  margin-top: 45px;
   @media (max-width: $breakpoint-mini-max) {
-    margin: 30px 0;
+    margin-top: 30px;
   }
 }
 
@@ -96,9 +99,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 45px 0;
+}
+
+* + .contacts-cdek {
+  margin-top: 45px;
   @media (max-width: $breakpoint-mini-max) {
-    margin: 30px 0;
+    margin-top: 30px;
   }
 }
 
@@ -151,13 +157,19 @@
 }
 
 .contacts-calc {
-  margin: 45px 0;
+}
+
+* + .contacts-calc {
+  margin-top: 45px;
   @media (max-width: $breakpoint-mini-max) {
-    margin: 30px 0;
+    margin-top: 30px;
   }
 }
 
 .contacts-express {
+}
+
+* + .contacts-express {
   margin-top: 45px;
   @media (max-width: $breakpoint-mini-max) {
     margin-top: 30px;
@@ -278,6 +290,13 @@
 
 .ymaps-widget {
   position: relative;
+}
+
+* + .ymaps-widget {
+  margin-top: 45px;
+  @media (max-width: $breakpoint-mini-max) {
+    margin-top: 30px;
+  }
 }
 
 .ymaps-map {
