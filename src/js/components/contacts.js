@@ -51,12 +51,13 @@ const ymapsWidgets = document.querySelectorAll(".ymaps-widget") || [];
 ymapsWidgets.forEach((widget) => {
   const map = widget.querySelector(".ymaps-map");
   const placeholder = widget.querySelector(".ymaps-placeholder");
+  const image = widget.querySelector(".ymaps-placeholder__image");
   const handler = widget.querySelector(".ymaps-placeholder__button");
   const um = widget.dataset.um;
 
   let initMap = false;
 
-  placeholder.style.backgroundImage = `url("https://api-maps.yandex.ru/services/constructor/1.0/static/?um=${um}&amp;width=1158&amp;height=320&amp;lang=ru_RU")`
+  image.style.backgroundImage = `url("https://api-maps.yandex.ru/services/constructor/1.0/static/?um=${um}&amp;width=1158&amp;height=320&amp;lang=ru_RU")`
 
   handler.addEventListener("click", function (e) {
     e.preventDefault();
