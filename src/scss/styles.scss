@@ -3490,9 +3490,11 @@ jdiv {
   text-decoration: none;
   @include transition(all, .2s, linear);
   &:hover {
-    background: #005976;
-    color: #fff;
+    color: #cc0033;
     text-decoration: none;
+    @media (min-width: $breakpoint-small) {
+      box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.75);
+    }
   }
 }
 
