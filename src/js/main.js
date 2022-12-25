@@ -852,7 +852,7 @@ $(function() {
                     else if (payment.id === 3) {
                         if (costInput.value < 5000) {
                             resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня'
-                            resultPrice.innerHTML = '350 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 400) + ' руб.'
+                            resultPrice.innerHTML = '400 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 400) + ' руб.'
                         }
                         else if (costInput.value >= 5000 && costInput.value < 8000) {
                             resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня'
@@ -934,11 +934,11 @@ $(function() {
                     else if (payment.id === 3) {
                         if (costInput.value < 5000) {
                             resultTime.innerHTML = '2-4 дня'
-                            resultPrice.innerHTML = '400 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 500) + ' руб.'
+                            resultPrice.innerHTML = '500 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 500) + ' руб.'
                         }
                         else if (costInput.value >= 5000 && costInput.value < 8000) {
                             resultTime.innerHTML = '2-4 дня'
-                            resultPrice.innerHTML = '350 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 400) + ' руб.'
+                            resultPrice.innerHTML = '400 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 400) + ' руб.'
                         }
                         else if (costInput.value >= 8000) {
                             resultTime.innerHTML = '2-4 дня'
@@ -967,11 +967,11 @@ $(function() {
                     else if (payment.id === 3) {
                         if (costInput.value < 5000) {
                             resultTime.innerHTML = '2-4 дня'
-                            resultPrice.innerHTML = '900 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 1000) + ' руб.'
+                            resultPrice.innerHTML = '1000 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 1000) + ' руб.'
                         }
                         else if (costInput.value >= 5000 && costInput.value < 8000) {
                             resultTime.innerHTML = '2-4 дня'
-                            resultPrice.innerHTML = '850 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 900) + ' руб.'
+                            resultPrice.innerHTML = '900 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 900) + ' руб.'
                         }
                         else if (costInput.value >= 8000) {
                             resultTime.innerHTML = '2-4 дня'
