@@ -335,9 +335,15 @@
   background: #002837;
   padding: 14px 24px;
   line-height: 1;
-  display: inline-block;
+  display: block;
   border-radius: 2px;
   white-space: nowrap;
+  text-decoration: none;
+  width: 100%;
+}
+
+.ymaps-placeholder__button:hover {
+  color: #fff;
   text-decoration: none;
 }
 
