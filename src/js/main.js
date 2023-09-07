@@ -533,11 +533,11 @@ discount_form.on('submit', function(e) {
     deliveries_inputs.on('change', function() {
         var delivery = parseInt(deliveries.filter(':checked').val());
 
-        if ([1, 3].indexOf(delivery) !== -1) {
-            $('#field-passport').hide();
-        } else {
-            $('#field-passport').show();
-        }
+        // if ([1, 3].indexOf(delivery) !== -1) {
+        //     $('#field-passport').hide();
+        // } else {
+        //     $('#field-passport').show();
+        // }
         if ([1, 4, 6, 7, 9, 10, 11].indexOf(delivery) !== -1) {
             $('#field-index').hide();
         } else {
