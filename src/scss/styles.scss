@@ -9105,6 +9105,35 @@ textarea.order-control {
     margin-top: 17px;
 }
 
+.order-form-rights input {
+  visibility: hidden;
+  position: absolute;
+}
+
+.order-form-rights label {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.order-form-rights label::before {
+  content: '';
+  display: block;
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.order-form-rights input:checked + label::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='16px' height='16px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 12.6111L8.92308 17.5L20 6.5' stroke='%23002837' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
 .order-footer {
     display: flex;
     justify-content: space-between;
