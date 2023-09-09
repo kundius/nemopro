@@ -6942,6 +6942,11 @@ th.forum-headline__replies {
   display: block;
 }
 
+.error.order-control {
+  border-color: #d42626;
+  background-color: rgba(212, 38, 38, 0.05);
+}
+
 textarea.order-control {
   height: 64px;
 }

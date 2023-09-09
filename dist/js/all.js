@@ -17056,7 +17056,7 @@ discount_form.on('submit', function (e) {
     // } else {
     //     $('#field-passport').show();
     // }
-    if ([1, 4, 6, 7, 9, 10, 11].indexOf(delivery) !== -1) {
+    if ([1, 4, 6, 7, 9, 10, 11, 13].indexOf(delivery) !== -1) {
       $('#field-index').hide();
     } else {
       $('#field-index').show();
