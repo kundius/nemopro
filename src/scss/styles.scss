@@ -9111,15 +9111,12 @@ textarea.order-control {
 }
 
 .order-form-rights label {
-  display: flex;
   position: relative;
-  align-items: center;
 }
 
 .order-form-rights label::before {
   content: '';
   display: block;
-  align-self: center;
   width: 20px;
   height: 20px;
   flex-shrink: 0;
@@ -9128,6 +9125,7 @@ textarea.order-control {
   background-color: #fff;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+  float: left;
 }
 
 .order-form-rights input:checked + label::before {
