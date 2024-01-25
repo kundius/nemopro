@@ -271,6 +271,9 @@
     text-decoration: none;
     color: #fff;
   }
+  @media (min-width: 1180px) {
+    font-size: 20px;
+  }
   @media (max-width: $breakpoint-medium-max) {
     font-size: 18px;
     text-align: center;

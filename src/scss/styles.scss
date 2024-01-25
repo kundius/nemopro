@@ -2214,10 +2214,10 @@ jdiv {
 .products-list-narrow {
     .products-cell {
         width: 100%;
-        @media (min-width: $breakpoint-small) {
+        @media (min-width: 580px) {
             width: 50%;
         }
-        @media (min-width: $breakpoint-large) {
+        @media (min-width: 1180px) {
             width: 33.333%;
         }
     }
@@ -2226,11 +2226,14 @@ jdiv {
 .products-list-wide {
     .products-cell {
         width: 100%;
-        @media (min-width: $breakpoint-small) {
+        @media (min-width: 580px) {
             width: 50%;
         }
-        @media (min-width: $breakpoint-medium) {
+        @media (min-width: 960px) {
             width: 33.333%;
+        }
+        @media (min-width: 1180px) {
+            width: 25%;
         }
     }
 }
@@ -7254,7 +7257,7 @@ textarea.order-control {
       background-color: rgb( 88, 215, 226 );
   }
 
-  @media (max-width: $breakpoint-small-max) {
+  @media (max-width: $breakpoint-large-max) {
     left: 20px;
     right: auto;
     bottom: 30px;
@@ -10088,7 +10091,7 @@ textarea.order-control {
         text-decoration: none;
         background: #ffce23;
     }
-    @media (min-width: $breakpoint-small) {
+    @media (min-width: $breakpoint-large) {
         display: none;
     }
 }
