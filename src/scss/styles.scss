@@ -1952,6 +1952,9 @@ jdiv {
   i {
       font-size: 24px;
   }
+  @media (max-width: 1180px) {
+    font-size: 24px;
+  }
   &_small {
     font-size: 22px;
     i {
@@ -2230,10 +2233,7 @@ jdiv {
             width: 50%;
         }
         @media (min-width: 960px) {
-            width: 33.333%;
-        }
-        @media (min-width: 1180px) {
-            width: 25%;
+          width: 25%;
         }
     }
 }
