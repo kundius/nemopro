@@ -17480,10 +17480,7 @@ $(function () {
     });
     $(deliverySelect).change(onChangeDelivery);
     $(form).submit(calculate);
-    if (form.dataset.city) {
-      console.log(form.dataset.city, form.dataset.city || 'Москва');
-      setCity(form.dataset.city || 'Москва'); // Москва по умолчанию
-    }
+    setCity(form.dataset.city || 'Москва'); // Москва по умолчанию
     // $(paymentSelect).change(calculate)
     // $(deliverySelect).change(calculate)
     // $(costInput).change(calculate)
