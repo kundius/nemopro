@@ -17481,7 +17481,7 @@ $(function () {
     $(deliverySelect).change(onChangeDelivery);
     $(form).submit(calculate);
     if (form.dataset.city) {
-      setCity(form.dataset.city);
+      setCity(form.dataset.city || 'Москва'); // Москва по умолчанию
     }
     // $(paymentSelect).change(calculate)
     // $(deliverySelect).change(calculate)
