@@ -1867,6 +1867,7 @@ jdiv {
     overflow: hidden;
     z-index: 10;
     color: #000;
+    background: #fff;
     padding: 4px 0 3px;
     font-size: 15px;
     font-weight: 700;
@@ -2166,6 +2167,13 @@ jdiv {
   z-index: 10;
 }
 
+.products-item__info-lt0 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 10;
+}
+
 .products-item__info-rt {
   position: absolute;
   right: 12px;
@@ -2192,6 +2200,10 @@ jdiv {
   i {
     font-size: 80%;
   }
+}
+
+.products-item__coupon_label {
+  font-size: 15px;
 }
 
 .products-item .msfavorites-toggle {
