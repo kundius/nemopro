@@ -436,19 +436,20 @@
   display: block;
   width: 140px;
   height: 52px;
-  background-color: #005976;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
-  mask-image: url('/files/images/logo.svg');
-
-  img {
-    opacity: 0;
-  }
 
   @media (max-width: $breakpoint-medium-max) {
     width: 114px;
     height: 42px;
+
+    background-color: #005976;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    mask-image: url('/files/images/logo.svg');
+
+    img {
+      opacity: 0;
+    }
   }
 }
 
