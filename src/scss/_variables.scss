@@ -12,6 +12,11 @@ $breakpoint-large-max: (
   $breakpoint-xlarge - 1
 );
 $icon-font: FontAwesome;
-$accent-1: #034f84;
-$accent-2: #056DB8;
-$accent-3: #DAEFFE;
+
+$color-light-darker: #DAEFFE;
+$color-light-lighter: #EDF8FF;
+
+$color-medium-darker: #056DB8;
+$color-medium-lighter: #058BE8;
+
+$color-dark: #034f84;

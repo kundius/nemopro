@@ -828,7 +828,7 @@ select {
 
 @media (min-width: $breakpoint-medium) {
   .catalog-menu {
-    background-color: $accent-1;
+    background-color: $color-dark;
     position: relative;
     z-index: 100;
   }
@@ -2267,9 +2267,9 @@ jdiv {
 .products-item__buttons {}
 
 .products-item__buttons-msbuyoneclick {
-  color: $accent-1;
+  color: $color-dark;
   font-size: 12px;
-  border: 2px solid $accent-1;
+  border: 2px solid $color-dark;
   cursor: pointer;
   padding: 0 5px;
   text-align: center;
@@ -2289,13 +2289,13 @@ jdiv {
 .products-item__buttons-add {
   color: #fff;
   font-size: 14px;
-  border: 2px solid $accent-1;
+  border: 2px solid $color-dark;
   cursor: pointer;
   padding: 0 5px;
   text-align: center;
   line-height: 20px;
   width: 100%;
-  background-color: $accent-1;
+  background-color: $color-dark;
   text-decoration: none;
   display: block;
   margin-bottom: 4px;
@@ -2369,14 +2369,14 @@ jdiv {
 }
 
 .products-item .msfavorites-toggle {
-  background: $accent-1;
+  background: $color-dark;
   width: 26px;
   height: 26px;
   font-size: 16px;
 }
 
 .products-item .mscomparison-toggle {
-  background: $accent-1;
+  background: $color-dark;
   width: 26px;
   height: 26px;
   font-size: 16px;
@@ -14112,7 +14112,7 @@ td.u-product-options__items {
 }
 
 .msfavorites-toggle {
-  background: #0b8fae;
+  background: $color-dark;
   border: none;
   width: 40px;
   height: 40px;
@@ -14131,7 +14131,7 @@ td.u-product-options__items {
   }
 
   &:hover {
-    background-color: #0b8fae;
+    background-color: $color-medium-lighter;
   }
 }
 
