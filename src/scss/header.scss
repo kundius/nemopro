@@ -82,11 +82,11 @@
     &_credit,
     &_reviews,
     &_track {
-      background-color: #005976;
+      background-color: $accent;
       font-size: 12px;
       line-height: 1;
       padding: 4px 5px 6px;
-      border-right: 1px solid #014b63;
+      border-right: 1px solid darken($accent, 10%);
       text-decoration: none;
       color: #fff;
 
@@ -187,7 +187,7 @@
 }
 
 .header {
-  background: #005976;
+  background: $accent;
   z-index: 990;
   position: fixed;
   width: 100%;
@@ -195,8 +195,8 @@
   top: 0;
 
   @media (max-width: $breakpoint-medium-max) {
-    background-color: #005976;
-    background: linear-gradient(180deg, #005976 0, #005976 32px, #fff 0, #fff);
+    background-color: $accent;
+    background: linear-gradient(180deg, $accent 0, $accent 32px, #fff 0, #fff);
     padding-top: 32px;
   }
 }
@@ -457,16 +457,16 @@
   position: relative;
   width: 48px;
   height: 48px;
-  border: 2px solid #169bbb;
-  color: #169bbb;
+  border: 2px solid $accent;
+  color: $accent;
   border-radius: 50%;
   flex-shrink: 0;
   display: block;
 
   &.full,
   &:hover {
-    border-color: #ffee00;
-    color: #ffee00;
+    border-color: #e5b612;
+    color: #e5b612;
   }
 
   @media (max-width: $breakpoint-medium-max) {
@@ -486,7 +486,7 @@
   text-align: center;
   border-radius: 100%;
   min-width: 14px;
-  background: #fe0;
+  background: #e5b612;
   display: none;
   min-height: 14px;
   align-items: center;
@@ -533,7 +533,7 @@
   line-height: 1;
   text-align: center;
   border-radius: 10px;
-  background: #fe0;
+  background: #e5b612;
   padding-top: 1px;
   padding-bottom: 0;
   padding-left: 2px;
