@@ -20,7 +20,7 @@
 .service-menu__item {
   font-size: 16px;
   line-height: 1;
-  color: #fff;
+  color: #000;
   text-decoration: underline;
   padding: 4px 8px 6px;
   display: flex;
@@ -31,9 +31,8 @@
   text-transform: lowercase;
 
   &:hover {
-    background-color: #014b63;
     text-decoration: underline;
-    color: #fff;
+    color: #000;
   }
 
   &_how-to {
@@ -305,7 +304,7 @@
 }
 
 .header__phone {
-  color: #fdfdfd;
+  color: #000;
   font-size: 28px;
   line-height: 1;
   text-decoration: none;
@@ -313,7 +312,7 @@
 
   &:hover {
     text-decoration: none;
-    color: #fff;
+    color: #000;
   }
 
   @media (max-width: 1180px) {
