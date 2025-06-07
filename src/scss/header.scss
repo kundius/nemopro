@@ -82,11 +82,11 @@
     &_credit,
     &_reviews,
     &_track {
-      background-color: $accent;
+      background-color: $accent-1;
       font-size: 12px;
       line-height: 1;
       padding: 4px 5px 6px;
-      border-right: 1px solid darken($accent, 10%);
+      border-right: 1px solid darken($accent-1, 10%);
       text-decoration: none;
       color: #fff;
 
@@ -187,7 +187,7 @@
 }
 
 .header {
-  background: $accent;
+  background: $accent-1;
   z-index: 990;
   position: fixed;
   width: 100%;
@@ -195,8 +195,8 @@
   top: 0;
 
   @media (max-width: $breakpoint-medium-max) {
-    background-color: $accent;
-    background: linear-gradient(180deg, $accent 0, $accent 32px, #fff 0, #fff);
+    background-color: $accent-1;
+    background: linear-gradient(180deg, $accent-1 0, $accent-1 32px, #fff 0, #fff);
     padding-top: 32px;
   }
 }
@@ -392,7 +392,7 @@
   width: 32px;
   height: 32px;
   position: relative;
-  color: $accent;
+  color: $accent-1;
   font-size: 20px;
   display: flex;
   align-items: center;
@@ -409,7 +409,7 @@
   }
 
   &:hover {
-    background: $accent;
+    background: $accent-1;
     color: #fff;
   }
 
@@ -417,7 +417,7 @@
   //   color: #169bbb;
 
   //   &:hover {
-  //     background: $accent;
+  //     background: $accent-1;
   //     color: #fff;
   //   }
   // }
@@ -441,7 +441,7 @@
     width: 114px;
     height: 42px;
 
-    background-color: $accent;
+    background-color: $accent-1;
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: contain;
@@ -457,8 +457,8 @@
   position: relative;
   width: 48px;
   height: 48px;
-  border: 2px solid $accent;
-  color: $accent;
+  border: 2px solid $accent-1;
+  color: $accent-1;
   border-radius: 50%;
   flex-shrink: 0;
   display: block;
