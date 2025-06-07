@@ -20,7 +20,7 @@
 .service-menu__item {
   font-size: 16px;
   line-height: 1;
-  color: #000;
+  color: #fff;
   text-decoration: underline;
   padding: 4px 8px 6px;
   display: flex;
@@ -32,7 +32,7 @@
 
   &:hover {
     text-decoration: underline;
-    color: #000;
+    color: #fff;
   }
 
   &_how-to {
@@ -88,6 +88,11 @@
       padding: 4px 5px 6px;
       border-right: 1px solid #014b63;
       text-decoration: none;
+      color: #000;
+
+      &:hover {
+        color: #000;
+      }
     }
 
     &_track {
