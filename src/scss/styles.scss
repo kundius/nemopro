@@ -11373,7 +11373,7 @@ textarea.order-control {
     z-index: 2;
     width: 40px;
     height: 100%;
-    background: #002837;
+    background: $color-dark;
     border-radius: 0 4px 4px 0;
   }
 
@@ -13144,7 +13144,7 @@ td.u-product-options__items {
   box-sizing: border-box;
   box-shadow: none;
   background: #f8f8f9;
-  border: 1px solid #79b8d9;
+  border: 1px solid $color-dark;
 
   &::placeholder {
     color: #777;
