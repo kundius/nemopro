@@ -13171,12 +13171,12 @@ td.u-product-options__items {
 }
 
 .u-feedback-message {
-  border: 1px solid #016a9a;
+  border: 1px solid $color-dark;
   overflow: hidden;
   position: relative;
   height: 38px;
   box-sizing: border-box;
-  background: #016a9a;
+  background: $color-dark;
 
   &_active {
     .u-feedback-message__front {
