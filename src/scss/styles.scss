@@ -2741,13 +2741,13 @@ jdiv {
 
 
 .h-reviews__all {
-  border: 2px solid #005976;
+  border: 2px solid $color-dark;
   line-height: 34px;
   white-space: nowrap;
   padding: 0 20px;
   font-size: 14px;
   font-weight: bold;
-  color: #005976;
+  color: $color-dark;
   text-decoration: none;
   margin: 20px auto 0;
   display: block;
@@ -2757,7 +2757,8 @@ jdiv {
   text-transform: uppercase;
 
   &:hover {
-    background-color: #005976;
+    background-color: $color-light-lighter;
+    border-color: $color-light-lighter;
     color: #ffffff;
     text-decoration: none;
   }
@@ -4140,7 +4141,7 @@ jdiv {
 
 .product__headline-arrow {
   cursor: pointer;
-  background: #005976;
+  background: $color-dark;
   border: none;
   font-size: 32px;
   color: #fff;
@@ -4154,7 +4155,7 @@ jdiv {
 
   @media (min-width: $breakpoint-medium) {
     &:hover {
-      background: #169bbb;
+      background: $color-light-lighter;
     }
   }
 
@@ -4166,13 +4167,13 @@ jdiv {
     min-width: 48px;
 
     &:active {
-      background: #169bbb;
+      background: $color-light-lighter;
     }
   }
 }
 
 .product__headline-text {
-  color: #016a88;
+  color: $color-dark;
   font-size: 18px;
   font-weight: 600;
   line-height: 1;
@@ -13507,8 +13508,8 @@ td.u-product-options__items {
 }
 
 .home-section__title {
-  background-color: #deedf0;
-  color: #005976;
+  background-color: $color-light-lighter;
+  color: $color-dark;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.1;
