@@ -11831,7 +11831,6 @@ textarea.order-control {
 
 .u-product-price__currency {
   font-size: 65%;
-  color: #005976;
   margin-left: 8px;
 
   @media (max-width: $breakpoint-mini-max) {
@@ -12866,7 +12865,7 @@ td.u-product-options__items {
 // }
 
 .u-header-search {
-  background: #026282;
+  background: $color-dark;
   padding: 8px 0;
   position: fixed;
   top: 60px;
@@ -13156,7 +13155,7 @@ td.u-product-options__items {
   min-height: 38px;
   text-align: center;
   border: none;
-  background: #03405c;
+  background: $color-dark;
   color: #ffffff;
   font-size: 17px;
   font-weight: 400;
@@ -13167,7 +13166,7 @@ td.u-product-options__items {
   cursor: pointer;
 
   &:hover {
-    background: lighten(#03405c, 5%);
+    background: $color-medium-lighter;
   }
 }
 
