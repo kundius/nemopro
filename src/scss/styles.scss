@@ -2919,7 +2919,8 @@ jdiv {
 }
 
 .footer--bg {
-  background: url('../img/footer.jpg') no-repeat bottom;
+  background: url('../img/footer.jpg') no-repeat 50% 100%;
+  background-size: 100% auto;
 }
 
 .footer__wrap {
