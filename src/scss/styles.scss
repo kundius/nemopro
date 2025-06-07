@@ -479,7 +479,7 @@ button {
 body {
   // font: 14px/1.8 -apple-system, BlinkMacSystemFont, "Segoe UI", "Open Sans", sans-serif;
   font: 14px/1.8 "SF UI Text", sans-serif;
-  background-color: #01718f;
+  background-color: #fff;
 }
 
 select {
@@ -492,16 +492,6 @@ select {
 
 .block-content {
   margin: 24px 0;
-}
-
-html {
-  //background: #01718f url("../img/bg-header.jpg") no-repeat center 60px;
-  background: #01718f;
-}
-
-body {
-  background: url("../img/footer.jpg") no-repeat center bottom;
-  background-size: 100%;
 }
 
 .wrapper {
@@ -2917,6 +2907,10 @@ jdiv {
       color: #fff;
     }
   }
+}
+
+.footer--bg {
+  background: url('../img/footer.jpg') no-repeat bottom;
 }
 
 .footer__wrap {
