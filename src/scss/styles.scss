@@ -6489,7 +6489,7 @@ div.pagination {
 
 .page-forum-title {
   font-size: 32px;
-  color: #01718f;
+  color: #000;
   text-transform: uppercase;
   letter-spacing: 0.025em;
   text-align: center;
@@ -6512,11 +6512,11 @@ div.pagination {
   border-spacing: 0;
   width: 100%;
   margin-bottom: 20px;
-  border: 1px solid #01718f;
+  border: 1px solid $color-dark;
 
   th {
     border: 0;
-    background: #01718f;
+    background: $color-dark;
     padding: 15px;
     text-transform: uppercase;
     text-align: left;
@@ -6537,7 +6537,7 @@ div.pagination {
   }
 
   tr:last-child td {
-    border-bottom: 1px solid #01718f;
+    border-bottom: 1px solid $color-dark;
   }
 }
 
@@ -6586,7 +6586,7 @@ th.forum-headline__replies {
 }
 
 .forum-theme-row__name {
-  color: #015876;
+  color: #000;
   font-size: 14px;
   font-weight: 700;
 }
@@ -6648,8 +6648,8 @@ th.forum-headline__replies {
   width: 202px;
   margin-bottom: 10px;
   font-size: 14px;
-  border-color: #01718f;
-  color: #01718f;
+  border-color: $color-dark;
+  color: $color-dark;
   border-radius: 0;
   float: right;
 
@@ -8648,7 +8648,7 @@ textarea.order-control {
 }
 
 .forum-rules__title {
-  color: #016a88;
+  color: #000;
   font-size: 18px;
   font-weight: 600;
   text-align: center;
@@ -9728,6 +9728,10 @@ textarea.order-control {
   line-height: 1.2;
   position: relative;
   padding-left: 28px;
+
+  a {
+    color: #000;
+  }
 
   .form-checkbox {
     position: absolute;
@@ -11496,12 +11500,12 @@ textarea.order-control {
 .fixed-catalog {
   position: fixed;
   z-index: 100;
-  color: #023c4e;
+  color: $color-dark;
   font-size: 14px;
   font-weight: 700;
   line-height: 29px;
   border-radius: 6px;
-  background-color: #e5b612;
+  background-color: #f2dd05;
   text-transform: uppercase;
   padding: 9px 15px;
   text-align: center;
