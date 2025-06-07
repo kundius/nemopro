@@ -2604,7 +2604,7 @@ jdiv {
 .content {
   border-radius: 5px;
   padding: 10px;
-  border: 1px solid #01556b;
+  border: 1px solid $color-dark;
   background-color: #ffffff;
   position: relative;
   margin-top: 10px;
@@ -5451,10 +5451,10 @@ label.error {
 .contacts__label {
   font-size: 16px;
   line-height: 1.25;
-  background-color: #e5b612;
+  background-color: $color-yellow-lighter;
   padding: 0 2px;
   display: inline-block;
-  color: #023c4e;
+  color: $color-dark;
 }
 
 .contacts__value {
@@ -5463,7 +5463,7 @@ label.error {
   font-weight: 700;
 
   a {
-    color: #0099cc;
+    color: #000;
     text-decoration: underline;
   }
 
@@ -11325,21 +11325,26 @@ textarea.order-control {
       display: block;
       text-align: center;
       cursor: pointer;
-      background-color: #e5b612;
+      background-color: $color-yellow-lighter;
       line-height: 33px;
-      color: #014b63;
+      color: $color-dark;
       font-size: 16px;
 
       &:hover {
-        background-color: darken(#e5b612, 5%);
-        color: #014b63;
+        background-color: $color-yellow-darker;
+        color: $color-dark;
       }
     }
 
     &.active {
       a {
-        background-color: #026282;
+        background-color: $color-dark;
         color: #fff;
+
+        &:hover {
+          background-color: $color-medium-lighter;
+          color: #fff;
+        }
       }
     }
   }
@@ -12534,7 +12539,7 @@ td.u-product-options__items {
 
   @media (max-width: $breakpoint-small-max) {
     flex-wrap: wrap;
-    background: #f5f5fd;
+    background: $color-light-darker;
     padding: 14px 4px 9px;
     margin: 0 -3px 20px;
   }
@@ -12550,7 +12555,7 @@ td.u-product-options__items {
 }
 
 .u-calc-city__name {
-  color: #005976;
+  color: #000;
   font-size: 24px;
   line-height: 1;
   letter-spacing: 0.019em;
@@ -14539,12 +14544,12 @@ td.u-product-options__items {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  color: #014b63;
+  color: $color-dark;
   text-transform: uppercase;
   font-size: 16px;
   padding: 5px;
   border-radius: 8px;
-  background: #57d4e9;
+  background: $color-light-darker;
   text-align: center;
   width: 120px;
   font-weight: 700;
