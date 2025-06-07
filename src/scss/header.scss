@@ -167,7 +167,7 @@
   margin-left: 5px;
   margin-right: 5px;
   border-radius: 6px;
-  background-color: #e5b612;
+  background-color: #F2DD05;
   text-transform: uppercase;
   text-align: center;
   box-sizing: initial;
@@ -347,7 +347,7 @@
 
 .header__catalog {
   border-radius: 6px;
-  background-color: #e5b612;
+  background-color: #F2DD05;
   color: #002837;
   font-size: 16px;
   font-weight: 700;
@@ -424,10 +424,10 @@
 
   &.active,
   &_active-alt {
-    color: #fe0;
+    color: #F2DD05;
 
     &:hover {
-      color: #fe0;
+      color: #F2DD05;
     }
   }
 }
@@ -466,8 +466,8 @@
 
   // &.full,
   // &:hover {
-  //   border-color: #fe0;
-  //   color: #fe0;
+  //   border-color: #F2DD05;
+  //   color: #F2DD05;
   // }
 
   @media (max-width: $breakpoint-medium-max) {
@@ -487,7 +487,7 @@
   text-align: center;
   border-radius: 100%;
   min-width: 14px;
-  background: #fe0;
+  background: #F2DD05;
   display: none;
   min-height: 14px;
   align-items: center;
@@ -534,7 +534,7 @@
   line-height: 1;
   text-align: center;
   border-radius: 10px;
-  background: #fe0;
+  background: #F2DD05;
   padding-top: 1px;
   padding-bottom: 0;
   padding-left: 2px;
