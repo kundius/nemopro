@@ -9666,7 +9666,7 @@ textarea.order-control {
 }
 
 .modal-buyoneclick__title {
-  color: #076692;
+  color: #000;
   font-size: 19px;
   font-weight: 700;
   line-height: 1;
@@ -9693,7 +9693,7 @@ textarea.order-control {
   margin-bottom: 15px;
 
   span {
-    color: #03405c;
+    color: #605e5e;
     font-weight: 700;
     letter-spacing: 0.73px;
     text-transform: uppercase;
@@ -9701,7 +9701,7 @@ textarea.order-control {
 }
 
 .buyoneclick-discount__button {
-  color: #03405c;
+  color: $color-dark;
   font-size: 13px;
   font-weight: 700;
   line-height: 32px;
@@ -9717,7 +9717,7 @@ textarea.order-control {
   text-decoration: none;
 
   &:hover {
-    color: lighten(#03405c, 10%);
+    color: $color-medium-lighter;
     text-decoration: none;
   }
 }
@@ -9764,7 +9764,7 @@ textarea.order-control {
   min-height: 38px;
   text-align: center;
   border: none;
-  background: #03405c;
+  background: $color-dark;
   color: #ffffff;
   font-size: 17px;
   font-weight: bold;
@@ -9776,7 +9776,7 @@ textarea.order-control {
   cursor: pointer;
 
   &:hover {
-    background: lighten(#03405c, 5%);
+    background: $color-medium-lighter;
   }
 }
 
@@ -9805,6 +9805,7 @@ textarea.order-control {
   font-size: 15px;
 
   a {
+    color: #000;
     text-decoration: underline;
   }
 
@@ -9824,7 +9825,7 @@ textarea.order-control {
 }
 
 .buyoneclick-price__value {
-  color: #03405c;
+  color: #000;
   font-size: 19px;
   font-weight: 700;
   line-height: 1;
@@ -10641,7 +10642,7 @@ textarea.order-control {
 }
 
 .modal-added__title {
-  color: #076692;
+  color: $color-dark;
   font-size: 19px;
   font-weight: 700;
   line-height: 1;
@@ -10650,7 +10651,7 @@ textarea.order-control {
   text-transform: uppercase;
   margin: -20px -20px 20px !important;
   padding: 12px;
-  background-color: #deedf0;
+  background-color: $color-light-lighter;
 }
 
 .modal-added__close {
@@ -10671,6 +10672,7 @@ textarea.order-control {
 
   a {
     outline: none;
+    text-decoration: underline;
   }
 
   @media (max-width: $breakpoint-medium-max) {
@@ -10721,6 +10723,7 @@ textarea.order-control {
   line-height: 1.2;
   font-size: 16px;
   text-decoration: underline;
+  color: #000;
 }
 
 .added-item__totals {
@@ -11730,7 +11733,7 @@ textarea.order-control {
   padding: 0 8px;
   line-height: 40px;
   text-decoration: none;
-  background-color: #e4b213;
+  background-color: #f2dd05;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -11748,7 +11751,7 @@ textarea.order-control {
   &:hover {
     text-decoration: none;
     color: #fff;
-    background-color: #d09e00;
+    background-color: darken(#f2dd05, 5%);
   }
 }
 
@@ -11892,8 +11895,7 @@ textarea.order-control {
   display: block;
 
   &:hover {
-    background-color: darken(#deedf0, 5%);
-    color: rgba(0, 0, 0, 1);
+    background-color: $color-light-darker;
     text-decoration: none;
   }
 
@@ -12507,26 +12509,15 @@ td.u-product-options__items {
 }
 
 .u-calc__title {
-  // color: #62625f;
-  // font-size: 19px;
-  // line-height: 1;
-  // letter-spacing: -0.01em;
-  // margin-bottom: 20px;
-
-  color: #005976;
+  color: #000;
   font-size: 24px;
   line-height: 1.25;
-
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 20px;
 
   @media (max-width: $breakpoint-small-max) {
-    // color: #005976;
-    // font-weight: 700;
-    // font-size: 16px;
     font-size: 20px;
-    // margin-bottom: 25px;
     margin-bottom: 15px;
   }
 }
@@ -12666,7 +12657,7 @@ td.u-product-options__items {
 }
 
 .u-calc-form__label {
-  color: #087592;
+  color: #000;
   font-size: 19px;
   line-height: 1;
   letter-spacing: 0.005em;
@@ -12784,14 +12775,14 @@ td.u-product-options__items {
 
 .u-product-discuss {
   line-height: 34px;
-  color: #e5c511;
+  color: #f2dd05;
   font-size: 16px;
   min-height: 42px;
   height: 42px;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bold;
-  border: 3px solid #e5c511;
+  border: 3px solid #f2dd05;
   width: 268px;
   max-width: 100%;
   display: block;
@@ -12801,13 +12792,13 @@ td.u-product-options__items {
   margin: 0 auto;
 
   &:hover {
-    background: #e5c511;
+    background: #f2dd05;
     color: #fff;
     text-decoration: none;
   }
 
   &:focus {
-    outline: 2px solid #ffee00;
+    outline: 2px solid #f2dd05;
   }
 
   @media (max-width: $breakpoint-mini-max) {
@@ -12995,7 +12986,7 @@ td.u-product-options__items {
   min-height: 42px;
   max-width: 100%;
   width: 268px;
-  background-color: #ebb203;
+  background-color: #f2dd05;
   padding: 0 20px;
   border: none;
   box-sizing: border-box;
@@ -13022,7 +13013,7 @@ td.u-product-options__items {
   }
 
   &_active {
-    background: lighten(#ebb203, 10%);
+    background: lighten(#f2dd05, 10%);
 
     &::after {
       margin-top: 2px;
@@ -13031,11 +13022,11 @@ td.u-product-options__items {
   }
 
   &:hover {
-    background: lighten(#ebb203, 10%);
+    background: lighten(#f2dd05, 10%);
   }
 
   &:focus {
-    outline: 2px solid #ffee00;
+    outline: 2px solid #f2dd05;
   }
 
   @media (max-width: $breakpoint-mini-max) {
@@ -13055,7 +13046,7 @@ td.u-product-options__items {
 
 .u-rating-info__value {
   font-size: 22px;
-  color: #026282;
+  color: $color-dark;
   margin-right: 25px;
   line-height: 1;
 
@@ -13081,7 +13072,7 @@ td.u-product-options__items {
 
 .u-rating__count {
   font-size: 16px;
-  color: #026282;
+  color: $color-dark;
   line-height: 1;
   width: 100%;
   margin-top: 18px;
@@ -14673,7 +14664,7 @@ td.u-product-options__items {
   position: relative;
   max-width: 320px;
   width: 33.33%;
-  border: 6px solid #8bcfde;
+  border: 6px solid $color-light-darker;
   min-height: 150px;
   border-radius: 6px;
   display: flex;
@@ -14694,7 +14685,7 @@ td.u-product-options__items {
 .u-product-achievement__title {
   font-size: 20px;
   line-height: 1;
-  color: #0d6b8e;
+  color: $color-dark;
   font-weight: 700;
   position: absolute;
   left: 10px;
@@ -14715,7 +14706,7 @@ td.u-product-options__items {
 .u-product-achievement__label {
   font-size: 72px;
   line-height: 72px;
-  color: #0d6b8e;
+  color: $color-dark;
   text-transform: uppercase;
   font-weight: 700;
   white-space: nowrap;
@@ -14730,7 +14721,7 @@ td.u-product-options__items {
   text-transform: lowercase;
   font-size: 24px;
   line-height: 1;
-  color: #0d6b8e;
+  color: $color-dark;
   font-weight: 300;
   white-space: nowrap;
 
