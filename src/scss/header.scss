@@ -82,16 +82,16 @@
     &_credit,
     &_reviews,
     &_track {
-      background-color: $accent-1;
+      background-color: $accent-3;
       font-size: 12px;
       line-height: 1;
       padding: 4px 5px 6px;
-      border-right: 1px solid darken($accent-1, 10%);
+      border-right: 1px solid darken($accent-3, 10%);
       text-decoration: none;
-      color: #fff;
+      color: #000;
 
       &:hover {
-        color: #fff;
+        color: #000;
       }
     }
 
@@ -187,7 +187,7 @@
 }
 
 .header {
-  background: $accent-1;
+  background: $accent-3;
   z-index: 990;
   position: fixed;
   width: 100%;
@@ -196,7 +196,7 @@
 
   @media (max-width: $breakpoint-medium-max) {
     background-color: $accent-1;
-    background: linear-gradient(180deg, $accent-1 0, $accent-1 32px, #fff 0, #fff);
+    background: linear-gradient(180deg, $accent-3 0, $accent-3 32px, #fff 0, #fff);
     padding-top: 32px;
   }
 }
@@ -227,12 +227,12 @@
 }
 
 .header-contacts__label {
-  color: #fff;
+  color: #000;
   margin-right: 18px;
   display: none;
 
   &:hover {
-    color: #fff;
+    color: #000;
   }
 
   @media (max-width: $breakpoint-medium-max) {
@@ -392,7 +392,7 @@
   width: 32px;
   height: 32px;
   position: relative;
-  color: $accent-1;
+  color: $accent-3;
   font-size: 20px;
   display: flex;
   align-items: center;
