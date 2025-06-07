@@ -386,12 +386,12 @@
 
 .toolbar-buttons__item {
   display: inline-block;
-  background: #005976;
+  background: #fff;
   border-radius: 16px;
   width: 32px;
   height: 32px;
   position: relative;
-  color: #ffffff;
+  color: #005976;
   font-size: 20px;
   display: flex;
   align-items: center;
@@ -408,24 +408,24 @@
   }
 
   &:hover {
-    background: #169bbb;
-    color: #002837;
+    background: #005976;
+    color: #fff;
   }
 
   &_active {
-    color: #77daee;
+    color: #169bbb;
 
     &:hover {
-      color: #77daee;
+      color: #169bbb;
     }
   }
 
   &.active,
   &_active-alt {
-    color: #fe0;
+    color: #e5b612;
 
     &:hover {
-      color: #fe0;
+      color: #e5b612;
     }
   }
 }
