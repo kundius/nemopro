@@ -392,7 +392,7 @@
   width: 32px;
   height: 32px;
   position: relative;
-  color: #005976;
+  color: $accent;
   font-size: 20px;
   display: flex;
   align-items: center;
@@ -409,18 +409,18 @@
   }
 
   &:hover {
-    background: #169bbb;
+    background: $accent;
     color: #fff;
   }
 
-  &_active {
-    color: #169bbb;
+  // &_active {
+  //   color: #169bbb;
 
-    &:hover {
-      background: #169bbb;
-      color: #fff;
-    }
-  }
+  //   &:hover {
+  //     background: $accent;
+  //     color: #fff;
+  //   }
+  // }
 
   &.active,
   &_active-alt {
@@ -441,7 +441,7 @@
     width: 114px;
     height: 42px;
 
-    background-color: #005976;
+    background-color: $accent;
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: contain;
