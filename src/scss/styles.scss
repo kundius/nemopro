@@ -427,7 +427,7 @@ button {
 }
 
 .u-button-second {
-  color: #03405c;
+  color: $color-dark;
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
@@ -443,7 +443,7 @@ button {
   display: inline-block;
 
   &:hover {
-    color: #05628d;
+    color: $color-medium-lighter;
     text-decoration: none;
   }
 }
@@ -453,8 +453,8 @@ button {
   line-height: 1;
   text-align: center;
   border: none;
-  background: #03405c;
-  border: 3px solid #03405c;
+  background: $color-dark;
+  border: 3px solid $color-dark;
   color: #fff;
   font-size: 14px;
   font-weight: 700;
@@ -465,8 +465,8 @@ button {
   cursor: pointer;
 
   &:hover {
-    background: #045175;
-    border-color: #045175;
+    background: $color-medium-lighter;
+    border-color: $color-medium-lighter;
     text-decoration: none;
     color: #fff;
   }
