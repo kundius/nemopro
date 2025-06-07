@@ -11552,7 +11552,7 @@ textarea.order-control {
 }
 
 .u-product__back {
-  color: #026282;
+  color: #000;
   text-decoration: underline;
   font-size: 15px;
   line-height: 24px;
@@ -11592,7 +11592,7 @@ textarea.order-control {
 .u-product__title {
   font-size: 31px;
   line-height: 1.15;
-  color: #026282;
+  color: #000;
   margin: 0 0 32px;
 
   @media (max-width: $breakpoint-mini-max) {
@@ -11805,7 +11805,7 @@ textarea.order-control {
 
 .u-product-price__value {
   font-size: 48px;
-  color: #005976;
+  color: #000;
   position: relative;
   top: 3px;
   white-space: nowrap;
@@ -11909,9 +11909,9 @@ textarea.order-control {
   font-size: 17px;
   font-weight: bold;
   text-transform: uppercase;
-  border: 3px solid #005976;
+  border: 3px solid $color-dark;
   cursor: pointer;
-  color: #005976;
+  color: $color-dark;
   padding: 0 15px;
   display: block;
   width: 100%;
@@ -11923,8 +11923,8 @@ textarea.order-control {
   letter-spacing: 0.05em;
 
   &:hover {
-    border-color: #0b8fae;
-    color: #0b8fae;
+    border-color: $color-medium-lighter;
+    color: $color-medium-lighter;
     text-decoration: none;
   }
 }
@@ -11935,10 +11935,10 @@ textarea.order-control {
   font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
-  border: 3px solid #005976;
+  border: 3px solid $color-dark;
   cursor: pointer;
   color: #fff;
-  background: #005976;
+  background: $color-dark;
   line-height: 33px;
   padding: 1px 15px 0;
   display: block;
@@ -11966,13 +11966,13 @@ textarea.order-control {
 
 .u-product-gocart {
   display: none;
-  background: #ffee00;
-  border-color: #ffee00;
+  background: #F2DD05;
+  border-color: #F2DD05;
   color: rgba(0, 0, 0, .6);
 
   &:hover {
-    background: darken(#ffee00, 5%);
-    border-color: darken(#ffee00, 5%);
+    background: darken(#F2DD05, 5%);
+    border-color: darken(#F2DD05, 5%);
     color: rgba(0, 0, 0, .6);
   }
 
@@ -11986,8 +11986,8 @@ textarea.order-control {
   background: #005976;
 
   &:hover {
-    background: #0b8fae;
-    border-color: #0b8fae;
+    background: $color-medium-lighter;
+    border-color: $color-medium-lighter;
   }
 
   ._is_in_cart & {
@@ -12276,17 +12276,17 @@ td.u-product-options__items {
 
   li {
     list-style: none;
-    color: #037290;
+    color: #000;
     font-size: 22px;
     line-height: 1;
     padding: 17px 0;
-    background-color: #deedf0;
+    background-color: $color-light-lighter;
     cursor: pointer;
     text-align: center;
     white-space: nowrap;
 
     &.uk-active {
-      background-color: #005976;
+      background-color: $color-dark;
       color: #fff;
       position: relative;
       font-weight: 600;
@@ -13914,7 +13914,7 @@ td.u-product-options__items {
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: #01718f;
+  color: #000;
 }
 
 .detail-gallery-thumbs .swiper-slide.swiper-slide-thumb-active::after {
@@ -14294,7 +14294,7 @@ td.u-product-options__items {
 
 
 .mscomparison-toggle {
-  background: #0b8fae;
+  background: $color-dark;
   border: none;
   width: 40px;
   height: 40px;
