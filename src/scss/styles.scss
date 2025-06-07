@@ -12162,10 +12162,9 @@ td.u-product-options__items {
   }
 
   input:checked+span {
-    background-color: #037290;
-    // border-color: #5ba3b7;
+    background-color: $color-medium-lighter;
+    border-color: $color-medium-lighter;
     color: #ffffff;
-    text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.6);
   }
 }
 

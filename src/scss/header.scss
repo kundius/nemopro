@@ -464,11 +464,11 @@
   display: block;
   background: $color-light-lighter;
 
-  &.full,
-  &:hover {
-    border-color: #fe0;
-    color: #fe0;
-  }
+  // &.full,
+  // &:hover {
+  //   border-color: #fe0;
+  //   color: #fe0;
+  // }
 
   @media (max-width: $breakpoint-medium-max) {
     width: 44px;
