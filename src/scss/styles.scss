@@ -11745,7 +11745,7 @@ textarea.order-control {
   line-height: 40px;
   text-decoration: none;
   background-color: $color-yellow-lighter;
-  color: #fff;
+  color: $color-dark;
   border: none;
   cursor: pointer;
 
@@ -12540,7 +12540,7 @@ td.u-product-options__items {
 
   @media (max-width: $breakpoint-small-max) {
     flex-wrap: wrap;
-    background: $color-light-darker;
+    background: $color-light-lighter;
     padding: 14px 4px 9px;
     margin: 0 -3px 20px;
   }
@@ -12988,7 +12988,7 @@ td.u-product-options__items {
 }
 
 .u-rating__add {
-  color: #fff;
+  color: $color-dark;
   font-size: 16px;
   font-weight: 400;
   line-height: 42px;
@@ -13016,8 +13016,8 @@ td.u-product-options__items {
     width: 10px;
     height: 10px;
     position: absolute;
-    border-left: 2px solid #fff;
-    border-bottom: 2px solid #fff;
+    border-left: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
     transform: translateY(-50%) rotate(-45deg);
     transition: ease .3s;
     transition-property: transform, margin-top;
@@ -13800,7 +13800,7 @@ td.u-product-options__items {
 }
 
 .detail-gallery_lightbox {
-  background: #000000;
+  background: $color-light-lighter;
   position: fixed;
   padding-bottom: 0;
   height: 100%;
@@ -13830,7 +13830,7 @@ td.u-product-options__items {
   padding: 0;
   z-index: 20;
   border: 0;
-  color: #ffffff;
+  color: $color-dark;
   filter: drop-shadow(0 0.1em 0.25em rgba(0, 0, 0, 0.4));
 }
 
