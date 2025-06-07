@@ -11876,9 +11876,9 @@ textarea.order-control {
 }
 
 .u-product-cheaper {
-  background-color: #deedf0;
+  background-color: $color-light-lighter;
   font-weight: 700;
-  color: rgba(0, 0, 0, .6);
+  color: $color-dark;
   font-size: 14px;
   text-transform: uppercase;
   line-height: 1;
@@ -11900,7 +11900,6 @@ textarea.order-control {
   @media (max-width: $breakpoint-mini-max) {
     margin-top: 26px;
     font-weight: 400;
-    color: #026282;
     font-size: 12px;
   }
 }
