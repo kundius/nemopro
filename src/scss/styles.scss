@@ -1997,7 +1997,7 @@ jdiv {
 }
 
 .products-item__name {
-  color: #016a88;
+  color: #000;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.2;
@@ -2524,7 +2524,7 @@ jdiv {
 .h-about__time {
   float: right;
 
-  color: #01718f;
+  color: #000;
   font-size: 18px;
   font-weight: 700;
   text-align: center;
@@ -2564,7 +2564,7 @@ jdiv {
 }
 
 .h-about__title {
-  color: #016a88;
+  color: #000;
   font-size: 24px;
   text-transform: uppercase;
   margin-bottom: 19px;
@@ -2581,7 +2581,11 @@ jdiv {
   font-size: 12px;
 
   a {
-    color: #0099cc;
+    color: #000;
+
+    &:hover {
+      color: #c03;
+    }
   }
 }
 
@@ -2713,7 +2717,7 @@ jdiv {
 .workflow-item__name {
   font-weight: bold;
   font-size: 18px;
-  color: #45b7c8;
+  color: #000;
   line-height: 1.2;
   margin: 0 0 15px;
 
@@ -2853,8 +2857,12 @@ jdiv {
   font-size: 12px;
 
   a {
-    color: #0099cc;
+    color: #000;
     text-decoration: underline;
+
+    &:hover {
+      color: #c03;
+    }
   }
 }
 
@@ -2877,7 +2885,7 @@ jdiv {
 }
 
 .h-text-block__title {
-  color: #037290;
+  color: #000;
   font-size: 20px;
   line-height: 1;
   text-transform: uppercase;
@@ -13106,7 +13114,7 @@ td.u-product-options__items {
 }
 
 .u-feedback__title {
-  color: #037290;
+  color: #000;
   font-size: 20px;
   line-height: 1;
   text-transform: uppercase;
@@ -13457,16 +13465,13 @@ td.u-product-options__items {
   a {
     display: inline-block;
     margin: 4px 8px;
-    color: #005976;
+    color: #000;
     white-space: nowrap;
     text-decoration: underline;
 
-    //border-bottom: 1px solid currentColor;
     &:hover {
       text-decoration: underline;
-      color: #002837;
-      /*background: #005976;
-            border-bottom-color: #005976;*/
+      color: #c03;
     }
   }
 }
@@ -13556,14 +13561,14 @@ td.u-product-options__items {
   display: block;
   margin-top: 8px;
   text-decoration: none;
-  color: #016a88;
+  color: #000;
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
 
   &:hover {
     text-decoration: underline;
-    color: #016a88;
+    color: #c03;
   }
 
   &::before {
