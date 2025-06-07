@@ -170,13 +170,13 @@ button {
   text-transform: uppercase;
   display: inline-block;
   border: 0;
-  background: #03405c;
+  background: $color-dark;
   color: #fff;
   text-decoration: none;
   vertical-align: middle;
 
   &:hover {
-    background: #045175;
+    background: $color-medium-lighter;
     color: #ffffff;
     text-decoration: none;
   }
