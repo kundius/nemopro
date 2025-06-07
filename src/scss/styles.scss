@@ -828,7 +828,7 @@ select {
 
 @media (min-width: $breakpoint-medium) {
   .catalog-menu {
-    background-color: #005976;
+    background-color: $accent;
     position: relative;
     z-index: 100;
   }
