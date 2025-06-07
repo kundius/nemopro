@@ -167,7 +167,7 @@
   margin-left: 5px;
   margin-right: 5px;
   border-radius: 6px;
-  background-color: #F2DD05;
+  background-color: $color-yellow-lighter;
   text-transform: uppercase;
   text-align: center;
   box-sizing: initial;
@@ -176,8 +176,8 @@
 
   &:hover {
     text-decoration: none;
-    background: #ffce23;
-    color: #002837;
+    background: $color-yellow-darker;
+    color: $color-dark;
   }
 
   @media (max-width: $breakpoint-medium-max) {
@@ -347,7 +347,7 @@
 
 .header__catalog {
   border-radius: 6px;
-  background-color: #F2DD05;
+  background-color: $color-yellow-lighter;
   color: #002837;
   font-size: 16px;
   font-weight: 700;
@@ -359,7 +359,7 @@
 
   &:hover {
     text-decoration: none;
-    background: #ffce23;
+    background: $color-yellow-darker;
     color: #002837;
   }
 }
@@ -424,10 +424,10 @@
 
   &.active,
   &_active-alt {
-    color: #F2DD05;
+    color: $color-yellow-lighter;
 
     &:hover {
-      color: #F2DD05;
+      color: $color-yellow-lighter;
     }
   }
 }
@@ -466,8 +466,8 @@
 
   // &.full,
   // &:hover {
-  //   border-color: #F2DD05;
-  //   color: #F2DD05;
+  //   border-color: $color-yellow-lighter;
+  //   color: $color-yellow-lighter;
   // }
 
   @media (max-width: $breakpoint-medium-max) {
@@ -487,7 +487,7 @@
   text-align: center;
   border-radius: 100%;
   min-width: 14px;
-  background: #F2DD05;
+  background: $color-yellow-lighter;
   display: none;
   min-height: 14px;
   align-items: center;
@@ -534,7 +534,7 @@
   line-height: 1;
   text-align: center;
   border-radius: 10px;
-  background: #F2DD05;
+  background: $color-yellow-lighter;
   padding-top: 1px;
   padding-bottom: 0;
   padding-left: 2px;

@@ -11505,7 +11505,7 @@ textarea.order-control {
   font-weight: 700;
   line-height: 29px;
   border-radius: 6px;
-  background-color: #f2dd05;
+  background-color: $color-yellow-lighter;
   text-transform: uppercase;
   padding: 9px 15px;
   text-align: center;
@@ -11524,7 +11524,7 @@ textarea.order-control {
 
   &:hover {
     text-decoration: none;
-    background: #ffce23;
+    background: $color-yellow-darker;
   }
 
   @media (min-width: $breakpoint-large) {
@@ -11737,7 +11737,7 @@ textarea.order-control {
   padding: 0 8px;
   line-height: 40px;
   text-decoration: none;
-  background-color: #f2dd05;
+  background-color: $color-yellow-lighter;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -11755,12 +11755,12 @@ textarea.order-control {
   &:hover {
     text-decoration: none;
     color: #fff;
-    background-color: #ffce23;
+    background-color: $color-yellow-darker;
   }
 }
 
 .u-product-share__box {
-  background-color: #f2dd05;
+  background-color: $color-yellow-lighter;
   left: 0;
   top: 0;
   position: absolute;
@@ -11971,13 +11971,13 @@ textarea.order-control {
 
 .u-product-gocart {
   display: none;
-  background: #F2DD05;
-  border-color: #F2DD05;
+  background: $color-yellow-lighter;
+  border-color: $color-yellow-lighter;
   color: rgba(0, 0, 0, .6);
 
   &:hover {
-    background: #ffce23;
-    border-color: #ffce23;
+    background: $color-yellow-darker;
+    border-color: $color-yellow-darker;
     color: rgba(0, 0, 0, .6);
   }
 
@@ -12779,14 +12779,14 @@ td.u-product-options__items {
 
 .u-product-discuss {
   line-height: 34px;
-  color: #f2dd05;
+  color: $color-yellow-lighter;
   font-size: 16px;
   min-height: 42px;
   height: 42px;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bold;
-  border: 3px solid #f2dd05;
+  border: 3px solid $color-yellow-lighter;
   width: 268px;
   max-width: 100%;
   display: block;
@@ -12796,13 +12796,13 @@ td.u-product-options__items {
   margin: 0 auto;
 
   &:hover {
-    background: #f2dd05;
+    background: $color-yellow-darker;
     color: #fff;
     text-decoration: none;
   }
 
   &:focus {
-    outline: 2px solid #f2dd05;
+    outline: 2px solid $color-yellow-darker;
   }
 
   @media (max-width: $breakpoint-mini-max) {
@@ -12990,7 +12990,7 @@ td.u-product-options__items {
   min-height: 42px;
   max-width: 100%;
   width: 268px;
-  background-color: #f2dd05;
+  background-color: $color-yellow-lighter;
   padding: 0 20px;
   border: none;
   box-sizing: border-box;
@@ -13017,7 +13017,7 @@ td.u-product-options__items {
   }
 
   &_active {
-    background: lighten(#f2dd05, 10%);
+    background: $color-yellow-darker;
 
     &::after {
       margin-top: 2px;
@@ -13026,11 +13026,11 @@ td.u-product-options__items {
   }
 
   &:hover {
-    background: lighten(#f2dd05, 10%);
+    background: $color-yellow-darker;
   }
 
   &:focus {
-    outline: 2px solid #f2dd05;
+    outline: 2px solid $color-yellow-darker;
   }
 
   @media (max-width: $breakpoint-mini-max) {
