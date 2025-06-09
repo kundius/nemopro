@@ -82,11 +82,11 @@
     &_credit,
     &_reviews,
     &_track {
-      background-color: $color-light-darkness;
+      background-color: $color-light-darker;
       font-size: 12px;
       line-height: 1;
       padding: 4px 5px 6px;
-      border-right: 1px solid $color-light-darker;
+      border-right: 1px solid $color-light-darkness;
       text-decoration: none;
       color: $color-dark;
 
