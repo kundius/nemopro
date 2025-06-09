@@ -176,11 +176,11 @@ a.ui-button:active,
 }
 
 .search-form input[name="query"] {
-  background-color: $color-dark;
-  border: 1px solid $color-dark;
+  background-color: $color-light-darkness;
+  border: 1px solid $color-light-darkness;
   padding: 0 20px;
   min-height: 44px;
-  color: #fff;
+  color: $color-dark;
   font-size: 18px;
   width: 100%;
 

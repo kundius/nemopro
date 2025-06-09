@@ -82,16 +82,16 @@
     &_credit,
     &_reviews,
     &_track {
-      background-color: $color-dark;
+      background-color: $color-light-darkness;
       font-size: 12px;
       line-height: 1;
       padding: 4px 5px 6px;
-      border-right: 1px solid darken($color-dark, 10%);
+      border-right: 1px solid $color-light-darker;
       text-decoration: none;
-      color: #fff;
+      color: $color-dark;
 
       &:hover {
-        color: #fff;
+        color: $color-dark;
       }
     }
 
