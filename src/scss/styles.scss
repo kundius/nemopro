@@ -12169,16 +12169,14 @@ td.u-product-options__items {
     }
 
     &:hover {
-      background-color: $color-medium-lighter;
-      border-color: $color-medium-lighter;
-      color: #fff;
+      background-color: $color-light-darker;
+      border-color: $color-light-darker;
     }
   }
 
   input:checked+span {
-    background-color: $color-medium-lighter;
-    border-color: $color-medium-lighter;
-    color: #ffffff;
+    background-color: $color-light-darker;
+    border-color: $color-light-darker;
   }
 }
 
@@ -13544,12 +13542,13 @@ td.u-product-options__items {
 .categories-slider-item {
   padding: 10px;
   background: #fff;
-  border-radius: 5px;
+  border-radius: 4px;
   position: relative;
   transition: box-shadow .3s ease;
+  border: 1px solid #dedede;
 
   &:hover {
-    box-shadow: 0 0 6px rgba(0, 0, 0, .75);
+    box-shadow: 0 0 6px rgba(0, 0, 0, .4);
   }
 }
 
@@ -13651,6 +13650,7 @@ td.u-product-options__items {
     width: 44px;
     height: 44px;
     background: $color-yellow-lighter;
+    color: $color-dark;
     border: none;
     border-radius: 50%;
     z-index: 30;
@@ -13678,8 +13678,8 @@ td.u-product-options__items {
       left: 50%;
       height: 10px;
       width: 10px;
-      border-right: 2px solid #ffffff;
-      border-bottom: 2px solid #ffffff;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
       transform: translate(-50%, -50%) rotate(-45deg);
       margin-left: -2px;
     }
