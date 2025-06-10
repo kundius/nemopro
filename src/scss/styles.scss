@@ -8343,7 +8343,7 @@ textarea.order-control {
   input:checked+span:after {
     content: '';
     display: block;
-    background-color: #45b7c8;
+    background-color: $color-dark;
     border-radius: 50%;
     width: 12px;
     height: 12px;
@@ -10402,7 +10402,7 @@ textarea.order-control {
 
 .order-country__label {
   text-align: center;
-  color: #135061;
+  color: #000;
   font-size: 19px;
   font-weight: 500;
   text-transform: uppercase;
@@ -10421,7 +10421,7 @@ textarea.order-control {
 
   label {
     display: inline-block;
-    color: #2285a0;
+    color: #000;
     font-size: 19px;
     cursor: pointer;
     position: relative;
@@ -10580,7 +10580,7 @@ textarea.order-control {
   align-items: center;
 
   .uk-icon-rub {
-    color: #02718f;
+    color: #000;
     font-size: 21px;
     margin-left: 10px;
     position: relative;
@@ -10589,7 +10589,7 @@ textarea.order-control {
 }
 
 .order-modern-total__desc {
-  color: #02718f;
+  color: #000;
   font-size: 16px;
   margin-left: 10px;
   position: relative;
