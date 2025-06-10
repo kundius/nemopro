@@ -9871,7 +9871,6 @@ textarea.order-control {
   font-family: 'Fira Sans', 'Open Sans', sans-serif;
 
   li {
-    color: #c4c5c5;
     font-size: 21px;
     line-height: 1;
     text-transform: uppercase;
@@ -9897,7 +9896,7 @@ textarea.order-control {
     }
 
     &.uk-active {
-      color: #007291;
+      color: #000;
     }
 
     &.uk-disabled {
@@ -10101,8 +10100,6 @@ textarea.order-control {
   }
 
   @media (max-width: $breakpoint-medium-max) {
-    color: #02718f;
-
     .old_price {
       text-align: left
     }
