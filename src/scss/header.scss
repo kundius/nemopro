@@ -82,16 +82,16 @@
     &_credit,
     &_reviews,
     &_track {
-      background-color: $color-light-lighter;
+      background-color: white;
       font-size: 12px;
       line-height: 1;
       padding: 4px 5px 6px;
       border-right: 1px solid $color-light-darker;
       text-decoration: none;
-      color: $color-dark;
+      color: #000;
 
       &:hover {
-        color: $color-dark;
+        color: #000;
       }
     }
 
@@ -177,7 +177,7 @@
   &:hover {
     text-decoration: none;
     background: $color-yellow-darker;
-    color: $color-dark;
+    color: $color-dark-lighter;
   }
 
   @media (max-width: $breakpoint-medium-max) {
@@ -187,7 +187,7 @@
 }
 
 .header {
-  background: $color-dark;
+  background: $color-dark-lighter;
   z-index: 990;
   position: fixed;
   width: 100%;
@@ -195,8 +195,8 @@
   top: 0;
 
   @media (max-width: $breakpoint-medium-max) {
-    background-color: $color-dark;
-    background: linear-gradient(180deg, $color-dark 0, $color-dark 32px, $color-light-lighter 0, $color-light-lighter);
+    background-color: $color-dark-lighter;
+    background: linear-gradient(180deg, $color-dark-lighter 0, $color-dark-lighter 32px, $color-light-lighter 0, $color-light-lighter);
     padding-top: 32px;
   }
 }
@@ -392,7 +392,7 @@
   width: 32px;
   height: 32px;
   position: relative;
-  color: $color-dark;
+  color: $color-dark-lighter;
   font-size: 20px;
   display: flex;
   align-items: center;
@@ -410,14 +410,14 @@
 
   &:hover {
     background: $color-light-darker;
-    color: $color-dark;
+    color: $color-dark-lighter;
   }
 
   // &_active {
   //   color: #169bbb;
 
   //   &:hover {
-  //     background: $color-dark;
+  //     background: $color-dark-lighter;
   //     color: #fff;
   //   }
   // }
@@ -441,7 +441,7 @@
     width: 114px;
     height: 42px;
 
-    background-color: $color-dark;
+    background-color: $color-dark-lighter;
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: contain;
@@ -457,8 +457,8 @@
   position: relative;
   width: 48px;
   height: 48px;
-  border: 2px solid $color-dark;
-  color: $color-dark;
+  border: 2px solid $color-dark-lighter;
+  color: $color-dark-lighter;
   border-radius: 50%;
   flex-shrink: 0;
   display: block;

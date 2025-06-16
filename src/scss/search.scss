@@ -180,7 +180,7 @@ a.ui-button:active,
   border: 1px solid $color-light-lighter;
   padding: 0 20px;
   min-height: 44px;
-  color: $color-dark;
+  color: $color-dark-lighter;
   font-size: 18px;
   width: 100%;
 
@@ -192,7 +192,7 @@ a.ui-button:active,
 }
 
 .search-form input[name="query"]::placeholder {
-  color: $color-dark;
+  color: $color-dark-lighter;
 }
 
 .search-form button {
@@ -206,7 +206,7 @@ a.ui-button:active,
   border: none;
   cursor: pointer;
   padding: 0;
-  color: $color-dark;
+  color: $color-dark-lighter;
   font-size: 16px;
   background: transparent;
 }

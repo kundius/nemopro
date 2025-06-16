@@ -170,7 +170,7 @@ button {
   text-transform: uppercase;
   display: inline-block;
   border: 0;
-  background: $color-dark;
+  background: $color-dark-lighter;
   color: #fff;
   text-decoration: none;
   vertical-align: middle;
@@ -360,13 +360,13 @@ button {
 }
 
 .button-border-blue {
-  border: 2px solid $color-dark;
+  border: 2px solid $color-dark-lighter;
   border-radius: 5px;
   font-size: 11px;
   padding: 10px 20px;
   line-height: 1;
   font-weight: bold;
-  color: $color-dark;
+  color: $color-dark-lighter;
   text-decoration: none;
   background: #ffffff;
   text-transform: uppercase;
@@ -433,7 +433,7 @@ button {
 }
 
 .u-button-second {
-  color: $color-dark;
+  color: $color-dark-lighter;
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
@@ -459,8 +459,8 @@ button {
   line-height: 1;
   text-align: center;
   border: none;
-  background: $color-dark;
-  border: 3px solid $color-dark;
+  background: $color-dark-lighter;
+  border: 3px solid $color-dark-lighter;
   color: #fff;
   font-size: 14px;
   font-weight: 700;
@@ -834,7 +834,7 @@ select {
 
 @media (min-width: $breakpoint-medium) {
   .catalog-menu {
-    background-color: $color-dark;
+    background-color: $color-dark-lighter;
     position: relative;
     z-index: 100;
   }
@@ -1838,7 +1838,7 @@ jdiv {
 .products-item {
   background-color: #ffffff;
   border-radius: 4px;
-  border: 1px solid $color-dark;
+  border: 1px solid $color-dark-lighter;
   position: relative;
   // overflow: hidden;
   transition: .6s ease;
@@ -2012,7 +2012,7 @@ jdiv {
   display: block;
 
   &:hover {
-    color: #cc0033;
+    color: $color-red-lightness;
   }
 }
 
@@ -2273,9 +2273,9 @@ jdiv {
 .products-item__buttons {}
 
 .products-item__buttons-msbuyoneclick {
-  color: $color-dark;
+  color: $color-dark-lighter;
   font-size: 12px;
-  border: 2px solid $color-dark;
+  border: 2px solid $color-dark-lighter;
   cursor: pointer;
   padding: 0 5px;
   text-align: center;
@@ -2295,13 +2295,13 @@ jdiv {
 .products-item__buttons-add {
   color: #fff;
   font-size: 14px;
-  border: 2px solid $color-dark;
+  border: 2px solid $color-dark-lighter;
   cursor: pointer;
   padding: 0 5px;
   text-align: center;
   line-height: 20px;
   width: 100%;
-  background-color: $color-dark;
+  background-color: $color-dark-lighter;
   text-decoration: none;
   display: block;
   margin-bottom: 4px;
@@ -2375,14 +2375,14 @@ jdiv {
 }
 
 .products-item .msfavorites-toggle {
-  background: $color-dark;
+  background: $color-dark-lighter;
   width: 26px;
   height: 26px;
   font-size: 16px;
 }
 
 .products-item .mscomparison-toggle {
-  background: $color-dark;
+  background: $color-dark-lighter;
   width: 26px;
   height: 26px;
   font-size: 16px;
@@ -2610,7 +2610,7 @@ jdiv {
 .content {
   border-radius: 5px;
   padding: 10px;
-  border: 1px solid $color-dark;
+  border: 1px solid $color-dark-lighter;
   background-color: #ffffff;
   position: relative;
   margin-top: 10px;
@@ -2747,13 +2747,13 @@ jdiv {
 
 
 .h-reviews__all {
-  border: 2px solid $color-dark;
+  border: 2px solid $color-dark-lighter;
   line-height: 34px;
   white-space: nowrap;
   padding: 0 20px;
   font-size: 14px;
   font-weight: bold;
-  color: $color-dark;
+  color: $color-dark-lighter;
   text-decoration: none;
   margin: 20px auto 0;
   display: block;
@@ -3150,15 +3150,15 @@ jdiv {
 .breadcrumbs {
   font-size: 12px;
   font-style: italic;
-  color: $color-dark;
+  color: $color-dark-lighter;
   line-height: 1.5;
-  border-top: 1px solid $color-dark;
-  border-bottom: 1px solid $color-dark;
+  border-top: 1px solid $color-dark-lighter;
+  border-bottom: 1px solid $color-dark-lighter;
   padding: 10px 0;
   margin: 0;
 
   a {
-    color: $color-dark;
+    color: $color-dark-lighter;
     text-decoration: underline;
   }
 
@@ -3243,7 +3243,7 @@ jdiv {
   text-transform: uppercase;
 
   &:hover {
-    background: #005976;
+    background: $color-dark-lighter;
     color: #fff;
 
     .offcanvas-close span {
@@ -4151,7 +4151,7 @@ jdiv {
 
 .product__headline-arrow {
   cursor: pointer;
-  background: $color-dark;
+  background: $color-dark-lighter;
   border: none;
   font-size: 32px;
   color: #fff;
@@ -4183,7 +4183,7 @@ jdiv {
 }
 
 .product__headline-text {
-  color: $color-dark;
+  color: $color-dark-lighter;
   font-size: 18px;
   font-weight: 600;
   line-height: 1;
@@ -5463,7 +5463,7 @@ label.error {
   background-color: $color-yellow-lighter;
   padding: 0 2px;
   display: inline-block;
-  color: $color-dark;
+  color: $color-dark-lighter;
 }
 
 .contacts__value {
@@ -6522,11 +6522,11 @@ div.pagination {
   border-spacing: 0;
   width: 100%;
   margin-bottom: 20px;
-  border: 1px solid $color-dark;
+  border: 1px solid $color-dark-lighter;
 
   th {
     border: 0;
-    background: $color-dark;
+    background: $color-dark-lighter;
     padding: 15px;
     text-transform: uppercase;
     text-align: left;
@@ -6547,7 +6547,7 @@ div.pagination {
   }
 
   tr:last-child td {
-    border-bottom: 1px solid $color-dark;
+    border-bottom: 1px solid $color-dark-lighter;
   }
 }
 
@@ -6658,8 +6658,8 @@ th.forum-headline__replies {
   width: 202px;
   margin-bottom: 10px;
   font-size: 14px;
-  border-color: $color-dark;
-  color: $color-dark;
+  border-color: $color-dark-lighter;
+  color: $color-dark-lighter;
   border-radius: 0;
   float: right;
 
@@ -7934,8 +7934,8 @@ th.forum-headline__replies {
     color: #000000;
     text-align: center;
     border: none;
-    border-top: 1px solid $color-dark;
-    border-bottom: 1px solid $color-dark;
+    border-top: 1px solid $color-dark-lighter;
+    border-bottom: 1px solid $color-dark-lighter;
     color: #007291;
     font-weight: bold;
 
@@ -7952,7 +7952,7 @@ th.forum-headline__replies {
   color: #ffffff;
   font-size: 10px;
   cursor: pointer;
-  background-color: $color-dark;
+  background-color: $color-dark-lighter;
   line-height: 30px;
   width: 30px;
   text-align: center;
@@ -8343,7 +8343,7 @@ textarea.order-control {
   input:checked+span:after {
     content: '';
     display: block;
-    background-color: $color-dark;
+    background-color: $color-dark-lighter;
     border-radius: 50%;
     width: 12px;
     height: 12px;
@@ -9592,7 +9592,7 @@ textarea.order-control {
 }
 
 .filters-wrap__toggle-on-moblie {
-  background-color: $color-dark;
+  background-color: $color-dark-lighter;
   color: #fff;
   display: none;
   width: 100%;
@@ -9710,7 +9710,7 @@ textarea.order-control {
 }
 
 .buyoneclick-discount__button {
-  color: $color-dark;
+  color: $color-dark-lighter;
   font-size: 13px;
   font-weight: 700;
   line-height: 32px;
@@ -9758,7 +9758,7 @@ textarea.order-control {
   box-sizing: border-box;
   width: 100%;
   min-height: 37px;
-  border: 1px solid $color-dark;
+  border: 1px solid $color-dark-lighter;
   background-color: #fff;
   box-shadow: none;
   border-radius: 0;
@@ -9777,7 +9777,7 @@ textarea.order-control {
   min-height: 38px;
   text-align: center;
   border: none;
-  background: $color-dark;
+  background: $color-dark-lighter;
   color: #ffffff;
   font-size: 17px;
   font-weight: bold;
@@ -10016,7 +10016,7 @@ textarea.order-control {
   margin-right: 25px;
   width: 110px;
   box-shadow: 1px 1px 5px rgba(6, 59, 79, 0.64);
-  border: 1px solid $color-dark;
+  border: 1px solid $color-dark-lighter;
   margin-top: -7px;
 
   @media (max-width: $breakpoint-medium-max) {
@@ -10645,7 +10645,7 @@ textarea.order-control {
 }
 
 .modal-added__title {
-  color: $color-dark;
+  color: $color-dark-lighter;
   font-size: 19px;
   font-weight: 700;
   line-height: 1;
@@ -11325,18 +11325,18 @@ textarea.order-control {
       cursor: pointer;
       background-color: $color-yellow-lighter;
       line-height: 33px;
-      color: $color-dark;
+      color: $color-dark-lighter;
       font-size: 16px;
 
       &:hover {
         background-color: $color-yellow-darker;
-        color: $color-dark;
+        color: $color-dark-lighter;
       }
     }
 
     &.active {
       a {
-        background-color: $color-dark;
+        background-color: $color-dark-lighter;
         color: #fff;
 
         &:hover {
@@ -11371,7 +11371,7 @@ textarea.order-control {
     z-index: 2;
     width: 40px;
     height: 100%;
-    background: $color-dark;
+    background: $color-dark-lighter;
     border-radius: 0 4px 4px 0;
   }
 
@@ -11504,7 +11504,7 @@ textarea.order-control {
 .fixed-catalog {
   position: fixed;
   z-index: 100;
-  color: $color-dark;
+  color: $color-dark-lighter;
   font-size: 14px;
   font-weight: 700;
   line-height: 29px;
@@ -11741,8 +11741,8 @@ textarea.order-control {
   padding: 0 8px;
   line-height: 40px;
   text-decoration: none;
-  background-color: $color-yellow-lighter;
-  color: $color-dark;
+  background-color: $color-light-lighter;
+  color: #000;
   border: none;
   cursor: pointer;
 
@@ -11758,13 +11758,13 @@ textarea.order-control {
 
   &:hover {
     text-decoration: none;
-    color: $color-dark;
-    background-color: $color-yellow-darker;
+    color: #000;
+    background-color: $color-light-darker;
   }
 }
 
 .u-product-share__box {
-  background-color: $color-yellow-lighter;
+  background-color: $color-light-lighter;
   left: 0;
   top: 0;
   position: absolute;
@@ -11889,7 +11889,7 @@ textarea.order-control {
 .u-product-cheaper {
   background-color: $color-light-lighter;
   font-weight: 700;
-  color: $color-dark;
+  color: $color-dark-lighter;
   font-size: 14px;
   text-transform: uppercase;
   line-height: 1;
@@ -11918,9 +11918,9 @@ textarea.order-control {
   font-size: 17px;
   font-weight: bold;
   text-transform: uppercase;
-  border: 3px solid $color-dark;
+  border: 3px solid $color-dark-lighter;
   cursor: pointer;
-  color: $color-dark;
+  color: $color-dark-lighter;
   padding: 0 15px;
   display: block;
   width: 100%;
@@ -11944,10 +11944,10 @@ textarea.order-control {
   font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
-  border: 3px solid $color-dark;
+  border: 3px solid $color-dark-lighter;
   cursor: pointer;
   color: #fff;
-  background: $color-dark;
+  background: $color-dark-lighter;
   line-height: 33px;
   padding: 1px 15px 0;
   display: block;
@@ -11992,7 +11992,7 @@ textarea.order-control {
 
 .u-product-addcart {
   display: block;
-  background: $color-dark;
+  background: $color-dark-lighter;
 
   &:hover {
     background: $color-medium-lighter;
@@ -12075,8 +12075,8 @@ td.u-product-options__items {
     padding: 0 0.25em;
     letter-spacing: -0.02em;
     height: 38px;
-    border: 1px solid $color-dark;
-    color: $color-dark;
+    border: 1px solid $color-dark-lighter;
+    color: $color-dark-lighter;
     font-size: 14px;
     font-weight: 700;
     line-height: 38px;
@@ -12293,7 +12293,7 @@ td.u-product-options__items {
     white-space: nowrap;
 
     &.uk-active {
-      background-color: $color-dark;
+      background-color: $color-dark-lighter;
       color: #fff;
       position: relative;
       font-weight: 600;
@@ -12984,7 +12984,7 @@ td.u-product-options__items {
 }
 
 .u-rating__add {
-  color: $color-dark;
+  color: $color-dark-lighter;
   font-size: 16px;
   font-weight: 400;
   line-height: 42px;
@@ -13053,7 +13053,7 @@ td.u-product-options__items {
 
 .u-rating-info__value {
   font-size: 22px;
-  color: $color-dark;
+  color: $color-dark-lighter;
   margin-right: 25px;
   line-height: 1;
 
@@ -13079,7 +13079,7 @@ td.u-product-options__items {
 
 .u-rating__count {
   font-size: 16px;
-  color: $color-dark;
+  color: $color-dark-lighter;
   line-height: 1;
   width: 100%;
   margin-top: 18px;
@@ -13141,7 +13141,7 @@ td.u-product-options__items {
   box-sizing: border-box;
   box-shadow: none;
   background: #f8f8f9;
-  border: 1px solid $color-dark;
+  border: 1px solid $color-dark-lighter;
 
   &::placeholder {
     color: #777;
@@ -13153,7 +13153,7 @@ td.u-product-options__items {
   min-height: 38px;
   text-align: center;
   border: none;
-  background: $color-dark;
+  background: $color-dark-lighter;
   color: #ffffff;
   font-size: 17px;
   font-weight: 400;
@@ -13169,12 +13169,12 @@ td.u-product-options__items {
 }
 
 .u-feedback-message {
-  border: 1px solid $color-dark;
+  border: 1px solid $color-dark-darker;
   overflow: hidden;
   position: relative;
   height: 38px;
   box-sizing: border-box;
-  background: $color-dark;
+  background: $color-dark-darker;
 
   &_active {
     .u-feedback-message__front {
@@ -13194,7 +13194,7 @@ td.u-product-options__items {
   text-transform: uppercase;
   letter-spacing: .6px;
   text-align: center;
-  background-color: $color-dark;
+  background-color: $color-dark-darker;
   line-height: 36px;
   transition: transform .3s ease;
   position: absolute;
@@ -13273,7 +13273,7 @@ td.u-product-options__items {
 .modal-options-form {}
 
 .modal-options-form__submit {
-  background: $color-dark;
+  background: $color-dark-lighter;
   display: block;
   width: 100%;
   padding: 0 10px;
@@ -13467,7 +13467,7 @@ td.u-product-options__items {
 
     &:hover {
       text-decoration: underline;
-      color: #c03;
+      color: $color-red-lightness;
     }
   }
 }
@@ -13506,7 +13506,7 @@ td.u-product-options__items {
 
 .home-section__title {
   background-color: $color-light-lighter;
-  color: $color-dark;
+  color: $color-dark-lighter;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.1;
@@ -13565,7 +13565,7 @@ td.u-product-options__items {
 
   &:hover {
     text-decoration: underline;
-    color: #c03;
+    color: $color-red-lightness;
   }
 
   &::before {
@@ -13645,7 +13645,7 @@ td.u-product-options__items {
     width: 44px;
     height: 44px;
     background: $color-yellow-lighter;
-    color: $color-dark;
+    color: $color-dark-lighter;
     border: none;
     border-radius: 50%;
     z-index: 30;
@@ -13828,7 +13828,7 @@ td.u-product-options__items {
   padding: 0;
   z-index: 20;
   border: 0;
-  color: $color-dark;
+  color: $color-dark-lighter;
   filter: drop-shadow(0 0.1em 0.25em rgba(0, 0, 0, 0.4));
 }
 
@@ -14110,7 +14110,7 @@ td.u-product-options__items {
 }
 
 .msfavorites-toggle {
-  background: $color-dark;
+  background: $color-dark-lighter;
   border: none;
   width: 40px;
   height: 40px;
@@ -14293,7 +14293,7 @@ td.u-product-options__items {
 
 
 .mscomparison-toggle {
-  background: $color-dark;
+  background: $color-dark-lighter;
   border: none;
   width: 40px;
   height: 40px;
@@ -14543,7 +14543,7 @@ td.u-product-options__items {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  color: $color-dark;
+  color: $color-dark-lighter;
   text-transform: uppercase;
   font-size: 16px;
   padding: 5px;
@@ -14694,7 +14694,7 @@ td.u-product-options__items {
 .u-product-achievement__title {
   font-size: 20px;
   line-height: 1;
-  color: $color-dark;
+  color: $color-dark-lighter;
   font-weight: 700;
   position: absolute;
   left: 10px;
@@ -14715,7 +14715,7 @@ td.u-product-options__items {
 .u-product-achievement__label {
   font-size: 72px;
   line-height: 72px;
-  color: $color-dark;
+  color: $color-dark-lighter;
   text-transform: uppercase;
   font-weight: 700;
   white-space: nowrap;
@@ -14730,7 +14730,7 @@ td.u-product-options__items {
   text-transform: lowercase;
   font-size: 24px;
   line-height: 1;
-  color: $color-dark;
+  color: $color-dark-lighter;
   font-weight: 300;
   white-space: nowrap;
 

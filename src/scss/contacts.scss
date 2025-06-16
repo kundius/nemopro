@@ -339,7 +339,7 @@
   color: #fff;
   font-family: inherit;
   border: none;
-  background: $color-dark;
+  background: $color-dark-lighter;
   padding: 14px 24px;
   line-height: 1;
   display: block;
@@ -357,13 +357,13 @@
 
 .ymaps-placeholder__button_yellow {
   background-color: $color-yellow-lighter;
-  color: $color-dark;
+  color: $color-dark-lighter;
 }
 
 .ymaps-placeholder__button_yellow:hover {
   text-decoration: none;
   background: $color-yellow-darker;
-  color: $color-dark;
+  color: $color-dark-lighter;
 }
 
 .ymaps-placeholder_hidden {
