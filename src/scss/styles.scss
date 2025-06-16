@@ -876,7 +876,7 @@ select {
         }
 
         &:hover {
-          background: $color-light-lighter;
+          background: $color-light-darker;
         }
       }
 
@@ -906,7 +906,7 @@ select {
         }
 
         a {
-          background: $color-light-lighter;
+          background: $color-light-darker;
         }
       }
 
@@ -986,8 +986,8 @@ select {
     width: 100%;
     padding: 0;
     margin: 0;
-    background-color: $color-light-lighter;
-    border-bottom: 1px solid $color-light-lighter;
+    background-color: $color-light-darker;
+    border-bottom: 1px solid $color-light-darker;
     transition: all .3s linear;
   }
 
@@ -1045,7 +1045,7 @@ select {
         }
 
         &:hover {
-          background-color: $color-light-darker;
+          background-color: $color-light-darkness;
           text-decoration: none;
         }
       }
@@ -1053,7 +1053,7 @@ select {
       &:hover,
       &.active {
         >a {
-          background-color: $color-light-darker;
+          background-color: $color-light-darkness;
           text-decoration: none;
         }
       }
