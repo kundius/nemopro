@@ -1045,7 +1045,7 @@ select {
         }
 
         &:hover {
-          background-color: $color-light-lighter;
+          background-color: $color-light-darker;
           text-decoration: none;
         }
       }
@@ -1053,7 +1053,7 @@ select {
       &:hover,
       &.active {
         >a {
-          background-color: $color-light-lighter;
+          background-color: $color-light-darker;
           text-decoration: none;
         }
       }
