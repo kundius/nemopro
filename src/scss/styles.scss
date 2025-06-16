@@ -834,7 +834,7 @@ select {
 
 @media (min-width: $breakpoint-medium) {
   .catalog-menu {
-    background-color: $color-light-lighter;
+    background-color: $color-dark-lighter;
     position: relative;
     z-index: 100;
   }
@@ -853,7 +853,7 @@ select {
 
     >li {
       list-style: none;
-      border-left: 1px solid $color-light-darker;
+      border-left: 1px solid $color-dark-darker;
       padding: 0;
       flex-grow: 1;
 
@@ -876,7 +876,7 @@ select {
         }
 
         &:hover {
-          background: $color-light-darker;
+          background: $color-light-lighter;
         }
       }
 
@@ -906,7 +906,7 @@ select {
         }
 
         a {
-          background: $color-light-darker;
+          background: $color-light-lighter;
         }
       }
 
@@ -986,8 +986,8 @@ select {
     width: 100%;
     padding: 0;
     margin: 0;
-    background-color: $color-light-darker;
-    border-bottom: 1px solid $color-light-darker;
+    background-color: $color-light-lighter;
+    border-bottom: 1px solid $color-light-lighter;
     transition: all .3s linear;
   }
 
@@ -1045,7 +1045,7 @@ select {
         }
 
         &:hover {
-          background-color: $color-light-darkness;
+          background-color: $color-dark-lighter;
           text-decoration: none;
         }
       }
@@ -1053,7 +1053,7 @@ select {
       &:hover,
       &.active {
         >a {
-          background-color: $color-light-darkness;
+          background-color: $color-dark-lighter;
           text-decoration: none;
         }
       }
