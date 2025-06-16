@@ -834,7 +834,7 @@ select {
 
 @media (min-width: $breakpoint-medium) {
   .catalog-menu {
-    background-color: $color-dark-lighter;
+    background-color: #fff;
     position: relative;
     z-index: 100;
   }
@@ -862,12 +862,11 @@ select {
       }
 
       >a {
-        color: #ffffff;
+        color: #000;
         font-size: 20px;
         line-height: 48px;
         text-decoration: none;
         text-transform: uppercase;
-        text-shadow: 0 1px 0 #004254;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -877,11 +876,7 @@ select {
         }
 
         &:hover {
-          background: #169bbb;
-
-          &::after {
-            border-top-color: #ffffff;
-          }
+          background: $color-light-lighter;
         }
       }
 
@@ -895,7 +890,7 @@ select {
           border-right: 5px;
           border-bottom: 0;
           border-style: solid;
-          border-color: #169bbb transparent transparent;
+          border-color: currentColor transparent transparent;
           display: inline-block;
           margin-left: 8px;
           position: relative;
@@ -911,11 +906,7 @@ select {
         }
 
         a {
-          background: #169bbb;
-
-          &::after {
-            border-top-color: #ffffff;
-          }
+          background: $color-light-lighter;
         }
       }
 
@@ -995,16 +986,15 @@ select {
     width: 100%;
     padding: 0;
     margin: 0;
-    background-color: #169bbc;
-    border-bottom: 1px solid #22a6c7;
+    background-color: $color-light-lighter;
+    border-bottom: 1px solid $color-light-lighter;
     transition: all .3s linear;
   }
 
   .catalog-submenu__head {
-    color: #ffffff;
+    color: #000;
     font-size: 24px;
     font-weight: 700;
-    text-shadow: 0 1px 0 #004254;
     text-transform: uppercase;
     line-height: 1.22;
     padding: 16px 28px 8px 10px;
@@ -1013,7 +1003,7 @@ select {
       content: '';
       display: block;
       height: 1px;
-      background-color: #22a6c7;
+      background-color: currentColor;
       margin-top: 8px;
     }
   }
@@ -1038,7 +1028,7 @@ select {
       margin-bottom: 10px;
 
       a {
-        color: #ffffff;
+        color: #000;
         font-size: 15px;
         line-height: 1;
         text-transform: none;
@@ -1055,7 +1045,7 @@ select {
         }
 
         &:hover {
-          background-color: #002c39;
+          background-color: $color-light-lighter;
           text-decoration: none;
         }
       }
@@ -1063,7 +1053,7 @@ select {
       &:hover,
       &.active {
         >a {
-          background-color: #002c39;
+          background-color: $color-light-lighter;
           text-decoration: none;
         }
       }

@@ -187,7 +187,7 @@
 }
 
 .header {
-  background: $color-dark-lighter;
+  background: $color-light-lighter;
   z-index: 990;
   position: fixed;
   width: 100%;
@@ -264,29 +264,42 @@
     }
 
     a {
-      color: #fff;
+      color: #000;
       text-decoration: underline;
+
+      @media (max-width: $breakpoint-medium-max) {
+        color: #fff;
+      }
 
       &:hover {
         text-decoration: none;
-        color: #fff;
+        color: #000;
+
+        @media (max-width: $breakpoint-medium-max) {
+          color: #fff;
+        }
       }
     }
   }
 }
 
 .header-contacts__more {
-  color: #fff;
+  color: #000;
   text-decoration: underline;
   margin-left: 10px;
 
   @media (max-width: $breakpoint-medium-max) {
     margin-left: 5px;
+    color: #fff;
   }
 
   &:hover {
     text-decoration: none;
-    color: #fff;
+    color: #000;
+
+    @media (max-width: $breakpoint-medium-max) {
+      color: #fff;
+    }
   }
 }
 
@@ -309,11 +322,15 @@
 }
 
 .header__phone {
-  color: #fff;
+  color: #000;
   font-size: 28px;
   line-height: 1;
   text-decoration: none;
   display: block;
+
+  @media (max-width: $breakpoint-medium-max) {
+    color: #fff;
+  }
 
   &:hover {
     text-decoration: none;
@@ -437,19 +454,19 @@
   width: 140px;
   height: 52px;
 
+  background-color: $color-dark-lighter;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  mask-image: url('/files/images/logo.svg');
+
+  img {
+    opacity: 0;
+  }
+
   @media (max-width: $breakpoint-medium-max) {
     width: 114px;
     height: 42px;
-
-    background-color: $color-dark-lighter;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: contain;
-    mask-image: url('/files/images/logo.svg');
-
-    img {
-      opacity: 0;
-    }
   }
 }
 
