@@ -2598,12 +2598,12 @@ jdiv {
 }
 
 .content {
-  border-radius: 5px;
-  padding: 10px;
-  border: 1px solid $color-dark-lighter;
-  background-color: #ffffff;
-  position: relative;
-  margin-top: 10px;
+  // border-radius: 5px;
+  // padding: 10px;
+  // border: 1px solid $color-dark-lighter;
+  // background-color: #ffffff;
+  // position: relative;
+  // margin-top: 10px;
 }
 
 .home-text {}
@@ -3146,6 +3146,7 @@ jdiv {
   border-bottom: 1px solid $color-light-lighter;
   padding: 10px 0;
   margin: 0;
+  margin-bottom: 10px;
 
   a {
     color: $color-dark-lighter;
