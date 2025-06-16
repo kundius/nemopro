@@ -3264,7 +3264,7 @@ jdiv {
     transform-origin: 50% 50%;
     width: 60%;
     height: 2px;
-    background-color: gray;
+    background-color: currentColor;
   }
 
   &::after {
@@ -3276,7 +3276,7 @@ jdiv {
     transform-origin: 50% 50%;
     width: 60%;
     height: 2px;
-    background-color: gray;
+    background-color: currentColor;
   }
 }
 
