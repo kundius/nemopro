@@ -853,7 +853,7 @@ select {
 
     >li {
       list-style: none;
-      border-left: 1px solid rgba(0, 0, 0, .15);
+      border-left: 1px solid $color-light-darker;
       padding: 0;
       flex-grow: 1;
 
