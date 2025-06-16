@@ -8441,7 +8441,7 @@ textarea.order-control {
   height: 64px;
   border-radius: 6px;
   text-align: center;
-  background-color: rgba(88, 215, 226, 0.741);
+  background-color: $color-light-darker;
   text-transform: uppercase;
   color: #004558;
   font-weight: bold;
@@ -8462,7 +8462,7 @@ textarea.order-control {
   }
 
   &:hover {
-    background-color: rgb(88, 215, 226);
+    background-color: $color-light-darkness;
   }
 
   @media (max-width: $breakpoint-medium-max) {
