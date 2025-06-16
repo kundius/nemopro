@@ -2002,7 +2002,7 @@ jdiv {
   display: block;
 
   &:hover {
-    color: $color-medium-darkness;
+    color: $color-medium-lighter;
   }
 }
 
@@ -10594,6 +10594,8 @@ textarea.order-control {
   button {
     width: 340px;
     max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @media (max-width: $breakpoint-medium-max) {
@@ -13463,7 +13465,7 @@ td.u-product-options__items {
 
     &:hover {
       text-decoration: underline;
-      color: $color-medium-darkness;
+      color: $color-medium-lighter;
     }
   }
 }
@@ -13561,7 +13563,7 @@ td.u-product-options__items {
 
   &:hover {
     text-decoration: underline;
-    color: $color-medium-darkness;
+    color: $color-medium-lighter;
   }
 
   &::before {
