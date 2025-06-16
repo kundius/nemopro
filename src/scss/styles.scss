@@ -1028,7 +1028,7 @@ select {
       margin-bottom: 10px;
 
       a {
-        color: #fff;
+        color: #000;
         font-size: 15px;
         line-height: 1;
         text-transform: none;
@@ -1047,6 +1047,7 @@ select {
         &:hover {
           background-color: $color-dark-lighter;
           text-decoration: none;
+          color: #fff;
         }
       }
 
