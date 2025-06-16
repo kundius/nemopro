@@ -5728,11 +5728,11 @@ label.error {
 }
 
 .title-blue {
-  color: #016a88;
+  color: $color-dark-lighter;
   font-size: 18px;
   font-weight: 600;
   line-height: 18px;
-  background-color: #dbeef0;
+  background-color: $color-light-lighter;
   padding: 18px 15px;
   margin: 18px 0;
 }

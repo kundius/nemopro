@@ -284,10 +284,14 @@
   color: #fff;
   font-family: inherit;
   border: none;
-  background: #002837;
+  background: $color-dark-lighter;
   padding: 12px 24px;
   border-radius: 2px;
   white-space: nowrap;
+
+  &:hover {
+    background: $color-medium-lighter;
+  }
 }
 
 .cdek-placeholder_hidden {
@@ -332,6 +336,10 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  &:hover {
+    background: $color-medium-lighter;
+  }
 }
 
 .ymaps-placeholder__button {
