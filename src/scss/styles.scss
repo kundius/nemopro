@@ -10473,13 +10473,13 @@ textarea.order-control {
 }
 
 .order-group__desc {
-  color: $color-red-lighter;
+  color: #6b6768;
   font-size: 13px;
   font-style: italic;
   margin-bottom: 22px;
 
   &_danger {
-    color: #a00a1f;
+    color: $color-red-lighter;
   }
 
   @media (max-width: $breakpoint-medium-max) {
