@@ -10040,7 +10040,7 @@ textarea.order-control {
     text-decoration: underline;
 
     &:hover {
-      color: $color-red-darker;
+      color: $color-medium-lighter;
     }
   }
 
@@ -10243,7 +10243,7 @@ textarea.order-control {
     border: none;
     padding: 0;
     background: transparent;
-    color: #b60b0b;
+    color: $color-red-lighter;
     font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
@@ -10255,7 +10255,7 @@ textarea.order-control {
     }
 
     i {
-      color: #ff4f34;
+      color: currentColor;
       display: inline-block;
       vertical-align: middle;
       position: relative;

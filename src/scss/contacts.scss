@@ -336,10 +336,6 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-
-  &:hover {
-    background: $color-medium-lighter;
-  }
 }
 
 .ymaps-placeholder__button {
@@ -356,6 +352,10 @@
   text-decoration: none;
   width: 100%;
   outline: none;
+
+  &:hover {
+    background: $color-medium-lighter;
+  }
 }
 
 .ymaps-placeholder__button:hover {
