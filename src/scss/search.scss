@@ -29,7 +29,7 @@ body .ui-button.ui-state-active:hover {
 }
 
 body .ui-menu .mse2-ac-more {
-  background-color: #014b63;
+  background-color: $color-dark-lighter;
   color: #ffffff;
   border-bottom: none;
   position: absolute;
@@ -42,7 +42,7 @@ body .ui-menu .mse2-ac-more {
 }
 
 body .ui-menu .mse2-ac-more:hover {
-  background: #002837;
+  background: $color-dark-darker;
 }
 
 body .ui-menu .mse2-ac-more a {
@@ -61,7 +61,7 @@ body .ui-menu .mse2-ac-close {
   height: 42px;
   width: 42px;
   z-index: 2;
-  background-color: #014b63;
+  background-color: $color-dark-lighter;
   color: #ffffff;
   border-bottom: none;
   cursor: pointer;
@@ -70,7 +70,7 @@ body .ui-menu .mse2-ac-close {
 }
 
 body .ui-menu .mse2-ac-close:hover {
-  background: #002837;
+  background: $color-dark-darker;
 }
 
 body .ui-menu .mse2-ac-close::before {
