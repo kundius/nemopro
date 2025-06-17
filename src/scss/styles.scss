@@ -877,6 +877,7 @@ select {
 
         &:hover {
           background: $color-light-lighter;
+          color: #000;
         }
       }
 
@@ -907,6 +908,7 @@ select {
 
         a {
           background: $color-light-lighter;
+          color: #000;
         }
       }
 
@@ -1056,6 +1058,7 @@ select {
         >a {
           background-color: $color-dark-lighter;
           text-decoration: none;
+          color: #fff;
         }
       }
 
