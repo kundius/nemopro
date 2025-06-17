@@ -3843,7 +3843,7 @@ jdiv {
   @include transition(all, .2s, linear);
 
   &:hover {
-    color: #014b63;
+    color: $color-medium-lighter;
     text-decoration: underline;
   }
 }
