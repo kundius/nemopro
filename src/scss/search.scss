@@ -165,8 +165,8 @@ body .ui-menu .mse2-ac-close::after {
 a.ui-button:active,
 .ui-button:active,
 .ui-button.ui-state-active:hover {
-  border: 1px solid #0089ae;
-  background: #01718f;
+  border: 1px solid $color-dark-lighter;
+  background: $color-dark-lighter;
   font-weight: normal;
   color: #fff;
 }
