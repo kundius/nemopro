@@ -22,8 +22,8 @@ body .ui-widget-header .ui-state-active,
 body a.ui-button:active,
 body .ui-button:active,
 body .ui-button.ui-state-active:hover {
-  border: 1px solid #01718f;
-  background: #01718f;
+  border: 1px solid $color-dark-lighter;
+  background: $color-dark-lighter;
   font-weight: normal;
   color: #fff;
 }
