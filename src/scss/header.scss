@@ -82,17 +82,18 @@
     &_credit,
     &_reviews,
     &_track {
-      background-color: white;
-      font-size: 12px;
-      line-height: 1;
-      padding: 4px 5px 6px;
-      border-right: 1px solid white;
-      text-decoration: none;
-      color: #000;
+      display: none;
+      // background-color: white;
+      // font-size: 12px;
+      // line-height: 1;
+      // padding: 4px 5px 6px;
+      // border-right: 1px solid white;
+      // text-decoration: none;
+      // color: #000;
 
-      &:hover {
-        color: #000;
-      }
+      // &:hover {
+      //   color: #000;
+      // }
     }
 
     &_track {
