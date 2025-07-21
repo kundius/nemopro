@@ -449,6 +449,14 @@
   }
 }
 
+.toolbar-buttons__item_mobile {
+  display: none;
+
+  @media (max-width: $breakpoint-medium-max) {
+    display: flex;
+  }
+}
+
 .header__logo {
   display: block;
   width: 140px;

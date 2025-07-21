@@ -11309,9 +11309,9 @@ textarea.order-control {
   display: flex;
   list-style: none;
 
-  @media (max-width: $breakpoint-mini-max) {
-    margin: -10px -10px 1px;
-  }
+  // @media (max-width: $breakpoint-mini-max) {
+  //   margin: -10px -10px 1px;
+  // }
 
   li {
     width: 50%;
