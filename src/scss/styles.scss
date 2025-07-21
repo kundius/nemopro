@@ -2908,6 +2908,43 @@ jdiv {
   justify-content: center;
 }
 
+.footer-links {}
+
+.footer-links__title {
+  background-color: #edf8ff;
+  color: #034f84;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.1;
+  padding: 12px;
+  margin: 0;
+  position: relative;
+  text-transform: uppercase;
+  border-radius: 5px 5px 0 0;
+  font-family: SF UI Display, sans-serif;
+}
+
+.footer-links__list {
+  justify-content: normal;
+  margin: 0 -5px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+}
+
+.footer-links__item {
+  background-color: white;
+  font-size: 12px;
+  line-height: 1;
+  padding: 4px 5px 6px;
+  border-right: 1px solid white;
+  text-decoration: none;
+  color: #000;
+
+  &:hover {
+    color: #000;
+  }
+}
+
 .footer {
   background-color: $color-light-lighter;
 
