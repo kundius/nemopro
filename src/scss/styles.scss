@@ -2908,20 +2908,19 @@ jdiv {
   justify-content: center;
 }
 
-.footer-links {}
+.footer-links {
+  margin-bottom: 24px;
+}
 
 .footer-links__title {
-  background-color: #edf8ff;
-  color: #034f84;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.1;
-  padding: 12px;
-  margin: 0;
-  position: relative;
+  color: #000;
+  font-size: 20px;
+  line-height: 1;
   text-transform: uppercase;
-  border-radius: 5px 5px 0 0;
-  font-family: SF UI Display, sans-serif;
+  border-bottom: 1px solid #edeff1;
+  text-align: center;
+  padding-bottom: 5px;
+  margin-bottom: 12px;
 }
 
 .footer-links__list {
