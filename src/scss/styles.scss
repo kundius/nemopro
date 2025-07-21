@@ -2914,6 +2914,7 @@ jdiv {
 
 .footer-links {
   margin-bottom: 24px;
+  margin-top: 24px;
   display: none;
 
   @media (max-width: $breakpoint-medium-max) {
@@ -13140,7 +13141,7 @@ td.u-product-options__items {
 }
 
 .u-sidebar-feedback {
-  margin: 40px 0;
+  margin: 16px 0;
 }
 
 .u-feedback {
