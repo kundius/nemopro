@@ -2910,6 +2910,11 @@ jdiv {
 
 .footer-links {
   margin-bottom: 24px;
+  display: none;
+
+  @media (max-width: $breakpoint-medium-max) {
+    display: block;
+  }
 }
 
 .footer-links__title {
