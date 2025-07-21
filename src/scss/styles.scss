@@ -2932,6 +2932,12 @@ jdiv {
 }
 
 .footer-links__item {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  min-height: 36px;
+  justify-content: center;
+  text-transform: lowercase;
   background-color: white;
   font-size: 12px;
   line-height: 1;
