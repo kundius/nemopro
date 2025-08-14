@@ -2,28 +2,111 @@ $breakpoint-small: 480px !default;
 $breakpoint-medium: 768px !default;
 $breakpoint-large: 960px !default;
 $breakpoint-xlarge: 1220px !default;
-$breakpoint-mini-max: (
-  $breakpoint-small - 1) !default;
-$breakpoint-small-max: (
-  $breakpoint-medium - 1) !default;
-$breakpoint-medium-max: (
-  $breakpoint-large - 1) !default;
-$breakpoint-large-max: (
-  $breakpoint-xlarge - 1
-);
+$breakpoint-mini-max: ($breakpoint-small - 1) !default;
+$breakpoint-small-max: ($breakpoint-medium - 1) !default;
+$breakpoint-medium-max: ($breakpoint-large - 1) !default;
+$breakpoint-large-max: ($breakpoint-xlarge - 1);
+
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+$breakpoint-3xl: 1792px;
+
 $icon-font: FontAwesome;
 
-$color-light-darkness: #BAE4FF;
-$color-light-darker: #DAEFFE;
-$color-light-lighter: #EDF8FF;
+$color-light-darkness: #bae4ff;
+$color-light-darker: #daeffe;
+$color-light-lighter: #edf8ff;
 
-$color-medium-lighter: #0465A9;
-$color-medium-darker: #056DB8;
+$color-medium-lighter: #0465a9;
+$color-medium-darker: #056db8;
 
 $color-dark-lighter: #034f84;
 $color-dark-darker: #034777;
 
-$color-yellow-lighter: #F2DD05;
+$color-yellow-lighter: #f2dd05;
 $color-yellow-darker: #ffce23;
 
 $color-red: #fe0000;
+
+@mixin --hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin --sm {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin --md {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin --lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin --xl {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+@mixin --2xl {
+  @media (min-width: $breakpoint-2xl) {
+    @content;
+  }
+}
+
+@mixin --3xl {
+  @media (min-width: $breakpoint-3xl) {
+    @content;
+  }
+}
+
+@mixin --max-sm {
+  @media not all and (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin --max-md {
+  @media not all and (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin --max-lg {
+  @media not all and (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin --max-xl {
+  @media not all and (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+@mixin --max-2xl {
+  @media not all and (min-width: $breakpoint-2xl) {
+    @content;
+  }
+}
+
+@mixin --max-3xl {
+  @media not all and (min-width: $breakpoint-3xl) {
+    @content;
+  }
+}
