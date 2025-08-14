@@ -4,12 +4,15 @@ http://dev.nemopro.ru/manager/?a=element/chunk/update&id=369
 http://dev.nemopro.ru/manager/?a=element/chunk/update&id=370
 http://dev.nemopro.ru/manager/?a=element/chunk/update&id=371
 http://dev.nemopro.ru/manager/?a=element/chunk/update&id=372
+http://dev.nemopro.ru/manager/?a=element/chunk/update&id=373
 
 http://dev.nemopro.ru/manager/?a=element/plugin/update&id=78
 
 http://dev.nemopro.ru/manager/?a=resource/update&id=26
 http://dev.nemopro.ru/manager/?a=resource/update&id=3961
 http://dev.nemopro.ru/manager/?a=resource/update&id=4130
+http://dev.nemopro.ru/manager/?a=resource/update&id=59
+http://dev.nemopro.ru/manager/?a=resource/update&id=76
 
 http://dev.nemopro.ru/manager/?a=element/template/update&id=13
 http://dev.nemopro.ru/manager/?a=element/template/update&id=7
