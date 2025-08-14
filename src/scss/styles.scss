@@ -593,6 +593,51 @@ select {
   flex-grow: 1;
 }
 
+.tabs-nav {
+  padding: 0;
+  margin: 12px 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  border-bottom: 1px solid #f3f3f3;
+  gap: 48px;
+  li {
+    a {
+      display: block;
+      text-align: center;
+      cursor: pointer;
+      line-height: 44px;
+      color: #bababa;
+      font-size: 20px;
+      text-transform: uppercase;
+      text-decoration: none;
+      &:hover {
+        color: #f18a16;
+      }
+    }
+    &.active {
+      a {
+        color: #000;
+        font-weight: 500;
+        &:hover {
+          color: #f18a16;
+        }
+      }
+    }
+  }
+  @include --max-md {
+    margin: 8px 0;
+    gap: 24px;
+    justify-content: flex-start;
+    li {
+      a {
+        line-height: 32px;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
 // .toolbar {
 //     background-color:  #005974;
 //     z-index: 999 !important;
