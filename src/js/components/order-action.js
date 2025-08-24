@@ -1,5 +1,6 @@
 const { confirmation } = require('./modal-confirmation.js')
 const { disableScroll, enableScroll } = require('./utils.js')
+const MicroModal = require('micromodal')
 
 const actionQuestions = {
   cart: 'Отправить заказ в корзину?',

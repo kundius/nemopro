@@ -1,4 +1,5 @@
 const { disableScroll, enableScroll } = require('./utils.js')
+const MicroModal = require('micromodal')
 
 function confirmation(options) {
   const modalId = `modal-confirmation`
