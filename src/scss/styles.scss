@@ -22,6 +22,76 @@ iframe {
   flex-shrink: 0;
 }
 
+.pagination {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 32px 0;
+  padding: 0;
+  list-style: none;
+  body #pdopage & {
+    margin: 32px 0;
+  }
+  .page-item {
+  }
+  .page-item.disabled .page-link {
+    color: #bababa;
+  }
+  .page-item.active .page-link {
+    font-weight: 700;
+    color: #0699bc;
+  }
+  .page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 24px;
+    min-width: 24px;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1;
+    color: #000;
+    &:hover {
+      color: #f18a16;
+    }
+  }
+}
+
+.modal-confirmation {
+}
+
+.modal-confirmation__header {
+  line-height: 1.333;
+  font-size: 18px;
+  a {
+    text-decoration: underline;
+    color: inherit;
+    display: inline-block;
+    &:hover {
+      color: #f18a16;
+    }
+  }
+
+  @include --max-md {
+    text-align: center;
+  }
+}
+
+.modal-confirmation__footer {
+  display: grid;
+  grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+
+  @include --max-md {
+    grid-template-columns: 1fr;
+    margin-top: 16px;
+    gap: 12px;
+  }
+}
+
 .alt-button-outline-obscure {
   height: 36px;
   white-space: nowrap;
