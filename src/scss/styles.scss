@@ -7,6 +7,11 @@
 @import "orders";
 @import "modal";
 
+:root {
+  --container-padding: 10px;
+  --container-width: 1200px;
+}
+
 [class*="uk-icon-"] {
   font-family: $icon-font;
 }
