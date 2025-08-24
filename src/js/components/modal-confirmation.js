@@ -47,12 +47,12 @@ function confirmation(options) {
   confirmationFooter.classList.add('modal-confirmation__footer')
 
   const confirmationCancel = document.createElement('button')
-  confirmationCancel.classList.add('button-outline-obscure')
+  confirmationCancel.classList.add('alt-button-outline-obscure')
   confirmationCancel.innerHTML = 'Отмена'
   confirmationCancel.dataset.modalClose = true
 
   const confirmationSubmit = document.createElement('button')
-  confirmationSubmit.classList.add('button-filled-primary')
+  confirmationSubmit.classList.add('alt-button-filled-primary')
   confirmationSubmit.innerHTML = 'Да'
   confirmationSubmit.addEventListener('click', onConfirm)
 

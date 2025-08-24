@@ -97,6 +97,42 @@ iframe {
   }
 }
 
+.alt-button-filled-primary {
+  height: 36px;
+  white-space: nowrap;
+  padding: 0 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  background-color: #ffed00;
+  border: 2px solid #ffed00;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+
+  &:disabled {
+    background-color: #f9f5b9;
+    border-color: #f9f5b9;
+    cursor: default;
+    color: #939393;
+  }
+
+  &:not(:disabled):hover {
+    background-image: linear-gradient(37deg, #ffed66, #ffde2c);
+    color: #000;
+  }
+
+  @include --max-md {
+    padding: 0 16px;
+  }
+}
+
 .alt-button-outline-obscure {
   height: 36px;
   white-space: nowrap;
