@@ -17097,6 +17097,11 @@ discount_form.on('submit', function (e) {
       $('#field-building').show();
     }
   });
+  var event = new Event('change', {
+    bubbles: true,
+    cancelable: true
+  });
+  deliveries_inputs.get(0).dispatchEvent(event);
 })();
 var cartSwitcher = UIkit.switcher('#cart-tabs', {
   connect: '#cart-switcher',
