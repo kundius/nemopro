@@ -31,7 +31,7 @@ function applyOrderAction(orderAction) {
         description: actionQuestions[action],
         onConfirm: () => {
           $.post(
-            '/assets/template/actions.php',
+            '/assets/nemopro/actions.php',
             {
               action: `order/${action}`,
               id: orderId
