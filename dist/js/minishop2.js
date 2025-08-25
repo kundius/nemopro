@@ -246,7 +246,7 @@
             if (!$(miniShop2.Cart.cart).length) {
                 return;
             }
-            console.log('ms initialize change', miniShop2.$doc, miniShop2.Cart.cart + ' ' + miniShop2.Cart.countInput)
+            console.log('ms initialize change', $(miniShop2.Cart.cart + ' ' + miniShop2.Cart.countInput))
             miniShop2.$doc.on('change', miniShop2.Cart.cart + ' ' + miniShop2.Cart.countInput, function () {
                 console.log('ms on change count')
                 $(this).closest(miniShop2.form).submit();
