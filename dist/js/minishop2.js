@@ -241,6 +241,7 @@
             miniShop2.Cart.totalCost = '.ms2_total_cost';
         },
         initialize: function () {
+            console.log('ms initialize')
             miniShop2.Cart.setup();
             if (!$(miniShop2.Cart.cart).length) {
                 return;
