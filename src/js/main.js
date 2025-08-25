@@ -239,7 +239,7 @@ jQuery(function () {
         const $input = $(this).closest('.js-input-number').find('input');
         const val = Number($input.val()) + 1;
         $input.val(val);
-        $input.trigger('change');
+        miniShop2.$doc.trigger('change');
         $input.get(0).dispatchEvent(new Event('change'));
     });
     $('.js-input-number-down').on('click', function () {
@@ -250,7 +250,7 @@ jQuery(function () {
 
         if (newValue >= minValue) {
             $input.val(newValue);
-            $input.trigger('change');
+            miniShop2.$doc.trigger('change');
             $input.get(0).dispatchEvent(new Event('change'));
         }
     });
