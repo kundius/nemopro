@@ -244,7 +244,6 @@
             if (!$(miniShop2.Cart.cart).length) {
                 return;
             }
-            console.log('initialize on change')
             miniShop2.$doc.on('change', miniShop2.Cart.cart + ' ' + miniShop2.Cart.countInput, function () {
                 $(this).closest(miniShop2.form).submit();
             });
