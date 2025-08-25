@@ -16791,29 +16791,29 @@ $('.js-contacts-select').each(function () {
     $(target).attr('href', uri);
   });
 });
-jQuery(function () {
-  console.log('initialize on click');
-  $('.js-input-number-up').on('click', function () {
-    var $input = $(this).closest('.js-input-number').find('input');
-    var val = Number($input.val()) + 1;
-    $input.val(val);
+$('.js-input-number-up').on('click', function () {
+  var $input = $(this).closest('.js-input-number').find('input');
+  var val = Number($input.val()) + 1;
+  $input.val(val);
+  var event = new Event('change', {
+    bubbles: true,
+    cancelable: true
+  });
+  $input.get(0).dispatchEvent(event);
+});
+$('.js-input-number-down').on('click', function () {
+  var $input = $(this).closest('.js-input-number').find('input');
+  var currentValue = Number($input.val());
+  var minValue = Number($input.attr('min')) || -Infinity;
+  var newValue = currentValue - 1;
+  if (newValue >= minValue) {
+    $input.val(newValue);
     var event = new Event('change', {
       bubbles: true,
       cancelable: true
     });
     $input.get(0).dispatchEvent(event);
-  });
-  $('.js-input-number-down').on('click', function () {
-    var $input = $(this).closest('.js-input-number').find('input');
-    var currentValue = Number($input.val());
-    var minValue = Number($input.attr('min')) || -Infinity;
-    var newValue = currentValue - 1;
-    if (newValue >= minValue) {
-      $input.val(newValue);
-      $input.trigger('change');
-      $input.get(0).dispatchEvent(new Event('change'));
-    }
-  });
+  }
 });
 
 /** Валидация и отправка форм **/
