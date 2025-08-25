@@ -1,20 +1,20 @@
 // тригерим ресайз окна для обновления закрепленных блоков
-$('[data-uk-switcher]').on('show.uk.switcher', function() {
+$('[data-uk-switcher]').on('show.uk.switcher', function () {
     $(window).trigger('resize');
 });
 
-$(document).on('af_complete', function(e, response) {
+$(document).on('af_complete', function (e, response) {
     response.form.parents('.uk-modal').find('.uk-modal-close').click();
 });
 
 /* Лайтбокс */
 $('a[href$=".jpg"], a[href$=".jpeg"], a[href$=".JPG"], a[href$=".png"], a[href$=".gif"]').not('[target="_blank"]').magnificPopup({
-    type:'image',
-    gallery:{
-        enabled:true
+    type: 'image',
+    gallery: {
+        enabled: true
     }
 });
-$(document).on('click', '.comment-image', function() {
+$(document).on('click', '.comment-image', function () {
     $.magnificPopup.open({
         items: {
             src: $(this).attr('href')
@@ -33,35 +33,35 @@ $('.js-popup-map').magnificPopup({
     fixedContentPos: false
 });
 $('.js-popup-inline').magnificPopup({
-    type:'inline'
+    type: 'inline'
 });
 $('.js-image-comment').magnificPopup({
-    type:'image',
-    gallery:{
-        enabled:true
+    type: 'image',
+    gallery: {
+        enabled: true
     }
 });
 $('.js-image-lightbox').magnificPopup({
-    type:'image',
+    type: 'image',
     image: {
-        markup: '<div class="mfp-figure">'+
-        '<div class="mfp-close"></div>'+
-        '<div class="mfp-img"></div>'+
-        '<div class="mfp-bottom-bar">'+
-        '<div class="mfp-title"></div>'+
-        '<div class="mfp-counter"></div>'+
-        '<div class="mfp-share">Поделиться в соцсетях: <span class="js-mfp-share"></span></div>'+
-        '</div>'+
-        '<div class="mfp-comments"></div>'+
-        '</div>'
+        markup: '<div class="mfp-figure">' +
+            '<div class="mfp-close"></div>' +
+            '<div class="mfp-img"></div>' +
+            '<div class="mfp-bottom-bar">' +
+            '<div class="mfp-title"></div>' +
+            '<div class="mfp-counter"></div>' +
+            '<div class="mfp-share">Поделиться в соцсетях: <span class="js-mfp-share"></span></div>' +
+            '</div>' +
+            '<div class="mfp-comments"></div>' +
+            '</div>'
     },
-    gallery:{
-        enabled:true
+    gallery: {
+        enabled: true
     },
     alignTop: true,
     //closeBtnInside: false,
     callbacks: {
-        change: function() {
+        change: function () {
             var popup = this,
                 id = popup.currItem.el.data('id'),
                 share = popup.currItem.el.data('share');
@@ -71,38 +71,38 @@ $('.js-image-lightbox').magnificPopup({
             $.post(document.location.href, {
                 action: 'comments',
                 thread: 'file-' + id
-            }, function(response) {
+            }, function (response) {
                 popup.content.find('.mfp-comments').html(response);
             });
         }
     }
 });
 $('.js-video-lightbox').magnificPopup({
-    type:'inline',
-    gallery:{
-        enabled:true
+    type: 'inline',
+    gallery: {
+        enabled: true
     },
     alignTop: true,
     callbacks: {
-        change: function() {
+        change: function () {
             var popup = this,
                 id = popup.currItem.el.data('id');
 
             $.post(document.location.href, {
                 action: 'comments',
                 thread: 'file-' + id
-            }, function(response) {
+            }, function (response) {
                 popup.content.find('.mfp-comments').html(response);
             });
         }
     }
 });
 var hash_video = location.hash.match(new RegExp('video=([^&]*)'));
-if(hash_video) {
+if (hash_video) {
     $('.js-video-lightbox[data-id="' + hash_video[1] + '"]').click();
 }
 var hash_image = location.hash.match(new RegExp('image=([^&]*)'));
-if(hash_image) {
+if (hash_image) {
     $('.js-image-lightbox[data-id="' + hash_image[1] + '"]').click();
 }
 
@@ -174,7 +174,7 @@ $('.js-actions-slider').slick({
     dots: true
 });
 
-$('.js-left-menu-toggle').click(function() {
+$('.js-left-menu-toggle').click(function () {
     //var height = 100 * $(window).scrollTop() / ($(document).height() - $(window).height());
     $(this).toggleClass('opened');
     $(this).nextAll('ul').animate({
@@ -184,81 +184,82 @@ $('.js-left-menu-toggle').click(function() {
     });
 });
 
-$('.left-menu .parent').click(function() {
+$('.left-menu .parent').click(function () {
     console.log('scroll top');
-    $('html, body').animate({ scrollTop : 0 }, 500);
+    $('html, body').animate({ scrollTop: 0 }, 500);
 });
 
-$(document).ready(function(){
-	$(".slideout-menu__lvl1 > .js-left-menu-toggle").click(function(){
-		$(".slideout-menu").toggleClass("slideout-sticky");
-	});
+$(document).ready(function () {
+    $(".slideout-menu__lvl1 > .js-left-menu-toggle").click(function () {
+        $(".slideout-menu").toggleClass("slideout-sticky");
+    });
 })
 
-$(document).ready(function(){
-	$(".slideout-menu__lvl2 > .js-left-menu-toggle").click(function(){
-		$(".slideout-menu").toggleClass("slideout-sticky-lvl");
-	});
+$(document).ready(function () {
+    $(".slideout-menu__lvl2 > .js-left-menu-toggle").click(function () {
+        $(".slideout-menu").toggleClass("slideout-sticky-lvl");
+    });
 })
 
-$('.js-right-menu-toggle').on('click' , function(){
-    $(this).parent('.touch').animate({ 'left' : '100%', 'right' : '-100%', });
+$('.js-right-menu-toggle').on('click', function () {
+    $(this).parent('.touch').animate({ 'left': '100%', 'right': '-100%', });
 })
 
-$(document).ready(function(){
-	$(".js-right-menu-toggle").click(function(){
-		$(".slideout-menu").removeClass("slideout-sticky");
-	});
+$(document).ready(function () {
+    $(".js-right-menu-toggle").click(function () {
+        $(".slideout-menu").removeClass("slideout-sticky");
+    });
 })
 
-$(document).ready(function(){
-	$(".js-right-menu-toggle").click(function(){
-		$(".slideout-menu").removeClass("slideout-sticky-lvl");
-	});
+$(document).ready(function () {
+    $(".js-right-menu-toggle").click(function () {
+        $(".slideout-menu").removeClass("slideout-sticky-lvl");
+    });
 })
 
 // смена внешней ссылки при выборе селекта
-$('.js-contacts-select').each(function() {
+$('.js-contacts-select').each(function () {
     var $select = $(this),
         uri = $select.find('option:selected').data('uri'),
         target = $select.data('target');
 
-        $(target).attr('href', uri).show();
+    $(target).attr('href', uri).show();
 
-    $select.change(function() {
+    $select.change(function () {
         var uri = $(this).find('option:selected').data('uri'),
             target = $(this).data('target');
 
-            $(target).attr('href', uri);
+        $(target).attr('href', uri);
     });
 });
 
-$('.js-input-number-up').click(function() {
-    var input = $(this).parent('.js-input-number').find('input');
-    var val = Number(input.val())+1;
-    input.val(val);
-    input.change();
+$('.js-input-number-up').on('click', function () {
+    const $input = $(this).closest('.js-input-number').find('input');
+    const val = Number($input.val()) + 1;
+    $input.val(val).trigger('change');
 });
-$('.js-input-number-down').click(function() {
-    var input = $(this).parent('.js-input-number').find('input');
-    var val = Number(input.val())-1;
-    if(!input.attr('min') || val >= input.attr('min')) {
-        input.val(val);
-        input.change();
+$('.js-input-number-down').on('click', function () {
+    const $input = $(this).closest('.js-input-number').find('input');
+    const currentValue = Number($input.val());
+    const minValue = Number($input.attr('min')) || -Infinity;
+    const newValue = currentValue - 1;
+
+    if (newValue >= minValue) {
+        $input.val(newValue).trigger('change');
     }
 });
 
 
 /** Валидация и отправка форм **/
-$('.js-form').each(function(){
+$('.js-form').each(function () {
     $(this).validate({
-        submitHandler: function(form) {
+        submitHandler: function (form) {
             var target = $(form).data('target');
             $(form).ajaxSubmit({
-                url:        location.href,
-                type:       'POST',
-                dataType:   'html',
-                success: function(response, statusText, xhr, $form) {
+                url: location.href,
+                type: 'POST',
+                dataType: 'html',
+                success: function (response, statusText, xhr, $form) {
                     var $target = $(document.createElement('div')).append(response).find(target);
                     $(target).html($target.html());
                 }
@@ -266,7 +267,7 @@ $('.js-form').each(function(){
         }
     });
 });
-$('.js-form-validate').each(function(){
+$('.js-form-validate').each(function () {
     $(this).validate();
 });
 $('#msOrder').validate({
@@ -274,7 +275,7 @@ $('#msOrder').validate({
         order_receiver: "receiver email phone conditions",
         order_address: "index region city street building room"
     },
-    errorPlacement: function(error, element) {
+    errorPlacement: function (error, element) {
         switch (element.attr("name")) {
             case "index":
             case "region":
@@ -331,10 +332,10 @@ $('#msOrder').validate({
 
 
 /** Видео **/
-$('.js-video').each(function() {
+$('.js-video').each(function () {
     $(this).data('videojs', videojs(this));
 });
-$('.js-video-modal').each(function() {
+$('.js-video-modal').each(function () {
     $(this).data('videojs', videojs(this, {
         width: ($(window).width() > 1000) ? 1000 : $(window).width() - 10
     }));
@@ -342,15 +343,15 @@ $('.js-video-modal').each(function() {
 
 /** Формы загрузки файлов **/
 $('.js-download-popup').magnificPopup({
-    type:'inline',
+    type: 'inline',
     midClick: true
 });
 
-$('.js-insert-file').each(function(i, wrapper) {
+$('.js-insert-file').each(function (i, wrapper) {
     var $wrapper = $(wrapper);
 
     $wrapper.find('.ms2galleryform-file-image-wrapper').append('<span>Вставить</span>');
-    $wrapper.on('click', '.ms2galleryform-file-link', function() {
+    $wrapper.on('click', '.ms2galleryform-file-link', function () {
         var target = $(this).parents('.js-insert-file').data('target');
 
         var link = $(this).attr('href');
@@ -358,7 +359,7 @@ $('.js-insert-file').each(function(i, wrapper) {
 
         $.markItUp({
             target: target,
-            replaceWith: '<a href="'+link+'" class="comment-image" target="_blank"><img src="'+ link +'" alt="'+name+'"></a>'
+            replaceWith: '<a href="' + link + '" class="comment-image" target="_blank"><img src="' + link + '" alt="' + name + '"></a>'
         });
 
         UIkit.modal(wrapper).hide();
@@ -368,7 +369,7 @@ $('.js-insert-file').each(function(i, wrapper) {
 });
 
 
-$(document).on('click', '.msbuyoneclick', function() {
+$(document).on('click', '.msbuyoneclick', function () {
     var id = $(this).data('id');
 
     $.ajax({
@@ -378,10 +379,10 @@ $(document).on('click', '.msbuyoneclick', function() {
             action: 'product',
             id: id
         },
-        success: function(response){
+        success: function (response) {
             var modal = UIkit.modal($(response).appendTo("body"), {});
 
-            modal.on("hide.uk.modal", function(){
+            modal.on("hide.uk.modal", function () {
                 if (modal.persist) {
                     modal.persist.appendTo(modal.persist.data("modalPersistParent"));
                     modal.persist = false;
@@ -391,14 +392,14 @@ $(document).on('click', '.msbuyoneclick', function() {
 
             modal.show();
 
-            modal.find('form').each(function() {
+            modal.find('form').each(function () {
                 var form = $(this);
-                form.submit(function() {
+                form.submit(function () {
                     $.ajax({
                         type: 'POST',
                         url: 'template/buyoneclick.php',
                         data: form.serialize(),
-                        success: function(response){
+                        success: function (response) {
                             response = $.parseJSON(response);
 
                             if (response.redirect) {
@@ -411,7 +412,7 @@ $(document).on('click', '.msbuyoneclick', function() {
                             } else {
                                 UIkit.notify(response.message, {
                                     status: 'danger',
-                                    timeout : 3000
+                                    timeout: 3000
                                 });
                             }
                         }
@@ -426,7 +427,7 @@ $(document).on('click', '.msbuyoneclick', function() {
     return false;
 });
 
-$(document).on('click', '[data-add-remains]', function(e) {
+$(document).on('click', '[data-add-remains]', function (e) {
     e.preventDefault();
 
     var url = $(this).data('add-remains');
@@ -436,7 +437,7 @@ $(document).on('click', '[data-add-remains]', function(e) {
 
     var modal = UIkit.modal("#under-order");
 
-    if ( modal.isActive() ) {
+    if (modal.isActive()) {
         modal.hide();
     } else {
         modal.show();
@@ -445,7 +446,7 @@ $(document).on('click', '[data-add-remains]', function(e) {
     return false;
 });
 
-$(document).on('click', '[data-add-options]', function(e) {
+$(document).on('click', '[data-add-options]', function (e) {
     e.preventDefault();
 
     var $modal = $($(this).data('add-options'));
@@ -461,7 +462,7 @@ $(document).on('click', '[data-add-options]', function(e) {
 
     $modal.on({ 'show.uk.modal': optionsWidth });
 
-    if ( modal.isActive() ) {
+    if (modal.isActive()) {
         modal.hide();
     } else {
         modal.show();
@@ -471,7 +472,7 @@ $(document).on('click', '[data-add-options]', function(e) {
 });
 
 
-$('.auth-button-restore').click(function(e) {
+$('.auth-button-restore').click(function (e) {
     $('#office-login-form-password').val('');
     $('#office-auth-login').toggleClass('auth-form-restore');
 
@@ -479,7 +480,7 @@ $('.auth-button-restore').click(function(e) {
 });
 
 
-$('#cheaper').on('click', '.cheaper-plus', function() {
+$('#cheaper').on('click', '.cheaper-plus', function () {
     var row = $(this).parents('.cheaper-address-row'),
         clone = row.clone();
 
@@ -487,21 +488,21 @@ $('#cheaper').on('click', '.cheaper-plus', function() {
     row.after(clone);
 });
 
-$('#cheaper').on('click', '.cheaper-minus', function() {
+$('#cheaper').on('click', '.cheaper-minus', function () {
     var row = $(this).parents('.cheaper-address-row');
 
     row.remove();
 });
 
-$('.js-home-catalog').click(function(e) {
-    if($(window).width() < 960) {
+$('.js-home-catalog').click(function (e) {
+    if ($(window).width() < 960) {
         UIkit.offcanvas.show('#uk-offcanvas');
         return false;
     }
 });
 
-$(document).on('change', '#mse2_filters select', function() {
-   $('html, body').animate({
+$(document).on('change', '#mse2_filters select', function () {
+    $('html, body').animate({
         scrollTop: /*$("#pdopage").offset().top || */0
     }, 1000);
 });
@@ -516,7 +517,7 @@ if (Boolean(discount_field.val())) {
     discount_form.addClass('cart-coupon--applied');
 }
 
-discount_form.on('submit', function(e) {
+discount_form.on('submit', function (e) {
     e.preventDefault();
 
     var value = $('[name="discount_code"]', this).val();
@@ -530,7 +531,7 @@ discount_form.on('submit', function(e) {
 (function () {
     var deliveries = $('[name="delivery"]');
     var deliveries_inputs = $('#msOrder input');
-    deliveries_inputs.on('change', function() {
+    deliveries_inputs.on('change', function () {
         var delivery = parseInt(deliveries.filter(':checked').val());
 
         // if ([1, 3].indexOf(delivery) !== -1) {
@@ -577,13 +578,13 @@ var cartSwitcher = UIkit.switcher('#cart-tabs', {
     swiping: false
 });
 
-$('#cart-tabs').on('show.uk.switcher', function(event, area){
+$('#cart-tabs').on('show.uk.switcher', function (event, area) {
     if ($(miniShop2.Order.paymentInput, miniShop2.Order.order).filter(':visible:checked').length == 0) {
         $(miniShop2.Order.paymentInput, miniShop2.Order.order).filter(':visible:first').trigger('click');
     }
 });
 
-$('.js-cart-submit').click(function() {
+$('.js-cart-submit').click(function () {
     cartSwitcher.show(1);
     // var headerHeight = $(window).width() < 960 ? 77 : 133;
     // $(".content").offset().top - headerHeight
@@ -592,7 +593,7 @@ $('.js-cart-submit').click(function() {
     }, 1000);
 });
 
-$('.js-header-modern-catalog').click(function() {
+$('.js-header-modern-catalog').click(function () {
     if ($(window).width() < 960) {
         UIkit.offcanvas.show('#uk-offcanvas');
         return false;
@@ -614,7 +615,7 @@ UIkit.switcher('#switcher-contacts-tabs', {
     var delay = 30;
     var catalog = document.querySelector('.fixed-catalog');
     var scrolltop = document.querySelector('.scrolltop');
-    window.addEventListener('scroll', function(e) {
+    window.addEventListener('scroll', function (e) {
         if (window.scrollY < prevScroll) {
             delay = 30;
             catalog.classList.add('fixed-catalog_visible');
@@ -638,58 +639,58 @@ if (contactsSelect) {
     new Choices(contactsSelect);
 }
 
-function optionsWidth () {    
+function optionsWidth() {
     const groups = $('.u-product-options__items');
-    groups.each(function(i1, group) {
+    groups.each(function (i1, group) {
         let items = $(group).find('.u-product-options__item');
         let minWidth = 0;
-        items.each(function(i2, item) {
+        items.each(function (i2, item) {
             if ($(item).outerWidth() > minWidth) {
                 minWidth = $(item).outerWidth();
             }
         });
         if (minWidth > 0) {
             let perRow = Math.floor($(group).outerWidth() / minWidth);
-            let normalPerRow = Math.ceil(items.length/Math.ceil(items.length/perRow));
+            let normalPerRow = Math.ceil(items.length / Math.ceil(items.length / perRow));
             let maxWidth = $(group).outerWidth() / normalPerRow;
             items.css('width', maxWidth);
         }
     });
 }
 
-$('.js-share-dropdown').each(function() {
+$('.js-share-dropdown').each(function () {
     const dropdown = UIkit.dropdown(this, {
         remaintime: 0,
         mode: 'click'
     });
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         dropdown.hide();
     });
 });
 
-$('.u-rating__add').click(function() {
+$('.u-rating__add').click(function () {
     if ($('#comment-form').is(':visible')) {
         $(this).removeClass('u-rating__add_active');
-        $('#comment-form').slideUp(500, function() {
+        $('#comment-form').slideUp(500, function () {
             // тригерим ресайз окна для обновления закрепленных блоков
             $(window).trigger('resize');
         });
     } else {
         $(this).addClass('u-rating__add_active');
-        $('#comment-form').slideDown(500, function() {
+        $('#comment-form').slideDown(500, function () {
             // тригерим ресайз окна для обновления закрепленных блоков
             $(window).trigger('resize');
         });
     }
 });
 
-$('[data-uk-switcher]').on('show.uk.switcher', function() {
+$('[data-uk-switcher]').on('show.uk.switcher', function () {
     $('.u-rating__add').removeClass('u-rating__add_active');
     $('#comment-form').slideUp(500);
 });
 
 
-$(function() {
+$(function () {
     const deliveries = [{
         id: 1,
         label: 'Самовывоз',
@@ -729,7 +730,7 @@ $(function() {
         id: 3,
         label: 'Оплата при получении'
     }]
-    $('.js-calc').each(function(i, form) {
+    $('.js-calc').each(function (i, form) {
         const cityInput = form.querySelector('[name="city"]')
         const cityLabel = form.querySelector('.js-calc-city-name')
         const citySubmit = form.querySelector('.js-calc-city-submit')
@@ -781,7 +782,7 @@ $(function() {
         }
 
         const onChangeDelivery = function (e) {
-            let item =  deliveries.find(row => row.id === parseInt(e.target.value))
+            let item = deliveries.find(row => row.id === parseInt(e.target.value))
             // способы оплаты в соответствии с выбранным способом доставки
             paymentChoices.setChoices(payments.filter(row => item.payments.indexOf(row.id) !== -1).map((row, index) => ({
                 value: row.id,
@@ -1061,7 +1062,7 @@ WebFont.load({
         families: ['SF UI Text', 'SF UI Display'],
         urls: ['/assets/nemopro/src/fonts/sf/SFUIText.css', '/assets/nemopro/src/fonts/sf/SFUIDisplay.css']
     },
-    active: function() {
+    active: function () {
         setTimeout(optionsWidth, 0);
     }
 });
@@ -1156,16 +1157,16 @@ $('.js-home-slider').each(function () {
     });
 });
 
-function initProductsImageOnDesktop () {
-    $(document).on('mouseenter', '.products-image', function() {
+function initProductsImageOnDesktop() {
+    $(document).on('mouseenter', '.products-image', function () {
         this.classList.add('products-image_hover');
     });
-    $(document).on('mouseleave', '.products-image', function() {
+    $(document).on('mouseleave', '.products-image', function () {
         this.classList.remove('products-image_hover');
     });
 }
 
-function initProductsImageOnMobile () {
+function initProductsImageOnMobile() {
     let hoveredItem = null;
 
     document.addEventListener('touchstart', function (e) {
@@ -1198,27 +1199,27 @@ if (window.matchMedia("(min-width: 768px)").matches) {
     initProductsImageOnMobile();
 }
 
-function initFeedbackMessageOnDesktop () {
-    $('.u-feedback-message').on('mouseenter', function() {
+function initFeedbackMessageOnDesktop() {
+    $('.u-feedback-message').on('mouseenter', function () {
         this.classList.add('u-feedback-message_active');
     });
-    $('.u-feedback-message').on('mouseleave', function() {
+    $('.u-feedback-message').on('mouseleave', function () {
         this.classList.remove('u-feedback-message_active');
     });
 }
 
-function initFeedbackMessageOnMobile () {
-    $('.u-feedback-message').on('click', function() {
+function initFeedbackMessageOnMobile() {
+    $('.u-feedback-message').on('click', function () {
         const el = this
 
         el.classList.add('u-feedback-message_active');
 
         const outsideClick = function (e) {
-          var itsChildren = el.contains(e.target)
-          if (e.target != el && !itsChildren) {
-            el.classList.remove('u-feedback-message_active');
-            document.removeEventListener('click', outsideClick);
-          }
+            var itsChildren = el.contains(e.target)
+            if (e.target != el && !itsChildren) {
+                el.classList.remove('u-feedback-message_active');
+                document.removeEventListener('click', outsideClick);
+            }
         }
 
         document.addEventListener('click', outsideClick);

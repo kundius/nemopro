@@ -16791,18 +16791,18 @@ $('.js-contacts-select').each(function () {
     $(target).attr('href', uri);
   });
 });
-$('.js-input-number-up').click(function () {
-  var input = $(this).parent('.js-input-number').find('input');
-  var val = Number(input.val()) + 1;
-  input.val(val);
-  input.change();
+$('.js-input-number-up').on('click', function () {
+  var $input = $(this).closest('.js-input-number').find('input');
+  var val = Number($input.val()) + 1;
+  $input.val(val).trigger('change');
 });
-$('.js-input-number-down').click(function () {
-  var input = $(this).parent('.js-input-number').find('input');
-  var val = Number(input.val()) - 1;
-  if (!input.attr('min') || val >= input.attr('min')) {
-    input.val(val);
-    input.change();
+$('.js-input-number-down').on('click', function () {
+  var $input = $(this).closest('.js-input-number').find('input');
+  var currentValue = Number($input.val());
+  var minValue = Number($input.attr('min')) || -Infinity;
+  var newValue = currentValue - 1;
+  if (newValue >= minValue) {
+    $input.val(newValue).trigger('change');
   }
 });
 
