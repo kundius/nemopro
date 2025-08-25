@@ -16795,9 +16795,11 @@ $('.js-input-number-up').on('click', function () {
   var $input = $(this).closest('.js-input-number').find('input');
   var val = Number($input.val()) + 1;
   $input.val(val);
-  $input.trigger('change');
-  $input.get(0).dispatchEvent(new Event('change'));
+  $(this).closest(miniShop2.form).submit();
+  // $input.trigger('change');
+  // $input.get(0).dispatchEvent(new Event('change'));
 });
+
 $('.js-input-number-down').on('click', function () {
   var $input = $(this).closest('.js-input-number').find('input');
   var currentValue = Number($input.val());
@@ -16805,8 +16807,9 @@ $('.js-input-number-down').on('click', function () {
   var newValue = currentValue - 1;
   if (newValue >= minValue) {
     $input.val(newValue);
-    $input.trigger('change');
-    $input.get(0).dispatchEvent(new Event('change'));
+    // $input.trigger('change');
+    // $input.get(0).dispatchEvent(new Event('change'));
+    $(this).closest(miniShop2.form).submit();
   }
 });
 
