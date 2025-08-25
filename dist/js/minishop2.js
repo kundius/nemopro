@@ -231,7 +231,6 @@
             clean: miniShop2Config.callbacksObjectTemplate()
         },
         setup: function () {
-            console.log('ms setup')
             miniShop2.Cart.cart = '#msCart';
             miniShop2.Cart.miniCart = '#msMiniCart';
             miniShop2.Cart.miniCartNotEmptyClass = 'full';
@@ -241,14 +240,12 @@
             miniShop2.Cart.totalCost = '.ms2_total_cost';
         },
         initialize: function () {
-            console.log('ms initialize')
             miniShop2.Cart.setup();
             if (!$(miniShop2.Cart.cart).length) {
                 return;
             }
-            console.log('ms initialize change', $(miniShop2.Cart.cart + ' ' + miniShop2.Cart.countInput))
+            console.log('initialize on change')
             miniShop2.$doc.on('change', miniShop2.Cart.cart + ' ' + miniShop2.Cart.countInput, function () {
-                console.log('ms on change count')
                 $(this).closest(miniShop2.form).submit();
             });
         },

@@ -16791,7 +16791,8 @@ $('.js-contacts-select').each(function () {
     $(target).attr('href', uri);
   });
 });
-$(document).ready(function () {
+jQuery(function () {
+  console.log('initialize on click', miniShop2.$doc);
   $('.js-input-number-up').on('click', function () {
     var $input = $(this).closest('.js-input-number').find('input');
     var val = Number($input.val()) + 1;

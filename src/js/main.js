@@ -233,7 +233,8 @@ $('.js-contacts-select').each(function () {
     });
 });
 
-$(document).ready(function () {
+jQuery(function () {
+    console.log('initialize on click', miniShop2.$doc)
     $('.js-input-number-up').on('click', function () {
         const $input = $(this).closest('.js-input-number').find('input');
         const val = Number($input.val()) + 1;
