@@ -16794,7 +16794,9 @@ $('.js-contacts-select').each(function () {
 $('.js-input-number-up').on('click', function () {
   var $input = $(this).closest('.js-input-number').find('input');
   var val = Number($input.val()) + 1;
-  $input.val(val).trigger('change');
+  $input.val(val);
+  $input.trigger('change');
+  $input.get(0).dispatchEvent(new Event('change'));
 });
 $('.js-input-number-down').on('click', function () {
   var $input = $(this).closest('.js-input-number').find('input');
@@ -16802,7 +16804,9 @@ $('.js-input-number-down').on('click', function () {
   var minValue = Number($input.attr('min')) || -Infinity;
   var newValue = currentValue - 1;
   if (newValue >= minValue) {
-    $input.val(newValue).trigger('change');
+    $input.val(newValue);
+    $input.trigger('change');
+    $input.get(0).dispatchEvent(new Event('change'));
   }
 });
 
