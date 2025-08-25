@@ -16792,13 +16792,16 @@ $('.js-contacts-select').each(function () {
   });
 });
 jQuery(function () {
-  console.log('initialize on click', miniShop2.$doc);
+  console.log('initialize on click');
   $('.js-input-number-up').on('click', function () {
     var $input = $(this).closest('.js-input-number').find('input');
     var val = Number($input.val()) + 1;
     $input.val(val);
-    miniShop2.$doc.trigger('change');
-    $input.get(0).dispatchEvent(new Event('change'));
+    var event = new Event('change', {
+      bubbles: true,
+      cancelable: true
+    });
+    $input.get(0).dispatchEvent(event);
   });
   $('.js-input-number-down').on('click', function () {
     var $input = $(this).closest('.js-input-number').find('input');
@@ -16807,7 +16810,7 @@ jQuery(function () {
     var newValue = currentValue - 1;
     if (newValue >= minValue) {
       $input.val(newValue);
-      miniShop2.$doc.trigger('change');
+      $input.trigger('change');
       $input.get(0).dispatchEvent(new Event('change'));
     }
   });
