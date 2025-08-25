@@ -181,8 +181,8 @@
         var url = (formActionUrl)
             ? formActionUrl
             : (miniShop2Config.actionUrl)
-                      ? miniShop2Config.actionUrl
-                      : document.location.href;
+                ? miniShop2Config.actionUrl
+                : document.location.href;
         // set request method
         var formMethod = (miniShop2.sendData.$form)
             ? miniShop2.sendData.$form.attr('method')
@@ -231,6 +231,7 @@
             clean: miniShop2Config.callbacksObjectTemplate()
         },
         setup: function () {
+            console.log('ms setup')
             miniShop2.Cart.cart = '#msCart';
             miniShop2.Cart.miniCart = '#msMiniCart';
             miniShop2.Cart.miniCartNotEmptyClass = 'full';
@@ -245,6 +246,7 @@
                 return;
             }
             miniShop2.$doc.on('change', miniShop2.Cart.cart + ' ' + miniShop2.Cart.countInput, function () {
+                console.log('ms on change count')
                 $(this).closest(miniShop2.form).submit();
             });
         },
@@ -266,7 +268,7 @@
         change: function () {
             var callbacks = miniShop2.Cart.callbacks;
             callbacks.change.response.success = function (response) {
-                if (typeof(response.data.key) == 'undefined') {
+                if (typeof (response.data.key) == 'undefined') {
                     this.Cart.remove_position(miniShop2.Utils.getValueFromSerializedArray('key'));
                 }
                 else {
@@ -425,8 +427,8 @@
             callbacks.response.success = function (response) {
                 (function (key, value, old_value) {
                     var $field = $('[name="' + key + '"]', miniShop2.Order.order)
-                        type = $field.attr('type');
-                        
+                    type = $field.attr('type');
+
                     switch (key) {
                         case 'delivery':
                             $field = $(miniShop2.Order.deliveryInputUniquePrefix + response.data[key]);
@@ -460,14 +462,14 @@
                             break;
                         //default:
                     }
-                    
+
                     switch (type) {
                         case 'checkbox':
                         case 'radio':
-                            var values = typeof(response.data[key]) != 'undefined' ? response.data[key].split('||') : [];
+                            var values = typeof (response.data[key]) != 'undefined' ? response.data[key].split('||') : [];
                             $field.removeClass('error').closest(miniShop2.Order.inputParent).removeClass('error');
-                            $field.each(function() {
-                                if(values.indexOf($(this).val()) != -1) {
+                            $field.each(function () {
+                                if (values.indexOf($(this).val()) != -1) {
                                     $(this).prop('checked', true);
                                 }
                             });
@@ -635,7 +637,7 @@
 
     miniShop2.Utils = {
         empty: function (val) {
-            return (typeof(val) == 'undefined' || val == 0 || val === null || val === false || (typeof(val) == 'string' && val.replace(/\s+/g, '') == '') || (typeof(val) == 'object' && val.length == 0));
+            return (typeof (val) == 'undefined' || val == 0 || val === null || val === false || (typeof (val) == 'string' && val.replace(/\s+/g, '') == '') || (typeof (val) == 'object' && val.length == 0));
         },
         formatPrice: function (price) {
             var pf = miniShop2Config.price_format;
@@ -723,8 +725,8 @@
     /**
      * Callbacks
      */
-     
-    function optionsInCart () {
+
+    function optionsInCart() {
         $('form.ms2_form').each(function (i, form) {
             var $form = $(form);
             var in_cart = $form.data('in_cart') || {};
@@ -763,44 +765,44 @@
     optionsInCart();
 
     /* сообщение о добавлении в корзину */
-    miniShop2.Callbacks.add('Cart.add.response.success', 'add_to_cart_message', function(response) {
+    miniShop2.Callbacks.add('Cart.add.response.success', 'add_to_cart_message', function (response) {
         $.post(
-          '/template/actions.php',
-          {
-              action: 'cart/add/success',
-              key: response.data.key
-          },
-          function(r) {
-              r = $.parseJSON(r);
+            '/template/actions.php',
+            {
+                action: 'cart/add/success',
+                key: response.data.key
+            },
+            function (r) {
+                r = $.parseJSON(r);
 
-              if (r.success) {
-                  var form = $('form.ms2_form').has('input[name="id"][value="' + r.data.product.id + '"]');
-                  var in_cart = form.data('in_cart') || [];
-                  in_cart.push(r.data.cart);
-                  form.data('in_cart', in_cart);
-                  optionsInCart();
+                if (r.success) {
+                    var form = $('form.ms2_form').has('input[name="id"][value="' + r.data.product.id + '"]');
+                    var in_cart = form.data('in_cart') || [];
+                    in_cart.push(r.data.cart);
+                    form.data('in_cart', in_cart);
+                    optionsInCart();
 
-                  var modal = UIkit.modal($(r.html).appendTo("body"), {
-                      center: true
-                  });
+                    var modal = UIkit.modal($(r.html).appendTo("body"), {
+                        center: true
+                    });
 
-                  modal.on("hide.uk.modal", function(){
-                      modal.element.remove();
-                  });
+                    modal.on("hide.uk.modal", function () {
+                        modal.element.remove();
+                    });
 
-                  modal.show();
-              }
-          }
+                    modal.show();
+                }
+            }
         );
     });
 
     /* Обновление цены после ввода купона в корзине */
-    miniShop2.Callbacks.add('Order.add.ajax.done', 'coupon_code', function(res) {
+    miniShop2.Callbacks.add('Order.add.ajax.done', 'coupon_code', function (res) {
         var res = res.responseJSON;
-        if (typeof(res.data['coupon_code']) != 'undefined') {
+        if (typeof (res.data['coupon_code']) != 'undefined') {
             miniShop2.Order.getcost();
         }
-        if(typeof(res.data['coupon_code']) == 'undefined' || res.data['coupon_code'] == '') {
+        if (typeof (res.data['coupon_code']) == 'undefined' || res.data['coupon_code'] == '') {
             $('#coupon_code_desc').text('');
         } else {
             $('#coupon_code_desc').text('Скидка применена!');
@@ -811,20 +813,20 @@
     function discountUpdateCart() {
         $.ajax({
             url: location.href,
-            success: function(response){
+            success: function (response) {
                 var html = $(document.createElement('div')).append(response);
 
                 // обновление стоимости корзины
                 $('.ms2_total_count').html(html.find('.ms2_total_count').html());
                 $('.ms2_total_cost').html(html.find('.ms2_total_cost').html());
-                html.find('.js-cart-row').each(function() {
+                html.find('.js-cart-row').each(function () {
                     var id = $(this).attr('id'),
-                      target = $('[id="' + id + '"]');
+                        target = $('[id="' + id + '"]');
 
-                    $('.js-cart-row-price', target).html( $('.js-cart-row-price', this).html() );
-                    $('.js-cart-row-oldprice', target).html( $('.js-cart-row-oldprice', this).html() );
-                    $('.js-cart-row-discount', target).html( $('.js-cart-row-discount', this).html() );
-                    $('.ms2_total_cost_row', target).html( $('.ms2_total_cost_row', this).html() );
+                    $('.js-cart-row-price', target).html($('.js-cart-row-price', this).html());
+                    $('.js-cart-row-oldprice', target).html($('.js-cart-row-oldprice', this).html());
+                    $('.js-cart-row-discount', target).html($('.js-cart-row-discount', this).html());
+                    $('.ms2_total_cost_row', target).html($('.ms2_total_cost_row', this).html());
                 });
 
                 // обновление стоимости заказа
@@ -838,16 +840,16 @@
     miniShop2.Callbacks.add('Cart.remove.response.success', 'remove_cart', discountUpdateCart);
 
     /* Обновление цены после ввода купона в корзине */
-    miniShop2.Callbacks.add('Order.add.response.success', 'discount_code', function(response) {
-        if(response.data.discount_code) {
+    miniShop2.Callbacks.add('Order.add.response.success', 'discount_code', function (response) {
+        if (response.data.discount_code) {
             $('.cart-coupon').addClass('cart-coupon--applied');
             discountUpdateCart();
         }
     });
 
     /* Обновление цены после включения кредита в корзине */
-    miniShop2.Callbacks.add('Order.add.response.success', 'credit', function(response) {
-        if (typeof(response.data['credit']) != 'undefined') {
+    miniShop2.Callbacks.add('Order.add.response.success', 'credit', function (response) {
+        if (typeof (response.data['credit']) != 'undefined') {
             discountUpdateCart();
         }
     });
@@ -855,19 +857,19 @@
     /* обновление стоимости доставки */
     function updDeliveryPrice() {
         var form = $('form#msOrder'),
-          params = {
-              'action': 'delivery/price',
-              'payment': $('[name="payment"]:checked', form).val()
-          };
+            params = {
+                'action': 'delivery/price',
+                'payment': $('[name="payment"]:checked', form).val()
+            };
 
-        $('.js-delivery-price').each(function() {
+        $('.js-delivery-price').each(function () {
             var span = $(this),
-              data = $.extend({
-                  'delivery': span.data('id')
-              }, params);
+                data = $.extend({
+                    'delivery': span.data('id')
+                }, params);
 
-            $.post("template/actions.php", data, function(response) {
-                if(response.price > 0) {
+            $.post("template/actions.php", data, function (response) {
+                if (response.price > 0) {
                     span.html('&mdash; <i>' + response.price + ' <i class="uk-icon-rub"></i></i>');
                 } else {
                     span.html('');
@@ -879,19 +881,19 @@
 
     function updPaymentDesc(response) {
         var form = $('form#msOrder'),
-          params = {
-              'action': 'payment/description',
-              'delivery': $('[name="delivery"]:checked', form).val()
-          };
+            params = {
+                'action': 'payment/description',
+                'delivery': $('[name="delivery"]:checked', form).val()
+            };
 
-        $('.js-delivery-description').each(function() {
+        $('.js-delivery-description').each(function () {
             var span = $(this),
-              data = $.extend({
-                  'payment': span.data('id')
-              }, params);
+                data = $.extend({
+                    'payment': span.data('id')
+                }, params);
 
-            $.post("template/actions.php", data, function(response) {
-                if(response.description) {
+            $.post("template/actions.php", data, function (response) {
+                if (response.description) {
                     span.html(response.description);
                 } else {
                     span.html('');
@@ -901,7 +903,7 @@
     }
     miniShop2.Callbacks.add('Order.getcost.response.success', 'updPaymentDesc', updPaymentDesc);
 
-    miniShop2.Callbacks.add('Order.submit.response.success', 'order_success', function(response) {
+    miniShop2.Callbacks.add('Order.submit.response.success', 'order_success', function (response) {
         // if (response.data['redirect']) {
         //     document.location.href = response.data['redirect'];
         // }
@@ -909,13 +911,13 @@
         var href = document.location.pathname;
         if (response.data['msorder']) {
             href = document.location.search
-              ? href + document.location.search + '&msorder=' + response.data['msorder']
-              : href + '?msorder=' + response.data['msorder'];
+                ? href + document.location.search + '&msorder=' + response.data['msorder']
+                : href + '?msorder=' + response.data['msorder'];
         }
         if ($('#msGetOrder').length) {
             $.ajax({
                 url: href,
-                success: function(response) {
+                success: function (response) {
                     $('#msGetOrder').html($(document.createElement('div')).html(response).find('#msGetOrder').html());
 
                     $('#cart-tabs li.uk-disabled').removeClass('uk-disabled').siblings().addClass('uk-disabled').end().click();
@@ -934,17 +936,17 @@
         // }
     });
 
-    miniShop2.Callbacks.add('Order.submit.before', 'orderSubmitBefore', function() {
+    miniShop2.Callbacks.add('Order.submit.before', 'orderSubmitBefore', function () {
         document.querySelector('.js-order-submit').classList.add('preloader');
     });
-    miniShop2.Callbacks.add('Order.submit.ajax.done', 'orderSubmitDone', function() {
+    miniShop2.Callbacks.add('Order.submit.ajax.done', 'orderSubmitDone', function () {
         document.querySelector('.js-order-submit').classList.remove('preloader');
     });
 
-    miniShop2.Callbacks.add('Cart.remove.before', 'remove_cart_before', function() {
+    miniShop2.Callbacks.add('Cart.remove.before', 'remove_cart_before', function () {
         $('.content').addClass('preloader');
     });
-    miniShop2.Callbacks.add('Cart.remove.ajax.always', 'remove_cart_after', function() {
-        setTimeout(function() {$('.content').removeClass('preloader')}, 800);
+    miniShop2.Callbacks.add('Cart.remove.ajax.always', 'remove_cart_after', function () {
+        setTimeout(function () { $('.content').removeClass('preloader') }, 800);
     });
 })(window, document, jQuery, miniShop2Config);

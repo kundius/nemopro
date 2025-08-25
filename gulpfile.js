@@ -16,7 +16,7 @@ const uglify = require('gulp-uglify')
 // sass.compiler = require('gulp-dart-scss')
 
 const config = {
-    srcDir: './src/'
+  srcDir: './src/'
 }
 
 function fonts() {
@@ -48,7 +48,7 @@ function css() {
   ])
     .pipe(sass())
     .pipe(concat('all.css'))
-    .pipe(postcss([ autoprefixer(), cssnano() ]))
+    .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(dest('dist/css'))
 }
 
@@ -83,12 +83,12 @@ function browserifyJs() {
     .pipe(tap(function (file) {
       log.info('bundling ' + file.path);
       // replace file contents with browserify's bundle stream
-      file.contents = browserify(file.path, {debug: true}).bundle();
+      file.contents = browserify(file.path, { debug: true }).bundle();
     }))
     // transform streaming contents into buffer contents (because gulp-sourcemaps does not support streaming contents)
     .pipe(buffer())
     // load and init sourcemaps
-    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(uglify())
     // write sourcemaps
     .pipe(sourcemaps.write('./'))
@@ -96,10 +96,12 @@ function browserifyJs() {
     .pipe(dest('dist/js'))
 }
 
-function modx(){
+function modx() {
   return src([
     config.srcDir + 'js/ajaxform.js',
     config.srcDir + 'js/minishop2.js',
+    config.srcDir + 'js/message_settings.js',
+    config.srcDir + 'js/jquery-3.4.1.min.js',
     config.srcDir + 'js/mslistorders.js',
     config.srcDir + 'js/tickets.js'
   ])
@@ -113,7 +115,7 @@ exports.browserifyJs = browserifyJs
 exports.css = css
 exports.modx = modx
 exports.build = parallel(fonts, images, css, js, browserifyJs, modx)
-exports.default = function() {
+exports.default = function () {
   watch(config.srcDir + 'scss/**/*', css)
   watch(config.srcDir + 'css/**/*', css)
   watch(config.srcDir + 'js/**/*', [js, browserifyJs])
