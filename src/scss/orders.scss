@@ -279,6 +279,7 @@
   width: 64px;
   height: 64px;
   display: flex;
+  flex-shrink: 0;
 
   @include --max-md {
     width: 48px;
