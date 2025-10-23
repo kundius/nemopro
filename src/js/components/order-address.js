@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       type: "ADDRESS",
       bounds: "city",
       geoLocation: false,
+      params: { locations: [{ country: "*" }] }
     });
   }
 
@@ -19,5 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     type: "ADDRESS",
     bounds: "region-area",
     geoLocation: false,
+    params: { locations: [{ country: "*" }] }
   });
 });
