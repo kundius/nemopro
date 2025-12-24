@@ -17400,13 +17400,13 @@ $(function () {
           } else if (payment.id === 3) {
             if (costInput.value < 5000) {
               resultTime.innerHTML = '4-6 дней';
-              resultPrice.innerHTML = '450 + ' + costInput.value * 0.04 + ' = ' + (costInput.value * 0.04 + 450) + ' руб.';
+              resultPrice.innerHTML = '450 + ' + costInput.value * 0.08 + ' = ' + (costInput.value * 0.08 + 450) + ' руб.';
             } else if (costInput.value >= 5000 && costInput.value < 12000) {
               resultTime.innerHTML = '4-6 дней';
-              resultPrice.innerHTML = '400 + ' + costInput.value * 0.04 + ' = ' + (costInput.value * 0.04 + 400) + ' руб.';
+              resultPrice.innerHTML = '400 + ' + costInput.value * 0.08 + ' = ' + (costInput.value * 0.08 + 400) + ' руб.';
             } else if (costInput.value >= 12000) {
               resultTime.innerHTML = '4-6 дней';
-              resultPrice.innerHTML = '0 + ' + costInput.value * 0.04 + ' = ' + costInput.value * 0.04 + ' руб.';
+              resultPrice.innerHTML = '0 + ' + costInput.value * 0.08 + ' = ' + costInput.value * 0.08 + ' руб.';
             }
           } else {
             errors.push('Неверный способ оплаты.');
@@ -17465,7 +17465,7 @@ $(function () {
               resultPrice.innerHTML = '900 руб.';
             } else if (costInput.value >= 12000) {
               resultTime.innerHTML = '2-4 дня';
-              resultPrice.innerHTML = 'Бесплатно';
+              resultPrice.innerHTML = '500 руб.';
             }
           } else if (payment.id === 3) {
             if (costInput.value < 5000) {
