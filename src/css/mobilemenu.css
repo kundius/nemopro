@@ -41,11 +41,11 @@
   visibility: visible;
 }
 
-.mobilemenu > .scroller {
+.mobilemenu>.scroller {
   overflow: hidden;
 }
 
-.mobilemenu > .scroller > .wrap {
+.mobilemenu>.scroller>.wrap {
   width: 100%;
   transition: transform 0.2s ease-in-out;
   -webkit-transition: transform 0.2s ease-in-out;
@@ -69,53 +69,56 @@
   padding: 0;
 }
 
-.mobilemenu .expanded > .dropdown {
+.mobilemenu .expanded>.dropdown {
   display: block;
 }
 
-.mobilemenu .expanded > .dropdown > div {
+.mobilemenu .expanded>.dropdown>div {
   border-bottom: 1px solid #f2f2f2;
 }
 
-.mobilemenu .expanded > .dropdown .menu_back {
+.mobilemenu .expanded>.dropdown .menu_back {
   border-bottom: 1px solid #ececec;
 }
-.mobilemenu .expanded > .dropdown .menu_back a {
+
+.mobilemenu .expanded>.dropdown .menu_back a {
   font-size: 14px;
   padding: 5px 20px 5px 30px;
   cursor: pointer;
   position: relative;
 }
 
-.mobilemenu .expanded > .dropdown .menu_back .svg {
+.mobilemenu .expanded>.dropdown .menu_back .svg {
   position: absolute;
   top: 50%;
   left: 15px;
   transform: translateY(-50%);
 }
 
-.mobilemenu .expanded > .dropdown .menu_title {
+.mobilemenu .expanded>.dropdown .menu_title {
   background-color: #fbfbfb;
   border-bottom: 1px solid #ececec;
 }
 
-.mobilemenu .expanded > .dropdown .menu_title > a {
+.mobilemenu .expanded>.dropdown .menu_title>a {
   font-size: 14px;
   text-transform: uppercase;
   padding: 15px 20px;
 }
 
-.mobilemenu .menu a:hover .svg {
-  background-color: transparent;
+@media (hover: hover) {
+  .mobilemenu .menu a:hover .svg {
+    background-color: transparent;
+  }
 }
 
-.mobilemenu .menu > ul {
+.mobilemenu .menu>ul {
   padding: 0;
   margin: 0;
   display: block;
 }
 
-.mobilemenu .menu ul > li {
+.mobilemenu .menu ul>li {
   list-style: none;
   display: block;
   margin: 0;
@@ -123,7 +126,7 @@
   padding: 0;
 }
 
-.mobilemenu .menu > ul > li {
+.mobilemenu .menu>ul>li {
   border-bottom: 1px solid #ececec;
 }
 
@@ -131,7 +134,7 @@
   display: none;
 }
 
-.mobilemenu .menu ul > li a {
+.mobilemenu .menu ul>li a {
   padding: 15px 20px;
   display: block;
   position: relative;
@@ -142,26 +145,28 @@
   text-transform: uppercase;
 }
 
-.mobilemenu .menu ul > li.active > a {
+.mobilemenu .menu ul>li.active>a {
   background: #daeffe;
 }
 
-.mobilemenu .menu ul > li a:hover {
-  background: #034f84;
-  color: #fff;
+@media (hover: hover) {
+  .mobilemenu .menu ul>li a:hover {
+    background: #034f84;
+    color: #fff;
+  }
 }
 
-.mobilemenu .menu ul > li > ul > li a {
+.mobilemenu .menu ul>li>ul>li a {
   padding: 5px 30px;
   font-size: 13px;
   text-transform: none;
 }
 
-.mobilemenu .menu ul > li a.parent {
+.mobilemenu .menu ul>li a.parent {
   padding-right: 46px;
 }
 
-.mobilemenu .menu ul > li .arrow {
+.mobilemenu .menu ul>li .arrow {
   position: absolute;
   z-index: 1;
   width: 46px;
@@ -173,14 +178,14 @@
   display: block;
 }
 
-.mobilemenu .menu ul > li .arrow .svg {
+.mobilemenu .menu ul>li .arrow .svg {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.mobilemenu .menu ul > li.selected > a:before {
+.mobilemenu .menu ul>li.selected>a:before {
   content: "";
   position: absolute;
   top: 30px;
@@ -190,7 +195,7 @@
   border-radius: 100%;
 }
 
-.mobilemenu .menu > ul > li > a {
+.mobilemenu .menu>ul>li>a {
   background: #fff;
   color: #000;
   font-size: 14px;
@@ -199,7 +204,7 @@
   text-transform: uppercase;
 }
 
-.mobilemenu .menu > ul > li.selected > a:before {
+.mobilemenu .menu>ul>li.selected>a:before {
   left: 0;
   top: -1px !important;
   bottom: -1px;
@@ -209,18 +214,18 @@
   border-radius: 0;
 }
 
-.mobilemenu .menu > ul > li:not(.counters),
-.menu ul > li.expanded,
-.menu ul > li.selected:not(.counters) {
+.mobilemenu .menu>ul>li:not(.counters),
+.menu ul>li.expanded,
+.menu ul>li.selected:not(.counters) {
   position: initial;
 }
 
-.mobilemenu .menu > ul > li.counters > a > span {
+.mobilemenu .menu>ul>li.counters>a>span {
   padding-right: 25px;
   position: relative;
 }
 
-.mobilemenu .menu > ul > li.counters .count {
+.mobilemenu .menu>ul>li.counters .count {
   width: 17px;
   height: 17px;
   line-height: 17px;
@@ -238,11 +243,11 @@
   left: auto;
 }
 
-.mobilemenu .menu > ul > li.counters .count.empted {
+.mobilemenu .menu>ul>li.counters .count.empted {
   background: #969ba5;
 }
 
-.mobilemenu .menu.middle > ul > li > a {
+.mobilemenu .menu.middle>ul>li>a {
   padding-left: 57px;
   background: #fbfbfb;
 }
@@ -277,12 +282,13 @@
   min-height: 19px;
   left: 21px;
   top: 22px;
-  background: url(/bitrix/templates/aspro_next/images/svg/Marker.svg) 2px 0
-    no-repeat;
+  background: url(/bitrix/templates/aspro_next/images/svg/Marker.svg) 2px 0 no-repeat;
 }
 
-.mobilemenu .menu.middle a:hover .svg-cabinet-login {
-  background-color: #222;
+@media (hover: hover) {
+  .mobilemenu .menu.middle a:hover .svg-cabinet-login {
+    background-color: #222;
+  }
 }
 
 .mobilemenu .menu.middle a .svg-basket,
@@ -325,15 +331,19 @@
   top: 26px;
 }
 
-.mobilemenu .menu.middle a:hover .svg-phone {
-  background-color: transparent;
+@media (hover: hover) {
+  .mobilemenu .menu.middle a:hover .svg-phone {
+    background-color: transparent;
+  }
 }
 
-.mobilemenu .menu.middle a:hover .svg-cabinet {
-  background-color: #222;
+@media (hover: hover) {
+  .mobilemenu .menu.middle a:hover .svg-cabinet {
+    background-color: #222;
+  }
 }
 
-.mobilemenu .downdrop .menu ul > li .arrow .svg {
+.mobilemenu .downdrop .menu ul>li .arrow .svg {
   transform: rotate(0.25turn);
 }
 
@@ -344,10 +354,10 @@
   padding: 0 0 0 19px;
 }
 
-.mobilemenu .downdrop .menu ul > li.expanded {
+.mobilemenu .downdrop .menu ul>li.expanded {
   border-bottom: none;
 }
 
-.mobilemenu .downdrop .menu ul > li.expanded > a {
+.mobilemenu .downdrop .menu ul>li.expanded>a {
   border-bottom: 1px solid #f2f2f2;
 }
