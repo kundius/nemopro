@@ -106,7 +106,7 @@
   padding: 15px 20px;
 }
 
-@media (hover: hover) {
+@media (min-width: 768px) {
   .mobilemenu .menu a:hover .svg {
     background-color: transparent;
   }
@@ -149,7 +149,7 @@
   background: #daeffe;
 }
 
-@media (hover: hover) {
+@media (min-width: 768px) {
   .mobilemenu .menu ul>li a:hover {
     background: #034f84;
     color: #fff;
@@ -285,7 +285,7 @@
   background: url(/bitrix/templates/aspro_next/images/svg/Marker.svg) 2px 0 no-repeat;
 }
 
-@media (hover: hover) {
+@media (min-width: 768px) {
   .mobilemenu .menu.middle a:hover .svg-cabinet-login {
     background-color: #222;
   }
@@ -331,13 +331,13 @@
   top: 26px;
 }
 
-@media (hover: hover) {
+@media (min-width: 768px) {
   .mobilemenu .menu.middle a:hover .svg-phone {
     background-color: transparent;
   }
 }
 
-@media (hover: hover) {
+@media (min-width: 768px) {
   .mobilemenu .menu.middle a:hover .svg-cabinet {
     background-color: #222;
   }
