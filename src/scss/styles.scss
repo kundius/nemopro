@@ -15269,6 +15269,8 @@ td.u-product-options__items {
   width: 100px;
   flex-shrink: 0;
   display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .about-widget__body {
@@ -15354,10 +15356,13 @@ td.u-product-options__items {
 }
 
 .about-slider-item {
+}
+
+.about-slider-item__haeder {
   display: flex;
-  padding: 32px;
   align-items: center;
-  gap: 32px;
+  justify-content: center;
+  padding: 24px;
 }
 
 .about-slider-item__icon {
@@ -15367,15 +15372,10 @@ td.u-product-options__items {
   display: flex;
 }
 
-.about-slider-item__body {
-  flex-grow:1;
-}
-
 .about-slider-item__title {
   color: #000;
-  font-size: 20px;
+  font-size: 18px;
   text-transform: uppercase;
-  margin-bottom: 16px;
   line-height: 1;
 }
 
@@ -15383,14 +15383,8 @@ td.u-product-options__items {
   color: #666;
   font-size: 14px;
   line-height: 1.35;
+  text-align: center;
+  margin-top: 24px;
 }
 
-.about-slider-item__more {
-  font-size: 14px;
-  line-height: 1.35;
-}
-
-.about-slider-item__more a {
-  color: #000;
-}
 
