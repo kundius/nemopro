@@ -15327,25 +15327,29 @@ td.u-product-options__items {
 
 .home-about__widget {
   display: flex;
+  min-width: 0;
 }
 
 .home-about__slider {
   display: flex;
+  min-width: 0;
 }
 
 .about-widget {
   display: flex;
   padding: 24px;
   align-items: center;
-  gap: 36px;
+  gap: 24px;
   border-radius: 5px;
   border: 1px solid #01556b;
   background-color: #fff;
 }
 
 .about-widget__icon {
-  background: url('../img/iconabout.png') no-repeat 50% 0;
+background: url(../img/icon-about.png) no-repeat 50% 0;
   align-self: stretch;
+  width: 100px;
+  flex-shrink: 0;
 }
 
 .about-widget__body {
