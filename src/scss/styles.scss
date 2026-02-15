@@ -2867,9 +2867,16 @@ jdiv {
   line-height: 12px;
   min-height: 100%;
 
-  .bx-pager-item {
-    a {
-    }
+  .slick-slider {
+    height: 100%;
+  }
+
+  .slick-list {
+    height: 100%;
+  }
+
+  .slick-track {
+    height: 100%;
   }
 
   .slick-dots {
@@ -15371,7 +15378,7 @@ background: url(../img/icon-about.png) no-repeat 50% 0;
 }
 
 .about-widget__more {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.35;
 }
 
