@@ -15257,7 +15257,7 @@ td.u-product-options__items {
 .about-widget {
   display: flex;
   padding: 32px;
-  align-items: center;
+  align-items: flex-start;
   gap: 32px;
   border-radius: 5px;
   border: 1px solid #01556b;
@@ -15265,11 +15265,10 @@ td.u-product-options__items {
 }
 
 .about-widget__icon {
-  align-self: stretch;
   width: 100px;
   flex-shrink: 0;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 }
 
