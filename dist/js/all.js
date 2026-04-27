@@ -16583,50 +16583,50 @@ $(function () {
 "use strict";
 
 // тригерим ресайз окна для обновления закрепленных блоков
-$('[data-uk-switcher]').on('show.uk.switcher', function () {
-  $(window).trigger('resize');
+$("[data-uk-switcher]").on("show.uk.switcher", function () {
+  $(window).trigger("resize");
 });
-$(document).on('af_complete', function (e, response) {
-  response.form.parents('.uk-modal').find('.uk-modal-close').click();
+$(document).on("af_complete", function (e, response) {
+  response.form.parents(".uk-modal").find(".uk-modal-close").click();
 });
 
 /* Лайтбокс */
 $('a[href$=".jpg"], a[href$=".jpeg"], a[href$=".JPG"], a[href$=".png"], a[href$=".gif"]').not('[target="_blank"]').magnificPopup({
-  type: 'image',
+  type: "image",
   gallery: {
     enabled: true
   }
 });
-$(document).on('click', '.comment-image', function () {
+$(document).on("click", ".comment-image", function () {
   $.magnificPopup.open({
     items: {
-      src: $(this).attr('href')
+      src: $(this).attr("href")
     },
-    type: 'image'
+    type: "image"
   });
   return false;
 });
-$('.js-popup-map').magnificPopup({
+$(".js-popup-map").magnificPopup({
   disableOn: 700,
-  type: 'iframe',
-  mainClass: 'mfp-fade',
+  type: "iframe",
+  mainClass: "mfp-fade",
   removalDelay: 160,
   preloader: false,
   fixedContentPos: false
 });
-$('.js-popup-inline').magnificPopup({
-  type: 'inline'
+$(".js-popup-inline").magnificPopup({
+  type: "inline"
 });
-$('.js-image-comment').magnificPopup({
-  type: 'image',
+$(".js-image-comment").magnificPopup({
+  type: "image",
   gallery: {
     enabled: true
   }
 });
-$('.js-image-lightbox').magnificPopup({
-  type: 'image',
+$(".js-image-lightbox").magnificPopup({
+  type: "image",
   image: {
-    markup: '<div class="mfp-figure">' + '<div class="mfp-close"></div>' + '<div class="mfp-img"></div>' + '<div class="mfp-bottom-bar">' + '<div class="mfp-title"></div>' + '<div class="mfp-counter"></div>' + '<div class="mfp-share">Поделиться в соцсетях: <span class="js-mfp-share"></span></div>' + '</div>' + '<div class="mfp-comments"></div>' + '</div>'
+    markup: '<div class="mfp-figure">' + '<div class="mfp-close"></div>' + '<div class="mfp-img"></div>' + '<div class="mfp-bottom-bar">' + '<div class="mfp-title"></div>' + '<div class="mfp-counter"></div>' + '<div class="mfp-share">Поделиться в соцсетях: <span class="js-mfp-share"></span></div>' + "</div>" + '<div class="mfp-comments"></div>' + "</div>"
   },
   gallery: {
     enabled: true
@@ -16636,20 +16636,20 @@ $('.js-image-lightbox').magnificPopup({
   callbacks: {
     change: function change() {
       var popup = this,
-        id = popup.currItem.el.data('id'),
-        share = popup.currItem.el.data('share');
-      popup.content.find('.js-mfp-share').html($(share).clone(true));
+        id = popup.currItem.el.data("id"),
+        share = popup.currItem.el.data("share");
+      popup.content.find(".js-mfp-share").html($(share).clone(true));
       $.post(document.location.href, {
-        action: 'comments',
-        thread: 'file-' + id
+        action: "comments",
+        thread: "file-" + id
       }, function (response) {
-        popup.content.find('.mfp-comments').html(response);
+        popup.content.find(".mfp-comments").html(response);
       });
     }
   }
 });
-$('.js-video-lightbox').magnificPopup({
-  type: 'inline',
+$(".js-video-lightbox").magnificPopup({
+  type: "inline",
   gallery: {
     enabled: true
   },
@@ -16657,42 +16657,42 @@ $('.js-video-lightbox').magnificPopup({
   callbacks: {
     change: function change() {
       var popup = this,
-        id = popup.currItem.el.data('id');
+        id = popup.currItem.el.data("id");
       $.post(document.location.href, {
-        action: 'comments',
-        thread: 'file-' + id
+        action: "comments",
+        thread: "file-" + id
       }, function (response) {
-        popup.content.find('.mfp-comments').html(response);
+        popup.content.find(".mfp-comments").html(response);
       });
     }
   }
 });
-var hash_video = location.hash.match(new RegExp('video=([^&]*)'));
+var hash_video = location.hash.match(new RegExp("video=([^&]*)"));
 if (hash_video) {
   $('.js-video-lightbox[data-id="' + hash_video[1] + '"]').click();
 }
-var hash_image = location.hash.match(new RegExp('image=([^&]*)'));
+var hash_image = location.hash.match(new RegExp("image=([^&]*)"));
 if (hash_image) {
   $('.js-image-lightbox[data-id="' + hash_image[1] + '"]').click();
 }
-$('.js-slider').slick({
+$(".js-slider").slick({
   autoplay: true,
   autoplaySpeed: 3000,
   prevArrow: '<button class="slider__prev"><i class="uk-icon-angle-left"></i></button>',
   nextArrow: '<button class="slider__next"><i class="uk-icon-angle-right"></i></button>',
   dots: true
 });
-$('.js-about-slider').slick({
+$(".js-about-slider").slick({
   autoplay: true,
   autoplaySpeed: 3000,
   arrows: false,
   dots: true
 });
-$('.js-seeAlso-carousel').slick({
+$(".js-seeAlso-carousel").slick({
   slidesToShow: 4,
   slidesToScroll: 1,
-  prevArrow: '.js-seeAlso-previous',
-  nextArrow: '.js-seeAlso-next',
+  prevArrow: ".js-seeAlso-previous",
+  nextArrow: ".js-seeAlso-next",
   responsive: [{
     breakpoint: 960,
     settings: {
@@ -16710,11 +16710,11 @@ $('.js-seeAlso-carousel').slick({
     }
   }]
 });
-$('.js-viewed-carousel').slick({
+$(".js-viewed-carousel").slick({
   slidesToShow: 4,
   slidesToScroll: 1,
-  prevArrow: '.js-viewed-previous',
-  nextArrow: '.js-viewed-next',
+  prevArrow: ".js-viewed-previous",
+  nextArrow: ".js-viewed-next",
   responsive: [{
     breakpoint: 960,
     settings: {
@@ -16732,23 +16732,23 @@ $('.js-viewed-carousel').slick({
     }
   }]
 });
-$('.js-actions-slider').slick({
+$(".js-actions-slider").slick({
   autoplay: true,
   autoplaySpeed: 3000,
   arrows: false,
   dots: true
 });
-$('.js-left-menu-toggle').click(function () {
+$(".js-left-menu-toggle").click(function () {
   //var height = 100 * $(window).scrollTop() / ($(document).height() - $(window).height());
-  $(this).toggleClass('opened');
-  $(this).nextAll('ul').animate({
+  $(this).toggleClass("opened");
+  $(this).nextAll("ul").animate({
     left: "0",
     right: "0"
   });
 });
-$('.left-menu .parent').click(function () {
-  console.log('scroll top');
-  $('html, body').animate({
+$(".left-menu .parent").click(function () {
+  console.log("scroll top");
+  $("html, body").animate({
     scrollTop: 0
   }, 500);
 });
@@ -16762,10 +16762,10 @@ $(document).ready(function () {
     $(".slideout-menu").toggleClass("slideout-sticky-lvl");
   });
 });
-$('.js-right-menu-toggle').on('click', function () {
-  $(this).parent('.touch').animate({
-    'left': '100%',
-    'right': '-100%'
+$(".js-right-menu-toggle").on("click", function () {
+  $(this).parent(".touch").animate({
+    left: "100%",
+    right: "-100%"
   });
 });
 $(document).ready(function () {
@@ -16780,35 +16780,35 @@ $(document).ready(function () {
 });
 
 // смена внешней ссылки при выборе селекта
-$('.js-contacts-select').each(function () {
+$(".js-contacts-select").each(function () {
   var $select = $(this),
-    uri = $select.find('option:selected').data('uri'),
-    target = $select.data('target');
-  $(target).attr('href', uri).show();
+    uri = $select.find("option:selected").data("uri"),
+    target = $select.data("target");
+  $(target).attr("href", uri).show();
   $select.change(function () {
-    var uri = $(this).find('option:selected').data('uri'),
-      target = $(this).data('target');
-    $(target).attr('href', uri);
+    var uri = $(this).find("option:selected").data("uri"),
+      target = $(this).data("target");
+    $(target).attr("href", uri);
   });
 });
-$('.js-input-number-up').on('click', function () {
-  var $input = $(this).closest('.js-input-number').find('input');
+$(".js-input-number-up").on("click", function () {
+  var $input = $(this).closest(".js-input-number").find("input");
   var val = Number($input.val()) + 1;
   $input.val(val);
-  var event = new Event('change', {
+  var event = new Event("change", {
     bubbles: true,
     cancelable: true
   });
   $input.get(0).dispatchEvent(event);
 });
-$('.js-input-number-down').on('click', function () {
-  var $input = $(this).closest('.js-input-number').find('input');
+$(".js-input-number-down").on("click", function () {
+  var $input = $(this).closest(".js-input-number").find("input");
   var currentValue = Number($input.val());
-  var minValue = Number($input.attr('min')) || -Infinity;
+  var minValue = Number($input.attr("min")) || -Infinity;
   var newValue = currentValue - 1;
   if (newValue >= minValue) {
     $input.val(newValue);
-    var event = new Event('change', {
+    var event = new Event("change", {
       bubbles: true,
       cancelable: true
     });
@@ -16817,26 +16817,26 @@ $('.js-input-number-down').on('click', function () {
 });
 
 /** Валидация и отправка форм **/
-$('.js-form').each(function () {
+$(".js-form").each(function () {
   $(this).validate({
     submitHandler: function submitHandler(form) {
-      var target = $(form).data('target');
+      var target = $(form).data("target");
       $(form).ajaxSubmit({
         url: location.href,
-        type: 'POST',
-        dataType: 'html',
+        type: "POST",
+        dataType: "html",
         success: function success(response, statusText, xhr, $form) {
-          var $target = $(document.createElement('div')).append(response).find(target);
+          var $target = $(document.createElement("div")).append(response).find(target);
           $(target).html($target.html());
         }
       });
     }
   });
 });
-$('.js-form-validate').each(function () {
+$(".js-form-validate").each(function () {
   $(this).validate();
 });
-$('#msOrder').validate({
+$("#msOrder").validate({
   groups: {
     order_receiver: "receiver email phone conditions",
     order_address: "index region city street building room"
@@ -16897,27 +16897,27 @@ $('#msOrder').validate({
 });
 
 /** Видео **/
-$('.js-video').each(function () {
-  $(this).data('videojs', videojs(this));
+$(".js-video").each(function () {
+  $(this).data("videojs", videojs(this));
 });
-$('.js-video-modal').each(function () {
-  $(this).data('videojs', videojs(this, {
+$(".js-video-modal").each(function () {
+  $(this).data("videojs", videojs(this, {
     width: $(window).width() > 1000 ? 1000 : $(window).width() - 10
   }));
 });
 
 /** Формы загрузки файлов **/
-$('.js-download-popup').magnificPopup({
-  type: 'inline',
+$(".js-download-popup").magnificPopup({
+  type: "inline",
   midClick: true
 });
-$('.js-insert-file').each(function (i, wrapper) {
+$(".js-insert-file").each(function (i, wrapper) {
   var $wrapper = $(wrapper);
-  $wrapper.find('.ms2galleryform-file-image-wrapper').append('<span>Вставить</span>');
-  $wrapper.on('click', '.ms2galleryform-file-link', function () {
-    var target = $(this).parents('.js-insert-file').data('target');
-    var link = $(this).attr('href');
-    var name = $(this).attr('title');
+  $wrapper.find(".ms2galleryform-file-image-wrapper").append("<span>Вставить</span>");
+  $wrapper.on("click", ".ms2galleryform-file-link", function () {
+    var target = $(this).parents(".js-insert-file").data("target");
+    var link = $(this).attr("href");
+    var name = $(this).attr("title");
     $.markItUp({
       target: target,
       replaceWith: '<a href="' + link + '" class="comment-image" target="_blank"><img src="' + link + '" alt="' + name + '"></a>'
@@ -16926,13 +16926,13 @@ $('.js-insert-file').each(function (i, wrapper) {
     return false;
   });
 });
-$(document).on('click', '.msbuyoneclick', function () {
-  var id = $(this).data('id');
+$(document).on("click", ".msbuyoneclick", function () {
+  var id = $(this).data("id");
   $.ajax({
-    type: 'POST',
-    url: 'template/buyoneclick.php',
+    type: "POST",
+    url: "template/buyoneclick.php",
     data: {
-      action: 'product',
+      action: "product",
       id: id
     },
     success: function success(response) {
@@ -16945,12 +16945,12 @@ $(document).on('click', '.msbuyoneclick', function () {
         modal.element.remove();
       });
       modal.show();
-      modal.find('form').each(function () {
+      modal.find("form").each(function () {
         var form = $(this);
         form.submit(function () {
           $.ajax({
-            type: 'POST',
-            url: 'template/buyoneclick.php',
+            type: "POST",
+            url: "template/buyoneclick.php",
             data: form.serialize(),
             success: function success(response) {
               response = $.parseJSON(response);
@@ -16958,12 +16958,12 @@ $(document).on('click', '.msbuyoneclick', function () {
                 window.location = response.redirect;
               } else if (response.success) {
                 UIkit.notify("<b>Заказ успешно оформлен.</b><br> Наши менеджеры свяжутся с Вами.", {
-                  status: 'success'
+                  status: "success"
                 });
                 modal.hide();
               } else {
                 UIkit.notify(response.message, {
-                  status: 'danger',
+                  status: "danger",
                   timeout: 3000
                 });
               }
@@ -16976,9 +16976,9 @@ $(document).on('click', '.msbuyoneclick', function () {
   });
   return false;
 });
-$(document).on('click', '[data-add-remains]', function (e) {
+$(document).on("click", "[data-add-remains]", function (e) {
   e.preventDefault();
-  var url = $(this).data('add-remains');
+  var url = $(this).data("add-remains");
   if (url) {
     $('#under-order [name="url"]').val(url);
   }
@@ -16990,18 +16990,18 @@ $(document).on('click', '[data-add-remains]', function (e) {
   }
   return false;
 });
-$(document).on('click', '[data-add-options]', function (e) {
+$(document).on("click", "[data-add-options]", function (e) {
   e.preventDefault();
-  var $modal = $($(this).data('add-options'));
-  if ($modal.first().parent().prop('tagName') !== 'BODY') {
-    $modal.appendTo('body');
+  var $modal = $($(this).data("add-options"));
+  if ($modal.first().parent().prop("tagName") !== "BODY") {
+    $modal.appendTo("body");
   }
   var modal = UIkit.modal($modal, {
     center: true,
-    container: 'body'
+    container: "body"
   });
   $modal.on({
-    'show.uk.modal': optionsWidth
+    "show.uk.modal": optionsWidth
   });
   if (modal.isActive()) {
     modal.hide();
@@ -17010,29 +17010,29 @@ $(document).on('click', '[data-add-options]', function (e) {
   }
   return false;
 });
-$('.auth-button-restore').click(function (e) {
-  $('#office-login-form-password').val('');
-  $('#office-auth-login').toggleClass('auth-form-restore');
+$(".auth-button-restore").click(function (e) {
+  $("#office-login-form-password").val("");
+  $("#office-auth-login").toggleClass("auth-form-restore");
   return false;
 });
-$('#cheaper').on('click', '.cheaper-plus', function () {
-  var row = $(this).parents('.cheaper-address-row'),
+$("#cheaper").on("click", ".cheaper-plus", function () {
+  var row = $(this).parents(".cheaper-address-row"),
     clone = row.clone();
-  clone.find('input').val('');
+  clone.find("input").val("");
   row.after(clone);
 });
-$('#cheaper').on('click', '.cheaper-minus', function () {
-  var row = $(this).parents('.cheaper-address-row');
+$("#cheaper").on("click", ".cheaper-minus", function () {
+  var row = $(this).parents(".cheaper-address-row");
   row.remove();
 });
-$('.js-home-catalog').click(function (e) {
+$(".js-home-catalog").click(function (e) {
   if ($(window).width() < 960) {
-    UIkit.offcanvas.show('#uk-offcanvas');
+    UIkit.offcanvas.show("#uk-offcanvas");
     return false;
   }
 });
-$(document).on('change', '#mse2_filters select', function () {
-  $('html, body').animate({
+$(document).on("change", "#mse2_filters select", function () {
+  $("html, body").animate({
     scrollTop: /*$("#pdopage").offset().top || */0
   }, 1000);
 });
@@ -17041,15 +17041,15 @@ $(document).on('change', '#mse2_filters select', function () {
  * Виртуальная форма купона в корзине
  **/
 var discount_field = $('#msOrder input[name="discount_code"]');
-var discount_form = $('#msCartCoupon');
+var discount_form = $("#msCartCoupon");
 if (Boolean(discount_field.val())) {
-  discount_form.addClass('cart-coupon--applied');
+  discount_form.addClass("cart-coupon--applied");
 }
-discount_form.on('submit', function (e) {
+discount_form.on("submit", function (e) {
   e.preventDefault();
   var value = $('[name="discount_code"]', this).val();
   discount_field.val(value);
-  discount_field.trigger('change');
+  discount_field.trigger("change");
 });
 
 /**
@@ -17057,9 +17057,9 @@ discount_form.on('submit', function (e) {
  **/
 (function () {
   var deliveries = $('[name="delivery"]');
-  var deliveries_inputs = $('#msOrder input');
-  deliveries_inputs.on('change', function () {
-    var delivery = parseInt(deliveries.filter(':checked').val());
+  var deliveries_inputs = $("#msOrder input");
+  deliveries_inputs.on("change", function () {
+    var delivery = parseInt(deliveries.filter(":checked").val());
 
     // if ([1, 3].indexOf(delivery) !== -1) {
     //     $('#field-passport').hide();
@@ -17067,14 +17067,14 @@ discount_form.on('submit', function (e) {
     //     $('#field-passport').show();
     // }
     if ([1, 4, 6, 7, 9, 10, 11, 13].indexOf(delivery) !== -1) {
-      $('#field-index').hide();
+      $("#field-index").hide();
     } else {
-      $('#field-index').show();
+      $("#field-index").show();
     }
     if ([1, 4].indexOf(delivery) !== -1) {
-      $('#field-region').hide();
+      $("#field-region").hide();
     } else {
-      $('#field-region').show();
+      $("#field-region").show();
     }
     // if (value == 1) {
     //     $('#field-city').hide();
@@ -17082,40 +17082,40 @@ discount_form.on('submit', function (e) {
     //     $('#field-city').show();
     // }
     if ([1, 4].indexOf(delivery) !== -1) {
-      $('#field-street').hide();
+      $("#field-street").hide();
     } else {
-      $('#field-street').show();
+      $("#field-street").show();
     }
     if ([1, 4].indexOf(delivery) !== -1) {
-      $('#field-room').hide();
+      $("#field-room").hide();
     } else {
-      $('#field-room').show();
+      $("#field-room").show();
     }
     if ([1, 4].indexOf(delivery) !== -1) {
-      $('#field-building').hide();
+      $("#field-building").hide();
     } else {
-      $('#field-building').show();
+      $("#field-building").show();
     }
   });
   if (deliveries_inputs.length > 0) {
-    var event = new Event('change', {
+    var event = new Event("change", {
       bubbles: true,
       cancelable: true
     });
     deliveries_inputs.get(0).dispatchEvent(event);
   }
 })();
-var cartSwitcher = UIkit.switcher('#cart-tabs', {
-  connect: '#cart-switcher',
+var cartSwitcher = UIkit.switcher("#cart-tabs", {
+  connect: "#cart-switcher",
   active: /\#msOrder/.test(document.location.href) ? 1 : 0,
   swiping: false
 });
-$('#cart-tabs').on('show.uk.switcher', function (event, area) {
-  if ($(miniShop2.Order.paymentInput, miniShop2.Order.order).filter(':visible:checked').length == 0) {
-    $(miniShop2.Order.paymentInput, miniShop2.Order.order).filter(':visible:first').trigger('click');
+$("#cart-tabs").on("show.uk.switcher", function (event, area) {
+  if ($(miniShop2.Order.paymentInput, miniShop2.Order.order).filter(":visible:checked").length == 0) {
+    $(miniShop2.Order.paymentInput, miniShop2.Order.order).filter(":visible:first").trigger("click");
   }
 });
-$('.js-cart-submit').click(function () {
+$(".js-cart-submit").click(function () {
   cartSwitcher.show(1);
   // var headerHeight = $(window).width() < 960 ? 77 : 133;
   // $(".content").offset().top - headerHeight
@@ -17123,9 +17123,9 @@ $('.js-cart-submit').click(function () {
     scrollTop: 0
   }, 1000);
 });
-$('.js-header-modern-catalog').click(function () {
+$(".js-header-modern-catalog").click(function () {
   if ($(window).width() < 960) {
-    UIkit.offcanvas.show('#uk-offcanvas');
+    UIkit.offcanvas.show("#uk-offcanvas");
     return false;
   }
 });
@@ -17133,26 +17133,26 @@ $('.js-header-modern-catalog').click(function () {
 /**
  * Переключатель в контактах
  **/
-var switcherContactsTabsActive = $('#switcher-contacts-content>li').has('li.active').index();
-UIkit.switcher('#switcher-contacts-tabs', {
+var switcherContactsTabsActive = $("#switcher-contacts-content>li").has("li.active").index();
+UIkit.switcher("#switcher-contacts-tabs", {
   active: switcherContactsTabsActive === -1 ? 0 : switcherContactsTabsActive,
-  connect: '#switcher-contacts-content',
+  connect: "#switcher-contacts-content",
   swiping: false
 });
 (function () {
   var prevScroll = window.scrollY;
   var delay = 30;
-  var catalog = document.querySelector('.fixed-catalog');
-  var scrolltop = document.querySelector('.scrolltop');
-  window.addEventListener('scroll', function (e) {
+  var catalog = document.querySelector(".fixed-catalog");
+  var scrolltop = document.querySelector(".scrolltop");
+  window.addEventListener("scroll", function (e) {
     if (window.scrollY < prevScroll) {
       delay = 30;
-      catalog.classList.add('fixed-catalog_visible');
-      scrolltop.classList.add('scrolltop_visible');
+      catalog.classList.add("fixed-catalog_visible");
+      scrolltop.classList.add("scrolltop_visible");
     } else {
       if (delay <= 0) {
-        catalog.classList.remove('fixed-catalog_visible');
-        scrolltop.classList.remove('scrolltop_visible');
+        catalog.classList.remove("fixed-catalog_visible");
+        scrolltop.classList.remove("scrolltop_visible");
       } else {
         delay--;
       }
@@ -17160,15 +17160,15 @@ UIkit.switcher('#switcher-contacts-tabs', {
     prevScroll = window.scrollY;
   });
 })();
-$('.ajax_form').append('<input type="text" name="org" value="" class="_org" style="position:absolute; visibility:hidden; height: 0; width: 0; padding: 0; border:none;"/>');
-var contactsSelect = document.querySelector('.js-contacts-select');
+$(".ajax_form").append('<input type="text" name="org" value="" class="_org" style="position:absolute; visibility:hidden; height: 0; width: 0; padding: 0; border:none;"/>');
+var contactsSelect = document.querySelector(".js-contacts-select");
 if (contactsSelect) {
   new Choices(contactsSelect);
 }
 function optionsWidth() {
-  var groups = $('.u-product-options__items');
+  var groups = $(".u-product-options__items");
   groups.each(function (i1, group) {
-    var items = $(group).find('.u-product-options__item');
+    var items = $(group).find(".u-product-options__item");
     var minWidth = 0;
     items.each(function (i2, item) {
       if ($(item).outerWidth() > minWidth) {
@@ -17179,109 +17179,109 @@ function optionsWidth() {
       var perRow = Math.floor($(group).outerWidth() / minWidth);
       var normalPerRow = Math.ceil(items.length / Math.ceil(items.length / perRow));
       var maxWidth = $(group).outerWidth() / normalPerRow;
-      items.css('width', maxWidth);
+      items.css("width", maxWidth);
     }
   });
 }
-$('.js-share-dropdown').each(function () {
+$(".js-share-dropdown").each(function () {
   var dropdown = UIkit.dropdown(this, {
     remaintime: 0,
-    mode: 'click'
+    mode: "click"
   });
   $(window).scroll(function () {
     dropdown.hide();
   });
 });
-$('.u-rating__add').click(function () {
-  if ($('#comment-form').is(':visible')) {
-    $(this).removeClass('u-rating__add_active');
-    $('#comment-form').slideUp(500, function () {
+$(".u-rating__add").click(function () {
+  if ($("#comment-form").is(":visible")) {
+    $(this).removeClass("u-rating__add_active");
+    $("#comment-form").slideUp(500, function () {
       // тригерим ресайз окна для обновления закрепленных блоков
-      $(window).trigger('resize');
+      $(window).trigger("resize");
     });
   } else {
-    $(this).addClass('u-rating__add_active');
-    $('#comment-form').slideDown(500, function () {
+    $(this).addClass("u-rating__add_active");
+    $("#comment-form").slideDown(500, function () {
       // тригерим ресайз окна для обновления закрепленных блоков
-      $(window).trigger('resize');
+      $(window).trigger("resize");
     });
   }
 });
-$('[data-uk-switcher]').on('show.uk.switcher', function () {
-  $('.u-rating__add').removeClass('u-rating__add_active');
-  $('#comment-form').slideUp(500);
+$("[data-uk-switcher]").on("show.uk.switcher", function () {
+  $(".u-rating__add").removeClass("u-rating__add_active");
+  $("#comment-form").slideUp(500);
 });
 $(function () {
   var deliveries = [{
     id: 1,
-    label: 'Самовывоз',
+    label: "Самовывоз",
     payments: [2]
   }, {
     id: 2,
-    label: 'ТК СДЭК по Москве',
+    label: "ТК СДЭК по Москве",
     payments: [1, 3]
   }, {
     id: 3,
-    label: 'ТК СДЭК по Москве (за МКАД)',
+    label: "ТК СДЭК по Москве (за МКАД)",
     payments: [1, 3]
   }, {
     id: 4,
-    label: 'Почта России',
+    label: "Почта России",
     payments: [1, 3]
   }, {
     id: 5,
-    label: 'Транспортные компании',
+    label: "Транспортные компании",
     payments: [1]
   }, {
     id: 6,
-    label: 'ТК СДЭК (до пункта выдачи)',
+    label: "ТК СДЭК (до пункта выдачи)",
     payments: [1, 3]
   }, {
     id: 7,
-    label: 'ТК СДЭК (до двери получателя)',
+    label: "ТК СДЭК (до двери получателя)",
     payments: [1, 3]
   }];
   var payments = [{
     id: 1,
-    label: 'Онлайн оплата'
+    label: "Онлайн оплата"
   }, {
     id: 2,
-    label: 'Оплата в магазине'
+    label: "Оплата в магазине"
   }, {
     id: 3,
-    label: 'Оплата при получении'
+    label: "Оплата при получении"
   }];
-  $('.js-calc').each(function (i, form) {
+  $(".js-calc").each(function (i, form) {
     var cityInput = form.querySelector('[name="city"]');
-    var cityLabel = form.querySelector('.js-calc-city-name');
-    var citySubmit = form.querySelector('.js-calc-city-submit');
+    var cityLabel = form.querySelector(".js-calc-city-name");
+    var citySubmit = form.querySelector(".js-calc-city-submit");
     var citySelect = form.querySelector('[name="autocomplete"]');
     var deliverySelect = form.querySelector('[name="delivery"]');
     var deliveryChoices = new Choices(deliverySelect, {
       searchEnabled: false,
-      noChoicesText: 'Укажите город'
+      noChoicesText: "Укажите город"
     });
     var paymentSelect = form.querySelector('[name="payment"]');
     var paymentChoices = new Choices(paymentSelect, {
       searchEnabled: false,
-      noChoicesText: 'Выберите способ доставки'
+      noChoicesText: "Выберите способ доставки"
     });
-    var errorBox = form.querySelector('.js-calc-error');
-    var resultBox = form.querySelector('.js-calc-result');
-    var resultDelivery = form.querySelector('.js-calc-result-delivery');
-    var resultTime = form.querySelector('.js-calc-result-time');
-    var resultPrice = form.querySelector('.js-calc-result-price');
+    var errorBox = form.querySelector(".js-calc-error");
+    var resultBox = form.querySelector(".js-calc-result");
+    var resultDelivery = form.querySelector(".js-calc-result-delivery");
+    var resultTime = form.querySelector(".js-calc-result-time");
+    var resultPrice = form.querySelector(".js-calc-result-price");
     var costInput = form.querySelector('[name="cost"]');
-    var calculateSubmit = form.querySelector('.js-calc-calculate');
+    var calculateSubmit = form.querySelector(".js-calc-calculate");
     var setCity = function setCity(city) {
-      if (city.indexOf('г ') === 0) {
+      if (city.indexOf("г ") === 0) {
         city = city.substring(2);
       }
       cityLabel.innerHTML = cityInput.value = city;
       var idx = [];
-      if (['Воронеж', 'Курск'].indexOf(city) !== -1) {
+      if (["Воронеж", "Курск"].indexOf(city) !== -1) {
         idx = [1];
-      } else if (['Москва'].indexOf(city) !== -1) {
+      } else if (["Москва"].indexOf(city) !== -1) {
         idx = [1, 2, 3];
       } else {
         idx = [4, 5, 6, 7];
@@ -17295,8 +17295,8 @@ $(function () {
           label: row.label,
           selected: index === 0
         };
-      }), 'value', 'label', true);
-      deliverySelect.dispatchEvent(new Event('change'));
+      }), "value", "label", true);
+      deliverySelect.dispatchEvent(new Event("change"));
     };
     var onChangeDelivery = function onChangeDelivery(e) {
       var item = deliveries.find(function (row) {
@@ -17311,26 +17311,26 @@ $(function () {
           label: row.label,
           selected: index === 0
         };
-      }), 'value', 'label', true);
+      }), "value", "label", true);
     };
     var calculate = function calculate(e) {
       e.preventDefault();
       var errors = [];
       if (!cityInput.value) {
-        errors.push('Укажите город.');
+        errors.push("Укажите город.");
       }
       if (!costInput.value) {
-        errors.push('Укажите стоимость заказа.');
+        errors.push("Укажите стоимость заказа.");
       }
       if (!deliverySelect.value) {
-        errors.push('Укажите способ доставки.');
+        errors.push("Укажите способ доставки.");
       }
       if (!paymentSelect.value) {
-        errors.push('Укажите способ оплаты.');
+        errors.push("Укажите способ оплаты.");
       }
       if (errors.length > 0) {
         $(resultBox).hide();
-        $(errorBox).html(errors.join('<br />')).show();
+        $(errorBox).html(errors.join("<br />")).show();
         return false;
       } else {
         $(resultBox).show();
@@ -17343,146 +17343,146 @@ $(function () {
         return row.id === parseInt(deliverySelect.value);
       });
       resultDelivery.innerHTML = delivery.label;
-      if (['Воронеж', 'Курск'].indexOf(cityInput.value) !== -1) {
-        resultTime.innerHTML = 'Сегодня';
-        resultPrice.innerHTML = 'Бесплатно';
-      } else if (['Москва'].indexOf(cityInput.value) !== -1) {
+      if (["Воронеж", "Курск"].indexOf(cityInput.value) !== -1) {
+        resultTime.innerHTML = "Сегодня";
+        resultPrice.innerHTML = "Бесплатно";
+      } else if (["Москва"].indexOf(cityInput.value) !== -1) {
         if (delivery.id === 1) {
           if (payment.id === 2) {
-            resultTime.innerHTML = 'Сегодня';
-            resultPrice.innerHTML = 'Бесплатно';
+            resultTime.innerHTML = "Сегодня";
+            resultPrice.innerHTML = "Бесплатно";
           } else {
-            errors.push('Неверный способ оплаты.');
+            errors.push("Неверный способ оплаты.");
           }
         } else if ([2, 3].indexOf(delivery.id) !== -1) {
           if (payment.id === 1) {
             if (costInput.value < 5000) {
-              resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня';
-              resultPrice.innerHTML = '450 руб.';
+              resultTime.innerHTML = delivery.id === 3 ? "1-3 дня" : "1-2 дня";
+              resultPrice.innerHTML = "450 руб.";
             } else if (costInput.value >= 5000 && costInput.value < 12000) {
-              resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня';
-              resultPrice.innerHTML = '400 руб.';
+              resultTime.innerHTML = delivery.id === 3 ? "1-3 дня" : "1-2 дня";
+              resultPrice.innerHTML = "400 руб.";
             } else if (costInput.value >= 12000) {
-              resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня';
-              resultPrice.innerHTML = 'Бесплатно';
+              resultTime.innerHTML = delivery.id === 3 ? "1-3 дня" : "1-2 дня";
+              resultPrice.innerHTML = "Бесплатно";
             }
           } else if (payment.id === 3) {
             if (costInput.value < 5000) {
-              resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня';
-              resultPrice.innerHTML = '450 + ' + costInput.value * 0.04 + ' = ' + (costInput.value * 0.04 + 450) + ' руб.';
+              resultTime.innerHTML = delivery.id === 3 ? "1-3 дня" : "1-2 дня";
+              resultPrice.innerHTML = "450 + " + costInput.value * 0.04 + " = " + (costInput.value * 0.04 + 450) + " руб.";
             } else if (costInput.value >= 5000 && costInput.value < 12000) {
-              resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня';
-              resultPrice.innerHTML = '400 + ' + costInput.value * 0.04 + ' = ' + (costInput.value * 0.04 + 400) + ' руб.';
+              resultTime.innerHTML = delivery.id === 3 ? "1-3 дня" : "1-2 дня";
+              resultPrice.innerHTML = "400 + " + costInput.value * 0.04 + " = " + (costInput.value * 0.04 + 400) + " руб.";
             } else if (costInput.value >= 12000) {
-              resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня';
-              resultPrice.innerHTML = '0 + ' + costInput.value * 0.04 + ' = ' + costInput.value * 0.04 + ' руб.';
+              resultTime.innerHTML = delivery.id === 3 ? "1-3 дня" : "1-2 дня";
+              resultPrice.innerHTML = "0 + " + costInput.value * 0.04 + " = " + costInput.value * 0.04 + " руб.";
             }
           } else {
-            errors.push('Неверный способ оплаты.');
+            errors.push("Неверный способ оплаты.");
           }
         } else {
-          errors.push('Неверный способ доставки.');
+          errors.push("Неверный способ доставки.");
         }
       } else {
         if (delivery.id === 4) {
           // Почта России
           if (payment.id === 1) {
             if (costInput.value < 5000) {
-              resultTime.innerHTML = '4-6 дней';
-              resultPrice.innerHTML = '450 руб.';
+              resultTime.innerHTML = "4-6 дней";
+              resultPrice.innerHTML = "450 руб.";
             } else if (costInput.value >= 5000 && costInput.value < 12000) {
-              resultTime.innerHTML = '4-6 дней';
-              resultPrice.innerHTML = '400 руб.';
+              resultTime.innerHTML = "4-6 дней";
+              resultPrice.innerHTML = "400 руб.";
             } else if (costInput.value >= 12000) {
-              resultTime.innerHTML = '4-6 дней';
-              resultPrice.innerHTML = 'Бесплатно';
+              resultTime.innerHTML = "4-6 дней";
+              resultPrice.innerHTML = "Бесплатно";
             }
           } else if (payment.id === 3) {
             if (costInput.value < 5000) {
-              resultTime.innerHTML = '4-6 дней';
-              resultPrice.innerHTML = '450 + ' + costInput.value * 0.08 + ' = ' + (costInput.value * 0.08 + 450) + ' руб.';
+              resultTime.innerHTML = "4-6 дней";
+              resultPrice.innerHTML = "450 + " + costInput.value * 0.08 + " = " + (costInput.value * 0.08 + 450) + " руб.";
             } else if (costInput.value >= 5000 && costInput.value < 12000) {
-              resultTime.innerHTML = '4-6 дней';
-              resultPrice.innerHTML = '400 + ' + costInput.value * 0.08 + ' = ' + (costInput.value * 0.08 + 400) + ' руб.';
+              resultTime.innerHTML = "4-6 дней";
+              resultPrice.innerHTML = "400 + " + costInput.value * 0.08 + " = " + (costInput.value * 0.08 + 400) + " руб.";
             } else if (costInput.value >= 12000) {
-              resultTime.innerHTML = '4-6 дней';
-              resultPrice.innerHTML = '0 + ' + costInput.value * 0.08 + ' = ' + costInput.value * 0.08 + ' руб.';
+              resultTime.innerHTML = "4-6 дней";
+              resultPrice.innerHTML = "0 + " + costInput.value * 0.08 + " = " + costInput.value * 0.08 + " руб.";
             }
           } else {
-            errors.push('Неверный способ оплаты.');
+            errors.push("Неверный способ оплаты.");
           }
         } else if (delivery.id === 5) {
           // Транспортные компании
           if (payment.id === 1) {
             if (costInput.value < 5000) {
-              resultTime.innerHTML = '3-5 дней';
-              resultPrice.innerHTML = '450 руб.';
+              resultTime.innerHTML = "3-5 дней";
+              resultPrice.innerHTML = "450 руб.";
             } else if (costInput.value >= 5000 && costInput.value < 12000) {
-              resultTime.innerHTML = '3-5 дней';
-              resultPrice.innerHTML = '400 руб.';
+              resultTime.innerHTML = "3-5 дней";
+              resultPrice.innerHTML = "400 руб.";
             } else if (costInput.value >= 12000) {
-              resultTime.innerHTML = '3-5 дней';
-              resultPrice.innerHTML = 'Бесплатно';
+              resultTime.innerHTML = "3-5 дней";
+              resultPrice.innerHTML = "Бесплатно";
             }
           } else {
-            errors.push('Неверный способ оплаты.');
+            errors.push("Неверный способ оплаты.");
           }
         } else if (delivery.id === 6) {
           // ТК СДЭК (до пункта выдачи)
           if (payment.id === 1) {
             if (costInput.value < 5000) {
-              resultTime.innerHTML = '2-4 дня';
-              resultPrice.innerHTML = '450 руб.';
+              resultTime.innerHTML = "2-4 дня";
+              resultPrice.innerHTML = "450 руб.";
             } else if (costInput.value >= 5000 && costInput.value < 12000) {
-              resultTime.innerHTML = '2-4 дня';
-              resultPrice.innerHTML = '400 руб.';
+              resultTime.innerHTML = "2-4 дня";
+              resultPrice.innerHTML = "400 руб.";
             } else if (costInput.value >= 12000) {
-              resultTime.innerHTML = '2-4 дня';
-              resultPrice.innerHTML = 'Бесплатно';
+              resultTime.innerHTML = "2-4 дня";
+              resultPrice.innerHTML = "Бесплатно";
             }
           } else if (payment.id === 3) {
             if (costInput.value < 5000) {
-              resultTime.innerHTML = '2-4 дня';
-              resultPrice.innerHTML = '450 + ' + costInput.value * 0.04 + ' = ' + (costInput.value * 0.04 + 450) + ' руб.';
+              resultTime.innerHTML = "2-4 дня";
+              resultPrice.innerHTML = "450 + " + costInput.value * 0.04 + " = " + (costInput.value * 0.04 + 450) + " руб.";
             } else if (costInput.value >= 5000 && costInput.value < 12000) {
-              resultTime.innerHTML = '2-4 дня';
-              resultPrice.innerHTML = '400 + ' + costInput.value * 0.04 + ' = ' + (costInput.value * 0.04 + 400) + ' руб.';
+              resultTime.innerHTML = "2-4 дня";
+              resultPrice.innerHTML = "400 + " + costInput.value * 0.04 + " = " + (costInput.value * 0.04 + 400) + " руб.";
             } else if (costInput.value >= 12000) {
-              resultTime.innerHTML = '2-4 дня';
-              resultPrice.innerHTML = '0 + ' + costInput.value * 0.04 + ' = ' + costInput.value * 0.04 + ' руб.';
+              resultTime.innerHTML = "2-4 дня";
+              resultPrice.innerHTML = "0 + " + costInput.value * 0.04 + " = " + costInput.value * 0.04 + " руб.";
             }
           } else {
-            errors.push('Неверный способ оплаты.');
+            errors.push("Неверный способ оплаты.");
           }
         } else if (delivery.id === 7) {
           // ТК СДЭК (до двери получателя)
           if (payment.id === 1) {
             if (costInput.value < 5000) {
-              resultTime.innerHTML = '2-4 дня';
-              resultPrice.innerHTML = '950 руб.';
+              resultTime.innerHTML = "2-4 дня";
+              resultPrice.innerHTML = "950 руб.";
             } else if (costInput.value >= 5000 && costInput.value < 12000) {
-              resultTime.innerHTML = '2-4 дня';
-              resultPrice.innerHTML = '900 руб.';
+              resultTime.innerHTML = "2-4 дня";
+              resultPrice.innerHTML = "900 руб.";
             } else if (costInput.value >= 12000) {
-              resultTime.innerHTML = '2-4 дня';
-              resultPrice.innerHTML = '500 руб.';
+              resultTime.innerHTML = "2-4 дня";
+              resultPrice.innerHTML = "500 руб.";
             }
           } else if (payment.id === 3) {
             if (costInput.value < 5000) {
-              resultTime.innerHTML = '2-4 дня';
-              resultPrice.innerHTML = '950 + ' + costInput.value * 0.04 + ' = ' + (costInput.value * 0.04 + 950) + ' руб.';
+              resultTime.innerHTML = "2-4 дня";
+              resultPrice.innerHTML = "950 + " + costInput.value * 0.04 + " = " + (costInput.value * 0.04 + 950) + " руб.";
             } else if (costInput.value >= 5000 && costInput.value < 12000) {
-              resultTime.innerHTML = '2-4 дня';
-              resultPrice.innerHTML = '900 + ' + costInput.value * 0.04 + ' = ' + (costInput.value * 0.04 + 900) + ' руб.';
+              resultTime.innerHTML = "2-4 дня";
+              resultPrice.innerHTML = "900 + " + costInput.value * 0.04 + " = " + (costInput.value * 0.04 + 900) + " руб.";
             } else if (costInput.value >= 12000) {
-              resultTime.innerHTML = '2-4 дня';
-              resultPrice.innerHTML = '0 + ' + costInput.value * 0.04 + ' = ' + (costInput.value * 0.04 + 0) + ' руб.';
+              resultTime.innerHTML = "2-4 дня";
+              resultPrice.innerHTML = "0 + " + costInput.value * 0.04 + " = " + (costInput.value * 0.04 + 0) + " руб.";
             }
           } else {
-            errors.push('Неверный способ оплаты.');
+            errors.push("Неверный способ оплаты.");
           }
         } else {
-          errors.push('Неверный способ доставки.');
+          errors.push("Неверный способ доставки.");
         }
       }
     };
@@ -17507,7 +17507,7 @@ $(function () {
     });
     $(deliverySelect).change(onChangeDelivery);
     $(form).submit(calculate);
-    setCity(form.dataset.city || 'Москва'); // Москва по умолчанию
+    setCity(form.dataset.city || "Москва"); // Москва по умолчанию
     // $(paymentSelect).change(calculate)
     // $(deliverySelect).change(calculate)
     // $(costInput).change(calculate)
@@ -17548,7 +17548,7 @@ $(function () {
     });
 });*/
 
-$('.js-categories-slider').slick({
+$(".js-categories-slider").slick({
   dots: false,
   infinite: true,
   speed: 400,
@@ -17559,17 +17559,17 @@ $('.js-categories-slider').slick({
 });
 WebFont.load({
   custom: {
-    families: ['SF UI Text', 'SF UI Display'],
-    urls: ['/assets/nemopro/src/fonts/sf/SFUIText.css', '/assets/nemopro/src/fonts/sf/SFUIDisplay.css']
+    families: ["SF UI Text", "SF UI Display"],
+    urls: ["/assets/nemopro/src/fonts/sf/SFUIText.css", "/assets/nemopro/src/fonts/sf/SFUIDisplay.css"]
   },
   active: function active() {
     setTimeout(optionsWidth, 0);
   }
 });
-$('.js-detail-gallery').each(function () {
+$(".js-detail-gallery").each(function () {
   var $wrapper = $(this);
-  var $thumbs = $('.js-detail-gallery-thumbs', this);
-  var $main = $('.js-detail-gallery-main', this);
+  var $thumbs = $(".js-detail-gallery-thumbs", this);
+  var $main = $(".js-detail-gallery-main", this);
   var perView = Math.ceil(this.offsetWidth / 64);
   var windowPerView = Math.ceil(window.innerWidth / 64);
 
@@ -17590,8 +17590,8 @@ $('.js-detail-gallery').each(function () {
     loopedSlides: 6,
     //looped slides should be the same
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
     },
     thumbs: {
       swiper: galleryThumbs
@@ -17601,16 +17601,16 @@ $('.js-detail-gallery').each(function () {
       disableOnInteraction: false
     }
   });
-  $('.js-detail-gallery-main', this).on('click', '.swiper-slide', function () {
-    $wrapper.addClass('detail-gallery_lightbox');
+  $(".js-detail-gallery-main", this).on("click", ".swiper-slide", function () {
+    $wrapper.addClass("detail-gallery_lightbox");
     galleryTop.update();
     galleryThumbs.update();
     galleryThumbs.params.slidesPerView = windowPerView;
     galleryThumbs.update();
     galleryTop.autoplay.stop();
   });
-  $('.js-detail-gallery-button', this).click(function () {
-    $wrapper.removeClass('detail-gallery_lightbox');
+  $(".js-detail-gallery-button", this).click(function () {
+    $wrapper.removeClass("detail-gallery_lightbox");
     galleryTop.update();
     galleryThumbs.update();
     galleryThumbs.params.slidesPerView = perView;
@@ -17618,12 +17618,12 @@ $('.js-detail-gallery').each(function () {
     galleryTop.autoplay.start();
   });
 });
-$('.js-home-slider').each(function () {
+$(".js-home-slider").each(function () {
   var $wrapper = $(this);
-  var $thumbs = $('.js-home-slider-thumbs', this);
-  var $main = $('.js-home-slider-main', this);
+  var $thumbs = $(".js-home-slider-thumbs", this);
+  var $main = $(".js-home-slider-main", this);
   var galleryThumbs = new Swiper($thumbs[0], {
-    direction: 'vertical',
+    direction: "vertical",
     allowTouchMove: false,
     slidesPerView: 3,
     loop: true,
@@ -17637,12 +17637,12 @@ $('.js-home-slider').each(function () {
     loopedSlides: 6,
     //looped slides should be the same
     pagination: {
-      el: '.swiper-pagination',
+      el: ".swiper-pagination",
       clickable: true
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
     },
     thumbs: {
       swiper: galleryThumbs
@@ -17652,37 +17652,37 @@ $('.js-home-slider').each(function () {
       disableOnInteraction: false
     }
   });
-  galleryTop.on('slideChange', function () {
+  galleryTop.on("slideChange", function () {
     galleryThumbs.slideTo(galleryTop.activeIndex);
   });
 });
 function initProductsImageOnDesktop() {
-  $(document).on('mouseenter', '.products-image', function () {
-    this.classList.add('products-image_hover');
+  $(document).on("mouseenter", ".products-image", function () {
+    this.classList.add("products-image_hover");
   });
-  $(document).on('mouseleave', '.products-image', function () {
-    this.classList.remove('products-image_hover');
+  $(document).on("mouseleave", ".products-image", function () {
+    this.classList.remove("products-image_hover");
   });
 }
 function initProductsImageOnMobile() {
   var hoveredItem = null;
-  document.addEventListener('touchstart', function (e) {
+  document.addEventListener("touchstart", function (e) {
     if (hoveredItem && !hoveredItem.contains(e.target)) {
-      $(hoveredItem).removeClass('products-image_hover');
+      $(hoveredItem).removeClass("products-image_hover");
       hoveredItem = null;
     }
   });
-  $(document).on('touchstart', '.products-image', function () {
-    $('.products-image').data('canClick', false);
+  $(document).on("touchstart", ".products-image", function () {
+    $(".products-image").data("canClick", false);
     if (hoveredItem == this) {
-      $(this).data('canClick', true);
+      $(this).data("canClick", true);
     }
-    $('.products-image').removeClass('products-image_hover');
-    $(this).addClass('products-image_hover');
+    $(".products-image").removeClass("products-image_hover");
+    $(this).addClass("products-image_hover");
     hoveredItem = this;
   });
-  $(document).on('click', '.products-image', function (e) {
-    if (!$(this).data('canClick')) {
+  $(document).on("click", ".products-image", function (e) {
+    if (!$(this).data("canClick")) {
       e.preventDefault();
     }
   });
@@ -17693,25 +17693,25 @@ if (window.matchMedia("(min-width: 768px)").matches) {
   initProductsImageOnMobile();
 }
 function initFeedbackMessageOnDesktop() {
-  $('.u-feedback-message').on('mouseenter', function () {
-    this.classList.add('u-feedback-message_active');
+  $(".u-feedback-message").on("mouseenter", function () {
+    this.classList.add("u-feedback-message_active");
   });
-  $('.u-feedback-message').on('mouseleave', function () {
-    this.classList.remove('u-feedback-message_active');
+  $(".u-feedback-message").on("mouseleave", function () {
+    this.classList.remove("u-feedback-message_active");
   });
 }
 function initFeedbackMessageOnMobile() {
-  $('.u-feedback-message').on('click', function () {
+  $(".u-feedback-message").on("click", function () {
     var el = this;
-    el.classList.add('u-feedback-message_active');
+    el.classList.add("u-feedback-message_active");
     var outsideClick = function outsideClick(e) {
       var itsChildren = el.contains(e.target);
       if (e.target != el && !itsChildren) {
-        el.classList.remove('u-feedback-message_active');
-        document.removeEventListener('click', outsideClick);
+        el.classList.remove("u-feedback-message_active");
+        document.removeEventListener("click", outsideClick);
       }
     };
-    document.addEventListener('click', outsideClick);
+    document.addEventListener("click", outsideClick);
   });
 }
 if (window.matchMedia("(min-width: 768px)").matches) {
@@ -17719,3 +17719,11 @@ if (window.matchMedia("(min-width: 768px)").matches) {
 } else {
   initFeedbackMessageOnMobile();
 }
+window.addEventListener("hashchange", function () {
+  if (location.hash.includes("reviews")) {
+    var reviewsTab = document.querySelector("#product-tabs-switcher li:nth-child(2)");
+    if (reviewsTab) {
+      reviewsTab.click();
+    }
+  }
+});
