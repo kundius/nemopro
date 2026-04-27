@@ -17747,7 +17747,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var link = e.target.closest('a[href*="#reviews"]');
     if (link) {
       openReviewsTab();
-      // e.preventDefault(); // Раскомментируй, если браузер мешает плавному скроллу
+      e.preventDefault();
     }
   });
 });
