@@ -17719,41 +17719,35 @@ if (window.matchMedia("(min-width: 768px)").matches) {
 } else {
   initFeedbackMessageOnMobile();
 }
-function checkAndOpenReviews() {
-  // Проверяем хеш
-  if (!location.hash.includes("reviews")) return;
-  var tab = document.querySelector("#product-tabs-switcher > li:nth-child(2)");
-  if (tab) {
+document.addEventListener("DOMContentLoaded", function () {
+  function openReviewsTab() {
+    var tab = document.querySelector("#product-tabs-switcher > li:nth-child(2)");
+    if (!tab) return;
     tab.click();
+    // ⏳ Задержка нужна, чтобы UIkit успел раскрыть контент таба
+    // иначе скролл может сработать в "пустоту"
     setTimeout(function () {
       tab.scrollIntoView({
         behavior: "smooth",
-        block: "start"
+        block: "center"
       });
-    }, 100);
+    }, 300);
   }
-}
-// 1. Срабатывает, когда DOM полностью загружен
-document.addEventListener('DOMContentLoaded', checkAndOpenReviews);
 
-// 2. Срабатывает при ручном изменении хеша
-window.addEventListener('hashchange', checkAndOpenReviews);
-// window.addEventListener("hashchange", function () {
-//   if (location.hash.includes("reviews")) {
-//     const reviewsTab = document.querySelector(
-//       "#product-tabs-switcher li:nth-child(2)",
-//     );
-//     if (reviewsTab) {
-//       reviewsTab.click();
-//       reviewsTab.scrollIntoView({ behavior: "smooth", block: "center" });
-//     }
-//   }
-// });
+  // 1. При загрузке страницы
+  if (location.hash.includes("reviews")) openReviewsTab();
 
-// if (location.hash.includes('reviews')) {
-//   const reviewsTab = document.querySelector('#product-tabs-switcher > li:nth-child(2)');
-//   if (reviewsTab) {
-//     reviewsTab.click();
-//     reviewsTab.scrollIntoView({ behavior: 'smooth', block: 'center' });
-//   }
-// }
+  // 2. При смене хеша (кнопки браузера назад/вперед)
+  window.addEventListener("hashchange", function () {
+    if (location.hash.includes("reviews")) openReviewsTab();
+  });
+
+  // 3. При клике на ссылку (ловим и повторные переходы)
+  document.addEventListener("click", function (e) {
+    var link = e.target.closest('a[href*="#reviews"]');
+    if (link) {
+      openReviewsTab();
+      // e.preventDefault(); // Раскомментируй, если браузер мешает плавному скроллу
+    }
+  });
+});
