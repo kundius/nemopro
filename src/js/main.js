@@ -1364,22 +1364,43 @@ if (window.matchMedia("(min-width: 768px)").matches) {
   initFeedbackMessageOnMobile();
 }
 
-window.addEventListener("hashchange", function () {
-  if (location.hash.includes("reviews")) {
-    const reviewsTab = document.querySelector(
-      "#product-tabs-switcher li:nth-child(2)",
-    );
-    if (reviewsTab) {
-      reviewsTab.click();
-      reviewsTab.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-  }
-});
+function checkAndOpenReviews() {
+  // Проверяем хеш
+  if (!location.hash.includes("reviews")) return;
 
-if (location.hash.includes('reviews')) {
-  const reviewsTab = document.querySelector('#product-tabs-switcher > li:nth-child(2)');
-  if (reviewsTab) {
-    reviewsTab.click();
-    reviewsTab.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const tab = document.querySelector(
+    "#product-tabs-switcher > li:nth-child(2)",
+  );
+
+  if (tab) {
+    tab.click();
+
+    setTimeout(() => {
+      tab.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 100);
   }
 }
+// 1. Срабатывает, когда DOM полностью загружен
+document.addEventListener('DOMContentLoaded', checkAndOpenReviews);
+
+// 2. Срабатывает при ручном изменении хеша
+window.addEventListener('hashchange', checkAndOpenReviews);
+// window.addEventListener("hashchange", function () {
+//   if (location.hash.includes("reviews")) {
+//     const reviewsTab = document.querySelector(
+//       "#product-tabs-switcher li:nth-child(2)",
+//     );
+//     if (reviewsTab) {
+//       reviewsTab.click();
+//       reviewsTab.scrollIntoView({ behavior: "smooth", block: "center" });
+//     }
+//   }
+// });
+
+// if (location.hash.includes('reviews')) {
+//   const reviewsTab = document.querySelector('#product-tabs-switcher > li:nth-child(2)');
+//   if (reviewsTab) {
+//     reviewsTab.click();
+//     reviewsTab.scrollIntoView({ behavior: 'smooth', block: 'center' });
+//   }
+// }

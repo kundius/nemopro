@@ -17719,25 +17719,41 @@ if (window.matchMedia("(min-width: 768px)").matches) {
 } else {
   initFeedbackMessageOnMobile();
 }
-window.addEventListener("hashchange", function () {
-  if (location.hash.includes("reviews")) {
-    var reviewsTab = document.querySelector("#product-tabs-switcher li:nth-child(2)");
-    if (reviewsTab) {
-      reviewsTab.click();
-      reviewsTab.scrollIntoView({
+function checkAndOpenReviews() {
+  // Проверяем хеш
+  if (!location.hash.includes("reviews")) return;
+  var tab = document.querySelector("#product-tabs-switcher > li:nth-child(2)");
+  if (tab) {
+    tab.click();
+    setTimeout(function () {
+      tab.scrollIntoView({
         behavior: "smooth",
-        block: "center"
+        block: "start"
       });
-    }
-  }
-});
-if (location.hash.includes('reviews')) {
-  var reviewsTab = document.querySelector('#product-tabs-switcher > li:nth-child(2)');
-  if (reviewsTab) {
-    reviewsTab.click();
-    reviewsTab.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center'
-    });
+    }, 100);
   }
 }
+// 1. Срабатывает, когда DOM полностью загружен
+document.addEventListener('DOMContentLoaded', checkAndOpenReviews);
+
+// 2. Срабатывает при ручном изменении хеша
+window.addEventListener('hashchange', checkAndOpenReviews);
+// window.addEventListener("hashchange", function () {
+//   if (location.hash.includes("reviews")) {
+//     const reviewsTab = document.querySelector(
+//       "#product-tabs-switcher li:nth-child(2)",
+//     );
+//     if (reviewsTab) {
+//       reviewsTab.click();
+//       reviewsTab.scrollIntoView({ behavior: "smooth", block: "center" });
+//     }
+//   }
+// });
+
+// if (location.hash.includes('reviews')) {
+//   const reviewsTab = document.querySelector('#product-tabs-switcher > li:nth-child(2)');
+//   if (reviewsTab) {
+//     reviewsTab.click();
+//     reviewsTab.scrollIntoView({ behavior: 'smooth', block: 'center' });
+//   }
+// }
