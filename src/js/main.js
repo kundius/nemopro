@@ -1369,12 +1369,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const tab = document.querySelector(
       "#product-tabs-switcher > li:nth-child(2)",
     );
+
     if (!tab) return;
 
     tab.click();
 
-    // 0 достаточно, если контент уже в DOM.
-    // Если таб открывается с анимацией — верни 300мс
     setTimeout(() => {
       tab.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 0);
@@ -1382,7 +1381,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 1. При загрузке страницы
   if (location.hash.includes("reviews")) {
-    setTimeout(openReviewsTab, 50); // небольшая задержка для инициализации виджетов
+    setTimeout(openReviewsTab, 500); // небольшая задержка для инициализации виджетов
   }
 
   // 2. При смене хеша (кнопки назад/вперед)
