@@ -4200,6 +4200,11 @@ jdiv {
   line-height: 1;
 }
 
+.product-rating__count span {
+  position: relative;
+  top: -1px;
+}
+
 .product-gallery {
   float: left;
   width: 40%;
@@ -15415,4 +15420,9 @@ td.u-product-options__items {
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
+}
+
+.product-item__rating-value span {
+  position: relative;
+  top: -1px;
 }
