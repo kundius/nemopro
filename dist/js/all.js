@@ -17724,6 +17724,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var tab = document.querySelector("#product-tabs-switcher > li:nth-child(2)");
     if (!tab) return;
     tab.click();
+
+    // 0 достаточно, если контент уже в DOM.
+    // Если таб открывается с анимацией — верни 300мс
     setTimeout(function () {
       tab.scrollIntoView({
         behavior: "smooth",
@@ -17733,21 +17736,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // 1. При загрузке страницы
-  setTimeout(function () {
-    if (location.hash.includes("reviews")) openReviewsTab();
-  }, 50);
+  if (location.hash.includes("reviews")) {
+    setTimeout(openReviewsTab, 50); // небольшая задержка для инициализации виджетов
+  }
 
-  // 2. При смене хеша (кнопки браузера назад/вперед)
+  // 2. При смене хеша (кнопки назад/вперед)
   window.addEventListener("hashchange", function () {
     if (location.hash.includes("reviews")) openReviewsTab();
   });
 
-  // 3. При клике на ссылку (ловим и повторные переходы)
-  document.addEventListener("click", function (e) {
-    var link = e.target.closest('a[href*="#reviews"]');
-    if (link) {
-      openReviewsTab();
-      e.preventDefault();
-    }
+  // 3. Прямой клик по ссылкам с #reviews
+  document.querySelectorAll('a[href*="#reviews"]').forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault(); // блокируем стандартный прыжок
+
+      // Обновляем хеш вручную, чтобы сработал hashchange и история браузера
+      if (location.hash !== "#reviews") {
+        history.pushState(null, null, "#reviews");
+        openReviewsTab();
+      } else {
+        // Повторный клик по тому же якорю
+        openReviewsTab();
+      }
+    });
   });
 });
