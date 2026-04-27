@@ -17724,6 +17724,20 @@ window.addEventListener("hashchange", function () {
     var reviewsTab = document.querySelector("#product-tabs-switcher li:nth-child(2)");
     if (reviewsTab) {
       reviewsTab.click();
+      reviewsTab.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
     }
   }
 });
+if (location.hash.includes('reviews')) {
+  var reviewsTab = document.querySelector('#product-tabs-switcher > li:nth-child(2)');
+  if (reviewsTab) {
+    reviewsTab.click();
+    reviewsTab.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    });
+  }
+}
