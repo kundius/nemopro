@@ -17724,18 +17724,18 @@ document.addEventListener("DOMContentLoaded", function () {
     var tab = document.querySelector("#product-tabs-switcher > li:nth-child(2)");
     if (!tab) return;
     tab.click();
-    // ⏳ Задержка нужна, чтобы UIkit успел раскрыть контент таба
-    // иначе скролл может сработать в "пустоту"
     setTimeout(function () {
       tab.scrollIntoView({
         behavior: "smooth",
         block: "start"
       });
-    }, 300);
+    }, 0);
   }
 
   // 1. При загрузке страницы
-  if (location.hash.includes("reviews")) openReviewsTab();
+  setTimeout(function () {
+    if (location.hash.includes("reviews")) openReviewsTab();
+  }, 50);
 
   // 2. При смене хеша (кнопки браузера назад/вперед)
   window.addEventListener("hashchange", function () {
