@@ -1376,13 +1376,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 1. При загрузке страницы
-  if (location.hash.includes("reviews")) {
-    setTimeout(openReviewsTab, 500); // небольшая задержка для инициализации виджетов
+  if (location.hash.includes("product-tabs")) {
+    setTimeout(openReviewsTab, 500); // задержка для инициализации виджетов
   }
 
   // 2. При смене хеша (кнопки назад/вперед)
   window.addEventListener("hashchange", () => {
-    if (location.hash.includes("reviews")) openReviewsTab();
+    if (location.hash.includes("product-tabs")) openReviewsTab();
   });
 
   // 3. Прямой клик по ссылкам с #reviews
