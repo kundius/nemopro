@@ -1386,7 +1386,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 3. Прямой клик по ссылкам с #reviews
-  document.querySelectorAll('a[href*="#product-tabs"]').forEach((link) => {
+  document.querySelectorAll("a.product-rating").forEach((link) => {
     link.addEventListener("click", openReviewsTab);
   });
 });
