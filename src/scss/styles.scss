@@ -15410,21 +15410,29 @@ td.u-product-options__items {
   gap: 4px;
   align-items: center;
   z-index: 20;
+  text-decoration: none;
 }
+
+.product-item__rating:hover {
+  text-decoration: none;
+}
+
 .product-item__rating-star {
   background: url("../img/star.svg") no-repeat 0 50%;
   background-size: auto;
   width: 16px;
   height: 16px;
   background-size: auto 100%;
-  display: inline-block;
+  display: block;
   position: relative;
 }
+
 .product-item__rating-value {
   color: #034f84;
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
+  display: block;
 }
 
 .product-item__rating-value span {
