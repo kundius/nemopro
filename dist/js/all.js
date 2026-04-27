@@ -17719,45 +17719,40 @@ if (window.matchMedia("(min-width: 768px)").matches) {
 } else {
   initFeedbackMessageOnMobile();
 }
+document.addEventListener("DOMContentLoaded", function () {
+  function openReviewsTab() {
+    var tab = document.querySelector("#product-tabs-switcher > li:nth-child(2)");
+    if (!tab) return;
+    tab.click();
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   function openReviewsTab() {
-//     const tab = document.querySelector(
-//       "#product-tabs-switcher > li:nth-child(2)",
-//     );
+    // setTimeout(() => {
+    //   tab.scrollIntoView({ behavior: "smooth", block: "start" });
+    // }, 0);
+  }
 
-//     if (!tab) return;
+  // 1. При загрузке страницы
+  if (location.hash.includes("reviews")) {
+    setTimeout(openReviewsTab, 500); // небольшая задержка для инициализации виджетов
+  }
 
-//     tab.click();
+  // 2. При смене хеша (кнопки назад/вперед)
+  window.addEventListener("hashchange", function () {
+    if (location.hash.includes("reviews")) openReviewsTab();
+  });
 
-//     setTimeout(() => {
-//       tab.scrollIntoView({ behavior: "smooth", block: "start" });
-//     }, 0);
-//   }
+  // 3. Прямой клик по ссылкам с #reviews
+  document.querySelectorAll('a[href*="#product-tabs"]').forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      //   e.preventDefault(); // блокируем стандартный прыжок
 
-//   // 1. При загрузке страницы
-//   if (location.hash.includes("reviews")) {
-//     setTimeout(openReviewsTab, 500); // небольшая задержка для инициализации виджетов
-//   }
-
-//   // 2. При смене хеша (кнопки назад/вперед)
-//   window.addEventListener("hashchange", () => {
-//     if (location.hash.includes("reviews")) openReviewsTab();
-//   });
-
-//   // 3. Прямой клик по ссылкам с #reviews
-//   document.querySelectorAll('a[href*="#reviews"]').forEach((link) => {
-//     link.addEventListener("click", (e) => {
-//       e.preventDefault(); // блокируем стандартный прыжок
-
-//       // Обновляем хеш вручную, чтобы сработал hashchange и история браузера
-//       if (location.hash !== "#reviews") {
-//         history.pushState(null, null, "#reviews");
-//         openReviewsTab();
-//       } else {
-//         // Повторный клик по тому же якорю
-//         openReviewsTab();
-//       }
-//     });
-//   });
-// });
+      // Обновляем хеш вручную, чтобы сработал hashchange и история браузера
+      //   if (location.hash !== "#reviews") {
+      // history.pushState(null, null, "#reviews");
+      openReviewsTab();
+      //   } else {
+      // Повторный клик по тому же якорю
+      // openReviewsTab();
+      //   }
+    });
+  });
+});
