@@ -1375,7 +1375,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ⏳ Задержка нужна, чтобы UIkit успел раскрыть контент таба
     // иначе скролл может сработать в "пустоту"
     setTimeout(() => {
-      tab.scrollIntoView({ behavior: "smooth", block: "center" });
+      tab.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 300);
   }
 
