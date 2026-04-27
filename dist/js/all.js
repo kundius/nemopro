@@ -17728,7 +17728,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 1. При загрузке страницы
   if (location.hash.includes("product-tabs")) {
-    setTimeout(openReviewsTab, 500); // небольшая задержка для инициализации виджетов
+    setTimeout(openReviewsTab, 500); // задержка для инициализации виджетов
   }
 
   // 2. При смене хеша (кнопки назад/вперед)
