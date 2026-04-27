@@ -1367,16 +1367,12 @@ if (window.matchMedia("(min-width: 768px)").matches) {
 document.addEventListener("DOMContentLoaded", () => {
   function openReviewsTab() {
     const tab = document.querySelector(
-      "#product-tabs-switcher > li:nth-child(2)",
+      "#product-tabs [data-uk-switcher] > li:nth-child(2)",
     );
 
     if (!tab) return;
 
     tab.click();
-
-    // setTimeout(() => {
-    //   tab.scrollIntoView({ behavior: "smooth", block: "start" });
-    // }, 0);
   }
 
   // 1. При загрузке страницы
@@ -1391,17 +1387,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 3. Прямой клик по ссылкам с #reviews
   document.querySelectorAll('a[href*="#product-tabs"]').forEach((link) => {
-    link.addEventListener("click", (e) => {
-      //   e.preventDefault(); // блокируем стандартный прыжок
-
-      // Обновляем хеш вручную, чтобы сработал hashchange и история браузера
-      //   if (location.hash !== "#reviews") {
-      // history.pushState(null, null, "#reviews");
-      openReviewsTab();
-      //   } else {
-      // Повторный клик по тому же якорю
-      // openReviewsTab();
-      //   }
-    });
+    link.addEventListener("click", openReviewsTab);
   });
 });
